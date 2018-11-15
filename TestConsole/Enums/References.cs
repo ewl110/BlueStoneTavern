@@ -8,10 +8,10 @@ namespace TestConsole.Enums
 {
     public enum  References
     {
+        PHB,
         DMG,
         MM,
         MToF,
-        PHB,
         SCAG,
         VGtM,
         XGtE

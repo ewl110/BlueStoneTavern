@@ -16,7 +16,8 @@ namespace TestConsole
         static void Main()
         {
             var abilityList = Dictionaries.Abilities.List;
-            var weaponList = Dictionaries.PHB.Weapons.List;
+            var weaponList = Dictionaries.PHB.Classes.Barbarian.BerserkerLevels;
+            var barbarian =Dictionaries.PHB.Classes.Barbarian.TotemWarriorLevels;
 
             //foreach (var item in weaponList.Keys)
             //{

@@ -7,41 +7,36 @@ using TestConsole.Enums;
 
 namespace TestConsole.Models
 {
-    public class Classes
-    {
-        public Class[] ClassList { get; set; }
-    }
-
     public class Class : Base
     {
+        public Class[] Archetypes { get; set; }
         public Proficiencies[] Equipment { get; set; }
-        public bool HasRitualCating { get; set; }
+        public bool HasRitualCasting { get; set; }
         public int HitDice { get; set; }
         public bool IsCaster { get; set; }
         public Languages[] Languages { get; set; }
-        public Level[] Levels { get; set; }
+        //public Level[] Levels { get; set; }
         public Proficiencies[] Proficiencies { get; set; }
         public Abilities[] SavingThrows { get; set; }
-        public Skills[] Skills { get; set; }
+        public Skill[] Skills { get; set; }
         public Spell[] Spellbook { get; set; }
-        public Class[] SubClass { get; set; }
     }
 
-    public class Level
-    {
-        public string[] Features { get; set; }
-        public int Lvl { get; set; }
-        public int ProficiencyBonus { get; set; }
-        public Skills[] Skills { get; set; }
-        public SpellSlots SpellSlots { get; set; }
-    }
+    //public class Level
+    //{
+    //    public string[] Features { get; set; }
+    //    public int Lvl { get; set; }
+    //    public int ProficiencyBonus { get; set; }
+    //    public Skills[] Skills { get; set; }
+    //    public SpellSlots SpellSlots { get; set; }
+    //}
 
-    public class Proficiencies
-    {
-        public ArmorTypes[] Armor { get; set; }
-        public ToolTypes[] Tools { get; set; }
-        public WeaponTypes[] Weapons { get; set; }
-    }
+    //public class Proficiencies
+    //{
+    //    public ArmorTypes[] Armor { get; set; }
+    //    public ToolTypes[] Tools { get; set; }
+    //    public WeaponTypes[] Weapons { get; set; }
+    //}
 
     public class SpellSlots
     {
