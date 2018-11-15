@@ -55,6 +55,7 @@
     <Compile Include="Dictionaries\PHB\Classes\Barbarian.cs" />
     <Compile Include="Dictionaries\PHB\Languages.cs" />
     <Compile Include="Dictionaries\PHB\Races.cs" />
+    <Compile Include="Dictionaries\PHB\Races\Human.cs" />
     <Compile Include="Dictionaries\PHB\Skills.cs" />
     <Compile Include="Dictionaries\PHB\Tools.cs" />
     <Compile Include="Dictionaries\PHB\Weapons.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Models\Abilities.cs" />
     <Compile Include="Models\Armor.cs" />
     <Compile Include="Models\Base.cs" />
+    <Compile Include="Models\BaseRace.cs" />
     <Compile Include="Models\BaseClass.cs" />
     <Compile Include="Models\Classes.cs" />
     <Compile Include="Models\Classes\Barbarian.cs" />
@@ -99,9 +101,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dictionaries\MToF\" />
-    <Folder Include="Dictionaries\PHB\Armor\" />
-    <Folder Include="Dictionaries\PHB\Backgrounds\" />
-    <Folder Include="Dictionaries\PHB\Weapons\" />
     <Folder Include="Dictionaries\VGtM\" />
     <Folder Include="Dictionaries\XGtE\" />
   </ItemGroup>

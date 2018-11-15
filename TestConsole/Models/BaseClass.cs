@@ -26,9 +26,7 @@ namespace TestConsole.Models
     public class Level
     {
         public string[] Features { get; set; }
-        //public int Lvl { get; set; }
         public int ProficiencyBonus { get; set; }
-        //public Skills[] Skills { get; set; }
         //public SpellSlots SpellSlots { get; set; }
     }
 
