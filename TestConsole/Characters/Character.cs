@@ -206,9 +206,9 @@ namespace TestConsole.Characters
 
         public Character(string charRace, CharacterClasses charClass)
         {
-            var races = Dictionaries.PHB.Races.Core();
-            this.classes = new List<CharacterClasses>(){ charClass };
-            this.race = charRace;
+            //var races = Dictionaries.PHB.Races.Core();
+            //this.classes = new List<CharacterClasses>(){ charClass };
+            //this.race = charRace;
         }
 
         public Guid createGuid()
