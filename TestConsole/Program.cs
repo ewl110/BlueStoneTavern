@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using TestConsole.Characters;
 using TestConsole.Characters.Races.Human;
 using TestConsole.Enums;
+using TestConsole.Dictionaries;
+using TestConsole.Models;
 
 namespace TestConsole
 {
@@ -13,11 +15,17 @@ namespace TestConsole
     {
         static void Main()
         {
-            //var languages = EnumUtil.GetValues<Enums.Languages.Exotic>();
+            var abilityList = Dictionaries.Abilities.List;
+            var weaponList = Dictionaries.PHB.Weapons.List;
 
-            //foreach (var item in languages)
+            //foreach (var item in weaponList.Keys)
             //{
-            //    Console.WriteLine(item);
+            //    Console.WriteLine($"{item} - {abilityList[item].Name}");
+            //}
+
+            //foreach (var item in abilityList.Values)
+            //{
+            //    Console.WriteLine($"{item.Name} - {item.HasSavingThrow}");
             //}
 
             Character character = new Human();

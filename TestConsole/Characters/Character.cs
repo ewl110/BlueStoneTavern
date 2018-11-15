@@ -12,7 +12,7 @@ namespace TestConsole.Characters
         public readonly Guid id;
 
         // General Stats
-        private Alignments alignment;
+        private string alignment;
         private int age;
         private int[] abilityScores;
         private List<CharacterClasses> classes = new List<CharacterClasses>();
@@ -22,7 +22,7 @@ namespace TestConsole.Characters
         private string name;
         private int proficiencyBonus;
         private string race;
-        private string size;
+        private Sizes size;
         private List<Skills> skills = new List<Skills>();
         private int speed;
 
@@ -49,7 +49,7 @@ namespace TestConsole.Characters
             }
             set
             {
-                this.race = alignment;
+                this.alignment = value;
             }
         }
         public int Age
@@ -64,7 +64,7 @@ namespace TestConsole.Characters
             }
         }
         public int[] AbilityScores { get; set; }
-        public List<string> Classes {
+        public List<CharacterClasses> Classes {
             get
             {
                 return this.classes;
@@ -163,7 +163,7 @@ namespace TestConsole.Characters
                 this.race = value;
             }
         }
-        public string Size
+        public Sizes Size
         {
             get
             {
@@ -174,7 +174,7 @@ namespace TestConsole.Characters
                 this.size = value;
             }
         }
-        public List<string> Skills {
+        public List<Skills> Skills {
             get
             {
                 return this.skills;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestConsole.Enums;
 
 namespace TestConsole
 {
@@ -17,14 +18,14 @@ namespace TestConsole
         {
             public static readonly int[] ASI = {2, 0, 0, 0, 0, 1};
             public static readonly string[] LANGUAGES = { "Common", "Draconic" };
-            public static string SIZE = "Medium";
+            public static Sizes SIZE = Sizes.Medium;
             public static int SPEED = 30;
         }
 
         public static class Human
         {
             public static readonly string[] LANGUAGES = { "Common", "+1" };
-            public static string SIZE = "Medium";
+            public static Sizes SIZE = Sizes.Medium;
             public static int SPEED = 30;
         }
 

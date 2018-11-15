@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TestConsole.Models
 {
-    public class Race
+    public class Race : Base
     {
         public int Age { get; set; }
         public string Alignment { get; set; }

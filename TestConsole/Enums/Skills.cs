@@ -9,25 +9,23 @@ namespace TestConsole.Enums
 {
     public enum Skills
     {
-        Acrobatics,
-        Arcana,
-        [Description("Animal Handling")]
-        AnimalHandling,
-        Athletics,
-        Deception,
-        History,
-        Insight,
-        Intimitdation,
-        Investigation,
-        Medicine,
-        Nature,
-        Perception,
-        Performance,
-        Persuasion,
-        Religion,
-        [Description("Sleight of Hand")]
-        SleightOfHand,
-        Stealth,
-        Survival
+        acrobatics,
+        arcana,
+        animalHandling,
+        athletics,
+        deception,
+        history,
+        insight,
+        intimitdation,
+        investigation,
+        medicine,
+        nature,
+        perception,
+        performance,
+        persuasion,
+        teligion,
+        sleightOfHand,
+        stealth,
+        survival
     }
 }

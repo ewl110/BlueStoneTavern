@@ -9,19 +9,18 @@ namespace TestConsole.Models
 {
     public class Spells
     {
-        Spell[] Spellbook { get; set; }
+        public Spell[] List { get; set; }
     }
 
-    public class Spell
+    public class Spell : Base
     {
-        string CastingTime { get; set; }
-        CharacterClasses[] Classes { get; set; }
-        string[] Components { get; set; }
-        string Description { get; set; }
-        string Duration { get; set; }
-        string Name { get; set; }
-        string Range { get; set; }
-        string Type { get; set; } // Concentration or Ritual
-        SchoolOfMagic School { get; set; }
+        public string CastingTime { get; set; }
+        public CharacterClasses[] Classes { get; set; }
+        public string[] Components { get; set; }
+        public string Duration { get; set; }
+        public int Level { get; set; }
+        public string Range { get; set; }
+        public string Type { get; set; } // Concentration or Ritual
+        public SchoolsOfMagic School { get; set; }
     }
 }
