@@ -291,6 +291,7 @@ namespace TestConsole.Characters
             this.hitPointCurrent = charClassDefaults.HitDice;
             this.hitPointMax = charClassDefaults.HitDice;
             this.languages = new List<string>() { };
+            this.level = 1;
             this.name = "Huumon";
             this.race = charRace;
             this.size = charRaceDefaults.Size;

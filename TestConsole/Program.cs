@@ -65,6 +65,7 @@ namespace TestConsole
 
             Console.WriteLine(
                 $"Name: {character1.Name}\n" +
+                $"Level: {character1.Level}\n" +
                 $"Race: {character1.Race}\n" +
                 $"Class: {string.Join(", ", character1.Classes.ToArray())}\n" +
                 $"Proficiency Bonus: +{character1.ProficiencyBonus}\n" +
