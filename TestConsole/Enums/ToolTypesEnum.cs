@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TestConsole.Enums
 {
-    public enum ToolTypes
+    public enum ToolTypesEnum
     {
         [Description("Artisan's Tools")]
         artisansTools,

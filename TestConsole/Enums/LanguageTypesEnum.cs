@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestConsole.Characters.Races.Human
+namespace TestConsole.Enums
 {
-    class Standard : Human
+    public enum LanguageTypesEnum
     {
+        Class,
+        Common,
+        Exotic,
+        Monstrous
     }
 }

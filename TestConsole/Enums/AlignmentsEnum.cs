@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TestConsole.Enums
 {
-    public enum Alignments
+    public enum AlignmentsEnum
     {
         [Description("Lawful Good")]
         LawfulGood,

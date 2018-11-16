@@ -10,6 +10,6 @@ namespace TestConsole.Models
     public class Cost
     {
         public int Price { get; set; }
-        public Currency Currency { get; set; }
+        public CurrencyEnum Currency { get; set; }
     }
 }

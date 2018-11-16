@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace TestConsole.Enums
 {
-    public enum LanguageTypes
+    public enum SizesEnum
     {
-        Class,
-        Common,
-        Exotic,
-        Monstrous
+        Tiny,
+        Small,
+        Medium,
+        Large,
+        Huge,
+        Gargantuan
     }
 }

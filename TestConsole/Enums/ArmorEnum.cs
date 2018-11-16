@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestConsole.Enums
 {
-    public enum Armors
+    public enum ArmorEnum
     {
         breastplate,
         chainMail,

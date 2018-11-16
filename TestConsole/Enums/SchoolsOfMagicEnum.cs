@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestConsole.Enums
 {
-    public enum SchoolsOfMagic
+    public enum SchoolsOfMagicEnum
     {
         Abjuration,
         Conjuration,

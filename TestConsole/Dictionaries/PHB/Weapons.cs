@@ -16,11 +16,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 10
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.slashing,
+                        DamageType = DamageTypesEnum.slashing,
                         Dice = 8,
                         NumberOfDice = 1,
                         Versatile = 10
@@ -30,7 +30,7 @@ namespace TestConsole.Dictionaries.PHB
                     Properties = new WeaponProperties {
                         Versatile = true
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 4
                 }
             },
@@ -39,11 +39,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 10
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 1,
                         NumberOfDice = 1
                     },
@@ -57,7 +57,7 @@ namespace TestConsole.Dictionaries.PHB
                         Long = 25,
                         Short = 100
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 1
                 }
             },
@@ -66,11 +66,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.sp,
+                        Currency = CurrencyEnum.sp,
                         Price = 1
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.bludgeoning,
+                        DamageType = DamageTypesEnum.bludgeoning,
                         Dice = 4,
                         NumberOfDice = 1
                     },
@@ -79,7 +79,7 @@ namespace TestConsole.Dictionaries.PHB
                     Properties = new WeaponProperties {
                         Light = true
                     },
-                    Type = WeaponTypes.simple,
+                    Type = WeaponTypesEnum.simple,
                     Weight = 2
                 }
             },
@@ -88,11 +88,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 75
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 6,
                         NumberOfDice = 1
                     },
@@ -107,7 +107,7 @@ namespace TestConsole.Dictionaries.PHB
                         Long = 120,
                         Short = 30
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 3
                 }
             },
@@ -116,11 +116,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 50
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 10,
                         NumberOfDice = 1
                     },
@@ -136,7 +136,7 @@ namespace TestConsole.Dictionaries.PHB
                         Long = 400,
                         Short = 100
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 18
                 }
             },
@@ -145,11 +145,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 25
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 8,
                         NumberOfDice = 1
                     },
@@ -164,7 +164,7 @@ namespace TestConsole.Dictionaries.PHB
                         Long = 320,
                         Short = 80
                     },
-                    Type = WeaponTypes.simple,
+                    Type = WeaponTypesEnum.simple,
                     Weight = 5
                 }
             },
@@ -173,11 +173,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 2
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 4,
                         NumberOfDice = 1
                     },
@@ -192,7 +192,7 @@ namespace TestConsole.Dictionaries.PHB
                         Long = 60,
                         Short = 20
                     },
-                    Type = WeaponTypes.simple,
+                    Type = WeaponTypesEnum.simple,
                     Weight = 1
                 }
             },
@@ -201,11 +201,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.cp,
+                        Currency = CurrencyEnum.cp,
                         Price = 5
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 4,
                         NumberOfDice = 1
                     },
@@ -219,7 +219,7 @@ namespace TestConsole.Dictionaries.PHB
                         Long = 60,
                         Short = 20
                     },
-                    Type = WeaponTypes.simple,
+                    Type = WeaponTypesEnum.simple,
                     Weight = 0.25
                 }
             },
@@ -228,17 +228,17 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 10
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.bludgeoning,
+                        DamageType = DamageTypesEnum.bludgeoning,
                         Dice = 8,
                         NumberOfDice = 1
                     },
                     IsRanged = false,
                     Name = "Flail",
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 2
                 }
             },
@@ -247,11 +247,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 20
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.slashing,
+                        DamageType = DamageTypesEnum.slashing,
                         Dice = 10,
                         NumberOfDice = 1
                     },
@@ -262,7 +262,7 @@ namespace TestConsole.Dictionaries.PHB
                         Reach = true,
                         TwoHanded = true
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 6
                 }
             },
@@ -271,11 +271,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 30
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.slashing,
+                        DamageType = DamageTypesEnum.slashing,
                         Dice = 8,
                         NumberOfDice = 12
                     },
@@ -285,7 +285,7 @@ namespace TestConsole.Dictionaries.PHB
                         Heavy = true,
                         TwoHanded = true
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 7
                 }
             },
@@ -294,11 +294,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.sp,
+                        Currency = CurrencyEnum.sp,
                         Price = 2
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.bludgeoning,
+                        DamageType = DamageTypesEnum.bludgeoning,
                         Dice = 8,
                         NumberOfDice = 1
                     },
@@ -307,7 +307,7 @@ namespace TestConsole.Dictionaries.PHB
                     Properties = new WeaponProperties {
                         TwoHanded = true
                     },
-                    Type = WeaponTypes.simple,
+                    Type = WeaponTypesEnum.simple,
                     Weight = 10
                 }
             },
@@ -316,11 +316,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 50
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.slashing,
+                        DamageType = DamageTypesEnum.slashing,
                         Dice = 6,
                         NumberOfDice = 2
                     },
@@ -330,7 +330,7 @@ namespace TestConsole.Dictionaries.PHB
                         Heavy = true,
                         TwoHanded = true
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 6
                 }
             },
@@ -339,11 +339,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 20
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.slashing,
+                        DamageType = DamageTypesEnum.slashing,
                         Dice = 10,
                         NumberOfDice = 1
                     },
@@ -354,7 +354,7 @@ namespace TestConsole.Dictionaries.PHB
                         Reach = true,
                         TwoHanded = true
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 6
                 }
             },
@@ -363,11 +363,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 5
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.slashing,
+                        DamageType = DamageTypesEnum.slashing,
                         Dice = 6,
                         NumberOfDice = 1
                     },
@@ -381,7 +381,7 @@ namespace TestConsole.Dictionaries.PHB
                         Long = 60,
                         Short = 20
                     },
-                    Type = WeaponTypes.simple,
+                    Type = WeaponTypesEnum.simple,
                     Weight = 2
                 }
             },
@@ -390,11 +390,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.sp,
+                        Currency = CurrencyEnum.sp,
                         Price = 5
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 6,
                         NumberOfDice = 1
                     },
@@ -407,7 +407,7 @@ namespace TestConsole.Dictionaries.PHB
                         Long = 120,
                         Short = 30
                     },
-                    Type = WeaponTypes.simple,
+                    Type = WeaponTypesEnum.simple,
                     Weight = 2
                 }
             },
@@ -416,11 +416,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 10
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 12,
                         NumberOfDice = 1
                     },
@@ -430,7 +430,7 @@ namespace TestConsole.Dictionaries.PHB
                         Reach = true,
                         Special = true
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 6
                 }
             },
@@ -439,11 +439,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 2
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.bludgeoning,
+                        DamageType = DamageTypesEnum.bludgeoning,
                         Dice = 4,
                         NumberOfDice = 1
                     },
@@ -457,7 +457,7 @@ namespace TestConsole.Dictionaries.PHB
                         Long = 60,
                         Short = 20
                     },
-                    Type = WeaponTypes.simple,
+                    Type = WeaponTypesEnum.simple,
                     Weight = 2
                 }
             },
@@ -466,11 +466,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 50
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 8,
                         NumberOfDice = 1
                     },
@@ -485,7 +485,7 @@ namespace TestConsole.Dictionaries.PHB
                         Long = 600,
                         Short = 150
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 2
                 }
             },
@@ -494,11 +494,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 15
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.slashing,
+                        DamageType = DamageTypesEnum.slashing,
                         Dice = 8,
                         NumberOfDice = 1,
                         Versatile = 10
@@ -508,7 +508,7 @@ namespace TestConsole.Dictionaries.PHB
                     Properties = new WeaponProperties {
                         Versatile = true
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 3
                 }
             },
@@ -517,17 +517,17 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 5
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.bludgeoning,
+                        DamageType = DamageTypesEnum.bludgeoning,
                         Dice = 6,
                         NumberOfDice = 1
                     },
                     IsRanged = false,
                     Name = "Mace",
-                    Type = WeaponTypes.simple,
+                    Type = WeaponTypesEnum.simple,
                     Weight = 4
                 }
             },
@@ -536,11 +536,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 10
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.slashing,
+                        DamageType = DamageTypesEnum.slashing,
                         Dice = 6,
                         NumberOfDice = 2
                     },
@@ -550,7 +550,7 @@ namespace TestConsole.Dictionaries.PHB
                         Heavy = true,
                         TwoHanded = true
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 10
                 }
             },
@@ -559,17 +559,17 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 15
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 8,
                         NumberOfDice = 1
                     },
                     IsRanged = false,
                     Name = "Morningstar",
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 4
                 }
             },
@@ -578,11 +578,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 1
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.bludgeoning,
+                        DamageType = DamageTypesEnum.bludgeoning,
                         Dice = 0,
                         NumberOfDice = 1
                     },
@@ -596,7 +596,7 @@ namespace TestConsole.Dictionaries.PHB
                         Long = 15,
                         Short = 5
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 3
                 }
             },
@@ -605,11 +605,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 5
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 10,
                         NumberOfDice = 1
                     },
@@ -620,7 +620,7 @@ namespace TestConsole.Dictionaries.PHB
                         Reach = true,
                         TwoHanded = true
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 18
                 }
             },
@@ -629,11 +629,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.sp,
+                        Currency = CurrencyEnum.sp,
                         Price = 2
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.bludgeoning,
+                        DamageType = DamageTypesEnum.bludgeoning,
                         Dice = 6,
                         NumberOfDice = 1,
                         Versatile = 8
@@ -643,7 +643,7 @@ namespace TestConsole.Dictionaries.PHB
                     Properties = new WeaponProperties {
                         Versatile = true
                     },
-                    Type = WeaponTypes.simple,
+                    Type = WeaponTypesEnum.simple,
                     Weight = 4
                 }
             },
@@ -652,11 +652,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 25
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 8,
                         NumberOfDice = 1
                     },
@@ -665,7 +665,7 @@ namespace TestConsole.Dictionaries.PHB
                     Properties = new WeaponProperties {
                         Finesse = true
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 2
                 }
             },
@@ -674,11 +674,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 25
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.slashing,
+                        DamageType = DamageTypesEnum.slashing,
                         Dice = 6,
                         NumberOfDice = 1
                     },
@@ -688,7 +688,7 @@ namespace TestConsole.Dictionaries.PHB
                         Finesse = true,
                         Light = true
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 3
                 }
             },
@@ -697,11 +697,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 25
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 6,
                         NumberOfDice = 1
                     },
@@ -715,7 +715,7 @@ namespace TestConsole.Dictionaries.PHB
                         Long = 320,
                         Short = 80
                     },
-                    Type = WeaponTypes.simple,
+                    Type = WeaponTypesEnum.simple,
                     Weight = 2
                 }
             },
@@ -724,11 +724,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 10
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 6,
                         NumberOfDice = 1
                     },
@@ -738,7 +738,7 @@ namespace TestConsole.Dictionaries.PHB
                         Finesse = true,
                         Light = true
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 2
                 }
             },
@@ -747,11 +747,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 1
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.slashing,
+                        DamageType = DamageTypesEnum.slashing,
                         Dice = 4,
                         NumberOfDice = 1
                     },
@@ -760,7 +760,7 @@ namespace TestConsole.Dictionaries.PHB
                     Properties = new WeaponProperties {
                         Light = true
                     },
-                    Type = WeaponTypes.simple,
+                    Type = WeaponTypesEnum.simple,
                     Weight = 2
                 }
             },
@@ -769,11 +769,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.sp,
+                        Currency = CurrencyEnum.sp,
                         Price = 1
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.bludgeoning,
+                        DamageType = DamageTypesEnum.bludgeoning,
                         Dice = 4,
                         NumberOfDice = 1
                     },
@@ -786,7 +786,7 @@ namespace TestConsole.Dictionaries.PHB
                         Long = 120,
                         Short = 30
                     },
-                    Type = WeaponTypes.simple,
+                    Type = WeaponTypesEnum.simple,
                     Weight = 0
                 }
             },
@@ -795,11 +795,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 1
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 6,
                         NumberOfDice = 1,
                         Versatile = 8
@@ -814,7 +814,7 @@ namespace TestConsole.Dictionaries.PHB
                         Long = 60,
                         Short = 20
                     },
-                    Type = WeaponTypes.simple,
+                    Type = WeaponTypesEnum.simple,
                     Weight = 3
                 }
             },
@@ -823,11 +823,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 5
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 6,
                         NumberOfDice = 1,
                         Versatile = 8
@@ -842,7 +842,7 @@ namespace TestConsole.Dictionaries.PHB
                         Long = 60,
                         Short = 20
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 4
                 }
             },
@@ -851,17 +851,17 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 0
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.bludgeoning,
+                        DamageType = DamageTypesEnum.bludgeoning,
                         Dice = 1,
                         NumberOfDice = 1
                     },
                     IsRanged = false,
                     Name = "Unarmed Strike",
-                    Type = WeaponTypes.simple,
+                    Type = WeaponTypesEnum.simple,
                     Weight = 0
                 }
             },
@@ -870,17 +870,17 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 5
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.piercing,
+                        DamageType = DamageTypesEnum.piercing,
                         Dice = 8,
                         NumberOfDice = 1
                     },
                     IsRanged = false,
                     Name = "War Pick",
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 2
                 }
             },
@@ -889,11 +889,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 15
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.bludgeoning,
+                        DamageType = DamageTypesEnum.bludgeoning,
                         Dice = 8,
                         NumberOfDice = 1,
                         Versatile = 10
@@ -903,7 +903,7 @@ namespace TestConsole.Dictionaries.PHB
                     Properties = new WeaponProperties {
                         Versatile = true
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 2
                 }
             },
@@ -912,11 +912,11 @@ namespace TestConsole.Dictionaries.PHB
                 new Weapon
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 2
                     },
                     Damage = new WeaponDamage {
-                        DamageType = DamageTypes.slashing,
+                        DamageType = DamageTypesEnum.slashing,
                         Dice = 4,
                         NumberOfDice = 1
                     },
@@ -926,7 +926,7 @@ namespace TestConsole.Dictionaries.PHB
                         Finesse = true,
                         Reach = true
                     },
-                    Type = WeaponTypes.martial,
+                    Type = WeaponTypesEnum.martial,
                     Weight = 3
                 }
             }

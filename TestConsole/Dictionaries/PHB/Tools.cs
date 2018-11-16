@@ -17,12 +17,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 50
                     },
                     Description = "",
                     Name = "Alchemist's Tools",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 8
                 }
             },
@@ -31,12 +31,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 30
                     },
                     Description = "",
                     Name = "Bagpipes",
-                    Type = ToolTypes.musicalInstrument,
+                    Type = ToolTypesEnum.musicalInstrument,
                     Weight = 6
                 }
             },
@@ -45,12 +45,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 20
                     },
                     Description = "",
                     Name = "Brewer's Supplies",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 9
                 }
             },
@@ -59,12 +59,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 10
                     },
                     Description = "",
                     Name = "Calligrapher's Supplies",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 5
                 }
             },
@@ -73,12 +73,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 8
                     },
                     Description = "",
                     Name = "Carpenter's Supplies",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 6
                 }
             },
@@ -87,12 +87,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 15
                     },
                     Description = "",
                     Name = "Cartographer's Supplies",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 6
                 }
             },
@@ -101,12 +101,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 5
                     },
                     Description = "",
                     Name = "Cobbler's Supplies",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 5
                 }
             },
@@ -115,12 +115,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 1
                     },
                     Description = "",
                     Name = "Cook's Utensils",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 8
                 }
             },
@@ -129,12 +129,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.sp,
+                        Currency = CurrencyEnum.sp,
                         Price = 1
                     },
                     Description = "",
                     Name = "Dice Set",
-                    Type = ToolTypes.gaming,
+                    Type = ToolTypesEnum.gaming,
                     Weight = 0
                 }
             },
@@ -143,12 +143,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 25
                     },
                     Description = "",
                     Name = "Disguise Kit",
-                    Type = ToolTypes.disguiseKit,
+                    Type = ToolTypesEnum.disguiseKit,
                     Weight = 3
                 }
             },
@@ -157,12 +157,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 1
                     },
                     Description = "",
                     Name = "Dragonchess Set",
-                    Type = ToolTypes.gaming,
+                    Type = ToolTypesEnum.gaming,
                     Weight = 0.5
                 }
             },
@@ -171,12 +171,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 6
                     },
                     Description = "",
                     Name = "Drum",
-                    Type = ToolTypes.musicalInstrument,
+                    Type = ToolTypesEnum.musicalInstrument,
                     Weight = 3
                 }
             },
@@ -185,12 +185,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 25
                     },
                     Description = "",
                     Name = "Dulcimer",
-                    Type = ToolTypes.musicalInstrument,
+                    Type = ToolTypesEnum.musicalInstrument,
                     Weight = 10
                 }
             },
@@ -199,12 +199,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 2
                     },
                     Description = "",
                     Name = "Flute",
-                    Type = ToolTypes.musicalInstrument,
+                    Type = ToolTypesEnum.musicalInstrument,
                     Weight = 1
                 }
             },
@@ -213,12 +213,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 15
                     },
                     Description = "",
                     Name = "Forgery Kit",
-                    Type = ToolTypes.forgeryKit,
+                    Type = ToolTypesEnum.forgeryKit,
                     Weight = 5
                 }
             },
@@ -227,12 +227,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 30
                     },
                     Description = "",
                     Name = "Glassblower's Tools",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 5
                 }
             },
@@ -241,12 +241,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 5
                     },
                     Description = "",
                     Name = "Herbalism Kit",
-                    Type = ToolTypes.herbalismKit,
+                    Type = ToolTypesEnum.herbalismKit,
                     Weight = 3
                 }
             },
@@ -255,12 +255,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 3
                     },
                     Description = "",
                     Name = "Horn",
-                    Type = ToolTypes.musicalInstrument,
+                    Type = ToolTypesEnum.musicalInstrument,
                     Weight = 2
                 }
             },
@@ -269,12 +269,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 25
                     },
                     Description = "",
                     Name = "Jeweler's Tools",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 2
                 }
             },
@@ -283,12 +283,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 5
                     },
                     Description = "",
                     Name = "Leather Worker's Tools",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 5
                 }
             },
@@ -297,12 +297,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 35
                     },
                     Description = "",
                     Name = "Lute",
-                    Type = ToolTypes.musicalInstrument,
+                    Type = ToolTypesEnum.musicalInstrument,
                     Weight = 2
                 }
             },
@@ -311,12 +311,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 30
                     },
                     Description = "",
                     Name = "Lyre",
-                    Type = ToolTypes.musicalInstrument,
+                    Type = ToolTypesEnum.musicalInstrument,
                     Weight = 2
                 }
             },
@@ -325,12 +325,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 10
                     },
                     Description = "",
                     Name = "Mason's Tools",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 8
                 }
             },
@@ -339,12 +339,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 25
                     },
                     Description = "",
                     Name = "Navigator's Tools",
-                    Type = ToolTypes.navigatorsTools,
+                    Type = ToolTypesEnum.navigatorsTools,
                     Weight = 2
                 }
             },
@@ -353,12 +353,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 10
                     },
                     Description = "",
                     Name = "Painter's Supplies",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 5
                 }
             },
@@ -367,12 +367,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 12
                     },
                     Description = "",
                     Name = "Pan Flute",
-                    Type = ToolTypes.musicalInstrument,
+                    Type = ToolTypesEnum.musicalInstrument,
                     Weight = 2
                 }
             },
@@ -381,12 +381,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.sp,
+                        Currency = CurrencyEnum.sp,
                         Price = 5
                     },
                     Description = "",
                     Name = "Playing Card Set",
-                    Type = ToolTypes.gaming,
+                    Type = ToolTypesEnum.gaming,
                     Weight = 0
                 }
             },
@@ -395,12 +395,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 50
                     },
                     Description = "",
                     Name = "Poisnoner's Kit",
-                    Type = ToolTypes.poisonersKit,
+                    Type = ToolTypesEnum.poisonersKit,
                     Weight = 2
                 }
             },
@@ -409,12 +409,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 10
                     },
                     Description = "",
                     Name = "Potter's Supplies",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 3
                 }
             },
@@ -423,12 +423,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 2
                     },
                     Description = "",
                     Name = "Shawm",
-                    Type = ToolTypes.musicalInstrument,
+                    Type = ToolTypesEnum.musicalInstrument,
                     Weight = 1
                 }
             },
@@ -437,12 +437,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 20
                     },
                     Description = "",
                     Name = "Smith's Tools",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 8
                 }
             },
@@ -451,12 +451,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 25
                     },
                     Description = "",
                     Name = "Thieves' Tools",
-                    Type = ToolTypes.thievesTools,
+                    Type = ToolTypesEnum.thievesTools,
                     Weight = 1
                 }
             },
@@ -465,12 +465,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 1
                     },
                     Description = "",
                     Name = "Three-Dragon Ante Set",
-                    Type = ToolTypes.gaming,
+                    Type = ToolTypesEnum.gaming,
                     Weight = 0
                 }
             },
@@ -479,12 +479,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 50
                     },
                     Description = "",
                     Name = "Tinker's Tools",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 10
                 }
             },
@@ -493,12 +493,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 30
                     },
                     Description = "",
                     Name = "Viol",
-                    Type = ToolTypes.musicalInstrument,
+                    Type = ToolTypesEnum.musicalInstrument,
                     Weight = 1
                 }
             },
@@ -507,12 +507,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 1
                     },
                     Description = "",
                     Name = "Weaver's Tools",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 5
                 }
             },
@@ -521,12 +521,12 @@ namespace TestConsole.Dictionaries.PHB
                 new Tool
                 {
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 1
                     },
                     Description = "",
                     Name = "Woodcarver's Tools",
-                    Type = ToolTypes.artisansTools,
+                    Type = ToolTypesEnum.artisansTools,
                     Weight = 5
                 }
             }

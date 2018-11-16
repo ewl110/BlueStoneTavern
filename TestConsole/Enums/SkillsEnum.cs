@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TestConsole.Enums
 {
-    public enum Skills
+    public enum SkillsEnum
     {
         acrobatics,
         arcana,

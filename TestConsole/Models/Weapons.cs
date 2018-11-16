@@ -20,13 +20,13 @@ namespace TestConsole.Models
         public int NumberOfDice { get; set; }
         public WeaponProperties Properties { get; set; }
         public WeaponRange Range { get; set; }
-        public WeaponTypes Type { get; set; }
+        public WeaponTypesEnum Type { get; set; }
         public double Weight { get; set; }
     }
 
     public class WeaponDamage
     {
-        public DamageTypes DamageType { get; set; }
+        public DamageTypesEnum DamageType { get; set; }
         public int Dice { get; set; }
         public int NumberOfDice { get; set; }
         public int Versatile { get; set; }

@@ -14,7 +14,7 @@ namespace TestConsole.Models
         public bool HasRitualCasting { get; set; }
         public int HitDice { get; set; }
         public bool IsCaster { get; set; }
-        public Languages[] Languages { get; set; }
+        public LanguagesModel[] Languages { get; set; }
         //public Level[] Levels { get; set; }
         public Proficiencies[] Proficiencies { get; set; }
         public Abilities[] SavingThrows { get; set; }

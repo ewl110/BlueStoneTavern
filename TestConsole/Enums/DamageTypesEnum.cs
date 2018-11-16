@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace TestConsole.Enums
 {
-    public enum  References
+    public enum DamageTypesEnum
     {
-        PHB,
-        DMG,
-        MM,
-        MToF,
-        SCAG,
-        VGtM,
-        XGtE
+        bludgeoning,
+        piercing,
+        slashing
     }
 }

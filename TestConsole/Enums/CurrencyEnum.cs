@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestConsole.Characters.Classes
+namespace TestConsole.Enums
 {
-    class Class : Character
+    public enum CurrencyEnum
     {
+        cp,
+        gp,
+        pp,
+        sp
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestConsole.Enums
 {
-    public enum Tools
+    public enum ToolsEnum
     {
         alchemistsSupplies,
         bagpipes,

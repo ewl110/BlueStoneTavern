@@ -15,7 +15,7 @@ namespace TestConsole.Models
     public class Tool : Base
     {
         public Cost Cost { get; set; }
-        public ToolTypes Type { get; set; }
+        public ToolTypesEnum Type { get; set; }
         public double Weight { get; set; }
     }
 }

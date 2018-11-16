@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestConsole.Enums
 {
-    public enum WeaponTypes
+    public enum WeaponTypesEnum
     {
         simple,
         martial

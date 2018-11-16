@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestConsole.Models.Classes
 {
-    public class Barbarian : BaseClass
+    public class Barbarian : ClassModel
     {
         public BarbarianLevels[] Levels { get; set; }
     }

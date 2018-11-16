@@ -18,14 +18,14 @@ namespace TestConsole
         {
             public static readonly int[] ASI = {2, 0, 0, 0, 0, 1};
             public static readonly string[] LANGUAGES = { "Common", "Draconic" };
-            public static Sizes SIZE = Sizes.Medium;
+            public static SizesEnum SIZE = SizesEnum.Medium;
             public static int SPEED = 30;
         }
 
         public static class Human
         {
             public static readonly string[] LANGUAGES = { "Common", "+1" };
-            public static Sizes SIZE = Sizes.Medium;
+            public static SizesEnum SIZE = SizesEnum.Medium;
             public static int SPEED = 30;
         }
 

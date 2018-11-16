@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace TestConsole.Enums
 {
-    public enum Sizes
+    public enum  ReferencesEnum
     {
-        Tiny,
-        Small,
-        Medium,
-        Large,
-        Huge,
-        Gargantuan
+        PHB,
+        DMG,
+        MM,
+        MToF,
+        SCAG,
+        VGtM,
+        XGtE
     }
 }

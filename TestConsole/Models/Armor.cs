@@ -13,7 +13,7 @@ namespace TestConsole.Models
         public Cost Cost { get; set; }
         public bool Stealth { get; set; }
         public int Strength { get; set; }
-        public ArmorTypes Type { get; set; }
+        public ArmorTypesEnum Type { get; set; }
         public int Weight { get; set; }
     }
 }

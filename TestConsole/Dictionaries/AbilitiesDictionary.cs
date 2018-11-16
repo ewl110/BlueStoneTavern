@@ -7,7 +7,7 @@ using TestConsole.Models;
 
 namespace TestConsole.Dictionaries
 {
-    public static class Abilities
+    public static class AbilitiesDictionary
     {
         public static Dictionary<string, Ability> List = new Dictionary<string, Ability>()
         {

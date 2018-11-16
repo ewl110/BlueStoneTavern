@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestConsole.Characters.Races
+namespace TestConsole.Enums
 {
-    class Race : Character
+    public enum ArmorTypesEnum
     {
+        heavy,
+        light,
+        medium,
+        shield
     }
 }

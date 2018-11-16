@@ -17,12 +17,12 @@ namespace TestConsole.Dictionaries.PHB
                 {
                     ArmorClass = 14,
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 400
                     },
                     Name = "Breastplate",
                     Stealth = true,
-                    Type = ArmorTypes.medium,
+                    Type = ArmorTypesEnum.medium,
                     Weight = 20
                 }
             },
@@ -32,13 +32,13 @@ namespace TestConsole.Dictionaries.PHB
                 {
                     ArmorClass = 16,
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 75
                     },
                     Name = "Chain Mail",
                     Stealth = false,
                     Strength = 13,
-                    Type = ArmorTypes.heavy,
+                    Type = ArmorTypesEnum.heavy,
                     Weight = 55
                 }
             },
@@ -48,12 +48,12 @@ namespace TestConsole.Dictionaries.PHB
                 {
                     ArmorClass = 13,
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 50
                     },
                     Name = "Chain Shirt",
                     Stealth = true,
-                    Type = ArmorTypes.medium,
+                    Type = ArmorTypesEnum.medium,
                     Weight = 20
                 }
             },
@@ -63,12 +63,12 @@ namespace TestConsole.Dictionaries.PHB
                 {
                     ArmorClass = 15,
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 750
                     },
                     Name = "Half Plate",
                     Stealth = false,
-                    Type = ArmorTypes.medium,
+                    Type = ArmorTypesEnum.medium,
                     Weight = 40
                 }
             },
@@ -78,12 +78,12 @@ namespace TestConsole.Dictionaries.PHB
                 {
                     ArmorClass = 12,
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 10
                     },
                     Name = "Hide",
                     Stealth = true,
-                    Type = ArmorTypes.medium,
+                    Type = ArmorTypesEnum.medium,
                     Weight = 12
                 }
             },
@@ -93,12 +93,12 @@ namespace TestConsole.Dictionaries.PHB
                 {
                     ArmorClass = 11,
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 10
                     },
                     Name = "Leather",
                     Stealth = true,
-                    Type = ArmorTypes.light,
+                    Type = ArmorTypesEnum.light,
                     Weight = 10
                 }
             },
@@ -108,12 +108,12 @@ namespace TestConsole.Dictionaries.PHB
                 {
                     ArmorClass = 11,
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 5
                     },
                     Name = "Padded",
                     Stealth = false,
-                    Type = ArmorTypes.light,
+                    Type = ArmorTypesEnum.light,
                     Weight = 8
                 }
             },
@@ -123,13 +123,13 @@ namespace TestConsole.Dictionaries.PHB
                 {
                     ArmorClass = 18,
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 1500
                     },
                     Name = "Plate",
                     Stealth = false,
                     Strength = 15,
-                    Type = ArmorTypes.heavy,
+                    Type = ArmorTypesEnum.heavy,
                     Weight = 65
                 }
             },
@@ -139,12 +139,12 @@ namespace TestConsole.Dictionaries.PHB
                 {
                     ArmorClass = 14,
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 30
                     },
                     Name = "Ring Mail",
                     Stealth = false,
-                    Type = ArmorTypes.heavy,
+                    Type = ArmorTypesEnum.heavy,
                     Weight = 40
                 }
             },
@@ -154,12 +154,12 @@ namespace TestConsole.Dictionaries.PHB
                 {
                     ArmorClass = 14,
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 50
                     },
                     Name = "Scale Mail",
                     Stealth = false,
-                    Type = ArmorTypes.medium,
+                    Type = ArmorTypesEnum.medium,
                     Weight = 45
                 }
             },
@@ -169,12 +169,12 @@ namespace TestConsole.Dictionaries.PHB
                 {
                     ArmorClass = 2,
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 10
                     },
                     Name = "Shield",
                     Stealth = true,
-                    Type = ArmorTypes.shield,
+                    Type = ArmorTypesEnum.shield,
                     Weight = 6
                 }
             },
@@ -184,13 +184,13 @@ namespace TestConsole.Dictionaries.PHB
                 {
                     ArmorClass = 17,
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 200
                     },
                     Name = "Splint",
                     Stealth = false,
                     Strength = 15,
-                    Type = ArmorTypes.heavy,
+                    Type = ArmorTypesEnum.heavy,
                     Weight = 60
                 }
             },
@@ -200,12 +200,12 @@ namespace TestConsole.Dictionaries.PHB
                 {
                     ArmorClass = 12,
                     Cost = new Cost {
-                        Currency = Currency.gp,
+                        Currency = CurrencyEnum.gp,
                         Price = 45
                     },
                     Name = "Studded Leather",
                     Stealth = true,
-                    Type = ArmorTypes.light,
+                    Type = ArmorTypesEnum.light,
                     Weight = 13
                 }
             }

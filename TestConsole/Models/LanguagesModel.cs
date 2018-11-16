@@ -7,13 +7,13 @@ using TestConsole.Enums;
 
 namespace TestConsole.Models
 {
-    public class Languages
+    public class LanguagesModel
     {
-        Language[] LanguageList { get; set; }
+        LanguageModel[] List { get; set; }
     }
 
-    public class Language : Base
+    public class LanguageModel : Base
     {
-        public LanguageTypes Type { get; set; }
+        public LanguageTypesEnum Type { get; set; }
     }
 }

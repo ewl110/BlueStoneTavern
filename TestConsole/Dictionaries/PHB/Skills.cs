@@ -162,6 +162,15 @@ namespace TestConsole.Dictionaries.PHB
                 }
             },
             {
+                "selectSkill",
+                new Skill
+                {
+                    Description = "",
+                    IsProficient = false,
+                    Name = "Select Skill"
+                }
+            },
+            {
                 "sleightOfHand",
                 new Skill
                 {
