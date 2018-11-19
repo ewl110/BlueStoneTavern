@@ -30,6 +30,8 @@ namespace DnD5E
             services.AddScoped<FeatureToggles>(x => new FeatureToggles {
                 EnableDeveloperExceptions = configuration.GetValue<bool>("FeatureToggles:EnableDeveloperExceptions")
             } );
+
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +57,13 @@ namespace DnD5E
                 await next();
             });
 
+            // Serves MVC files
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("Default", "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            // Serves static files if MVC fidns no matches
             app.UseFileServer();
         }
     }

@@ -5,6 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\Character\" />
+    <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\dist\css\" />
     <Folder Include="wwwroot\dist\js\" />
     <Folder Include="wwwroot\dist\img\" />
@@ -17,6 +20,7 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
 </Project>
