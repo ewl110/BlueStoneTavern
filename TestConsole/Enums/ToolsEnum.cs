@@ -41,6 +41,8 @@ namespace TestConsole.Enums
         flute,
         [Description("Forgery Kit")]
         forgeryKit,
+        [Description("Gaming Set")]
+        gamingSet,
         [Description("Glassblower's Tools")]
         glassblowersTools,
         [Description("Herbalims Kit")]
