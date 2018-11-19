@@ -43,6 +43,8 @@ namespace TestConsole.Enums
         orc,
         [Description("Primordial")]
         primordial,
+        [Description("Select Language")]
+        selectLanguage,
         [Description("Sylvan")]
         sylvan,
         [Description("Thieves' Cant")]

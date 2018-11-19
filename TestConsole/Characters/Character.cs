@@ -280,13 +280,14 @@ namespace TestConsole.Characters
             RaceModel charRaceDefaults = Dictionaries.RacesDictionary.List[charRace.ToString()];
             var languages = Dictionaries.PHB.LanguagesDictionary.List;
             var commonLanguages = languages.Where(l => l.Value.Type == LanguageTypesEnum.Common).ToDictionary(i => i.Key, i => i.Value);
-            var skills = Dictionaries.PHB.Skills.List;
+            var skills = Dictionaries.PHB.SkillsDictionary.List;
             Random rng = new Random();
 
             //var parentClasses = Dictionaries.ClassDictionary.List.Where(c => c.Value.ParentClass == null).ToDictionary(i => i.Key, i => i.Value);
 
             this.classes.Add(charClass);
             this.feats = new List<string>() { };
+            this.features = new List<string>() { };
             this.hitDice = charClassDefaults.HitDice;
             this.hitPointCurrent = charClassDefaults.HitDice;
             this.hitPointMax = charClassDefaults.HitDice;

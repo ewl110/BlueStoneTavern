@@ -26,6 +26,8 @@ namespace TestConsole.Enums
         [Description("Poisoner's Kit")]
         poisonersKit,
         [Description("Thieves' Tools")]
-        thievesTools
+        thievesTools,
+        [Description("Vehicles")]
+        vehicles
     }
 }
