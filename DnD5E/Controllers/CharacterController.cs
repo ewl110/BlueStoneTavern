@@ -61,8 +61,7 @@ namespace DnD5E.Controllers
         [Route("")]
         public IActionResult Index()
         {
-            return new ContentResult { Content = "Choose your character!" };
-            //return View();
+            return View();
         }
     }
 }

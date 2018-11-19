@@ -10,8 +10,7 @@ namespace DnD5E.Controllers
     {
         public IActionResult Index()
         {
-            return new ContentResult { Content = "D&D 5E Character Creator" };
-            //return View();
+            return View();
         }
     }
 }
