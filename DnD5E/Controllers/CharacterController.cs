@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using DnD5E.Enums;
 using DnD5E.Models;
-using Microsoft.AspNetCore.Mvc;
+using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace DnD5E.Controllers
 {
     [Route("character")]
-    public class CharacterController : Controller
+    public class CharacterController : Microsoft.AspNetCore.Mvc.Controller
     {
         [Route("create")]
-        public IActionResult Create()
+        public Microsoft.AspNetCore.Mvc.ActionResult Create()
         {
             return View();
         }

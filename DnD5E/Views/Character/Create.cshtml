@@ -1,4 +1,4 @@
-﻿
+﻿@model DnD5E.Models.CharacterModel
 @{
     Layout = "_Layout";
     ViewData["Title"] = "Index";
@@ -6,4 +6,18 @@
 
 <h2>Create your character</h2>
 
+@Html.ActionLink("Test Link", "Index", "Character")
 
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.LabelFor(x => x.Name)
+        @Html.EditorFor(x => x.Name)
+    </p>
+    <p>
+        @Html.LabelFor(x => x.Class)
+        @Html.TextAreaFor(x => x.Class)
+    </p>
+
+    <button type="submit">Create Character</button>
+}
