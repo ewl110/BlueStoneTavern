@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using DnD5E.Enums;
+using DnD5E.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DnD5E.Controllers
@@ -55,7 +56,17 @@ namespace DnD5E.Controllers
         [Route("details/{id:int}")]
         public IActionResult Details(int id)
         {
-            return View();
+            CharacterModel character = new CharacterModel
+            {
+                // TODO: Get dictionary values for background, class and race before adding to model
+                Background = "folkHero",
+                Class = String.Join(", ", new List<string>{ "ranger" }.ToArray()),
+                Level = 1,
+                Name = "Huumon",
+                Race = "halfElf"
+            };
+
+            return View(character);
         }
 
         [Route("")]

@@ -21,6 +21,19 @@ namespace DnD5E.Enums
             return (attributes.Length > 0) ? (T)attributes[0] : null;
         }
 
+        public static Type GetType(string enumName)
+        {
+            foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                var type = assembly.GetType(enumName);
+                if (type == null)
+                    continue;
+                if (type.IsEnum)
+                    return type;
+            }
+            return null;
+        }
+
         public static T GetValueFromDescription<T>(string description)
         {
             var type = typeof(T);

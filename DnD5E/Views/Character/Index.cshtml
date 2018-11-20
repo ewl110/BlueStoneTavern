@@ -1,10 +1,13 @@
-﻿
+﻿@model IEnumerable<DnD5E.Models.CharacterModel>
+
 @{
     Layout = "_Layout";
     ViewData["Title"] = "Index";
 }
 
 <h2>Choose your character</h2>
+
+@await (Component.InvokeAsync<DnD5E.ViewComponents.CharacterListViewComponent>())
 
 <a class="btn" href="@Url.Action("Create", "Character")" title="Create Character">Create Character</a>
 

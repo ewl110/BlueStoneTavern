@@ -1,0 +1,10 @@
+﻿@model IEnumerable<DnD5E.Models.CharacterModel>
+
+<ul>
+    @foreach (var c in Model)
+    {
+    <li>
+        @Html.Partial("_CharacterCard", c)
+    </li>
+    }
+</ul>

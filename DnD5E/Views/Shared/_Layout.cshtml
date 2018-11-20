@@ -2,17 +2,28 @@
 @{
     ViewData["Title"] = "_Layout";
 }
+<html>
+<head>
+</head>
+<body>
+    <section class="header" role="masthead">
+        <div class="container">
+            <div class="col">
 
-<head></head>
-
-@RenderBody()
-
-<section class="footer" role="colpphon">
-    <div class="container">
-        <div class="col">
-            <div class="footer_copyright">
-                &copy; @DateTime.Now.Year
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    @RenderBody()
+
+    <section class="footer" role="colpphon">
+        <div class="container">
+            <div class="col">
+                <div class="footer_copyright">
+                    &copy; @DateTime.Now.Year
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
