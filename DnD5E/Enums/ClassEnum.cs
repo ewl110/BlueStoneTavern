@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace DnD5E.Enums
 {
@@ -10,6 +6,8 @@ namespace DnD5E.Enums
     {
         [Description("Barbarian")]
         barbarian,
+        [Description("Berserker")]
+        berserker,
         [Description("Bard")]
         bard,
         [Description("Cleric")]
@@ -28,6 +26,8 @@ namespace DnD5E.Enums
         rogue,
         [Description("Sorceror")]
         sorceror,
+        [Description("totemWarrior")]
+        totemWarrior,
         [Description("Warlock")]
         warlock,
         [Description("Wizard")]

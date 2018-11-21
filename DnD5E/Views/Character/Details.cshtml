@@ -9,7 +9,7 @@
 <ul>
     <li>Name: @Model.Name</li>
     <li>Race: @Model.Race</li>
-    <li>Class: @Model.Class</li>
+    <li>Class: @String.Join(", ", Model.Class.ToArray())</li>
     <li>Background: @Model.Background</li>
     <li>Level: @Model.Level</li>
 </ul>

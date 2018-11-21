@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace DnD5E.Enums
 {
@@ -46,6 +42,8 @@ namespace DnD5E.Enums
         halfOrc,
         [Description("Halfling")]
         halfling,
+        [Description("Human")]
+        human,
         [Description("Human (Standard)")]
         humanStandard,
         [Description("Human (Variant)")]

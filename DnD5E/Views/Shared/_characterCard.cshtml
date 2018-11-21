@@ -2,5 +2,5 @@
 
 <a class="card" href="@Url.Action("Details","Character", new { id = 24 })">
     <h3>@Model.Name</h3>
-    <p>@Model.Race - @Model.Class</p>
+    <p>@Model.Race - @String.Join(", ", Model.Class.ToArray())</p>
 </a>

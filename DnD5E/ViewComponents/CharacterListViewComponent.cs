@@ -15,13 +15,13 @@ namespace DnD5E.ViewComponents
             var characters = new CharacterModel[] {
                 new CharacterModel
                 {
-                    Class = String.Join(", ", new List<string>{ "ranger" }.ToArray()),
+                    Class = new List<string>{ "ranger" },
                     Name = "Character Awesome",
                     Race = "halfElf"
                 },
                 new CharacterModel
                 {
-                    Class = String.Join(", ", new List<string>{ "eldritchKnight", "cleric" }.ToArray()),
+                    Class = new List<string>{ "eldritchKnight", "cleric" },
                     Name = "Character DD",
                     Race = "dragonborn"
                 }
