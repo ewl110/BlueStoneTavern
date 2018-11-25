@@ -25,8 +25,8 @@ var
 
   //* folders
   folder = {
-    src: 'source/',
-    build: 'public/'
+    src: 'src/',
+    build: 'dist/'
   }
 ;
 

@@ -1,0 +1,41 @@
+.footer {
+  text-align: center; }
+
+fieldset legend {
+  background: #aaa;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem 1rem; }
+
+fieldset:not(.isSelected) .fieldset_content {
+  display: none; }
+
+fieldset.isDisabled legend {
+  background: #eee;
+  color: #ccc;
+  cursor: not-allowed; }
+
+fieldset.isSelected legend {
+  background: #d51018; }
+
+.form-control-list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .form-control-list input {
+    display: none; }
+    .form-control-list input:checked + label {
+      background: #333;
+      color: #fff; }
+  .form-control-list label {
+    background: #ddd;
+    cursor: pointer;
+    display: block;
+    padding: 0.5rem 1rem; }
+    .form-control-list label:focus, .form-control-list label:hover {
+      background: #333;
+      color: #fff; }
+  .form-control-list li {
+    padding: 0 1rem; }
+    .form-control-list li + li {
+      margin-top: 0.5rem; }

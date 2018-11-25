@@ -4,6 +4,9 @@
 }
 <html>
 <head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/dist/css/main.min.css">
 </head>
 <body>
     <section class="header" role="masthead">
@@ -14,9 +17,11 @@
         </div>
     </section>
 
-    @RenderBody()
+    <section class="main" role="main">
+        @RenderBody()
+    </section>
 
-    <section class="footer" role="colpphon">
+    <section class="footer" role="colophon">
         <div class="container">
             <div class="col">
                 <div class="footer_copyright">
@@ -25,5 +30,7 @@
             </div>
         </div>
     </section>
+
+    <script src="~/dist/js/main.min.js"></script>
 </body>
 </html>

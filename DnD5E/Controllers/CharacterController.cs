@@ -88,5 +88,11 @@ namespace DnD5E.Controllers
         {
             return View();
         }
+
+        [Route("random")]
+        public IActionResult Random()
+        {
+            return View();
+        }
     }
 }

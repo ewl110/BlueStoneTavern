@@ -1,0 +1,68 @@
+﻿fieldset {
+    legend {
+        background: #aaa;
+        color: #fff;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+    }
+
+    &:not(.isSelected) {
+        .fieldset_content {
+            display: none;
+        }
+    }
+
+    &.isDisabled {
+        legend {
+            background: #eee;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+    }
+
+    &.isSelected {
+        legend {
+            background: #d51018;
+        }
+    }
+}
+
+.form {
+    &-control {
+        &-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            input {
+                display: none;
+
+                &:checked + label {
+                    background: #333;
+                    color: #fff;
+                }
+            }
+
+            label {
+                background: #ddd;
+                cursor: pointer;
+                display: block;
+                padding: 0.5rem 1rem;
+
+                &:focus,
+                &:hover {
+                    background: #333;
+                    color: #fff;
+                }
+            }
+
+            li {
+                padding: 0 1rem;
+
+                & + li {
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+    }
+}
