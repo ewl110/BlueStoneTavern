@@ -1,97 +1,148 @@
 ﻿
 @{
-    ViewData["Title"] = "Random";
-    Layout = "_Layout.cshtml";
+    ViewData["Title"] = "Create Random Character";
+    Layout = "_Layout";
 }
 
-<section class="character_intro">
-    <h2>Dragonborn Sorceror 1</h2>
-    <q class="character_flavorText">Do you hear that? It is the roaring in my blood.</q>
-    <img class="character_avatar" src="" alt="Character Name (Race Class)" />
-    <div class="character_summary">
-        <p>Background description</p>
-    </div>
-</section>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <section class="character_intro">
+                <h2>Dragonborn Sorceror 1</h2>
+                <q class="character_flavorText">Do you hear that? It is the roaring in my blood.</q>
+                <img class="character_avatar" src="" alt="Character Name (Race Class)" />
+                <div class="content-wrapper">
+                    <p>You are a ferocious wanderer of the untrodden ways, a survivor who constantly tests yourself against the dangers of the wild—and conquers.</p>
+                    <p>Despite your self-sufficiency, you tire of a life alone. Your clan is far, but these companions are the closest thing to a tribe. As long as they can prove themselves worthy of your company, you will travel with them.</p>
+                </div>
+            </section>
 
-<section class="character_stats">
-    <div>
-        <h3>Character Name</h3>
-        <i>Medium humanoid (silver dragonborn, Draconic Bloodline, neutral good</i>
-        <div>
-            <b>Armor Class 15 (natural armor)</b>
-            <b>Hit Points 44 (Hit Dice 6d6)</b>
-            <b>Speed 30 ft.</b>
+            <section class="character_stats">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3>Character Name</h3>
+                        <i>Medium humanoid (silver dragonborn), draconic bloodline, neutral good</i>
+                        <div>
+                            <b>Armor Class:</b> 14 (natural armor)
+                            <b>Hit Points:</b> 9 (Hit Dice 1d6)
+                            <b>Speed:</b> 30 ft.
+                        </div>
+                        <div>
+                            <ul class="abilityScores">
+                                <li>
+                                    Str
+                                    <div>10 (+0)</div>
+                                </li>
+                                <li>
+                                    Dex
+                                    <div>13 (+1)</div>
+                                </li>
+                                <li>
+                                    Con
+                                    <div>14 (+2)</div>
+                                </li>
+                                <li>
+                                    Int
+                                    <div>10 (+0)</div>
+                                </li>
+                                <li>
+                                    Wis
+                                    <div>12 (+1)</div>
+                                </li>
+                                <li>
+                                    Cha
+                                    <div>16 (+3)</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="character_proficiencies">
+                            <div class="content-wrapper">
+                                <p><b>Proficiencies</b> (+2 proficiiency bonus)</p>
+                                <p><b>Saving Throws:</b> Con +4, Cha +5</p>
+                                <p><b>Skills:</b> Arcana +2, Athletics +2, Intimidation +5, Survival +3</p>
+                                <p><b>Tools:</b> Drum</p>
+                                <p><b>Weapons:</b> Daggers, Darts, Light Crossbows, Quarterstaffs, Slings</p>
+                            </div>
+                            <div class="content-wrapper">
+                                <p><b>Damage Resistances:</b> Cold</p>
+                            </div>
+                            <div class="content-wrapper">
+                                <p><b>Senses:</b> Passive Perception (11)</p>
+                            </div>
+                            <div class="content-wrapper">
+                                <p><b>Languages:</b> Common, Draconic, Giant</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="character_actions">
+                            <h4>Actions</h4>
+                            <p><b>Attack:</b> You can attack once when you take this action, using the following:</p>
+                            <p><b>Quarterstaff:</b> <i>Melee Weapon Attack:</i> +2 to hit, reach 5 ft., one target. <i>Hit:</i> 1d8 bludgeoning damage. <i>Special:</i> Versatile (1d10 bludgeoning damage)</p>
+                            <p><b>Dagger:</b> <i>Melee Weapon Attack:</i> +3 to hit, reach 5 ft., one target. <i>Hit:</i> 1d4 + 1 piercing damage. <i>Special:</i> Finesse, Thrown (20/60 ft.)</p>
+                            <p><b>Dart:</b> <i>Ranged Weapon Attack:</i> +3 to hit, range 20/60 ft., one target. <i>Hit:</i> 1d4 + 1 piercing damage.</p>
+                            <p><b>Cold Breath:</b> 15 ft. cone; each creature in the are must make a DC 12 CON saving throw, takign 2d6 cold damge on a failed save, and half as much on a successful one.</p>
+                            <p><b>Spellcasting:</b> Sorceror feature</p>
+                            <h4>Bonus Actions</h4>
+                            <ul class="actions"></ul>
+                            <h4>Options</h4>
+                            <ul class="actions"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="character_background">
+                <h3>Background (Outlander)</h3>
+                <div class="background">
+                    <div class="content-wrapper">
+                        <p>You grew up in the wilds, a fiercely proud member of a noble clan. The clan outweighs everything else in your life, even the stated law of the land.</p>
+                        <p><b>Wanderer:</b> You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth.</p>
+                        <p><b>Faction:</b> You are a member of the Emerald Enclave, defenders of the wild lands.</p>
+                        <p><b>Personality Trait:</b> You once ran 25 miles to warn your clan of an approaching threat, and you’d do the same again.</p>
+                        <p><b>Ideal:</b> To dishonor yourself is to dishonor the clan.</p>
+                        <p><b>Bond:</b> Your clan is the most important thing in your life, even when they are far from you.</p>
+                        <p><b>Flaw:</b> It is nature’s way that the strong survive and the weak perish.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="character_traits">
+                <h3>Dragonborn Traits</h3>
+                <p><b>Draconic Ancestry (Silver):</b> You have a cold breath weapon and resistance to cold damage.</p>
+                <p><b>Breath weapon: (Recharges after long or short rest)</b>  You can use your action to exhale cold energy in a 15 ft. cone. Each creature in the area must make a CON saving throw (DC = 8 + CON modifier + proficiency bonus) taking full damage on a failed save, or half as much damage on a successful one.</p>
+            </section>
+
+            <section class="character_features">
+                <h3>Sorceror Features</h3>
+                <div class="content-wrapper">
+                    <p><b>Dragon Ancestor:</b> Whenever you make a CHA check when interacting with dragons, your proficiency is doubled if it applies to the check.</p>
+                </div>
+                <div class="content-wrapper">
+                    <p><b>Draconic Resilience:</b> As magic flows through your body, it causes physical traits of your dragon ancestor to emerge. Your hit point maximum increases by 1 at 1st level and whenever you gain a sorcerer level.</p>
+                    <p>Additionally, parts of your body are covered by a thin sheen of dragonlike scales. When you aren’t wearing armor, your AC equals 13 + your DEX modifier.</p>
+                </div>
+                <div class="content-wrapper">
+                    <p><b>Spellcasting:</b> CHA is your spellcasting ability for your sorcerer spells. You use your CHA whenever a spell refers to your spellcasting ability.</p>
+                    <p>To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p>
+                </div>
+                <div class="content-wrapper">
+                    <p><b>Spell Save DC:</b> 13</p>
+                </div>
+                <div class="content-wrapper">
+                    <p><b>Spell Attack Modifier:</b> +5</p>
+                </div>
+                <div class="content-wrapper">
+                    <p><b>Spells Known:</b></p>
+                    <p>Cantrips (at will): <i>blade ward, mage hand, ray of frost, true strike</i></p>
+                    <p>1st level (2 slots): <i>magic missile, shield</i></p>
+                </div>
+            </section>
+
+            <section class="character_equipment">
+                <h3>Equipment</h3>
+                <p>Quarterstaff, dart (20), dagger (2), explorer's pack, hunting trap, drum crafted from a bear's skull, component pouch, traveler's clothes, belt pouch, money (10 gp).</p>
+            </section>
         </div>
-        <div>
-            <ul class="abilityScores">
-                <li>
-                    Str
-                    <div>10 (+0)</div>
-                </li>
-                <li>
-                    Dex
-                    <div>14 (+2)</div>
-                </li>
-                <li>
-                    Con
-                    <div>14 (+2)</div>
-                </li>
-                <li>
-                    Int
-                    <div>10 (+0)</div>
-                </li>
-                <li>
-                    Wis
-                    <div>12 (+1)</div>
-                </li>
-                <li>
-                    Cha
-                    <div>16 (+3)</div>
-                </li>
-            </ul>
-        </div>
-        <div class="character_proficiencies">
-            <div><b>Proficiencies</b> (+3 proficiiency bonus)</div>
-        </div>
     </div>
-    <div class="character_actions">
-        <h4>Actions</h4>
-        <ul class="actions"></ul>
-        <h4>Bonus Actions</h4>
-        <ul class="actions"></ul>
-        <h4>Options</h4>
-        <ul class="actions"></ul>
-    </div>
-</section>
-
-<section class="character_background">
-    <h3>Background (Outlander)</h3>
-    <div class="background">
-        <p>Background description 2</p>
-        <p><b>Wanderer:</b> Background feature</p>
-        <p><b>Faction:</b> You are a member of the Emerald Enclave, defenders of the wild lands.</p>
-        <p><b>Personality Trait:</b> random personality trait</p>
-        <p><b>Ideal:</b> random ideal</p>
-        <p><b>Bond:</b> random bond</p>
-        <p><b>Flaw:</b> random flaw</p>
-    </div>
-</section>
-
-<section class="character_racialTraits">
-    <h3>Dragonborn Traits</h3>
-    <ul class="features">
-        <li><p><b>Draconic Ancestry (Silver):</b>  racial trait</p></li>
-        <li><p><b>Breath weapon:</b>  racial trait</p></li>
-    </ul>
-</section>
-
-<section class="character_classFeatures">
-    <h3>Sorceror Features</h3>
-    <ul class="features">
-        <li>
-            <p><b>Spellcasting:</b>  class feature</p>
-            <p><b>Spellcasting:</b>  class feature with indented second paragraph</p>
-        </li>
-        <li><p><b>Breath weapon:</b>  class feature</p></li>
-    </ul>
-</section>
+</div>

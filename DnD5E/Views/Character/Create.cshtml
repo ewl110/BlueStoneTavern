@@ -8,89 +8,91 @@
 }
 
 <div class="container">
-    <div class="col">
-        <h2>Create your character</h2>
+    <div class="row">
+        <div class="col">
+            <h2>Create your character</h2>
 
-        <form class="form" id="createCharacterForm" asp-action="Create" asp-controller="Character">
-            <fieldset class="isSelected">
-                <legend>1. Select Class</legend>
-                <div class="fieldset_content">
-                    <ul class="form-control-list">
-                        @foreach (var c in ViewBag.classList)
-                        {
-                            @if (c.ParentClass == null)
+            <form class="form" id="createCharacterForm" asp-action="Create" asp-controller="Character">
+                <fieldset class="isSelected">
+                    <legend>1. Select Class</legend>
+                    <div class="fieldset_content">
+                        <ul class="form-control-list">
+                            @foreach (var c in ViewBag.classList)
                             {
-                                <li>
-                                    <input class="form-control-radio" id="@c.Key" name="Class" type="radio" value="@c.Key" />
-                                    <label for="@c.Key" tabindex="0">@c.Name</label>
-                                </li>
+                                @if (c.ParentClass == null)
+                                {
+                                    <li>
+                                        <input class="form-control-radio" id="@c.Key" name="Class" type="radio" value="@c.Key" />
+                                        <label for="@c.Key" tabindex="0">@c.Name</label>
+                                    </li>
+                                }
                             }
-                        }
-                    </ul>
-                </div>
-            </fieldset>
-            <fieldset class="isDisabled">
-                <legend>2. Assign Ability Scores</legend>
-                <div class="fieldset_content">
-                    <p>Point Buy: 15, 14, 13, 12, 10, 8</p>
-                    <label for="str">Strength</label>
-                    <input class="form-control" id="str" type="number" value="8" max="15" min="8" />
-                    <label for="dex">Dexterity</label>
-                    <input class="form-control" id="dex" type="number" value="8" max="15" min="8" />
-                    <label for="con">Constitution</label>
-                    <input class="form-control" id="con" type="number" value="8" max="15" min="8" />
-                    <label for="int">Intelligence</label>
-                    <input class="form-control" id="int" type="number" value="8" max="15" min="8" />
-                    <label for="wis">Wisdom</label>
-                    <input class="form-control" id="wis" type="number" value="8" max="15" min="8" />
-                    <label for="cha">Charisma</label>
-                    <input class="form-control" id="cha" type="number" value="8" max="15" min="8" />
-                </div>
-            </fieldset>
-            <fieldset class="isDisabled">
-                <legend>3. Select Race</legend>
-                <div class="fieldset_content">
-                    <ul class="form-control-list">
-                        @foreach (var race in ViewBag.racelist)
-                        {
-                            @if (race.Key != race.Archetype)
+                        </ul>
+                    </div>
+                </fieldset>
+                <fieldset class="isDisabled">
+                    <legend>2. Assign Ability Scores</legend>
+                    <div class="fieldset_content">
+                        <p>Point Buy: 15, 14, 13, 12, 10, 8</p>
+                        <label for="str">Strength</label>
+                        <input class="form-control" id="str" type="number" value="8" max="15" min="8" />
+                        <label for="dex">Dexterity</label>
+                        <input class="form-control" id="dex" type="number" value="8" max="15" min="8" />
+                        <label for="con">Constitution</label>
+                        <input class="form-control" id="con" type="number" value="8" max="15" min="8" />
+                        <label for="int">Intelligence</label>
+                        <input class="form-control" id="int" type="number" value="8" max="15" min="8" />
+                        <label for="wis">Wisdom</label>
+                        <input class="form-control" id="wis" type="number" value="8" max="15" min="8" />
+                        <label for="cha">Charisma</label>
+                        <input class="form-control" id="cha" type="number" value="8" max="15" min="8" />
+                    </div>
+                </fieldset>
+                <fieldset class="isDisabled">
+                    <legend>3. Select Race</legend>
+                    <div class="fieldset_content">
+                        <ul class="form-control-list">
+                            @foreach (var race in ViewBag.racelist)
+                            {
+                                @if (race.Key != race.Archetype)
+                                {
+                                    <li>
+                                        <label for="@race.Key">
+                                            <input class="form-control-radio" id="@race.Key" name="Race" type="radio" value="@race.Key" />
+                                            <span>@race.Name</span>
+                                        </label>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                </fieldset>
+                <fieldset class="isDisabled">
+                    <legend>4. Select Background</legend>
+                    <div class="fieldset_content">
+                        <ul class="form-control-list">
+                            @foreach (var c in ViewBag.backgroundList)
                             {
                                 <li>
-                                    <label for="@race.Key">
-                                        <input class="form-control-radio" id="@race.Key" name="Race" type="radio" value="@race.Key" />
-                                        <span>@race.Name</span>
+                                    <label for="@c.Key">
+                                        <input class="form-control-radio" id="@c.Key" name="Background" type="radio" value="@c.Key" />
+                                        <span>@c.Name</span>
                                     </label>
                                 </li>
                             }
-                        }
-                    </ul>
-                </div>
-            </fieldset>
-            <fieldset class="isDisabled">
-                <legend>4. Select Background</legend>
-                <div class="fieldset_content">
-                    <ul class="form-control-list">
-                        @foreach (var c in ViewBag.backgroundList)
-                        {
-                            <li>
-                                <label for="@c.Key">
-                                    <input class="form-control-radio" id="@c.Key" name="Background" type="radio" value="@c.Key" />
-                                    <span>@c.Name</span>
-                                </label>
-                            </li>
-                        }
-                    </ul>
-                </div>
-            </fieldset>
-            <fieldset class="isDisabled">
-                <legend>5. Enter Character Name</legend>
-                <div class="fieldset_content">
-                    <label for="name">Enter Character Name</label>
-                    <input class="form-control" id="name" name="Name" type="text" />
+                        </ul>
+                    </div>
+                </fieldset>
+                <fieldset class="isDisabled">
+                    <legend>5. Enter Character Name</legend>
+                    <div class="fieldset_content">
+                        <label for="name">Enter Character Name</label>
+                        <input class="form-control" id="name" name="Name" type="text" />
 
-                    <button type="submit">Create Character</button>
-                </div>
-            </fieldset>
-        </form>
+                        <button type="submit">Create Character</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
     </div>
 </div>
