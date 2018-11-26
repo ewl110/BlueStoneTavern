@@ -92,19 +92,14 @@ namespace DnD5E.Controllers
         [Route("random")]
         public IActionResult Random()
         {
-            var deck = Decks.BackgroundDeck.Cards;
-            var card = deck.PullRandomCardFromDeck();
+            var charBackground = Decks.BackgroundDeck.Cards.PullRandomCardFromDeck();
+            var charClass = Decks.ClassDeck.Cards.PullRandomCardFromDeck(true);
+            var charRace = Decks.RaceDeck.Cards.PullRandomCardFromDeck(true);
 
-            string bond = card.Bond.PickRandomItemFromArray();
-            string flaw = card.Flaw.PickRandomItemFromArray();
-            string ideal = card.Ideal.PickRandomItemFromArray();
-            string personality = card.Personality.PickRandomItemFromArray();
-
-            Console.WriteLine(
-                $"Bond: {bond}\n" +
-                $"Flaw:  {flaw}\n" +
-                $"Ideal:  {ideal}\n" +
-                $"Personality: {personality}");
+            string bond = charBackground.Bond.PickRandomItemFromArray();
+            string flaw = charBackground.Flaw.PickRandomItemFromArray();
+            string ideal = charBackground.Ideal.PickRandomItemFromArray();
+            string personality = charBackground.Personality.PickRandomItemFromArray();
 
             return View();
         }
