@@ -17,8 +17,8 @@ namespace DnD5E.Decks
                 Proficiencies = new ProficiencyModel
                 {
                     Skills = new string[]{
-                        SkillsEnum.insight.GetAttributeOfType<DescriptionAttribute>().Description,
-                        SkillsEnum.religion.GetAttributeOfType<DescriptionAttribute>().Description
+                        SkillsEnum.Insight.ToString(),
+                        SkillsEnum.Religion.ToString()
                     }
                 },
                 Bond = new string[]{
@@ -56,8 +56,8 @@ namespace DnD5E.Decks
                     "I've spent so long in the temple that I have little practical experience dealing with people in the outside world.",
                 },
                 Languages = new string[] {
-                    LanguagesEnum.selectLanguage.GetAttributeOfType<DescriptionAttribute>().Description,
-                    LanguagesEnum.selectLanguage.GetAttributeOfType<DescriptionAttribute>().Description
+                    LanguagesEnum.SelectLanguage.GetAttributeOfType<DescriptionAttribute>().Description,
+                    LanguagesEnum.SelectLanguage.GetAttributeOfType<DescriptionAttribute>().Description
                 },
                 Equipment = new string[]{
                     "A holy symbol (a gift to you when you entered the priesthood)",
@@ -79,8 +79,8 @@ namespace DnD5E.Decks
                 Proficiencies = new ProficiencyModel
                 {
                     Skills = new string[]{
-                        SkillsEnum.deception.GetAttributeOfType<DescriptionAttribute>().Description,
-                        SkillsEnum.sleightOfHand.GetAttributeOfType<DescriptionAttribute>().Description
+                        SkillsEnum.Deception.ToString(),
+                        SkillsEnum.SleightOfHand.GetAttributeOfType<DescriptionAttribute>().Description
                     },
                     Tools = new string[]{
                         ToolsEnum.disguiseKit.GetAttributeOfType<DescriptionAttribute>().Description,
@@ -141,8 +141,8 @@ namespace DnD5E.Decks
                 Proficiencies = new ProficiencyModel
                 {
                     Skills = new string[]{
-                        SkillsEnum.deception.GetAttributeOfType<DescriptionAttribute>().Description,
-                        SkillsEnum.stealth.GetAttributeOfType<DescriptionAttribute>().Description
+                        SkillsEnum.Deception.ToString(),
+                        SkillsEnum.Stealth.ToString()
                     },
                     Tools = new string[]{
                         ToolsEnum.selectGameSet.GetAttributeOfType<DescriptionAttribute>().Description,
@@ -201,8 +201,8 @@ namespace DnD5E.Decks
                 Proficiencies = new ProficiencyModel
                 {
                     Skills = new string[]{
-                        SkillsEnum.acrobatics.GetAttributeOfType<DescriptionAttribute>().Description,
-                        SkillsEnum.performance.GetAttributeOfType<DescriptionAttribute>().Description
+                        SkillsEnum.Acrobatics.ToString(),
+                        SkillsEnum.Performance.ToString()
                     },
                     Tools = new string[]{
                         ToolsEnum.disguiseKit.GetAttributeOfType<DescriptionAttribute>().Description,
@@ -262,8 +262,8 @@ namespace DnD5E.Decks
                 Proficiencies = new ProficiencyModel
                 {
                     Skills = new string[]{
-                        SkillsEnum.athletics.GetAttributeOfType<DescriptionAttribute>().Description,
-                        SkillsEnum.survival.GetAttributeOfType<DescriptionAttribute>().Description
+                        SkillsEnum.Athletics.ToString(),
+                        SkillsEnum.Survival.ToString()
                     },
                     Tools = new string[]{
                         ToolsEnum.selectInstrument.GetAttributeOfType<DescriptionAttribute>().Description
@@ -304,7 +304,7 @@ namespace DnD5E.Decks
                     "I was, in fact, raised by wolves.",
                 },
                 Languages = new string[] {
-                    LanguagesEnum.selectLanguage.GetAttributeOfType<DescriptionAttribute>().Description
+                    LanguagesEnum.SelectLanguage.GetAttributeOfType<DescriptionAttribute>().Description
                 },
                 Equipment = new string[]{
                     "A staff",

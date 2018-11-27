@@ -6,6 +6,7 @@ namespace DnD5E.Models
     public class RaceCard : BaseCard
     {
         public AbilityScoresModel AbilityScores { get; set; }
+        public ActionModel[] Actions { get; set; }
         public AgeRangeModel AgeRange { get; set; }
         public string[] Features { get; set; }
         public string[] Immunity { get; set; }
