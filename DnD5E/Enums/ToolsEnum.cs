@@ -68,6 +68,10 @@ namespace DnD5E.Enums
         poisonersKit,
         [Description("Potter's Supplies")]
         pottersSupplies,
+        [Description("Select Game Set")]
+        selectGameSet,
+        [Description("Select Instrument")]
+        selectInstrument,
         [Description("Shawm")]
         shawm,
         [Description("Smith's Tools")]
