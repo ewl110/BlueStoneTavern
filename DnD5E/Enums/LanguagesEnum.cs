@@ -9,6 +9,7 @@ namespace DnD5E.Enums
     public enum LanguagesEnum
     {
         Abyssal,
+        Aquan,
         Arakocra,
         Celestial,
         Common,
