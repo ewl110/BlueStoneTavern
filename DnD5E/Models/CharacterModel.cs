@@ -18,6 +18,7 @@ namespace DnD5E.Models
         public int Level { get; set; }
         [Required]
         public string Race { get; set; }
+        public int Speed { get; set; }
     }
 
     public class CreateCharacter
@@ -25,13 +26,5 @@ namespace DnD5E.Models
         public string Background { get; set; }
         public string Class { get; set; }
         public string Race { get; set; }
-    }
-
-    public class HitPointsModel
-    {
-        public int HitDice { get; set; }
-        public int HitDiceAvailable { get; set; }
-        public int HitPointsCurrent { get; set; }
-        public int HitPointsMax { get; set; }
     }
 }

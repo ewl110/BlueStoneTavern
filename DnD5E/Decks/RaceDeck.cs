@@ -761,49 +761,6 @@ namespace DnD5E.Decks
                         {
                             Str = 0,
                             Dex = 0,
-                            Con = 0,
-                            Int = 0,
-                            Wis = 1,
-                            Cha = 0
-                        },
-                        Description = "As a wood elf, you have keen senses and intuition, and your fleet feet carry you quickly and stealthily through your native forests.",
-                        Features = new List<FeatureModel>
-                        {
-                            new FeatureModel
-                            {
-                                Name = "Elf Weapon Training",
-                                Description = new string[]
-                                {
-                                    "You have proficiency with the longsword, shortsword, shortbow, and longbow."
-                                }
-                            },
-                            new FeatureModel
-                            {
-                                Name = "Fleet of Foot",
-                                Description = new string[]
-                                {
-                                    "Your base walking speed increases to 35 feet."
-                                }
-                            },
-                            new FeatureModel
-                            {
-                                Name = "Mask of the Wild",
-                                Description = new string[]
-                                {
-                                    "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
-                                }
-                            },
-                        },
-                        Name = "Wood Elf",
-                        Speed = 35,
-                        Weight = (int)RarityEnum.Common
-                    },
-                    new RaceCard
-                    {
-                        AbilityScores = new AbilityScoresModel
-                        {
-                            Str = 0,
-                            Dex = 0,
                             Con = 1,
                             Int = 0,
                             Wis = 0,
@@ -881,6 +838,49 @@ namespace DnD5E.Decks
                             DamageTypesEnum.Necrotic.ToString()
                         },
                         Weight = (int)RarityEnum.VeryRare
+                    },
+                    new RaceCard
+                    {
+                        AbilityScores = new AbilityScoresModel
+                        {
+                            Str = 0,
+                            Dex = 0,
+                            Con = 0,
+                            Int = 0,
+                            Wis = 1,
+                            Cha = 0
+                        },
+                        Description = "As a wood elf, you have keen senses and intuition, and your fleet feet carry you quickly and stealthily through your native forests.",
+                        Features = new List<FeatureModel>
+                        {
+                            new FeatureModel
+                            {
+                                Name = "Elf Weapon Training",
+                                Description = new string[]
+                                {
+                                    "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+                                }
+                            },
+                            new FeatureModel
+                            {
+                                Name = "Fleet of Foot",
+                                Description = new string[]
+                                {
+                                    "Your base walking speed increases to 35 feet."
+                                }
+                            },
+                            new FeatureModel
+                            {
+                                Name = "Mask of the Wild",
+                                Description = new string[]
+                                {
+                                    "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+                                }
+                            },
+                        },
+                        Name = "Wood Elf",
+                        Speed = 35,
+                        Weight = (int)RarityEnum.Common
                     },
                 },
                 Weight = (int)RarityEnum.Common

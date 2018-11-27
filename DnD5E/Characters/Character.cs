@@ -34,10 +34,12 @@ namespace DnD5E.Characters
         private List<string> immunity;
         private List<string> languages;
         private List<string> proficiencyArmor;
+        private int proficiencyBonus;
         private List<string> proficiencySkills;
         private List<string> proficiencyTools;
         private List<string> proficiencyWeapons;
         private List<string> resistance;
+        private int speed;
 
         private int level;
 
@@ -131,36 +133,11 @@ namespace DnD5E.Characters
             this.charClass = charClassCard.Name;
             this.charRace = charRaceVariantCard.Name;
             this.hitDice = charClassCard.HitDice;
+            this.hitPointCurrent = this.hitPointMax = charClassCard.HitDice + this.abilityScores.ConMod;
             this.id = CreateGuid();
             this.level = level;
-        }
-
-        public AbilityScoresModel GetAbilityScores(AbilityScoresModel classAS, AbilityScoresModel raceAS, AbilityScoresModel raceVariantAS)
-        {
-            int Str = classAS.Str + raceAS.Str + raceVariantAS.Str;
-            int Dex = classAS.Dex + raceAS.Dex + raceVariantAS.Dex;
-            int Con = classAS.Dex + raceAS.Dex + raceVariantAS.Dex;
-            int Int = classAS.Dex + raceAS.Dex + raceVariantAS.Dex;
-            int Wis = classAS.Dex + raceAS.Dex + raceVariantAS.Dex;
-            int Cha = classAS.Dex + raceAS.Dex + raceVariantAS.Dex;
-
-            AbilityScoresModel newAbilityScores = new AbilityScoresModel()
-            {
-                Str = Str,
-                StrMod = (Str - 10) / 2,
-                Dex = Dex,
-                DexMod = (Dex - 10) / 2,
-                Con = Con,
-                ConMod = (Con - 10) / 2,
-                Int = Int,
-                IntMod = (Int - 10) / 2,
-                Wis = Wis,
-                WisMod = (Wis - 10) / 2,
-                Cha = Cha,
-                ChaMod = (Cha - 10) / 2,
-            };
-
-            return newAbilityScores;
+            this.proficiencyBonus = 2;
+            this.speed = charRaceVariantCard.Speed != 30? charRaceVariantCard.Speed : charRaceCard.Speed;
         }
 
         public Guid CreateGuid()
@@ -173,6 +150,71 @@ namespace DnD5E.Characters
             }
 
             return id;
+        }
+
+        public AbilityScoresModel GetAbilityScores(AbilityScoresModel classAS, AbilityScoresModel raceAS, AbilityScoresModel raceVariantAS)
+        {
+            int Str = classAS.Str + raceAS.Str + raceVariantAS.Str;
+            int Dex = classAS.Dex + raceAS.Dex + raceVariantAS.Dex;
+            int Con = classAS.Con + raceAS.Con + raceVariantAS.Con;
+            int Int = classAS.Int + raceAS.Int + raceVariantAS.Int;
+            int Wis = classAS.Wis + raceAS.Wis + raceVariantAS.Wis;
+            int Cha = classAS.Cha + raceAS.Cha + raceVariantAS.Cha;
+
+            AbilityScoresModel newAbilityScores = new AbilityScoresModel()
+            {
+                Str = Str,
+                StrMod = GetAbilityScoreModifier(Str),
+                Dex = Dex,
+                DexMod = GetAbilityScoreModifier(Dex),
+                Con = Con,
+                ConMod = GetAbilityScoreModifier(Con),
+                Int = Int,
+                IntMod = GetAbilityScoreModifier(Int),
+                Wis = Wis,
+                WisMod = GetAbilityScoreModifier(Wis),
+                Cha = Cha,
+                ChaMod = GetAbilityScoreModifier(Cha),
+            };
+
+            return newAbilityScores;
+        }
+
+        public int GetAbilityScoreModifier(int abilityScore)
+        {
+            int abilityScoreModifier = (abilityScore - 10 ) / 2;
+
+            if (abilityScore % 2 != 0)
+            {
+                abilityScoreModifier = ((abilityScore - 1) - 10) / 2;
+            }
+
+            return abilityScoreModifier;
+        }
+
+        public CharacterCard GetNewCharacter()
+        {
+            CharacterCard randomCharacter = new CharacterCard()
+            {
+                AbilityScores = this.AbilityScores,
+                Age = this.Age,
+                Background = this.charBackground,
+                Class = this.charClass,
+                HitPoints = new HitPointsModel
+                {
+                    HitDice = this.hitDice,
+                    HitDiceAvailable = this.hitDice,
+                    HitPointsCurrent = this.hitPointCurrent,
+                    HitPointsMax = this.hitPointMax,
+                },
+                Id = this.id,
+                Level = this.level,
+                ProficiencyBonus = this.proficiencyBonus,
+                Race = this.charRace,
+                Speed = this.speed
+            };
+
+            return randomCharacter;
         }
     }
 }

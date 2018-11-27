@@ -1,4 +1,4 @@
-﻿
+﻿@model  DnD5E.Models.CharacterCard
 @{
     ViewData["Title"] = "Create Random Character";
     Layout = "_Layout";
@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col">
             <section class="character_intro">
-                <h2>Dragonborn Sorceror 1</h2>
+                <h2>@Model.Race @Model.Class @Model.Level</h2>
                 <q class="character_flavorText">Do you hear that? It is the roaring in my blood.</q>
                 <img class="character_avatar" src="https://via.placeholder.com/150" alt="Character Name (Dragonborn Sorceror)" />
                 <div class="content-wrapper">
@@ -24,40 +24,40 @@
                         <i>Medium humanoid (silver dragonborn), draconic bloodline, neutral good</i>
                         <div>
                             <b>Armor Class:</b> 14 (natural armor)
-                            <b>Hit Points:</b> 9 (Hit Dice 1d6)
-                            <b>Speed:</b> 30 ft.
+                            <b>Hit Points:</b> @Model.HitPoints.HitPointsCurrent (Hit Dice @(Model.Level)d@(Model.HitPoints.HitDiceAvailable))
+                            <b>Speed:</b> @Model.Speed ft.
                         </div>
                         <div>
-                            <ul class="abilityScores">
-                                <li>
+                            <ul class="abilityScores row">
+                                <li class="col-sm-6 col-md-4">
                                     Str
-                                    <div>10 (+0)</div>
+                                    <div>@Model.AbilityScores.Str ( @(Model.AbilityScores.StrMod < 0 ? Model.AbilityScores.StrMod.ToString() : "+" + Model.AbilityScores.StrMod.ToString()) )</div>
                                 </li>
-                                <li>
+                                <li class="col-sm-6 col-md-4">
                                     Dex
-                                    <div>13 (+1)</div>
+                                    <div>@Model.AbilityScores.Dex ( @(Model.AbilityScores.DexMod < 0 ? Model.AbilityScores.DexMod.ToString() : "+" + Model.AbilityScores.DexMod.ToString()) )</div>
                                 </li>
-                                <li>
+                                <li class="col-sm-6 col-md-4">
                                     Con
-                                    <div>14 (+2)</div>
+                                    <div>@Model.AbilityScores.Con ( @(Model.AbilityScores.ConMod < 0 ? Model.AbilityScores.ConMod.ToString() : "+" + Model.AbilityScores.ConMod.ToString()) )</div>
                                 </li>
-                                <li>
+                                <li class="col-sm-6 col-md-4">
                                     Int
-                                    <div>10 (+0)</div>
+                                    <div>@Model.AbilityScores.Int ( @(Model.AbilityScores.IntMod < 0 ? Model.AbilityScores.IntMod.ToString() : "+" + Model.AbilityScores.IntMod.ToString()) )</div>
                                 </li>
-                                <li>
+                                <li class="col-sm-6 col-md-4">
                                     Wis
-                                    <div>12 (+1)</div>
+                                    <div>@Model.AbilityScores.Wis ( @(Model.AbilityScores.WisMod < 0 ? Model.AbilityScores.WisMod.ToString() : "+" + Model.AbilityScores.WisMod.ToString()) )</div>
                                 </li>
-                                <li>
+                                <li class="col-sm-6 col-md-4">
                                     Cha
-                                    <div>16 (+3)</div>
+                                    <div>@Model.AbilityScores.Cha ( @(Model.AbilityScores.ChaMod < 0 ? Model.AbilityScores.ChaMod.ToString() : "+" + Model.AbilityScores.ChaMod.ToString()) )</div>
                                 </li>
                             </ul>
                         </div>
                         <div class="character_proficiencies">
                             <div class="content-wrapper">
-                                <p><b>Proficiencies</b> (+2 proficiiency bonus)</p>
+                                <p><b>Proficiencies</b> (+@Model.ProficiencyBonus proficiiency bonus)</p>
                                 <p><b>Saving Throws:</b> Con +4, Cha +5</p>
                                 <p><b>Skills:</b> Arcana +2, Athletics +2, Intimidation +5, Survival +3</p>
                                 <p><b>Tools:</b> Drum</p>

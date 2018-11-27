@@ -28,7 +28,7 @@ namespace DnD5E.Decks
                     Dex = 14,
                     Con = 13,
                     Int = 12,
-                    Wis = 18,
+                    Wis = 8,
                     Cha = 15
                 },
                 HitDice = 8,
