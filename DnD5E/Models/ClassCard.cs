@@ -5,6 +5,7 @@ namespace DnD5E.Models
 {
     public class ClassCard : BaseCard
     {
+        public AbilityScoresModel AbilityScores { get; set; }
         public ClassEnum? BaseClass { get; set; }
         public int HitDice { get; set; }
         public Dictionary<int, LevelModel> Levels { get; set; }

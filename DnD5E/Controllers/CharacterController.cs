@@ -102,6 +102,7 @@ namespace DnD5E.Controllers
             string ideal = charBackground.Ideal.PickRandomItemFromArray();
             string personality = charBackground.Personality.PickRandomItemFromArray();
 
+            var character = new Characters.Character();
             return View();
         }
     }
