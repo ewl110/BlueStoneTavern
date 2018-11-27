@@ -95,6 +95,7 @@ namespace DnD5E.Controllers
             var charBackground = Decks.BackgroundDeck.Cards.PullRandomCardFromDeck();
             var charClass = Decks.ClassDeck.Cards.PullRandomCardFromDeck(true);
             var charRace = Decks.RaceDeck.Cards.PullRandomCardFromDeck(true);
+            var charRaceVariant = charRace.Variants.PullRandomCardFromDeck(true);
 
             string bond = charBackground.Bond.PickRandomItemFromArray();
             string flaw = charBackground.Flaw.PickRandomItemFromArray();
