@@ -11,6 +11,7 @@ namespace DnD5E.Models
         public string[] Features { get; set; }
         public string[] Immunity { get; set; }
         public string[] Languages { get; set; }
+        public ProficiencyModel Proficiencies { get; set; }
         public string[] Resistance { get; set; }
         public SizeEnum Size { get; set; } = SizeEnum.medium;
         public int Speed { get; set; } = 30;
