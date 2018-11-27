@@ -544,9 +544,103 @@ namespace DnD5E.Decks
             },
             new RaceCard()
             {
+                AbilityScores = new AbilityScoresModel
+                {
+                    Str = 0,
+                    Dex = 0,
+                    Con = 0,
+                    Int = 2,
+                    Wis = 0,
+                    Cha = 0
+                },
+                AgeRange = new AgeRangeModel
+                {
+                    Max = 350,
+                    Min = 40
+                },
+                Features = new string[]
+                {
+                    "<p><b>Speed:</b> Your speed is not reduced by wearing heavy armor.</p>",
+                    "<p><b>Darkvision:</b> Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.</p>",
+                    "<p><b>Gnome Cunning:</b> You have advantage on all Intelligence, Wisdom, and Charisma saves against magic.</p>",
+                    "<p><b>Stonecunning:</b> Whenever you make an INT (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.</p>"
+                },
+                Languages = new string[]
+                {
+                    LanguagesEnum.Common.ToString(),
+                    LanguagesEnum.Gnomish.ToString(),
+                },
                 Name = "Gnome",
+                Size = SizeEnum.small.ToString(),
                 Speed = 25,
-                Weight = 100
+                Variants = new List<RaceCard>()
+                {
+                    new RaceCard
+                    {
+                        AbilityScores = new AbilityScoresModel
+                        {
+                            Str = 0,
+                            Dex = 1,
+                            Con = 0,
+                            Int = 0,
+                            Wis = 0,
+                            Cha = 0
+                        },
+                        Description = "Forest gnomes have a knack for stealth and illusion, and are generally rather secretive. They gather in hidden forest communities, befriending the local fey and animals.",
+                        Features = new string[]
+                        {
+                            "<p><b>Natural Illusionist:</b> You know the minor illusion cantrip. Intelligence is your spellcasting modifier for it.</p>",
+                            "<p><b>Speak with Small Beasts:</b> Through sound and gestures, you may communicate simple ideas with Small or smaller beasts.</p>"
+                        },
+                        Name = "Forest Gnome",
+                        Weight = (int)RarityEnum.Common
+                    },
+                    new RaceCard
+                    {
+                        AbilityScores = new AbilityScoresModel
+                        {
+                            Str = 0,
+                            Dex = 1,
+                            Con = 0,
+                            Int = 0,
+                            Wis = 0,
+                            Cha = 0
+                        },
+                        Description = "Forest gnomes and rock gnomes are the gnomes most commonly encountered in the lands of the surface world. There is another subrace of gnomes rarely seen by any surface-dweller: deep gnomes, also known as svirfneblin. Guarded, and suspicious of outsiders, svirfneblin are cunning and taciturn, but can be just as kind-hearted, loyal, and compassionate as their surface cousins.",
+                        Features = new string[]
+                        {
+                            "<p><b>Superior Darkvision:</b> Your darkvision has a radius of 120 feet.</p>",
+                            "<p><b>Stone Camouflage:<?b> You have advantage on Dexterity (stealth) checks to hide in rocky terrain.</p>"
+                        },
+                        Languages = new string[]
+                        {
+                            LanguagesEnum.Undercommon.ToString()
+                        },
+                        Name = "Deep Gnome",
+                        Weight = (int)RarityEnum.Rare
+                    },
+                    new RaceCard
+                    {
+                        AbilityScores = new AbilityScoresModel
+                        {
+                            Str = 0,
+                            Dex = 0,
+                            Con = 1,
+                            Int = 0,
+                            Wis = 0,
+                            Cha = 0
+                        },
+                        Description = "Rock gnomes are naturally inventive and quite hardy for such a small creature. Also known as tinker gnomes, they are well known for their contraptions, ranging from revolutionary to eccentric.",
+                        Features = new string[]
+                        {
+                            "<p><b>Artificer's Lore:</b> Whenever you make an Intelligence (History) check related to magical, alchemical, or technological items, you can add twice your proficiency bonus instead of any other proficiency bonus that may apply.</p>",
+                            "<p><b>Tinker:</b> You have proficiency with artisan tools (tinker's tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time. When you create a device, choose one of the following options:<br /><i>Clockwork Toy:</i> This toy is a c1ockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents.<br /><i>Fire Starter:</i> The device produces a miniature flame, which you can use to light a candle, torch, or campfire. Using the device requires your action.<br /><i>Music Box:</i> When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song's end or when it is closed.<br />At your DM's discretion, you may make other objects with effects similar in power to these. The prestidigitation cantrip is a good baseline for such effects.</p>"
+                        },
+                        Name = "Rock Gnome",
+                        Weight = (int)RarityEnum.Common
+                    }
+                },
+                Weight = (int)RarityEnum.Common
             },
         };
     }
