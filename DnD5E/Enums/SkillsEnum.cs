@@ -8,43 +8,27 @@ namespace DnD5E.Enums
 {
     public enum SkillsEnum
     {
-        [Description("Acrobatics")]
-        acrobatics,
-        [Description("Arcana")]
-        arcana,
+        Acrobatics,
+        Arcana,
         [Description("Animal Handling")]
-        animalHandling,
-        [Description("Athletics")]
-        athletics,
-        [Description("Deception")]
-        deception,
-        [Description("History")]
-        history,
-        [Description("Insight")]
-        insight,
-        [Description("Intimidation")]
-        intimitdation,
-        [Description("Investigation")]
-        investigation,
-        [Description("Medicine")]
-        medicine,
-        [Description("Nature")]
-        nature,
-        [Description("Perception")]
-        perception,
-        [Description("Performance")]
-        performance,
-        [Description("Persuasion")]
-        persuasion,
-        [Description("Religion")]
-        religion,
+        AnimalHandling,
+        Athletics,
+        Deception,
+        History,
+        Insight,
+        Intimidation,
+        Investigation,
+        Medicine,
+        Nature,
+        Perception,
+        Performance,
+        Persuasion,
+        Religion,
         [Description("Select Skill")]
-        selectSkill,
+        SelectSkill,
         [Description("Sleight of Hand")]
-        sleightOfHand,
-        [Description("Stealth")]
-        stealth,
-        [Description("Survival")]
-        survival
+        SleightOfHand,
+        Stealth,
+        Survival
     }
 }

@@ -15,13 +15,13 @@ namespace DnD5E.Dictionaries
                 {
                     Key = BackgroundEnum.acolyte.ToString(),
                     Languages = new List<LanguagesEnum>(){
-                        LanguagesEnum.selectLanguage,
-                        LanguagesEnum.selectLanguage
+                        LanguagesEnum.SelectLanguage,
+                        LanguagesEnum.SelectLanguage
                     },
                     Name = BackgroundEnum.acolyte.GetAttributeOfType<DescriptionAttribute>().Description,
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.insight,
-                        SkillsEnum.religion
+                        SkillsEnum.Insight,
+                        SkillsEnum.Religion
                     },
                     Tools = new List<ToolsEnum>(){ }
                 }
@@ -34,8 +34,8 @@ namespace DnD5E.Dictionaries
                     Languages = new List<LanguagesEnum>(){ },
                     Name = "Charlatan",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.deception,
-                        SkillsEnum.sleightOfHand
+                        SkillsEnum.Deception,
+                        SkillsEnum.SleightOfHand
                     },
                     Tools = new List<ToolsEnum>(){
                         ToolsEnum.disguiseKit,
@@ -51,8 +51,8 @@ namespace DnD5E.Dictionaries
                     Languages = new List<LanguagesEnum>(){ },
                     Name = "Criminal",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.deception,
-                        SkillsEnum.stealth
+                        SkillsEnum.Deception,
+                        SkillsEnum.Stealth
                     },
                     Tools = new List<ToolsEnum>(){
                         ToolsEnum.gamingSet,
@@ -68,8 +68,8 @@ namespace DnD5E.Dictionaries
                     Languages = new List<LanguagesEnum>(){ },
                     Name = "Entertainer",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.acrobatics,
-                        SkillsEnum.performance
+                        SkillsEnum.Acrobatics,
+                        SkillsEnum.Performance
                     },
                     Tools = new List<ToolsEnum>(){
                         ToolsEnum.disguiseKit,
@@ -85,8 +85,8 @@ namespace DnD5E.Dictionaries
                     Languages = new List<LanguagesEnum>(){ },
                     Name = "Folk Hero",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.animalHandling,
-                        SkillsEnum.survival
+                        SkillsEnum.AnimalHandling,
+                        SkillsEnum.Survival
                     },
                     Tools = new List<ToolsEnum>(){
                         ToolsEnum.artisansTools,
@@ -100,12 +100,12 @@ namespace DnD5E.Dictionaries
                 {
                     Key = BackgroundEnum.guildArtisan.ToString(),
                     Languages = new List<LanguagesEnum>(){
-                        LanguagesEnum.selectLanguage
+                        LanguagesEnum.SelectLanguage
                     },
                     Name = "Guild Artisan",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.insight,
-                        SkillsEnum.persuasion
+                        SkillsEnum.Insight,
+                        SkillsEnum.Persuasion
                     },
                     Tools = new List<ToolsEnum>(){
                         ToolsEnum.artisansTools
@@ -118,12 +118,12 @@ namespace DnD5E.Dictionaries
                 {
                     Key = BackgroundEnum.guildMerchant.ToString(),
                     Languages = new List<LanguagesEnum>(){
-                        LanguagesEnum.selectLanguage
+                        LanguagesEnum.SelectLanguage
                     },
                     Name = "Guild Merchant",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.insight,
-                        SkillsEnum.persuasion
+                        SkillsEnum.Insight,
+                        SkillsEnum.Persuasion
                     },
                     Tools = new List<ToolsEnum>(){
                         ToolsEnum.navigatorsTools
@@ -136,12 +136,12 @@ namespace DnD5E.Dictionaries
                 {
                     Key = BackgroundEnum.hermit.ToString(),
                     Languages = new List<LanguagesEnum>(){
-                        LanguagesEnum.selectLanguage
+                        LanguagesEnum.SelectLanguage
                     },
                     Name = "Hermit",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.medicine,
-                        SkillsEnum.religion
+                        SkillsEnum.Medicine,
+                        SkillsEnum.Religion
                     },
                     Tools = new List<ToolsEnum>(){
                         ToolsEnum.herbalismKit
@@ -154,12 +154,12 @@ namespace DnD5E.Dictionaries
                 {
                     Key = BackgroundEnum.noble.ToString(),
                     Languages = new List<LanguagesEnum>(){
-                        LanguagesEnum.selectLanguage
+                        LanguagesEnum.SelectLanguage
                     },
                     Name = "Noble",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.history,
-                        SkillsEnum.persuasion
+                        SkillsEnum.History,
+                        SkillsEnum.Persuasion
                     },
                     Tools = new List<ToolsEnum>(){
                         ToolsEnum.gamingSet
@@ -172,12 +172,12 @@ namespace DnD5E.Dictionaries
                 {
                     Key = BackgroundEnum.outlander.ToString(),
                     Languages = new List<LanguagesEnum>(){
-                        LanguagesEnum.selectLanguage
+                        LanguagesEnum.SelectLanguage
                     },
                     Name = "Outlander",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.athletics,
-                        SkillsEnum.survival
+                        SkillsEnum.Athletics,
+                        SkillsEnum.Survival
                     },
                     Tools = new List<ToolsEnum>(){
                         ToolsEnum.musicalInstrument
@@ -192,8 +192,8 @@ namespace DnD5E.Dictionaries
                     Languages = new List<LanguagesEnum>(){ },
                     Name = "Pirate",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.athletics,
-                        SkillsEnum.perception
+                        SkillsEnum.Athletics,
+                        SkillsEnum.Perception
                     },
                     Tools = new List<ToolsEnum>(){
                         ToolsEnum.navigatorsTools,
@@ -207,12 +207,12 @@ namespace DnD5E.Dictionaries
                 {
                     Key = BackgroundEnum.knight.ToString(),
                     Languages = new List<LanguagesEnum>(){
-                        LanguagesEnum.selectLanguage
+                        LanguagesEnum.SelectLanguage
                     },
                     Name = "Knight",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.history,
-                        SkillsEnum.persuasion
+                        SkillsEnum.History,
+                        SkillsEnum.Persuasion
                     },
                     Tools = new List<ToolsEnum>(){
                         ToolsEnum.gamingSet
@@ -225,13 +225,13 @@ namespace DnD5E.Dictionaries
                 {
                     Key = BackgroundEnum.sage.ToString(),
                     Languages = new List<LanguagesEnum>(){
-                        LanguagesEnum.selectLanguage,
-                        LanguagesEnum.selectLanguage
+                        LanguagesEnum.SelectLanguage,
+                        LanguagesEnum.SelectLanguage
                     },
                     Name = "Sage",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.arcana,
-                        SkillsEnum.history
+                        SkillsEnum.Arcana,
+                        SkillsEnum.History
                     },
                     Tools = new List<ToolsEnum>(){ }
                 }
@@ -244,8 +244,8 @@ namespace DnD5E.Dictionaries
                     Languages = new List<LanguagesEnum>(){ },
                     Name = "Sailor",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.athletics,
-                        SkillsEnum.perception
+                        SkillsEnum.Athletics,
+                        SkillsEnum.Perception
                     },
                     Tools = new List<ToolsEnum>(){
                         ToolsEnum.navigatorsTools,
@@ -261,8 +261,8 @@ namespace DnD5E.Dictionaries
                     Languages = new List<LanguagesEnum>(){ },
                     Name = "Soldier",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.athletics,
-                        SkillsEnum.intimitdation
+                        SkillsEnum.Athletics,
+                        SkillsEnum.Intimidation
                     },
                     Tools = new List<ToolsEnum>(){
                         ToolsEnum.gamingSet,
@@ -278,8 +278,8 @@ namespace DnD5E.Dictionaries
                     Languages = new List<LanguagesEnum>(){ },
                     Name = "Spy",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.deception,
-                        SkillsEnum.stealth
+                        SkillsEnum.Deception,
+                        SkillsEnum.Stealth
                     },
                     Tools = new List<ToolsEnum>(){
                         ToolsEnum.gamingSet,
@@ -295,8 +295,8 @@ namespace DnD5E.Dictionaries
                     Languages = new List<LanguagesEnum>(){ },
                     Name = "Urchin",
                     Skills = new List<SkillsEnum>(){
-                        SkillsEnum.sleightOfHand,
-                        SkillsEnum.stealth
+                        SkillsEnum.SleightOfHand,
+                        SkillsEnum.Stealth
                     },
                     Tools = new List<ToolsEnum>(){
                         ToolsEnum.disguiseKit,

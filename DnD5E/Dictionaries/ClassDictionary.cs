@@ -18,18 +18,18 @@ namespace DnD5E.Dictionaries
                     Name = ClassEnum.barbarian.GetAttributeOfType<DescriptionAttribute>().Description,
                     SavingThrows = new List<AbilitiesEnum>
                     {
-                        AbilitiesEnum.constitution,
-                        AbilitiesEnum.strength
+                        AbilitiesEnum.Constitution,
+                        AbilitiesEnum.Strength
                     },
                     Skills = new ClassSkillsModel {
                         Available = new List<SkillsEnum>
                         {
-                            SkillsEnum.animalHandling,
-                            SkillsEnum.athletics,
-                            SkillsEnum.intimitdation,
-                            SkillsEnum.nature,
-                            SkillsEnum.perception,
-                            SkillsEnum.survival
+                            SkillsEnum.AnimalHandling,
+                            SkillsEnum.Athletics,
+                            SkillsEnum.Intimidation,
+                            SkillsEnum.Nature,
+                            SkillsEnum.Perception,
+                            SkillsEnum.Survival
                         },
                         Number = 2
                     }

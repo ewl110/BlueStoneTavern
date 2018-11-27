@@ -20,22 +20,6 @@ namespace DnD5E.Models
         public string Race { get; set; }
     }
 
-    public class AbilityScoresModel
-    {
-        [Range(1, 20, ErrorMessage = "Value must be between 1 and 20.")]
-        public int Cha { get; set; }
-        [Range(1, 20, ErrorMessage = "Value must be between 1 and 20.")]
-        public int Con { get; set; }
-        [Range(1, 20, ErrorMessage = "Value must be between 1 and 20.")]
-        public int Dex { get; set; }
-        [Range(1, 20, ErrorMessage = "Value must be between 1 and 20.")]
-        public int Int { get; set; }
-        [Range(1, 20, ErrorMessage = "Value must be between 1 and 20.")]
-        public int Str { get; set; }
-        [Range(1, 20, ErrorMessage = "Value must be between 1 and 20.")]
-        public int Wis { get; set; }
-    }
-
     public class CreateCharacter
     {
         public string Background { get; set; }

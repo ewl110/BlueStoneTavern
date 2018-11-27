@@ -15,7 +15,9 @@ namespace DnD5E.Dictionaries
                 {
                     Archetype = RaceEnum.human.ToString(),
                     Key = RaceEnum.human.ToString(),
-                    Languages = new List<string>() { LanguagesEnum.common.ToString(), LanguagesEnum.selectLanguage.ToString() },
+                    Languages = new List<string>() {
+                        LanguagesEnum.Common.ToString(),
+                        LanguagesEnum.SelectLanguage.ToString() },
                     Name = RaceEnum.human.GetAttributeOfType<DescriptionAttribute>().Description,
                     Size = SizeEnum.medium,
                     Speed = 30
@@ -40,7 +42,7 @@ namespace DnD5E.Dictionaries
                     Feats = new List<string>() { "selectFeat" },
                     Key = RaceEnum.humanVariant.ToString(),
                     Name = RaceEnum.humanVariant.GetAttributeOfType<DescriptionAttribute>().Description,
-                    Skills = new List<string>() { SkillsEnum.selectSkill.ToString() }
+                    Skills = new List<string>() { SkillsEnum.SelectSkill.ToString() }
                 }
             }
         };
