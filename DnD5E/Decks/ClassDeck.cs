@@ -1,5 +1,7 @@
-﻿using DnD5E.Models;
+﻿using DnD5E.Enums;
+using DnD5E.Models;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DnD5E.Decks
 {
@@ -17,8 +19,23 @@ namespace DnD5E.Decks
                     Wis = 12,
                     Cha = 10
                 },
+                Description = "You are a fierce warrior of primitive background who can enter battle rage.",
                 HitDice = 12,
-                Name = "Barbarian"
+                Name = "Barbarian",
+                Proficiencies = new ProficiencyModel
+                {
+                    Armor = new string[]
+                    {
+                        ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
+                        ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description,
+                        ArmorEnum.Shield.ToString()
+                    },
+                    SavingThrows = new string[]
+                    {
+                        AbilitiesEnum.Str.ToString(),
+                        AbilitiesEnum.Con.ToString(),
+                    }
+                }
             },
             new ClassCard()
             {
@@ -31,8 +48,21 @@ namespace DnD5E.Decks
                     Wis = 8,
                     Cha = 15
                 },
+                Description = "You are an inspiring magician whose power echoes the music of creation.",
                 HitDice = 8,
-                Name = "Bard"
+                Name = "Bard",
+                Proficiencies = new ProficiencyModel
+                {
+                    Armor = new string[]
+                    {
+                        ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
+                    },
+                    SavingThrows = new string[]
+                    {
+                        AbilitiesEnum.Dex.ToString(),
+                        AbilitiesEnum.Cha.ToString(),
+                    }
+                }
             },
             new ClassCard()
             {
@@ -45,8 +75,23 @@ namespace DnD5E.Decks
                     Wis = 15,
                     Cha = 12
                 },
+                Description = "You are a priestly champion who wields divine magic in service of a higher power.",
                 HitDice = 8,
-                Name = "Cleric"
+                Name = "Cleric",
+                Proficiencies = new ProficiencyModel
+                {
+                    Armor = new string[]
+                    {
+                        ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
+                        ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description,
+                        ArmorEnum.Shield.ToString()
+                    },
+                    SavingThrows = new string[]
+                    {
+                        AbilitiesEnum.Wis.ToString(),
+                        AbilitiesEnum.Cha.ToString(),
+                    }
+                }
             },
             new ClassCard()
             {
@@ -59,8 +104,23 @@ namespace DnD5E.Decks
                     Wis = 15,
                     Cha = 12
                 },
+                Description = "You are a priest of the Old Faith, wielding the powers of nature &mdash; moonlight and plant growth, fire and lightning &mdash; and adopting animal forms.",
                 HitDice = 8,
-                Name = "Druid"
+                Name = "Druid",
+                Proficiencies = new ProficiencyModel
+                {
+                    Armor = new string[]
+                    {
+                        ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
+                        ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description,
+                        ArmorEnum.Shield.ToString()
+                    },
+                    SavingThrows = new string[]
+                    {
+                        AbilitiesEnum.Int.ToString(),
+                        AbilitiesEnum.Wis.ToString(),
+                    }
+                }
             },
             new ClassCard()
             {
@@ -73,8 +133,24 @@ namespace DnD5E.Decks
                     Wis = 12,
                     Cha = 10
                 },
+                Description = "You are a master of martial combat, skilled with a variety of weapons and armor.",
                 HitDice = 10,
-                Name = "Fighter"
+                Name = "Fighter",
+                Proficiencies = new ProficiencyModel
+                {
+                    Armor = new string[]
+                    {
+                        ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
+                        ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description,
+                        ArmorEnum.Heavy.GetAttributeOfType<DescriptionAttribute>().Description,
+                        ArmorEnum.Shield.ToString()
+                    },
+                    SavingThrows = new string[]
+                    {
+                        AbilitiesEnum.Str.ToString(),
+                        AbilitiesEnum.Con.ToString(),
+                    }
+                }
             },
             new ClassCard()
             {
@@ -87,8 +163,17 @@ namespace DnD5E.Decks
                     Wis = 14,
                     Cha = 10
                 },
+                Description = "You are a master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.",
                 HitDice = 8,
-                Name = "Monk"
+                Name = "Monk",
+                Proficiencies = new ProficiencyModel
+                {
+                    SavingThrows = new string[]
+                    {
+                        AbilitiesEnum.Str.ToString(),
+                        AbilitiesEnum.Dex.ToString(),
+                    }
+                }
             },
             new ClassCard()
             {
@@ -101,8 +186,24 @@ namespace DnD5E.Decks
                     Wis = 8,
                     Cha = 14
                 },
+                Description = "You are a holy warrior bound to a sacred oath.",
                 HitDice = 8,
-                Name = "Paladin"
+                Name = "Paladin",
+                Proficiencies = new ProficiencyModel
+                {
+                    Armor = new string[]
+                    {
+                        ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
+                        ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description,
+                        ArmorEnum.Heavy.GetAttributeOfType<DescriptionAttribute>().Description,
+                        ArmorEnum.Shield.ToString()
+                    },
+                    SavingThrows = new string[]
+                    {
+                        AbilitiesEnum.Wis.ToString(),
+                        AbilitiesEnum.Cha.ToString(),
+                    }
+                }
             },
             new ClassCard()
             {
@@ -115,8 +216,23 @@ namespace DnD5E.Decks
                     Wis = 14,
                     Cha = 8
                 },
+                Description = "You are a warrior who uses martial prowess and nature magic to combat threats on the edges of civilization.",
                 HitDice = 10,
-                Name = "Ranger"
+                Name = "Ranger",
+                Proficiencies = new ProficiencyModel
+                {
+                    Armor = new string[]
+                    {
+                        ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
+                        ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description,
+                        ArmorEnum.Shield.ToString()
+                    },
+                    SavingThrows = new string[]
+                    {
+                        AbilitiesEnum.Str.ToString(),
+                        AbilitiesEnum.Dex.ToString(),
+                    }
+                }
             },
             new ClassCard()
             {
@@ -129,8 +245,21 @@ namespace DnD5E.Decks
                     Wis = 13,
                     Cha = 8
                 },
+                Description = "You are a scoundrel who uses stealth and trickery to overcome obstacles.",
                 HitDice = 8,
-                Name = "Rogue"
+                Name = "Rogue",
+                Proficiencies = new ProficiencyModel
+                {
+                    Armor = new string[]
+                    {
+                        ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
+                    },
+                    SavingThrows = new string[]
+                    {
+                        AbilitiesEnum.Dex.ToString(),
+                        AbilitiesEnum.Int.ToString(),
+                    }
+                }
             },
             new ClassCard()
             {
@@ -143,8 +272,17 @@ namespace DnD5E.Decks
                     Wis = 8,
                     Cha = 15
                 },
+                Description = "You are a spellcaster who draws on inherent magic from a gift or bloodline.",
                 HitDice = 6,
-                Name = "Sorceror"
+                Name = "Sorceror",
+                Proficiencies = new ProficiencyModel
+                {
+                    SavingThrows = new string[]
+                    {
+                        AbilitiesEnum.Con.ToString(),
+                        AbilitiesEnum.Cha.ToString(),
+                    }
+                }
             },
             new ClassCard()
             {
@@ -158,7 +296,20 @@ namespace DnD5E.Decks
                     Cha = 15
                 },
                 HitDice = 8,
-                Name = "Warlock"
+                Description = "You are a wielder of magic that isderived from a bargain with an extraplanar entity.",
+                Name = "Warlock",
+                Proficiencies = new ProficiencyModel
+                {
+                    Armor = new string[]
+                    {
+                        ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
+                    },
+                    SavingThrows = new string[]
+                    {
+                        AbilitiesEnum.Wis.ToString(),
+                        AbilitiesEnum.Cha.ToString(),
+                    }
+                }
             },
             new ClassCard()
             {
@@ -171,8 +322,17 @@ namespace DnD5E.Decks
                     Wis = 12,
                     Cha = 10
                 },
+                Description = "You are a scholarly magic-user capable of maipulating the structures of reality.",
                 HitDice = 6,
-                Name = "Wizard"
+                Name = "Wizard",
+                Proficiencies = new ProficiencyModel
+                {
+                    SavingThrows = new string[]
+                    {
+                        AbilitiesEnum.Int.ToString(),
+                        AbilitiesEnum.Wis.ToString(),
+                    }
+                }
             }
         };
     }

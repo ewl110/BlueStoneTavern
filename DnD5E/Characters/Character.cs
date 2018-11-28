@@ -1,8 +1,6 @@
 ﻿using DnD5E.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DnD5E.Characters
 {
@@ -236,11 +234,21 @@ namespace DnD5E.Characters
         {
             List<string> armorProficiency = new List<string>() { };
 
-            if (this.charRaceCard.Proficiencies != null && this.charRaceCard.Proficiencies.Armor != null)
+            if (this.charClassCard.Proficiencies != null && this.charClassCard.Proficiencies.Armor != null)
             {
-                foreach (var item in this.charRaceCard.Proficiencies.Armor)
+                foreach (var item in this.charClassCard.Proficiencies.Armor)
                 {
-                    armorProficiency.Add(item);
+                    if (!armorProficiency.Contains(item) && !armorProficiency.Contains($"{item} (nonmetal)"))
+                    {
+                        if (this.charClassCard.Name == "Druid")
+                        {
+                            armorProficiency.Add($"{item} (nonmetal)");
+                        }
+                        else
+                        {
+                            armorProficiency.Add(item);
+                        }
+                    }
                 }
             }
 
@@ -248,7 +256,21 @@ namespace DnD5E.Characters
             {
                 foreach (var item in this.charRaceVariantCard.Proficiencies.Armor)
                 {
-                    armorProficiency.Add(item);
+                    if (!armorProficiency.Contains(item) && !armorProficiency.Contains($"{item} (nonmetal)"))
+                    {
+                        armorProficiency.Add(item);
+                    }
+                }
+            }
+
+            if (this.charRaceCard.Proficiencies != null && this.charRaceCard.Proficiencies.Armor != null)
+            {
+                foreach (var item in this.charRaceCard.Proficiencies.Armor)
+                {
+                    if (!armorProficiency.Contains(item) && !armorProficiency.Contains($"{item} (nonmetal)"))
+                    {
+                        armorProficiency.Add(item);
+                    }
                 }
             }
 

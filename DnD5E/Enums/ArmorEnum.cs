@@ -19,6 +19,7 @@ namespace DnD5E.Enums
         Light,
         [Description("Medium Armor")]
         Medium,
+        MediumNonmetal,
         Padded,
         Plate,
         [Description("Ring Mail")]
