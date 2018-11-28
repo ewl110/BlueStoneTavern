@@ -137,7 +137,7 @@ namespace DnD5E.Characters
             this.id = CreateGuid();
             this.languages = GetLanguages();
             this.level = level;
-            this.proficiencyBonus = 2;
+            this.proficiencyBonus = GetProficiencyBonus();
             this.proficiencySkills = GetSkills();
             this.speed = this.charRaceVariantCard.Speed != 30? this.charRaceVariantCard.Speed : this.charRaceCard.Speed;
         }
@@ -319,6 +319,34 @@ namespace DnD5E.Characters
             }
 
             return skillModifier;
+        }
+
+        private int GetProficiencyBonus()
+        {
+            int level = this.level;
+            int proficiencyBonus = 2;
+
+            if (level > 4)
+            {
+                proficiencyBonus = 3;
+            }
+
+            if (level > 8)  
+            {
+                proficiencyBonus = 4;
+            }
+
+            if (level > 12)
+            {
+                proficiencyBonus = 5;
+            }
+
+            if (level > 16)
+            {
+                proficiencyBonus = 6;
+            }
+
+            return proficiencyBonus;
         }
 
         private List<string> GetSkills() {
