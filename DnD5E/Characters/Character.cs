@@ -33,6 +33,7 @@ namespace DnD5E.Characters
         private List<string> languages;
         private List<string> proficiencyArmor;
         private int proficiencyBonus;
+        private List<string> proficiencySavingThrows;
         private List<string> proficiencySkills;
         private List<string> proficiencyTools;
         private List<string> proficiencyWeapons;
@@ -138,6 +139,7 @@ namespace DnD5E.Characters
             this.level = level;
             this.proficiencyArmor = GetArmorProficiency();
             this.proficiencyBonus = GetProficiencyBonus();
+            this.proficiencySavingThrows = GetSavingThrowProficiency();
             this.proficiencySkills = GetSkillProficiency();
             this.proficiencyTools = GetToolProficiency();
             this.resistance = GetResistances();
@@ -178,6 +180,7 @@ namespace DnD5E.Characters
                 PassivePerception = GetPassivePerception(),
                 ProficiencyArmor = this.proficiencyArmor,
                 ProficiencyBonus = this.proficiencyBonus,
+                ProficiencySavingThrows = this.proficiencySavingThrows,
                 ProficiencySkills = this.proficiencySkills,
                 ProficiencyTools = this.proficiencyTools,
                 ProficiencyWeapons = this.proficiencyWeapons,
@@ -360,6 +363,34 @@ namespace DnD5E.Characters
             return passivePerception;
         }
 
+        private int GetProficiencyBonus()
+        {
+            int level = this.level;
+            int proficiencyBonus = 2;
+
+            if (level > 4)
+            {
+                proficiencyBonus = 3;
+            }
+
+            if (level > 8)
+            {
+                proficiencyBonus = 4;
+            }
+
+            if (level > 12)
+            {
+                proficiencyBonus = 5;
+            }
+
+            if (level > 16)
+            {
+                proficiencyBonus = 6;
+            }
+
+            return proficiencyBonus;
+        }
+
         private List<string> GetResistances()
         {
             List<string> resistance = new List<string>() { };
@@ -381,6 +412,51 @@ namespace DnD5E.Characters
             }
 
             return resistance;
+        }
+
+        private int GetSavingThrowModifier(string ability)
+        {
+            int abilityModifier = this.proficiencyBonus;
+
+            switch (ability)
+            {
+                case "Cha":
+                    abilityModifier += this.abilityScores.ChaMod;
+                    break;
+                case "Con":
+                    abilityModifier += this.abilityScores.ConMod;
+                    break;
+                case "Dex":
+                    abilityModifier += this.abilityScores.DexMod;
+                    break;
+                case "Int":
+                    abilityModifier += this.abilityScores.IntMod;
+                    break;
+                case "Str":
+                    abilityModifier += this.abilityScores.StrMod;
+                    break;
+                case "Wis":
+                    abilityModifier += this.abilityScores.WisMod;
+                    break;
+            }
+
+            return abilityModifier;
+        }
+
+        private List<string> GetSavingThrowProficiency()
+        {
+            List<string> savingThrowProficiency = new List<string>() { };
+
+            if (this.charClassCard.Proficiencies != null && this.charClassCard.Proficiencies.SavingThrows != null)
+            {
+                foreach (var item in this.charClassCard.Proficiencies.SavingThrows)
+                {
+                    int savingThrowMod = GetSavingThrowModifier(item);
+                    savingThrowProficiency.Add($"{item} +{savingThrowMod}");
+                }
+            }
+
+            return savingThrowProficiency;
         }
 
         private int GetSkillModifier(string skill) {
@@ -419,34 +495,6 @@ namespace DnD5E.Characters
             }
 
             return skillModifier;
-        }
-
-        private int GetProficiencyBonus()
-        {
-            int level = this.level;
-            int proficiencyBonus = 2;
-
-            if (level > 4)
-            {
-                proficiencyBonus = 3;
-            }
-
-            if (level > 8)  
-            {
-                proficiencyBonus = 4;
-            }
-
-            if (level > 12)
-            {
-                proficiencyBonus = 5;
-            }
-
-            if (level > 16)
-            {
-                proficiencyBonus = 6;
-            }
-
-            return proficiencyBonus;
         }
 
         private List<string> GetSkillProficiency() {

@@ -58,7 +58,9 @@
                         <div class="character_proficiencies">
                             <div class="content-wrapper">
                                 <p><b>Proficiencies</b> (+@Model.ProficiencyBonus proficiency bonus)</p>
-                                <p><b>Saving Throws:</b> Con +4, Cha +5</p>
+
+                                <p><b>Saving Throws:</b> @string.Join(", ", Model.ProficiencySavingThrows)</p>
+
                                 <p><b>Skills:</b> @string.Join(", ", Model.ProficiencySkills)</p>
 
                                 @if (Model.ProficiencyTools.Count > 0)
