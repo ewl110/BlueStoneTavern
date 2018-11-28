@@ -596,6 +596,14 @@ namespace DnD5E.Decks
                             }
                         },
                         Name = "Mountain Dwarf",
+                        Proficiencies = new ProficiencyModel
+                        {
+                            Armor = new string[]
+                            {
+                                ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
+                                ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description
+                            }
+                        },
                         Weight = (int)RarityEnum.Common
                     },
                 },
@@ -926,7 +934,7 @@ namespace DnD5E.Decks
                     LanguagesEnum.Gnomish.ToString(),
                 },
                 Name = "Gnome",
-                Size = SizeEnum.small.ToString(),
+                Size = SizeEnum.Small.ToString(),
                 Speed = 25,
                 Variants = new List<RaceCard>()
                 {

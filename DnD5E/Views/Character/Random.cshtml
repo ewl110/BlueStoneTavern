@@ -57,11 +57,25 @@
                         </div>
                         <div class="character_proficiencies">
                             <div class="content-wrapper">
-                                <p><b>Proficiencies</b> (+@Model.ProficiencyBonus proficiiency bonus)</p>
+                                <p><b>Proficiencies</b> (+@Model.ProficiencyBonus proficiency bonus)</p>
                                 <p><b>Saving Throws:</b> Con +4, Cha +5</p>
                                 <p><b>Skills:</b> @string.Join(", ", Model.ProficiencySkills)</p>
-                                <p><b>Tools:</b> Drum</p>
+
+                                @if (Model.ProficiencyTools.Count > 0)
+                                {
+                                    <div class="content-wrapper">
+                                        <p><b>Tools:</b> @string.Join(", ", Model.ProficiencyTools)</p>
+                                    </div>
+                                }
+
                                 <p><b>Weapons:</b> Daggers, Darts, Light Crossbows, Quarterstaffs, Slings</p>
+
+                                @if (Model.ProficiencyArmor.Count > 0)
+                                {
+                                    <div class="content-wrapper">
+                                        <p><b>Armor:</b> @string.Join(", ", Model.ProficiencyArmor)</p>
+                                    </div>
+                                }
                             </div>
 
                             @if (Model.Resistance.Count > 0)

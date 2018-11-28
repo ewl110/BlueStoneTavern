@@ -138,8 +138,10 @@ namespace DnD5E.Characters
             this.immunity = GetImmnuities();
             this.languages = GetLanguages();
             this.level = level;
+            this.proficiencyArmor = GetArmorProficiency();
             this.proficiencyBonus = GetProficiencyBonus();
-            this.proficiencySkills = GetSkills();
+            this.proficiencySkills = GetSkillProficiency();
+            this.proficiencyTools = GetToolProficiency();
             this.resistance = GetResistances();
             this.speed = this.charRaceVariantCard.Speed != 30? this.charRaceVariantCard.Speed : this.charRaceCard.Speed;
         }
@@ -176,8 +178,11 @@ namespace DnD5E.Characters
                 Languages = this.languages,
                 Level = this.level,
                 PassivePerception = GetPassivePerception(),
+                ProficiencyArmor = this.proficiencyArmor,
                 ProficiencyBonus = this.proficiencyBonus,
                 ProficiencySkills = this.proficiencySkills,
+                ProficiencyTools = this.proficiencyTools,
+                ProficiencyWeapons = this.proficiencyWeapons,
                 Race = this.charRace,
                 Resistance = this.resistance,
                 Size = this.charRaceCard.Size,
@@ -225,6 +230,29 @@ namespace DnD5E.Characters
             }
 
             return abilityScoreModifier;
+        }
+
+        private List<string> GetArmorProficiency()
+        {
+            List<string> armorProficiency = new List<string>() { };
+
+            if (this.charRaceCard.Proficiencies != null && this.charRaceCard.Proficiencies.Armor != null)
+            {
+                foreach (var item in this.charRaceCard.Proficiencies.Armor)
+                {
+                    armorProficiency.Add(item);
+                }
+            }
+
+            if (this.charRaceVariantCard.Proficiencies != null && this.charRaceVariantCard.Proficiencies.Armor != null)
+            {
+                foreach (var item in this.charRaceVariantCard.Proficiencies.Armor)
+                {
+                    armorProficiency.Add(item);
+                }
+            }
+
+            return armorProficiency;
         }
 
         private CharacterBackgroundModel GetBackground()
@@ -399,7 +427,7 @@ namespace DnD5E.Characters
             return proficiencyBonus;
         }
 
-        private List<string> GetSkills() {
+        private List<string> GetSkillProficiency() {
             int skillModifier = 0;
             List<string> skills = new List<string>() { };
 
@@ -431,6 +459,37 @@ namespace DnD5E.Characters
             }
 
             return skills;
+        }
+
+        private List<string> GetToolProficiency()
+        {
+            List<string> tools = new List<string>() { };
+
+            if (this.charBackgroundCard.Proficiencies != null && this.charBackgroundCard.Proficiencies.Tools != null)
+            {
+                foreach (var item in this.charBackgroundCard.Proficiencies.Tools)
+                {
+                    tools.Add(item);
+                }
+            }
+
+            if (this.charRaceCard.Proficiencies != null && this.charRaceCard.Proficiencies.Tools != null)
+            {
+                foreach (var item in this.charRaceCard.Proficiencies.Tools)
+                {
+                    tools.Add(item);
+                }
+            }
+
+            if (this.charRaceVariantCard.Proficiencies != null && this.charRaceVariantCard.Proficiencies.Tools != null)
+            {
+                foreach (var item in this.charRaceVariantCard.Proficiencies.Tools)
+                {
+                    tools.Add(item);
+                }
+            }
+
+            return tools;
         }
     }
 }

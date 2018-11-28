@@ -19,7 +19,7 @@ namespace DnD5E.Dictionaries
                         LanguagesEnum.Common.ToString(),
                         LanguagesEnum.SelectLanguage.ToString() },
                     Name = RaceEnum.human.GetAttributeOfType<DescriptionAttribute>().Description,
-                    Size = SizeEnum.medium,
+                    Size = SizeEnum.Medium,
                     Speed = 30
                 }
             },

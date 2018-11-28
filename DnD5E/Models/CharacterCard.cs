@@ -17,7 +17,10 @@ namespace DnD5E.Models
         public int Level { get; set; }
         public int PassivePerception { get; set; }
         public int ProficiencyBonus { get; set; }
+        public List<string> ProficiencyArmor { get; set; }
         public List<string> ProficiencySkills { get; set; }
+        public List<string> ProficiencyTools { get; set; }
+        public List<string> ProficiencyWeapons { get; set; }
         public string Race { get; set; }
         public List<string> Resistance { get; set; }
         public string Size { get; set; }

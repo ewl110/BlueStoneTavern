@@ -35,8 +35,8 @@ namespace DnD5E.Models
 
     public class ClassProficienciesModel
     {
-        public List<ProficienciesEnum> Armor { get; set; }
-        public List<ProficienciesEnum> Tools { get; set; }
-        public List<ProficienciesEnum> Weapons { get; set; }
+        public List<string> Armor { get; set; }
+        public List<string> Tools { get; set; }
+        public List<string> Weapons { get; set; }
     }
 }
