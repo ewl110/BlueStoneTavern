@@ -11,13 +11,15 @@ namespace DnD5E.Models
         public string Class { get; set; }
         public int HitDice { get; set; }
         public HitPointsModel HitPoints { get; set; }
-        public Guid Id { get; set;  }
+        public Guid Id { get; set; }
+        public List<string> Immunity { get; set; }
         public List<string> Languages { get; set; }
         public int Level { get; set; }
         public int PassivePerception { get; set; }
         public int ProficiencyBonus { get; set; }
         public List<string> ProficiencySkills { get; set; }
         public string Race { get; set; }
+        public List<string> Resistance { get; set; }
         public string Size { get; set; }
         public int Speed { get; set; }
     }

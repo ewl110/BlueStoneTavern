@@ -135,10 +135,12 @@ namespace DnD5E.Characters
             this.hitDice = this.charClassCard.HitDice;
             this.hitPointCurrent = this.hitPointMax = this.charClassCard.HitDice + this.abilityScores.ConMod;
             this.id = CreateGuid();
+            this.immunity = GetImmnuities();
             this.languages = GetLanguages();
             this.level = level;
             this.proficiencyBonus = GetProficiencyBonus();
             this.proficiencySkills = GetSkills();
+            this.resistance = GetResistances();
             this.speed = this.charRaceVariantCard.Speed != 30? this.charRaceVariantCard.Speed : this.charRaceCard.Speed;
         }
 
@@ -170,12 +172,14 @@ namespace DnD5E.Characters
                     HitPointsMax = this.hitPointMax,
                 },
                 Id = this.id,
+                Immunity = this.immunity,
                 Languages = this.languages,
                 Level = this.level,
                 PassivePerception = GetPassivePerception(),
                 ProficiencyBonus = this.proficiencyBonus,
                 ProficiencySkills = this.proficiencySkills,
                 Race = this.charRace,
+                Resistance = this.resistance,
                 Size = this.charRaceCard.Size,
                 Speed = this.speed
             };
@@ -242,6 +246,29 @@ namespace DnD5E.Characters
             return background;
         }
 
+        private List<string> GetImmnuities()
+        {
+            List<string> immunity = new List<string>() { };
+
+            if (this.charRaceCard.Immunity != null)
+            {
+                foreach (var item in this.charRaceCard.Immunity)
+                {
+                    immunity.Add(item);
+                }
+            }
+
+            if (this.charRaceVariantCard.Immunity != null)
+            {
+                foreach (var item in this.charRaceVariantCard.Immunity)
+                {
+                    immunity.Add(item);
+                }
+            }
+
+            return immunity;
+        }
+
         private List<string> GetLanguages() {
             List<string> languages = new List<string>(){ };
 
@@ -281,6 +308,29 @@ namespace DnD5E.Characters
             }
 
             return passivePerception;
+        }
+
+        private List<string> GetResistances()
+        {
+            List<string> resistance = new List<string>() { };
+
+            if (this.charRaceCard.Resistance != null)
+            {
+                foreach (var item in this.charRaceCard.Resistance)
+                {
+                    resistance.Add(item);
+                }
+            }
+
+            if (this.charRaceVariantCard.Resistance != null)
+            {
+                foreach (var item in this.charRaceVariantCard.Resistance)
+                {
+                    resistance.Add(item);
+                }
+            }
+
+            return resistance;
         }
 
         private int GetSkillModifier(string skill) {

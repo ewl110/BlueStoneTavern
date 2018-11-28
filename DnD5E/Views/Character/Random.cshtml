@@ -63,9 +63,21 @@
                                 <p><b>Tools:</b> Drum</p>
                                 <p><b>Weapons:</b> Daggers, Darts, Light Crossbows, Quarterstaffs, Slings</p>
                             </div>
-                            <div class="content-wrapper">
-                                <p><b>Damage Resistances:</b> Cold</p>
-                            </div>
+
+                            @if (Model.Resistance.Count > 0)
+                            {
+                                <div class="content-wrapper">
+                                    <p><b>Damage Resistances:</b> @string.Join(", ", Model.Resistance)</p>
+                                </div>
+                            }
+
+                            @if (Model.Immunity.Count > 0)
+                            {
+                                <div class="content-wrapper">
+                                    <p><b>Damage Immunities:</b> @string.Join(", ", Model.Immunity)</p>
+                                </div>
+                            }
+
                             <div class="content-wrapper">
                                 <p><b>Senses:</b> Passive Perception (@Model.PassivePerception)</p>
                             </div>
