@@ -52,9 +52,9 @@ namespace DnD5E.Decks
                             Wis = 0,
                             Cha = 0
                         },
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Draconic Ancestry (Black)",
                                 Description = new string[]
@@ -62,7 +62,7 @@ namespace DnD5E.Decks
                                     "You have an acid breath weapon and resistance to acid damage."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Breath weapon:",
                                 Description = new string[]
@@ -89,9 +89,9 @@ namespace DnD5E.Decks
                             Wis = 0,
                             Cha = 0
                         },
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name ="Draconic Ancestry (Blue)",
                                 Description = new string[]
@@ -99,7 +99,7 @@ namespace DnD5E.Decks
                                     "You have a lightning breath weapon and resistance to lightning damage."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name ="Breath weapon",
                                 Description = new string[]
@@ -126,9 +126,9 @@ namespace DnD5E.Decks
                             Wis = 0,
                             Cha = 0
                         },
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name ="Draconic Ancestry (Brass)",
                                 Description = new string[]
@@ -136,7 +136,7 @@ namespace DnD5E.Decks
                                     "You have a fire breath weapon and resistance to fire damage.",
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name ="Breath weapon",
                                 Description = new string[]
@@ -163,9 +163,9 @@ namespace DnD5E.Decks
                             Wis = 0,
                             Cha = 0
                         },
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Draconic Ancestry (Bronze)",
                                 Description = new string[]
@@ -173,7 +173,7 @@ namespace DnD5E.Decks
                                     "You have a lightning breath weapon and resistance to lightning damage."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Breath weapon",
                                 Description = new string[]
@@ -200,9 +200,9 @@ namespace DnD5E.Decks
                             Wis = 0,
                             Cha = 0
                         },
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name ="Draconic Ancestry (Copper)",
                                 Description = new string[]
@@ -210,7 +210,7 @@ namespace DnD5E.Decks
                                     "You have an acid breath weapon and resistance to acid damage."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name ="Breath weapon",
                                 Description = new string[]
@@ -237,9 +237,9 @@ namespace DnD5E.Decks
                             Wis = 0,
                             Cha = 0
                         },
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name ="Draconic Ancestry (Gold)",
                                 Description = new string[]
@@ -247,7 +247,7 @@ namespace DnD5E.Decks
                                     "You have a fire breath weapon and resistance to fire damage."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name ="Breath weapon (Gold)",
                                 Description = new string[]
@@ -274,9 +274,9 @@ namespace DnD5E.Decks
                             Wis = 0,
                             Cha = 0
                         },
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Draconic Ancestry (Green)",
                                 Description = new string[]
@@ -284,7 +284,7 @@ namespace DnD5E.Decks
                                     "You have a poison breath weapon and resistance to poison damage."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Breath weapon",
                                 Description = new string[]
@@ -311,9 +311,9 @@ namespace DnD5E.Decks
                             Wis = 0,
                             Cha = 0
                         },
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Draconic Ancestry (Red)",
                                 Description = new string[]
@@ -321,7 +321,7 @@ namespace DnD5E.Decks
                                     "You have a fire breath weapon and resistance to fire damage."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Breath weapon",
                                 Description = new string[]
@@ -348,9 +348,9 @@ namespace DnD5E.Decks
                             Wis = 0,
                             Cha = 0
                         },
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Draconic Ancestry (Silver)",
                                 Description = new string[]
@@ -358,7 +358,7 @@ namespace DnD5E.Decks
                                     "You have a cold breath weapon and resistance to cold damage.",
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Breath weapon",
                                 Description = new string[]
@@ -385,9 +385,9 @@ namespace DnD5E.Decks
                             Wis = 0,
                             Cha = 0
                         },
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Draconic Ancestry (White)",
                                 Description = new string[]
@@ -395,7 +395,7 @@ namespace DnD5E.Decks
                                     "You have a cold breath weapon and resistance to cold damage."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Breath weapon",
                                 Description = new string[]
@@ -430,9 +430,9 @@ namespace DnD5E.Decks
                     Max = 350,
                     Min = 50
                 },
-                Features = new List<FeatureModel>
+                Features = new List<FeaturesModel>
                 {
-                    new FeatureModel
+                    new FeaturesModel
                     {
                         Name = "Speed",
                         Description = new string[]
@@ -440,7 +440,7 @@ namespace DnD5E.Decks
                             "Your speed is not reduced by wearing heavy armor."
                         }
                     },
-                    new FeatureModel
+                    new FeaturesModel
                     {
                         Name = "Darkvision",
                         Description = new string[]
@@ -448,7 +448,7 @@ namespace DnD5E.Decks
                             "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
                         }
                     },
-                    new FeatureModel
+                    new FeaturesModel
                     {
                         Name = "Dwarven Resilience",
                         Description = new string[]
@@ -456,7 +456,7 @@ namespace DnD5E.Decks
                             "You have advantage on saving throws against poison, and you have resistance against poison damage."
                         }
                     },
-                    new FeatureModel
+                    new FeaturesModel
                     {
                         Name = "Dwarven Combat Training",
                         Description = new string[]
@@ -464,7 +464,7 @@ namespace DnD5E.Decks
                             "You have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer."
                         }
                     },
-                    new FeatureModel
+                    new FeaturesModel
                     {
                         Name = "Stonecunning",
                         Description = new string[]
@@ -506,9 +506,9 @@ namespace DnD5E.Decks
                             Wis = 0,
                             Cha = 0
                         },
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name ="Superior Darkvision",
                                 Description = new string[]
@@ -516,7 +516,7 @@ namespace DnD5E.Decks
                                     "Your darkvision has a radius of 120 feet."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name ="Duergar Resilience",
                                 Description = new string[]
@@ -524,7 +524,7 @@ namespace DnD5E.Decks
                                     "You have advantage on saving throws against illusions and against being charmed or paralyzed."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name ="Duergar Magic",
                                 Description = new string[]
@@ -532,7 +532,7 @@ namespace DnD5E.Decks
                                     "When you reach 3rd level, you can cast the enlarge/reduce spell on yourself once with this trait, using only the spell's enlarge option. When you reach 5th level, you can cast the invisibility spell on yourself once with this trait. You don't need material components for either spell, and you can't cast them while you're in direct sunlight, although sunlight has no effect on them once cast. You regain the ability to cast these spells with this trait when you finish a long rest. Intelligence is your spellcasting ability for these spells."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name ="Sunlight Sensitivity",
                                 Description = new string[]
@@ -559,9 +559,9 @@ namespace DnD5E.Decks
                             Wis = 1,
                             Cha = 0
                         },
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Dwarven Toughness",
                                 Description = new string[]
@@ -584,9 +584,9 @@ namespace DnD5E.Decks
                             Wis = 0,
                             Cha = 0
                         },
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Dwarven Armor Training",
                                 Description = new string[]
@@ -617,9 +617,9 @@ namespace DnD5E.Decks
                     Max = 750,
                     Min = 100
                 },
-                Features = new List<FeatureModel>
+                Features = new List<FeaturesModel>
                 {
-                    new FeatureModel
+                    new FeaturesModel
                     {
                         Name = "Darkvision",
                         Description = new string[]
@@ -627,7 +627,7 @@ namespace DnD5E.Decks
                             "Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
                         }
                     },
-                    new FeatureModel
+                    new FeaturesModel
                     {
                         Name = "Keen Senses",
                         Description = new string[]
@@ -635,7 +635,7 @@ namespace DnD5E.Decks
                             "You have proficiency in the Perception skill."
                         }
                     },
-                    new FeatureModel
+                    new FeaturesModel
                     {
                         Name = "Fey Ancestry",
                         Description = new string[]
@@ -643,7 +643,7 @@ namespace DnD5E.Decks
                             "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
                         }
                     },
-                    new FeatureModel
+                    new FeaturesModel
                     {
                         Name = "Trance",
                         Description = new string[]
@@ -679,9 +679,9 @@ namespace DnD5E.Decks
                             Cha = 1
                         },
                         Description = "Descendants of an earlier, dark-skinned race of elf, the Drow were banished from the surface for following the goddess Lolth down her path of evil and corruption.",
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Superior Darkvision",
                                 Description = new string[]
@@ -689,7 +689,7 @@ namespace DnD5E.Decks
                                     "Your darkvision has a range of 120 feet, instead of 60."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Sunlight Sensitivity",
                                 Description = new string[]
@@ -697,7 +697,7 @@ namespace DnD5E.Decks
                                     "You have disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight when you, the target of the attack, or whatever you are trying to perceive is in direct sunlight."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Drow Magic",
                                 Description = new string[]
@@ -705,7 +705,7 @@ namespace DnD5E.Decks
                                     "You know the dancing lights cantrip. When you reach 3rd level, you can cast faerie fire once, and it recharges after a long rest. When you reach 5th level, you can cast darkness once, and it recharges after a long rest. Charisma is your spellcasting ability for these spells."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Drow Weapon Training",
                                 Description = new string[]
@@ -729,9 +729,9 @@ namespace DnD5E.Decks
                             Cha = 0
                         },
                         Description = "As a high elf, you have a keen mind and a mastery of at least basic magical theory.",
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Elf Weapon Training",
                                 Description = new string[]
@@ -739,7 +739,7 @@ namespace DnD5E.Decks
                                     "You have proficiency with the longsword, shortsword, shortbow, and longbow."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Cantrip",
                                 Description = new string[]
@@ -767,9 +767,9 @@ namespace DnD5E.Decks
                             Cha = 0
                         },
                         Description = "Sea elves fell in love with the wild beauty of the ocean in the earliest days of the multiverse. While other elves traveled from realm to realm, the sea elves navigated the deepest currents and explored the waters across a hundred worlds. Today, they live in small, hidden communities in the ocean shallows and on the Elemental Plane of Water.",
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Sea Elf Training",
                                 Description = new string[]
@@ -777,7 +777,7 @@ namespace DnD5E.Decks
                                     "You have proficiency with the spear, trident, light crossbow, and net."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Child of the Sea",
                                 Description = new string[]
@@ -785,7 +785,7 @@ namespace DnD5E.Decks
                                     "You have a swimming speed of 30 feet, and you can breathe air and water."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Friend of the Sea",
                                 Description = new string[]
@@ -813,9 +813,9 @@ namespace DnD5E.Decks
                             Cha = 0
                         },
                         Description = "Sworn to the Raven Queen's service, the mysterious shadar-kai venture into the Material Plane from the Shadowfell to advance her will. Once they were fey like the rest of their elven kin, and now they exist in a strange state between life and death. Eladrin and shadar-kai are like reflections of each other: one bursting with emotion, the other nearly devoid of it.",
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Necrotic Resistance",
                                 Description = new string[]
@@ -823,7 +823,7 @@ namespace DnD5E.Decks
                                     "You have resistance to necrotic damage."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Blessing of the Raven Queen",
                                 Description = new string[]
@@ -851,9 +851,9 @@ namespace DnD5E.Decks
                             Cha = 0
                         },
                         Description = "As a wood elf, you have keen senses and intuition, and your fleet feet carry you quickly and stealthily through your native forests.",
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Elf Weapon Training",
                                 Description = new string[]
@@ -861,7 +861,7 @@ namespace DnD5E.Decks
                                     "You have proficiency with the longsword, shortsword, shortbow, and longbow."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Fleet of Foot",
                                 Description = new string[]
@@ -869,7 +869,7 @@ namespace DnD5E.Decks
                                     "Your base walking speed increases to 35 feet."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Mask of the Wild",
                                 Description = new string[]
@@ -901,9 +901,9 @@ namespace DnD5E.Decks
                     Max = 350,
                     Min = 40
                 },
-                Features = new List<FeatureModel>
+                Features = new List<FeaturesModel>
                 {
-                    new FeatureModel
+                    new FeaturesModel
                     {
                         Name = "Darkvision",
                         Description = new string[]
@@ -911,7 +911,7 @@ namespace DnD5E.Decks
                             "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
                         }
                     },
-                    new FeatureModel
+                    new FeaturesModel
                     {
                         Name = "Gnome Cunning",
                         Description = new string[]
@@ -942,9 +942,9 @@ namespace DnD5E.Decks
                             Cha = 0
                         },
                         Description = "Forest gnomes and rock gnomes are the gnomes most commonly encountered in the lands of the surface world. There is another subrace of gnomes rarely seen by any surface-dweller: deep gnomes, also known as svirfneblin. Guarded, and suspicious of outsiders, svirfneblin are cunning and taciturn, but can be just as kind-hearted, loyal, and compassionate as their surface cousins.",
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Superior Darkvision",
                                 Description = new string[]
@@ -952,7 +952,7 @@ namespace DnD5E.Decks
                                     "Your darkvision has a radius of 120 feet."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Stone Camouflage",
                                 Description = new string[]
@@ -980,9 +980,9 @@ namespace DnD5E.Decks
                             Cha = 0
                         },
                         Description = "Forest gnomes have a knack for stealth and illusion, and are generally rather secretive. They gather in hidden forest communities, befriending the local fey and animals.",
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Natural Illusionist",
                                 Description = new string[]
@@ -990,7 +990,7 @@ namespace DnD5E.Decks
                                     "You know the minor illusion cantrip. Intelligence is your spellcasting modifier for it."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Speak with Small Beasts",
                                 Description = new string[]
@@ -1014,9 +1014,9 @@ namespace DnD5E.Decks
                             Cha = 0
                         },
                         Description = "Rock gnomes are naturally inventive and quite hardy for such a small creature. Also known as tinker gnomes, they are well known for their contraptions, ranging from revolutionary to eccentric.",
-                        Features = new List<FeatureModel>
+                        Features = new List<FeaturesModel>
                         {
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Artificer's Lore",
                                 Description = new string[]
@@ -1024,7 +1024,7 @@ namespace DnD5E.Decks
                                     "Whenever you make an Intelligence (History) check related to magical, alchemical, or technological items, you can add twice your proficiency bonus instead of any other proficiency bonus that may apply."
                                 }
                             },
-                            new FeatureModel
+                            new FeaturesModel
                             {
                                 Name = "Tinker",
                                 Description = new string[]

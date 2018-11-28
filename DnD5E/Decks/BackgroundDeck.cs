@@ -13,12 +13,13 @@ namespace DnD5E.Decks
             {
                 Name = "Acolyte",
                 Description = "You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realm of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine. You are not necessarily a cleric — performing sacred rites is not the same thing as channeling divine power.",
-                Feature = new FeatureModel
+                Feature = new FeaturesModel
                 {
                     Name ="Shelter of the Faithful",
                     Description = new string[]
                     {
-                        "As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle.<p><p>You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple."
+                        "As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle.",
+                        "You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple."
                     }
                 },
                 Proficiencies = new ProficiencyModel
@@ -82,7 +83,7 @@ namespace DnD5E.Decks
             {
                 Name = "Charlatan",
                 Description = "You have always had a way with people. You know what makes them tick, you can tease out their hearts' desires after a few minutes of conversation, and with a few leading questions you can read them like they were children's books. It's a useful talent, and one that you're perfectly willing to use for your advantage. You know what people want and you deliver, or rather, you promise to deliver. Common sense should steer people away from things that sound too good to be true, but common sense seems to be in short supply when you're around. The bottle of pink-colored liquid will surely cure that unseemly rash, this ointment — nothing more than a bit of fat with a sprinkle of silver dust — can restore youth and vigor, and there's a bridge in the city that just happens to be for sale. These marvels sound implausible, but you make them sound like the real deal.",
-                Feature = new FeatureModel
+                Feature = new FeaturesModel
                 {
                     Name = "False Identity",
                     Description = new string[]
@@ -151,7 +152,7 @@ namespace DnD5E.Decks
             {
                 Name = "Criminal",
                 Description = "You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld. You’re far closer than most people to the world of murder, theft, and violence that pervades the underbelly of civilization, and you have survived up to this point by flouting the rules and regulations of society.",
-                Feature = new FeatureModel
+                Feature = new FeaturesModel
                 {
                     Name ="Criminal Contact",
                     Description = new string[]
@@ -218,7 +219,7 @@ namespace DnD5E.Decks
             {
                 Name = "Entertainer",
                 Description = "You thrive in front of an audience. You know how to entrance them, entertain them, and even inspire them. Your poetics can stir the hearts of those who hear you, awakening grief or joy, laughter or anger. Your music raises their spirits or captures their sorrow. Your dance steps captivate, your humor cuts to the quick. Whatever techniques you use, your art is your life.",
-                Feature = new FeatureModel
+                Feature = new FeaturesModel
                 {
                     Name = "By Popular Demand",
                     Description = new string[]
@@ -286,7 +287,7 @@ namespace DnD5E.Decks
             {
                 Name = "Outlander",
                 Description = "You grew up in the wilds, far from civilization and the comforts of town and technology. You’ve witnessed the migration of herds larger than forests, survived weather more extreme than any city-dweller could comprehend, and enjoyed the solitude of being the only thinking creature for miles in any direction. The wilds are in your blood, whether you were a nomad, an explorer, a recluse, a hunter-gatherer, or even a marauder. Even in places where you don’t know the specific features of the terrain, you know the ways of the wild.",
-                Feature = new FeatureModel
+                Feature = new FeaturesModel
                 {
                     Name ="Wanderer",
                     Description = new string[]

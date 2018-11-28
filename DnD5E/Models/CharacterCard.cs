@@ -7,7 +7,7 @@ namespace DnD5E.Models
     {
         public AbilityScoresModel AbilityScores { get; set; }
         public int Age { get; set; }
-        public string Background { get; set; }
+        public CharacterBackgroundModel Background { get; set; }
         public string Class { get; set; }
         public int HitDice { get; set; }
         public HitPointsModel HitPoints { get; set; }
@@ -18,6 +18,24 @@ namespace DnD5E.Models
         public int ProficiencyBonus { get; set; }
         public List<string> ProficiencySkills { get; set; }
         public string Race { get; set; }
+        public string Size { get; set; }
         public int Speed { get; set; }
+    }
+
+    public class CharacterBackgroundModel
+    {
+        public string Bond { get; set; }
+        public string Description { get; set; }
+        public CharacterFeatureModel Feature { get; set; }
+        public string Flaw { get; set; }
+        public string Ideal { get; set; }
+        public string Name { get; set; }
+        public string Personality { get; set; }
+    }
+
+    public class CharacterFeatureModel
+    {
+        public string[] Description { get; set; }
+        public string Name { get; set; }
     }
 }

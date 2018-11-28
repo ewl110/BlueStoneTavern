@@ -8,7 +8,7 @@ namespace DnD5E.Models
         public AbilityScoresModel AbilityScores { get; set; }
         public ActionModel[] Actions { get; set; }
         public AgeRangeModel AgeRange { get; set; }
-        public List<FeatureModel> Features { get; set; }
+        public List<FeaturesModel> Features { get; set; }
         public string[] Immunity { get; set; }
         public List<string> Languages { get; set; }
         public ProficiencyModel Proficiencies { get; set; }

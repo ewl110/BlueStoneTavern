@@ -7,11 +7,11 @@ namespace DnD5E.Dictionaries
 {
     public static class FeatureDictionary
     {
-        public static Dictionary<string, FeatureModel> List = new Dictionary<string, FeatureModel>()
+        public static Dictionary<string, FeaturesModel> List = new Dictionary<string, FeaturesModel>()
         {
             {
                 FeaturesEnum.brutalCritical.ToString(),
-                new FeatureModel
+                new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
                         ClassEnum.barbarian
@@ -22,7 +22,7 @@ namespace DnD5E.Dictionaries
             },
             {
                 FeaturesEnum.dangerSense.ToString(),
-                new FeatureModel
+                new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
                         ClassEnum.barbarian
@@ -33,7 +33,7 @@ namespace DnD5E.Dictionaries
             },
             {
                 FeaturesEnum.extraAttack.ToString(),
-                new FeatureModel
+                new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
                         ClassEnum.barbarian
@@ -44,7 +44,7 @@ namespace DnD5E.Dictionaries
             },
             {
                 FeaturesEnum.fastMovement.ToString(),
-                new FeatureModel
+                new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
                         ClassEnum.barbarian
@@ -55,7 +55,7 @@ namespace DnD5E.Dictionaries
             },
             {
                 FeaturesEnum.feralInstinct.ToString(),
-                new FeatureModel
+                new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
                         ClassEnum.barbarian
@@ -66,7 +66,7 @@ namespace DnD5E.Dictionaries
             },
             {
                 FeaturesEnum.indomitableMight.ToString(),
-                new FeatureModel
+                new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
                         ClassEnum.barbarian
@@ -77,7 +77,7 @@ namespace DnD5E.Dictionaries
             },
             {
                 FeaturesEnum.persistentRage.ToString(),
-                new FeatureModel
+                new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
                         ClassEnum.barbarian
@@ -88,7 +88,7 @@ namespace DnD5E.Dictionaries
             },
             {
                 FeaturesEnum.primalChampion.ToString(),
-                new FeatureModel
+                new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
                         ClassEnum.barbarian
@@ -99,7 +99,7 @@ namespace DnD5E.Dictionaries
             },
             {
                 FeaturesEnum.rage.ToString(),
-                new FeatureModel
+                new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
                         ClassEnum.barbarian
@@ -110,7 +110,7 @@ namespace DnD5E.Dictionaries
             },
             {
                 FeaturesEnum.recklessAttack.ToString(),
-                new FeatureModel
+                new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
                         ClassEnum.barbarian
@@ -121,7 +121,7 @@ namespace DnD5E.Dictionaries
             },
             {
                 FeaturesEnum.relentlessRage.ToString(),
-                new FeatureModel
+                new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
                         ClassEnum.barbarian
@@ -132,7 +132,7 @@ namespace DnD5E.Dictionaries
             },
             {
                 FeaturesEnum.unarmoredDefenceBarbarian.ToString(),
-                new FeatureModel
+                new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
                         ClassEnum.barbarian

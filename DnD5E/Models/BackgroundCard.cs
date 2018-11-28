@@ -6,7 +6,7 @@ namespace DnD5E.Models
     {
         public string[] Bond { get; set; }
         public string[] Equipment { get; set; }
-        public FeatureModel Feature { get; set; }
+        public FeaturesModel Feature { get; set; }
         public string[] Flaw { get; set; }
         public string[] Ideal { get; set; }
         public List<string> Languages { get; set; }

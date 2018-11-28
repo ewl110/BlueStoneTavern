@@ -20,7 +20,7 @@ namespace DnD5E.Characters
 
         private AbilityScoresModel abilityScores;
         private int age;
-        private string charBackground;
+        private CharacterBackgroundModel charBackground;
         private string charClass;
         private string charRace;
 
@@ -50,73 +50,73 @@ namespace DnD5E.Characters
             }
         }
 
-        public AbilityScoresModel AbilityScores
-        {
-            get
-            {
-                return this.abilityScores;
-            }
-            set
-            {
-                this.abilityScores = value;
-            }
-        }
-        public int Age
-        {
-            get
-            {
-                return this.age;
-            }
-            set
-            {
-                this.age = value;
-            }
-        }
-        public string CharBackground
-        {
-            get
-            {
-                return this.charBackground;
-            }
-            set
-            {
-                this.charBackground = value;
-            }
-        }
-        public string CharClass
-        {
-            get
-            {
-                return this.charClass;
-            }
-            set
-            {
-                this.charClass = value;
-            }
-        }
-        public string CharRace
-        {
-            get
-            {
-                return this.charRace;
-            }
-            set
-            {
-                this.charRace = value;
-            }
-        }
-        public List<string> Languages;
+        //public AbilityScoresModel AbilityScores
+        //{
+        //    get
+        //    {
+        //        return this.abilityScores;
+        //    }
+        //    set
+        //    {
+        //        this.abilityScores = value;
+        //    }
+        //}
+        //public int Age
+        //{
+        //    get
+        //    {
+        //        return this.age;
+        //    }
+        //    set
+        //    {
+        //        this.age = value;
+        //    }
+        //}
+        //public string CharBackground
+        //{
+        //    get
+        //    {
+        //        return this.charBackground;
+        //    }
+        //    set
+        //    {
+        //        this.charBackground = value;
+        //    }
+        //}
+        //public string CharClass
+        //{
+        //    get
+        //    {
+        //        return this.charClass;
+        //    }
+        //    set
+        //    {
+        //        this.charClass = value;
+        //    }
+        //}
+        //public string CharRace
+        //{
+        //    get
+        //    {
+        //        return this.charRace;
+        //    }
+        //    set
+        //    {
+        //        this.charRace = value;
+        //    }
+        //}
+        //public List<string> Languages;
 
-        public int Level {
-            get
-            {
-                return this.level;
-            }
-            set
-            {
-                this.level = value;
-            }
-        }
+        //public int Level {
+        //    get
+        //    {
+        //        return this.level;
+        //    }
+        //    set
+        //    {
+        //        this.level = value;
+        //    }
+        //}
 
         public Character() : this(1) {}
 
@@ -129,7 +129,7 @@ namespace DnD5E.Characters
 
             this.abilityScores = GetAbilityScores( this.charClassCard.AbilityScores, this.charRaceCard.AbilityScores, this.charRaceVariantCard.AbilityScores );
             this.age = rng.Next(this.charRaceCard.AgeRange.Min, this.charRaceCard.AgeRange.Max);
-            this.charBackground = this.charBackgroundCard.Name;
+            this.charBackground = GetBackground();
             this.charClass = this.charClassCard.Name;
             this.charRace = this.charRaceVariantCard.Name;
             this.hitDice = this.charClassCard.HitDice;
@@ -142,7 +142,7 @@ namespace DnD5E.Characters
             this.speed = this.charRaceVariantCard.Speed != 30? this.charRaceVariantCard.Speed : this.charRaceCard.Speed;
         }
 
-        public Guid CreateGuid()
+        private Guid CreateGuid()
         {
             Guid id = Guid.Empty;
 
@@ -154,7 +154,36 @@ namespace DnD5E.Characters
             return id;
         }
 
-        public AbilityScoresModel GetAbilityScores(AbilityScoresModel classAS, AbilityScoresModel raceAS, AbilityScoresModel raceVariantAS)
+        public CharacterCard CreateNewCharacter()
+        {
+            CharacterCard randomCharacter = new CharacterCard()
+            {
+                AbilityScores = this.abilityScores,
+                Age = this.age,
+                Background = this.charBackground,
+                Class = this.charClass,
+                HitPoints = new HitPointsModel
+                {
+                    HitDice = this.hitDice,
+                    HitDiceAvailable = this.hitDice,
+                    HitPointsCurrent = this.hitPointCurrent,
+                    HitPointsMax = this.hitPointMax,
+                },
+                Id = this.id,
+                Languages = this.languages,
+                Level = this.level,
+                PassivePerception = GetPassivePerception(),
+                ProficiencyBonus = this.proficiencyBonus,
+                ProficiencySkills = this.proficiencySkills,
+                Race = this.charRace,
+                Size = this.charRaceCard.Size,
+                Speed = this.speed
+            };
+
+            return randomCharacter;
+        }
+
+        private AbilityScoresModel GetAbilityScores(AbilityScoresModel classAS, AbilityScoresModel raceAS, AbilityScoresModel raceVariantAS)
         {
             int Str = classAS.Str + raceAS.Str + raceVariantAS.Str;
             int Dex = classAS.Dex + raceAS.Dex + raceVariantAS.Dex;
@@ -192,6 +221,25 @@ namespace DnD5E.Characters
             }
 
             return abilityScoreModifier;
+        }
+
+        private CharacterBackgroundModel GetBackground()
+        {
+            CharacterBackgroundModel background = new CharacterBackgroundModel {
+                Bond = this.charBackgroundCard.Bond.PickRandomItemFromArray(),
+                Description = this.charBackgroundCard.Description,
+                Feature = new CharacterFeatureModel
+                {
+                    Description = this.charBackgroundCard.Feature.Description,
+                    Name = this.charBackgroundCard.Feature.Name
+                },
+                Flaw = this.charBackgroundCard.Flaw.PickRandomItemFromArray(),
+                Ideal = this.charBackgroundCard.Ideal.PickRandomItemFromArray(),
+                Name = this.charBackgroundCard.Name,
+                Personality = this.charBackgroundCard.Personality.PickRandomItemFromArray()
+        };
+
+            return background;
         }
 
         private List<string> GetLanguages() {
@@ -233,34 +281,6 @@ namespace DnD5E.Characters
             }
 
             return passivePerception;
-        }
-
-        public CharacterCard GetNewCharacter()
-        {
-            CharacterCard randomCharacter = new CharacterCard()
-            {
-                AbilityScores = this.abilityScores,
-                Age = this.age,
-                Background = this.charBackground,
-                Class = this.charClass,
-                HitPoints = new HitPointsModel
-                {
-                    HitDice = this.hitDice,
-                    HitDiceAvailable = this.hitDice,
-                    HitPointsCurrent = this.hitPointCurrent,
-                    HitPointsMax = this.hitPointMax,
-                },
-                Id = this.id,
-                Languages = this.languages,
-                Level = this.level,
-                PassivePerception = GetPassivePerception(),
-                ProficiencyBonus = this.proficiencyBonus,
-                ProficiencySkills = this.proficiencySkills,
-                Race = this.charRace,
-                Speed = this.speed
-            };
-
-            return randomCharacter;
         }
 
         private int GetSkillModifier(string skill) {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DnD5E.Models
 {
-    public class FeatureModel : BaseModel
+    public class FeaturesModel : BaseModel
     {
         public List<ClassEnum> Class { get; set; }
         public new string[] Description { get; set; }
