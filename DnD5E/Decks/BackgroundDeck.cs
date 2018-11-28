@@ -62,7 +62,7 @@ namespace DnD5E.Decks
                     "I've enjoyed fine food, drink, and high society among my temple's elite. Rough living grates on me.",
                     "I've spent so long in the temple that I have little practical experience dealing with people in the outside world.",
                 },
-                Languages = new string[] {
+                Languages = new List<string> {
                     LanguagesEnum.SelectLanguage.GetAttributeOfType<DescriptionAttribute>().Description,
                     LanguagesEnum.SelectLanguage.GetAttributeOfType<DescriptionAttribute>().Description
                 },
@@ -338,7 +338,7 @@ namespace DnD5E.Decks
                     "I feel far more comfortable around animals than people.",
                     "I was, in fact, raised by wolves.",
                 },
-                Languages = new string[] {
+                Languages = new List<string> {
                     LanguagesEnum.SelectLanguage.GetAttributeOfType<DescriptionAttribute>().Description
                 },
                 Equipment = new string[]{

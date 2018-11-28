@@ -59,7 +59,7 @@
                             <div class="content-wrapper">
                                 <p><b>Proficiencies</b> (+@Model.ProficiencyBonus proficiiency bonus)</p>
                                 <p><b>Saving Throws:</b> Con +4, Cha +5</p>
-                                <p><b>Skills:</b> Arcana +2, Athletics +2, Intimidation +5, Survival +3</p>
+                                <p><b>Skills:</b> @string.Join(", ", Model.ProficiencySkills)</p>
                                 <p><b>Tools:</b> Drum</p>
                                 <p><b>Weapons:</b> Daggers, Darts, Light Crossbows, Quarterstaffs, Slings</p>
                             </div>
@@ -67,10 +67,10 @@
                                 <p><b>Damage Resistances:</b> Cold</p>
                             </div>
                             <div class="content-wrapper">
-                                <p><b>Senses:</b> Passive Perception (11)</p>
+                                <p><b>Senses:</b> Passive Perception (@Model.PassivePerception)</p>
                             </div>
                             <div class="content-wrapper">
-                                <p><b>Languages:</b> Common, Draconic, Giant</p>
+                                <p><b>Languages:</b> @string.Join(", ", Model.Languages)</p>
                             </div>
                         </div>
                     </div>

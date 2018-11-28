@@ -12,11 +12,11 @@ namespace DnD5E.Characters
 
         public readonly Guid id;
 
-        //private BackgroundCard charBackgroundCard;
-        //private ClassCard charClassCard;
-        //private ClassCard charSubClassCard;
-        //public RaceCard charRaceCard;
-        //private RaceCard charRaceVariantCard;
+        private BackgroundCard charBackgroundCard;
+        private ClassCard charClassCard;
+        private ClassCard charSubClassCard;
+        private RaceCard charRaceCard;
+        private RaceCard charRaceVariantCard;
 
         private AbilityScoresModel abilityScores;
         private int age;
@@ -122,22 +122,24 @@ namespace DnD5E.Characters
 
         public Character(int level)
         {
-            var charBackgroundCard = Decks.BackgroundDeck.Cards.PullRandomCardFromDeck();
-            var charClassCard = Decks.ClassDeck.Cards.PullRandomCardFromDeck(true);
-            var charRaceCard = Decks.RaceDeck.Cards.PullRandomCardFromDeck(true);
-            var charRaceVariantCard = charRaceCard.Variants.PullRandomCardFromDeck(true);
+            this.charBackgroundCard = Decks.BackgroundDeck.Cards.PullRandomCardFromDeck();
+            this.charClassCard = Decks.ClassDeck.Cards.PullRandomCardFromDeck(true);
+            this.charRaceCard = Decks.RaceDeck.Cards.PullRandomCardFromDeck(true);
+            this.charRaceVariantCard = this.charRaceCard.Variants.PullRandomCardFromDeck(true);
 
-            this.abilityScores = GetAbilityScores( charClassCard.AbilityScores, charRaceCard.AbilityScores, charRaceVariantCard.AbilityScores );
-            this.age = rng.Next(charRaceCard.AgeRange.Min, charRaceCard.AgeRange.Max);
-            this.charBackground = charBackgroundCard.Name;
-            this.charClass = charClassCard.Name;
-            this.charRace = charRaceVariantCard.Name;
-            this.hitDice = charClassCard.HitDice;
-            this.hitPointCurrent = this.hitPointMax = charClassCard.HitDice + this.abilityScores.ConMod;
+            this.abilityScores = GetAbilityScores( this.charClassCard.AbilityScores, this.charRaceCard.AbilityScores, this.charRaceVariantCard.AbilityScores );
+            this.age = rng.Next(this.charRaceCard.AgeRange.Min, this.charRaceCard.AgeRange.Max);
+            this.charBackground = this.charBackgroundCard.Name;
+            this.charClass = this.charClassCard.Name;
+            this.charRace = this.charRaceVariantCard.Name;
+            this.hitDice = this.charClassCard.HitDice;
+            this.hitPointCurrent = this.hitPointMax = this.charClassCard.HitDice + this.abilityScores.ConMod;
             this.id = CreateGuid();
+            this.languages = GetLanguages();
             this.level = level;
             this.proficiencyBonus = 2;
-            this.speed = charRaceVariantCard.Speed != 30? charRaceVariantCard.Speed : charRaceCard.Speed;
+            this.proficiencySkills = GetSkills();
+            this.speed = this.charRaceVariantCard.Speed != 30? this.charRaceVariantCard.Speed : this.charRaceCard.Speed;
         }
 
         public Guid CreateGuid()
@@ -180,7 +182,7 @@ namespace DnD5E.Characters
             return newAbilityScores;
         }
 
-        public int GetAbilityScoreModifier(int abilityScore)
+        private int GetAbilityScoreModifier(int abilityScore)
         {
             int abilityScoreModifier = (abilityScore - 10 ) / 2;
 
@@ -192,12 +194,53 @@ namespace DnD5E.Characters
             return abilityScoreModifier;
         }
 
+        private List<string> GetLanguages() {
+            List<string> languages = new List<string>(){ };
+
+            if (this.charBackgroundCard.Languages != null)
+            {
+                foreach (var item in this.charBackgroundCard.Languages)
+                {
+                    languages.Add(item);
+                }
+            }
+
+            if (this.charRaceCard.Languages != null)
+            {
+                foreach (var item in this.charRaceCard.Languages)
+                {
+                    languages.Add(item);
+                }
+            }
+
+            if (this.charRaceVariantCard.Languages != null)
+            {
+                foreach (var item in this.charRaceVariantCard.Languages)
+                {
+                    languages.Add(item);
+                }
+            }
+
+            return languages;
+        }
+
+        private int GetPassivePerception() {
+            int passivePerception = 10 + this.abilityScores.WisMod;
+
+            if ( string.Join(",", this.proficiencySkills).Contains("Perception") )
+            {
+                passivePerception += this.proficiencyBonus;
+            }
+
+            return passivePerception;
+        }
+
         public CharacterCard GetNewCharacter()
         {
             CharacterCard randomCharacter = new CharacterCard()
             {
-                AbilityScores = this.AbilityScores,
-                Age = this.Age,
+                AbilityScores = this.abilityScores,
+                Age = this.age,
                 Background = this.charBackground,
                 Class = this.charClass,
                 HitPoints = new HitPointsModel
@@ -208,13 +251,88 @@ namespace DnD5E.Characters
                     HitPointsMax = this.hitPointMax,
                 },
                 Id = this.id,
+                Languages = this.languages,
                 Level = this.level,
+                PassivePerception = GetPassivePerception(),
                 ProficiencyBonus = this.proficiencyBonus,
+                ProficiencySkills = this.proficiencySkills,
                 Race = this.charRace,
                 Speed = this.speed
             };
 
             return randomCharacter;
+        }
+
+        private int GetSkillModifier(string skill) {
+            int skillModifier = this.proficiencyBonus;
+
+            switch (skill)
+            {
+                case "Acrobatics":
+                case "Sleight of Hand":
+                case "Stealth":
+                    skillModifier += this.abilityScores.DexMod;
+                    break;
+                case "Arcana":
+                case "History":
+                case "Investigation":
+                case "Nature":
+                case "Religion":
+                    skillModifier += this.abilityScores.IntMod;
+                    break;
+                case "Animal Handling":
+                case "Insight":
+                case "Medicine":
+                case "Perception":
+                case "Survival":
+                    skillModifier += this.abilityScores.WisMod;
+                    break;
+                case "Athletics":
+                    skillModifier += this.abilityScores.StrMod;
+                    break;
+                case "Deception":
+                case "Intimidation":
+                case "Performance":
+                case "Persuasion":
+                    skillModifier += this.abilityScores.ChaMod;
+                    break;
+            }
+
+            return skillModifier;
+        }
+
+        private List<string> GetSkills() {
+            int skillModifier = 0;
+            List<string> skills = new List<string>() { };
+
+            if (this.charBackgroundCard.Proficiencies != null && this.charBackgroundCard.Proficiencies.Skills != null)
+            {
+                foreach (var item in this.charBackgroundCard.Proficiencies.Skills)
+                {
+                    skillModifier = GetSkillModifier(item);
+                    skills.Add($"{item} +{skillModifier}");
+                }
+            }
+
+            if (this.charRaceCard.Proficiencies != null && this.charRaceCard.Proficiencies.Skills != null)
+            {
+                foreach (var item in this.charRaceCard.Proficiencies.Skills)
+                {
+                    skillModifier = GetSkillModifier(item);
+                    skills.Add($"{item} +{skillModifier}");
+                }
+            }
+
+            if (this.charRaceVariantCard.Proficiencies != null && this.charRaceVariantCard.Proficiencies.Skills != null)
+            {
+                foreach (var item in this.charRaceVariantCard.Proficiencies.Skills)
+                {
+                    skillModifier = GetSkillModifier(item);
+                    skills.Add($"{item} +{skillModifier}");
+                }
+            }
+
+            return skills;
         }
     }
 }

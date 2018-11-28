@@ -33,7 +33,7 @@ namespace DnD5E.Decks
                     Max = 80,
                     Min = 15
                 },
-                Languages = new string[]
+                Languages = new List<string>
                 {
                     LanguagesEnum.Common.ToString(),
                     LanguagesEnum.Draconic.ToString(),
@@ -473,7 +473,7 @@ namespace DnD5E.Decks
                         }
                     }
                 },
-                Languages = new string[]
+                Languages = new List<string>
                 {
                     LanguagesEnum.Common.ToString(),
                     LanguagesEnum.Dwarvish.ToString(),
@@ -541,7 +541,7 @@ namespace DnD5E.Decks
                                 }
                             }
                         },
-                        Languages = new string[]
+                        Languages = new List<string>
                         {
                             LanguagesEnum.Undercommon.ToString()
                         },
@@ -652,7 +652,7 @@ namespace DnD5E.Decks
                         }
                     }
                 },
-                Languages = new string[]
+                Languages = new List<string>
                 {
                     LanguagesEnum.Common.ToString(),
                     LanguagesEnum.Elvish.ToString(),
@@ -748,7 +748,7 @@ namespace DnD5E.Decks
                                 }
                             },
                         },
-                        Languages = new string[]
+                        Languages = new List<string>
                         {
                             LanguagesEnum.SelectLanguage.GetAttributeOfType<DescriptionAttribute>().Description
                         },
@@ -794,7 +794,7 @@ namespace DnD5E.Decks
                                 }
                             },
                         },
-                        Languages = new string[]
+                        Languages = new List<string>
                         {
                             LanguagesEnum.Aquan.ToString()
                         },
@@ -920,7 +920,7 @@ namespace DnD5E.Decks
                         }
                     },
                 },
-                Languages = new string[]
+                Languages = new List<string>
                 {
                     LanguagesEnum.Common.ToString(),
                     LanguagesEnum.Gnomish.ToString(),
@@ -961,7 +961,7 @@ namespace DnD5E.Decks
                                 }
                             },
                         },
-                        Languages = new string[]
+                        Languages = new List<string>
                         {
                             LanguagesEnum.Undercommon.ToString()
                         },

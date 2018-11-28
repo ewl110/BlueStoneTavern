@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DnD5E.Models
 {
@@ -11,8 +12,11 @@ namespace DnD5E.Models
         public int HitDice { get; set; }
         public HitPointsModel HitPoints { get; set; }
         public Guid Id { get; set;  }
+        public List<string> Languages { get; set; }
         public int Level { get; set; }
+        public int PassivePerception { get; set; }
         public int ProficiencyBonus { get; set; }
+        public List<string> ProficiencySkills { get; set; }
         public string Race { get; set; }
         public int Speed { get; set; }
     }

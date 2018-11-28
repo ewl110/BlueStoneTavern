@@ -10,7 +10,7 @@ namespace DnD5E.Models
         public AgeRangeModel AgeRange { get; set; }
         public List<FeatureModel> Features { get; set; }
         public string[] Immunity { get; set; }
-        public string[] Languages { get; set; }
+        public List<string> Languages { get; set; }
         public ProficiencyModel Proficiencies { get; set; }
         public string[] Resistance { get; set; }
         public string Size { get; set; } = SizeEnum.medium.ToString();
