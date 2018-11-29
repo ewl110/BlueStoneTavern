@@ -9,6 +9,7 @@ namespace DnD5E.Models
         public int Age { get; set; }
         public CharacterBackgroundModel Background { get; set; }
         public string Class { get; set; }
+        public List<FeaturesModel> ClassFeatures { get; set; }
         public int HitDice { get; set; }
         public HitPointsModel HitPoints { get; set; }
         public Guid Id { get; set; }
@@ -23,6 +24,7 @@ namespace DnD5E.Models
         public List<string> ProficiencyTools { get; set; }
         public List<string> ProficiencyWeapons { get; set; }
         public string Race { get; set; }
+        public List<FeaturesModel> RaceTraits { get; set; }
         public List<string> Resistance { get; set; }
         public string Size { get; set; }
         public int Speed { get; set; }

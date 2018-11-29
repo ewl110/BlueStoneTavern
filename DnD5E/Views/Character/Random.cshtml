@@ -148,13 +148,12 @@
             </section>
 
             <section class="character_traits">
-                <h3>Dragonborn Traits</h3>
-                <p><b>Draconic Ancestry (Silver):</b> You have a cold breath weapon and resistance to cold damage.</p>
-                <p><b>Breath weapon: (Recharges after long or short rest)</b>  You can use your action to exhale cold energy in a 15 ft. cone. Each creature in the area must make a CON saving throw (DC = 8 + CON modifier + proficiency bonus) taking full damage on a failed save, or half as much damage on a successful one.</p>
+                <h3>@Model.Race Traits</h3>
+                @Html.Partial("_FeaturesList", Model.RaceTraits)
             </section>
 
             <section class="character_features">
-                <h3>Sorceror Features</h3>
+                <h3>@Model.Class Features</h3>
                 <div class="content-wrapper">
                     <p><b>Dragon Ancestor:</b> Whenever you make a CHA check when interacting with dragons, your proficiency is doubled if it applies to the check.</p>
                 </div>

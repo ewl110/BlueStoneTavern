@@ -29,6 +29,7 @@ namespace DnD5E.Characters
         private int hitPointCurrent;
         private int hitPointMax;
 
+        private List<FeaturesModel> classFeatures;
         private List<string> immunity;
         private List<string> languages;
         private List<string> proficiencyArmor;
@@ -37,6 +38,7 @@ namespace DnD5E.Characters
         private List<string> proficiencySkills;
         private List<string> proficiencyTools;
         private List<string> proficiencyWeapons;
+        private List<FeaturesModel> raceTraits;
         private List<string> resistance;
         private int speed;
 
@@ -131,6 +133,7 @@ namespace DnD5E.Characters
             this.charBackground = GetBackground();
             this.charClass = this.charClassCard.Name;
             this.charRace = this.charRaceVariantCard.Name;
+            this.classFeatures = GetClassFeatures();
             this.hitDice = this.charClassCard.HitDice;
             this.hitPointCurrent = this.hitPointMax = this.charClassCard.HitDice + this.abilityScores.ConMod;
             this.id = CreateGuid();
@@ -142,6 +145,7 @@ namespace DnD5E.Characters
             this.proficiencySavingThrows = GetSavingThrowProficiency();
             this.proficiencySkills = GetSkillProficiency();
             this.proficiencyTools = GetToolProficiency();
+            this.raceTraits = GetRaceTraits();
             this.resistance = GetResistances();
             this.speed = this.charRaceVariantCard.Speed != 30? this.charRaceVariantCard.Speed : this.charRaceCard.Speed;
         }
@@ -166,6 +170,7 @@ namespace DnD5E.Characters
                 Age = this.age,
                 Background = this.charBackground,
                 Class = this.charClass,
+                ClassFeatures = this.classFeatures,
                 HitPoints = new HitPointsModel
                 {
                     HitDice = this.hitDice,
@@ -185,6 +190,7 @@ namespace DnD5E.Characters
                 ProficiencyTools = this.proficiencyTools,
                 ProficiencyWeapons = this.proficiencyWeapons,
                 Race = this.charRace,
+                RaceTraits = this.raceTraits,
                 Resistance = this.resistance,
                 Size = this.charRaceCard.Size,
                 Speed = this.speed
@@ -294,9 +300,16 @@ namespace DnD5E.Characters
                 Ideal = this.charBackgroundCard.Ideal.PickRandomItemFromArray(),
                 Name = this.charBackgroundCard.Name,
                 Personality = this.charBackgroundCard.Personality.PickRandomItemFromArray()
-        };
+            };
 
             return background;
+        }
+
+        private List<FeaturesModel> GetClassFeatures()
+        {
+            List<FeaturesModel> features = new List<FeaturesModel>() { };
+
+            return features;
         }
 
         private List<string> GetImmnuities()
@@ -389,6 +402,29 @@ namespace DnD5E.Characters
             }
 
             return proficiencyBonus;
+        }
+
+        private List<FeaturesModel> GetRaceTraits()
+        {
+            List<FeaturesModel> traits = new List<FeaturesModel>() { };
+
+            if (this.charRaceCard.Features != null)
+            {
+                foreach (var item in this.charRaceCard.Features)
+                {
+                    traits.Add(item);
+                }
+            }
+
+            if (this.charRaceVariantCard.Features != null)
+            {
+                foreach (var item in this.charRaceVariantCard.Features)
+                {
+                    traits.Add(item);
+                }
+            }
+
+            return traits;
         }
 
         private List<string> GetResistances()
