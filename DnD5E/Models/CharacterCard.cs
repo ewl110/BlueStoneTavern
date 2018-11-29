@@ -9,6 +9,7 @@ namespace DnD5E.Models
         public int Age { get; set; }
         public CharacterBackgroundModel Background { get; set; }
         public string Class { get; set; }
+        public string ClassDescription { get; set; }
         public List<FeaturesModel> ClassFeatures { get; set; }
         public int HitDice { get; set; }
         public HitPointsModel HitPoints { get; set; }
@@ -39,6 +40,14 @@ namespace DnD5E.Models
         public string Ideal { get; set; }
         public string Name { get; set; }
         public string Personality { get; set; }
+    }
+
+    public class CharacterClassModel
+    {
+        public string Description { get; set; }
+        public string Name { get; set; }
+        public int Level { get; set; }
+        public string Variant { get; set; }
     }
 
     public class CharacterFeatureModel

@@ -14,7 +14,7 @@ namespace DnD5E.Dictionaries
                 new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
-                        ClassEnum.barbarian
+                        ClassEnum.Barbarian
                     },
                     Key = FeaturesEnum.brutalCritical.ToString(),
                     Name = FeaturesEnum.brutalCritical.GetAttributeOfType<DescriptionAttribute>().Description
@@ -25,7 +25,7 @@ namespace DnD5E.Dictionaries
                 new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
-                        ClassEnum.barbarian
+                        ClassEnum.Barbarian
                     },
                     Key = FeaturesEnum.dangerSense.ToString(),
                     Name = FeaturesEnum.dangerSense.GetAttributeOfType<DescriptionAttribute>().Description
@@ -36,7 +36,7 @@ namespace DnD5E.Dictionaries
                 new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
-                        ClassEnum.barbarian
+                        ClassEnum.Barbarian
                     },
                     Key = FeaturesEnum.extraAttack.ToString(),
                     Name = FeaturesEnum.extraAttack.GetAttributeOfType<DescriptionAttribute>().Description
@@ -47,7 +47,7 @@ namespace DnD5E.Dictionaries
                 new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
-                        ClassEnum.barbarian
+                        ClassEnum.Barbarian
                     },
                     Key = FeaturesEnum.fastMovement.ToString(),
                     Name = FeaturesEnum.fastMovement.GetAttributeOfType<DescriptionAttribute>().Description
@@ -58,7 +58,7 @@ namespace DnD5E.Dictionaries
                 new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
-                        ClassEnum.barbarian
+                        ClassEnum.Barbarian
                     },
                     Key = FeaturesEnum.feralInstinct.ToString(),
                     Name = FeaturesEnum.feralInstinct.GetAttributeOfType<DescriptionAttribute>().Description
@@ -69,7 +69,7 @@ namespace DnD5E.Dictionaries
                 new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
-                        ClassEnum.barbarian
+                        ClassEnum.Barbarian
                     },
                     Key = FeaturesEnum.indomitableMight.ToString(),
                     Name = FeaturesEnum.indomitableMight.GetAttributeOfType<DescriptionAttribute>().Description
@@ -80,7 +80,7 @@ namespace DnD5E.Dictionaries
                 new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
-                        ClassEnum.barbarian
+                        ClassEnum.Barbarian
                     },
                     Key = FeaturesEnum.persistentRage.ToString(),
                     Name = FeaturesEnum.persistentRage.GetAttributeOfType<DescriptionAttribute>().Description
@@ -91,7 +91,7 @@ namespace DnD5E.Dictionaries
                 new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
-                        ClassEnum.barbarian
+                        ClassEnum.Barbarian
                     },
                     Key = FeaturesEnum.primalChampion.ToString(),
                     Name = FeaturesEnum.primalChampion.GetAttributeOfType<DescriptionAttribute>().Description
@@ -102,7 +102,7 @@ namespace DnD5E.Dictionaries
                 new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
-                        ClassEnum.barbarian
+                        ClassEnum.Barbarian
                     },
                     Key = FeaturesEnum.rage.ToString(),
                     Name = FeaturesEnum.rage.GetAttributeOfType<DescriptionAttribute>().Description
@@ -113,7 +113,7 @@ namespace DnD5E.Dictionaries
                 new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
-                        ClassEnum.barbarian
+                        ClassEnum.Barbarian
                     },
                     Key = FeaturesEnum.recklessAttack.ToString(),
                     Name = FeaturesEnum.recklessAttack.GetAttributeOfType<DescriptionAttribute>().Description
@@ -124,7 +124,7 @@ namespace DnD5E.Dictionaries
                 new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
-                        ClassEnum.barbarian
+                        ClassEnum.Barbarian
                     },
                     Key = FeaturesEnum.relentlessRage.ToString(),
                     Name = FeaturesEnum.relentlessRage.GetAttributeOfType<DescriptionAttribute>().Description
@@ -135,7 +135,7 @@ namespace DnD5E.Dictionaries
                 new FeaturesModel
                 {
                     Class = new List<ClassEnum>() {
-                        ClassEnum.barbarian
+                        ClassEnum.Barbarian
                     },
                     Key = FeaturesEnum.unarmoredDefenceBarbarian.ToString(),
                     Name = FeaturesEnum.unarmoredDefenceBarbarian.GetAttributeOfType<DescriptionAttribute>().Description

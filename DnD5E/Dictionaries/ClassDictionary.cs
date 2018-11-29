@@ -10,12 +10,12 @@ namespace DnD5E.Dictionaries
         public static Dictionary<string, ClassModel> List = new Dictionary<string, ClassModel>()
         {
             {
-                ClassEnum.barbarian.ToString(),
+                ClassEnum.Barbarian.ToString(),
                 new ClassModel {
                     HitDice = 12,
                     IsCaster = false,
-                    Key = ClassEnum.barbarian.ToString(),
-                    Name = ClassEnum.barbarian.GetAttributeOfType<DescriptionAttribute>().Description,
+                    Key = ClassEnum.Barbarian.ToString(),
+                    Name = ClassEnum.Barbarian.GetAttributeOfType<DescriptionAttribute>().Description,
                     SavingThrows = new List<AbilitiesEnum>
                     {
                         AbilitiesEnum.Con,
@@ -36,11 +36,11 @@ namespace DnD5E.Dictionaries
                 }
             },
             {
-                ClassEnum.berserker.ToString(),
+                ClassEnum.Berserker.ToString(),
                 new ClassModel {
-                    Key = ClassEnum.berserker.ToString(),
-                    Name = ClassEnum.berserker.GetAttributeOfType<DescriptionAttribute>().Description,
-                    ParentClass = ClassEnum.barbarian
+                    Key = ClassEnum.Berserker.ToString(),
+                    Name = ClassEnum.Berserker.GetAttributeOfType<DescriptionAttribute>().Description,
+                    ParentClass = ClassEnum.Barbarian
                 }
             },
             {
@@ -48,7 +48,7 @@ namespace DnD5E.Dictionaries
                 new ClassModel {
                     Key = ClassEnum.totemWarrior.ToString(),
                     Name = ClassEnum.totemWarrior.GetAttributeOfType<DescriptionAttribute>().Description,
-                    ParentClass = ClassEnum.barbarian
+                    ParentClass = ClassEnum.Barbarian
                 }
             }
         };
