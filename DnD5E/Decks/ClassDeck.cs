@@ -142,6 +142,19 @@ namespace DnD5E.Decks
                         1,
                         new LevelModel
                         {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Spellcasting",
+                                    Description = new string[]
+                                    {
+                                        "Wisdom is your spellcasting ability for your druid spells. You use your Wisdom whenever a spell refers to your spellcasting ability.",
+                                        "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest."
+                                    },
+                                    AbilityModifier = AbilitiesEnum.Wis.ToString(),
+                                }
+                            },
                             Proficiencies = new ProficiencyModel
                             {
                                 Armor = new string[]
@@ -364,6 +377,19 @@ namespace DnD5E.Decks
                         1,
                         new LevelModel
                         {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Spellcasting",
+                                    Description = new string[]
+                                    {
+                                        "Charisma is your spellcasting ability for your sorcerer spells. You use your Charisma whenever a spell refers to your spellcasting ability.",
+                                        "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest."
+                                    },
+                                    AbilityModifier = AbilitiesEnum.Cha.ToString(),
+                                }
+                            },
                             Proficiencies = new ProficiencyModel
                             {
                                 SavingThrows = new string[]
@@ -396,6 +422,19 @@ namespace DnD5E.Decks
                         1,
                         new LevelModel
                         {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Spellcasting",
+                                    Description = new string[]
+                                    {
+                                        "Charisma is your spellcasting ability for your warlock spells. You use your Charisma whenever a spell refers to your spellcasting ability.",
+                                        "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest."
+                                    },
+                                    AbilityModifier = AbilitiesEnum.Cha.ToString(),
+                                }
+                            },
                             Proficiencies = new ProficiencyModel
                             {
                                 Armor = new string[]
@@ -432,6 +471,19 @@ namespace DnD5E.Decks
                         1,
                         new LevelModel
                         {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Spellcasting",
+                                    Description = new string[]
+                                    {
+                                        "Intelligence is your spellcasting ability for your wizard spells. You use your Intelligence whenever a spell refers to your spellcasting ability.",
+                                        "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long or short rest."
+                                    },
+                                    AbilityModifier = AbilitiesEnum.Int.ToString(),
+                                }
+                            },
                             Proficiencies = new ProficiencyModel
                             {
                                 SavingThrows = new string[]

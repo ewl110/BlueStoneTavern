@@ -16,7 +16,7 @@ namespace DnD5E.Models
     {
         public int? BardicInspiration { get; set; }
         public int? CombatDice { get; set; }
-        public FeaturesModel Features { get; set; }
+        public List<FeaturesModel> Features { get; set; }
         public int? KiPoints { get; set; }
         public ProficiencyModel Proficiencies { get; set; }
         public int? Rage { get; set; }

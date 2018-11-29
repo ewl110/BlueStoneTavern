@@ -5,11 +5,10 @@ namespace DnD5E.Models
 {
     public class FeaturesModel : BaseModel
     {
+        public string AbilityModifier { get; set; }
         public List<ClassEnum> Class { get; set; }
         public new string[] Description { get; set; }
         public string Key { get; set; }
         public List<RaceEnum> Race { get; set; }
-
-        // should descriptions be a string array?
     }
 }

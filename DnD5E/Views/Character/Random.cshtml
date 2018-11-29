@@ -153,7 +153,8 @@
 
             <section class="character_features">
                 <h3>@Model.Class Features</h3>
-                <div class="content-wrapper">
+                @Html.Partial("_FeaturesList", Model.ClassFeatures)
+                @*<div class="content-wrapper">
                     <p><b>Dragon Ancestor:</b> Whenever you make a CHA check when interacting with dragons, your proficiency is doubled if it applies to the check.</p>
                 </div>
                 <div class="content-wrapper">
@@ -174,7 +175,7 @@
                     <p><b>Spells Known:</b></p>
                     <p>Cantrips (at will): <i>blade ward, mage hand, ray of frost, true strike</i></p>
                     <p>1st level (2 slots): <i>magic missile, shield</i></p>
-                </div>
+                </div>*@
             </section>
 
             <section class="character_equipment">

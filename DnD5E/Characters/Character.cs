@@ -59,6 +59,8 @@ namespace DnD5E.Characters
 
         public Character(int level)
         {
+            this.level = level;
+
             this.charBackgroundCard = Decks.BackgroundDeck.Cards.PullRandomCardFromDeck();
             this.charClassCard = Decks.ClassDeck.Cards.PullRandomCardFromDeck(true);
             this.charRaceCard = Decks.RaceDeck.Cards.PullRandomCardFromDeck(true);
@@ -76,7 +78,6 @@ namespace DnD5E.Characters
             this.id = CreateGuid();
             this.immunity = GetImmunities();
             this.languages = GetLanguages();
-            this.level = level;
             this.proficiencyBonus = GetProficiencyBonus();
             this.raceTraits = GetRaceTraits();
             this.resistance = GetResistances();
@@ -219,6 +220,50 @@ namespace DnD5E.Characters
         private List<FeaturesModel> GetClassFeatures()
         {
             List<FeaturesModel> features = new List<FeaturesModel>() { };
+
+            for (int i = 1; i <= this.level; i++)
+            {
+                if (this.charClassCard.Levels[i].Features != null)
+                {
+                    foreach (FeaturesModel item in this.charClassCard.Levels[i].Features)
+                    {
+                        features.Add(item);
+
+                        if (item.Name == "Spellcasting")
+                        {
+                            int abilityMod = 0;
+
+                            switch (item.AbilityModifier)
+                            {
+                                case "Cha":
+                                    abilityMod = this.abilityScores.ChaMod;
+                                    break;
+                                case "Int":
+                                    abilityMod = this.abilityScores.IntMod;
+                                    break;
+                                case "Wis":
+                                    abilityMod = this.abilityScores.WisMod;
+                                    break;
+                            }
+
+                            features.Add(new FeaturesModel {
+                                Name = "Spell Save DC",
+                                Description = new string[] {
+                                    (8 + abilityMod + GetProficiencyBonus()).ToString()
+                                },
+                            });
+
+                            features.Add(new FeaturesModel
+                            {
+                                Name = "Spell Attack Modifier",
+                                Description = new string[] {
+                                    $"+{abilityMod + GetProficiencyBonus()}"
+                                },
+                            });
+                        }
+                    }
+                }
+            }
 
             return features;
         }
