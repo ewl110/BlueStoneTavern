@@ -50,7 +50,7 @@ namespace DnD5E.Decks
                             Rage = 2,
                             RageDamage = 2
                         }
-                    }
+                    },
                 },
             },
             new ClassCard()

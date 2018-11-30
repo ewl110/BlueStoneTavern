@@ -10,7 +10,7 @@
             <section class="character_intro">
                 <h2>@Model.Race @Model.Class @Model.Level</h2>
                 <q class="character_flavorText">Do you hear that? It is the roaring in my blood.</q>
-                <img class="character_avatar" src="https://via.placeholder.com/150" alt="Character Name (Dragonborn Sorceror)" />
+                <img class="character_avatar" src="https://via.placeholder.com/150" alt="Character Name (@Model.Race @Model.Class)" />
                 <div class="content-wrapper">
                     <p>@Model.ClassDescription</p>
                 </div>
@@ -184,28 +184,6 @@
             <section class="character_features">
                 <h3>@Model.Class Features</h3>
                 @Html.Partial("_FeaturesList", Model.ClassFeatures)
-                @*<div class="content-wrapper">
-                    <p><b>Dragon Ancestor:</b> Whenever you make a CHA check when interacting with dragons, your proficiency is doubled if it applies to the check.</p>
-                </div>
-                <div class="content-wrapper">
-                    <p><b>Draconic Resilience:</b> As magic flows through your body, it causes physical traits of your dragon ancestor to emerge. Your hit point maximum increases by 1 at 1st level and whenever you gain a sorcerer level.</p>
-                    <p>Additionally, parts of your body are covered by a thin sheen of dragonlike scales. When you aren’t wearing armor, your AC equals 13 + your DEX modifier.</p>
-                </div>
-                <div class="content-wrapper">
-                    <p><b>Spellcasting:</b> CHA is your spellcasting ability for your sorcerer spells. You use your CHA whenever a spell refers to your spellcasting ability.</p>
-                    <p>To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p>
-                </div>
-                <div class="content-wrapper">
-                    <p><b>Spell Save DC:</b> 13</p>
-                </div>
-                <div class="content-wrapper">
-                    <p><b>Spell Attack Modifier:</b> +5</p>
-                </div>
-                <div class="content-wrapper">
-                    <p><b>Spells Known:</b></p>
-                    <p>Cantrips (at will): <i>blade ward, mage hand, ray of frost, true strike</i></p>
-                    <p>1st level (2 slots): <i>magic missile, shield</i></p>
-                </div>*@
             </section>
 
             <section class="character_equipment">

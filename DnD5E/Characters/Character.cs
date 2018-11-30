@@ -226,7 +226,7 @@ namespace DnD5E.Characters
 
             for (int i = 1; i <= this.level; i++)
             {
-                if (this.charClassCard.Levels[i].Features != null)
+                if (this.charClassCard.Levels.ContainsKey(i) && this.charClassCard.Levels[i].Features != null)
                 {
                     foreach (FeaturesModel item in this.charClassCard.Levels[i].Features)
                     {
@@ -345,7 +345,7 @@ namespace DnD5E.Characters
 
             for (int i = 1; i <= this.level; i++)
             {
-                if (this.charClassCard.Levels[i].Proficiencies != null)
+                if (this.charClassCard.Levels.ContainsKey(i) && this.charClassCard.Levels[i].Proficiencies != null)
                 {
                     var proficiencies = this.charClassCard.Levels[i].Proficiencies;
 

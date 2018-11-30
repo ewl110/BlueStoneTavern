@@ -92,7 +92,7 @@ namespace DnD5E.Controllers
         [Route("random")]
         public IActionResult Random()
         {
-            CharacterCard character = new Characters.Character().CreateNewCharacter();
+            CharacterCard character = new Characters.Character(6).CreateNewCharacter();
             return View(character);
         }
     }
