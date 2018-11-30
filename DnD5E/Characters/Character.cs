@@ -22,7 +22,7 @@ namespace DnD5E.Characters
         private AbilityScoresModel abilityScores;
         private int age;
         private CharacterBackgroundModel charBackground;
-        private string charClass;
+        private List<CharacterClassModel> charClass;
         private string charRace;
 
         private int deathSavesFailed;
@@ -33,7 +33,8 @@ namespace DnD5E.Characters
         private int hitPointMax;
 
         private string classDescription;
-        private List<FeaturesModel> classFeatures;
+        private List<FeaturesModel> classFeatures = new List<FeaturesModel>() { };
+        private string charClassPrimary;
         private List<string> immunity;
         private List<string> languages;
         private int passivePerception;
@@ -46,8 +47,7 @@ namespace DnD5E.Characters
         private List<FeaturesModel> raceTraits;
         private List<string> resistance;
         private int speed;
-
-        private int level;
+        private int totalLevel;
 
         public Guid Id {
             get
@@ -60,22 +60,28 @@ namespace DnD5E.Characters
 
         public Character(int level)
         {
-            this.level = level;
-
+            // Get required character data
             this.charBackgroundCard = Decks.BackgroundDeck.Cards.PullRandomCardFromDeck();
             this.charClassCard = Decks.ClassDeck.Cards.PullRandomCardFromDeck(true);
             this.charFactionCard = Decks.FactionDeck.Cards.PullRandomCardFromDeck();
             this.charRaceCard = Decks.RaceDeck.Cards.PullRandomCardFromDeck(true);
             this.charRaceVariantCard = this.charRaceCard.Variants.PullRandomCardFromDeck(true);
 
+            // Define classes and totalLevel
+            this.charClass = new List<CharacterClassModel> {
+                new CharacterClassModel()
+                    {
+                        Level = level,
+                        Name = this.charClassCard.Name,
+                    }
+                };
+            this.totalLevel = GetTotalLevel();
+
+            // Calculate modifiers
             this.abilityScores = GetAbilityScores( this.charClassCard.AbilityScores, this.charRaceCard.AbilityScores, this.charRaceVariantCard.AbilityScores );
             this.age = rng.Next(this.charRaceCard.AgeRange.Min, this.charRaceCard.AgeRange.Max);
             this.charBackground = GetBackground();
-            this.charClass = this.charClassCard.Name;
-            this.charRace = this.charRaceVariantCard.Name;
-            this.classDescription = this.charClassCard.Description;
-            this.classFeatures = GetClassFeatures();
-            this.hitDice = this.charClassCard.HitDice;
+            this.charClassPrimary = GetPrimaryClass();
             this.hitPointCurrent = this.hitPointMax = this.charClassCard.HitDice + this.abilityScores.ConMod;
             this.id = CreateGuid();
             this.immunity = GetImmunities();
@@ -85,7 +91,42 @@ namespace DnD5E.Characters
             this.resistance = GetResistances();
             this.speed = this.charRaceVariantCard.Speed != 30? this.charRaceVariantCard.Speed : this.charRaceCard.Speed;
 
+            GetClassFeatures();
             GetProficiencies();
+        }
+
+        private void AddSpellCastingFeatures(string abilityModifier)
+        {
+            int abilityMod = 0;
+
+            switch (abilityModifier)
+            {
+                case "Cha":
+                    abilityMod = this.abilityScores.ChaMod;
+                    break;
+                case "Int":
+                    abilityMod = this.abilityScores.IntMod;
+                    break;
+                case "Wis":
+                    abilityMod = this.abilityScores.WisMod;
+                    break;
+            }
+
+            this.classFeatures.Add(new FeaturesModel
+            {
+                Name = "Spell Save DC",
+                Description = new string[] {
+                    (8 + abilityMod + GetProficiencyBonus()).ToString()
+                },
+            });
+
+            this.classFeatures.Add(new FeaturesModel
+            {
+                Name = "Spell Attack Modifier",
+                Description = new string[] {
+                    $"+{abilityMod + GetProficiencyBonus()}"
+                },
+            });
         }
 
         private Guid CreateGuid()
@@ -108,12 +149,13 @@ namespace DnD5E.Characters
                 Age = this.age,
                 Background = this.charBackground,
                 Class = this.charClass,
-                ClassDescription = this.classDescription,
+                ClassDescription = this.charClassCard.Description,
                 ClassFeatures = this.classFeatures,
+                ClassPrimary = this.charClassPrimary,
                 Faction = this.charFactionCard,
                 HitPoints = new HitPointsModel
                 {
-                    HitDice = this.hitDice,
+                    HitDice = this.charClassCard.HitDice,
                     HitDiceAvailable = this.hitDice,
                     HitPointsCurrent = this.hitPointCurrent,
                     HitPointsMax = this.hitPointMax,
@@ -121,7 +163,6 @@ namespace DnD5E.Characters
                 Id = this.id,
                 Immunity = this.immunity,
                 Languages = this.languages,
-                Level = this.level,
                 PassivePerception = this.passivePerception,
                 ProficiencyArmor = this.proficiencyArmor,
                 ProficiencyBonus = this.proficiencyBonus,
@@ -129,11 +170,12 @@ namespace DnD5E.Characters
                 ProficiencySkills = this.proficiencySkills,
                 ProficiencyTools = this.proficiencyTools,
                 ProficiencyWeapons = this.proficiencyWeapons,
-                Race = this.charRace,
+                Race = this.charRaceVariantCard.Name,
                 RaceTraits = this.raceTraits,
                 Resistance = this.resistance,
                 Size = this.charRaceCard.Size,
-                Speed = this.speed
+                Speed = this.speed,
+                TotalLevel = this.totalLevel,
             };
 
             return randomCharacter;
@@ -220,55 +262,61 @@ namespace DnD5E.Characters
             return background;
         }
 
-        private List<FeaturesModel> GetClassFeatures()
+        private void GetClassFeatures()
         {
             List<FeaturesModel> features = new List<FeaturesModel>() { };
 
-            for (int i = 1; i <= this.level; i++)
+            // Loop through all the currently selected character classes
+            foreach (var charClass in this.charClass)
             {
-                if (this.charClassCard.Levels.ContainsKey(i) && this.charClassCard.Levels[i].Features != null)
+                // Find the mathching class in the ClassDeck
+                foreach (ClassCard c in Decks.ClassDeck.Cards)
                 {
-                    foreach (FeaturesModel item in this.charClassCard.Levels[i].Features)
+                    if (charClass.Name == c.Name)
                     {
-                        features.Add(item);
-
-                        if (item.Name == "Spellcasting")
+                        for (int i = 1; i <= charClass.Level; i++)
                         {
-                            int abilityMod = 0;
+                            string classVariant = "";
 
-                            switch (item.AbilityModifier)
+                            if (c.Levels.ContainsKey(i))
                             {
-                                case "Cha":
-                                    abilityMod = this.abilityScores.ChaMod;
-                                    break;
-                                case "Int":
-                                    abilityMod = this.abilityScores.IntMod;
-                                    break;
-                                case "Wis":
-                                    abilityMod = this.abilityScores.WisMod;
-                                    break;
+                                if (c.Levels[i].Features != null)
+                                {
+                                    foreach (FeaturesModel item in this.charClassCard.Levels[i].Features)
+                                    {
+                                        this.classFeatures.Add(item);
+
+                                        if (item.Name == "Spellcasting")
+                                        {
+                                            AddSpellCastingFeatures(item.AbilityModifier);
+                                        }
+                                    }
+                                }
+
+                                // Check if class variant exists
+                                if (charClass.Variant != null)
+                                {
+                                    classVariant = charClass.Variant;
+                                }
+
+                                // If class variant is found add the relevant features
+                                if (this.charClassCard.Levels[i].Variants != null && this.charClassCard.Levels[i].Variants.ContainsKey(classVariant) && this.charClassCard.Levels[i].Variants[classVariant].Features != null)
+                                {
+                                    foreach (FeaturesModel item in this.charClassCard.Levels[i].Variants[classVariant].Features)
+                                    {
+                                        this.classFeatures.Add(item);
+
+                                        if (item.Name == "Spellcasting")
+                                        {
+                                            AddSpellCastingFeatures(item.AbilityModifier);
+                                        }
+                                    }
+                                }
                             }
-
-                            features.Add(new FeaturesModel {
-                                Name = "Spell Save DC",
-                                Description = new string[] {
-                                    (8 + abilityMod + GetProficiencyBonus()).ToString()
-                                },
-                            });
-
-                            features.Add(new FeaturesModel
-                            {
-                                Name = "Spell Attack Modifier",
-                                Description = new string[] {
-                                    $"+{abilityMod + GetProficiencyBonus()}"
-                                },
-                            });
                         }
                     }
                 }
             }
-
-            return features;
         }
 
         private List<string> GetImmunities()
@@ -335,6 +383,23 @@ namespace DnD5E.Characters
             this.passivePerception = passivePerception;
         }
 
+        private string GetPrimaryClass()
+        {
+            string charClass = "";
+            int level = 0;
+
+            foreach (var c in this.charClass)
+            {
+                if ( c.Level > level )
+                {
+                    charClass = c.Name;
+                    level = c.Level;
+                }
+            }
+
+            return charClass;
+        }
+
         private void GetProficiencies()
         {
             this.proficiencyArmor = new List<string>() { };
@@ -343,17 +408,37 @@ namespace DnD5E.Characters
             this.proficiencyTools = new List<string>() { };
             this.proficiencyWeapons = new List<string>() { };
 
-            for (int i = 1; i <= this.level; i++)
+            foreach (var c in this.charClass)
             {
-                if (this.charClassCard.Levels.ContainsKey(i) && this.charClassCard.Levels[i].Proficiencies != null)
+                for (int i = 1; i <= c.Level; i++)
                 {
-                    var proficiencies = this.charClassCard.Levels[i].Proficiencies;
+                    if (this.charClassCard.Levels.ContainsKey(i) && this.charClassCard.Levels[i].Proficiencies != null)
+                    {
+                        string classVariant = "";
+                        var proficiencies = this.charClassCard.Levels[i].Proficiencies;
 
-                    this.proficiencyArmor = this.proficiencyArmor.Union(GetArmorProficiency(proficiencies)).ToList();
-                    this.proficiencySavingThrows = this.proficiencySavingThrows.Union(GetSavingThrowProficiency(proficiencies)).ToList();
-                    this.proficiencySkills = this.proficiencySkills.Union(GetSkillProficiency(proficiencies)).ToList();
-                    this.proficiencyTools = this.proficiencyTools.Union(GetToolProficiency(proficiencies)).ToList();
-                    this.proficiencyWeapons = this.proficiencyWeapons.Union(GetWeaponProficiency(proficiencies)).ToList();
+                        this.proficiencyArmor = this.proficiencyArmor.Union(GetArmorProficiency(proficiencies)).ToList();
+                        this.proficiencySavingThrows = this.proficiencySavingThrows.Union(GetSavingThrowProficiency(proficiencies)).ToList();
+                        this.proficiencySkills = this.proficiencySkills.Union(GetSkillProficiency(proficiencies)).ToList();
+                        this.proficiencyTools = this.proficiencyTools.Union(GetToolProficiency(proficiencies)).ToList();
+                        this.proficiencyWeapons = this.proficiencyWeapons.Union(GetWeaponProficiency(proficiencies)).ToList();
+
+                        if (c.Variant != null)
+                        {
+                            classVariant = c.Variant;
+                        }
+
+                        if (this.charClassCard.Levels[i].Variants != null && this.charClassCard.Levels[i].Variants.ContainsKey(classVariant) && this.charClassCard.Levels[i].Variants[classVariant].Proficiencies != null)
+                        {
+                            var proficienciesVariant = this.charClassCard.Levels[i].Variants[classVariant].Proficiencies;
+
+                            this.proficiencyArmor = this.proficiencyArmor.Union(GetArmorProficiency(proficienciesVariant)).ToList();
+                            this.proficiencySavingThrows = this.proficiencySavingThrows.Union(GetSavingThrowProficiency(proficienciesVariant)).ToList();
+                            this.proficiencySkills = this.proficiencySkills.Union(GetSkillProficiency(proficienciesVariant)).ToList();
+                            this.proficiencyTools = this.proficiencyTools.Union(GetToolProficiency(proficienciesVariant)).ToList();
+                            this.proficiencyWeapons = this.proficiencyWeapons.Union(GetWeaponProficiency(proficienciesVariant)).ToList();
+                        }
+                    }
                 }
             }
 
@@ -395,7 +480,7 @@ namespace DnD5E.Characters
 
         private int GetProficiencyBonus()
         {
-            int level = this.level;
+            int level = this.totalLevel;
             int proficiencyBonus = 2;
 
             if (level > 4)
@@ -579,6 +664,18 @@ namespace DnD5E.Characters
             }
 
             return tools;
+        }
+
+        private int GetTotalLevel()
+        {
+            int totalLevel = 0;
+
+            foreach (var c in this.charClass)
+            {
+                totalLevel += c.Level;
+            }
+
+            return totalLevel;
         }
 
         private List<string> GetWeaponProficiency(ProficiencyModel proficiencies)

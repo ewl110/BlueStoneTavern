@@ -10,7 +10,7 @@ namespace DnD5E.Decks
         public static List<ClassCard> Cards = new List<ClassCard>() {
             new ClassCard()
             {
-                Name = "Barbarian",
+                Name = ClassEnum.Barbarian.ToString(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 15,
@@ -55,7 +55,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = "Bard",
+                Name = ClassEnum.Bard.ToString(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 10,
@@ -99,7 +99,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = "Cleric",
+                Name = ClassEnum.Cleric.ToString(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 14,
@@ -141,7 +141,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = "Druid",
+                Name = ClassEnum.Druid.ToString(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 13,
@@ -205,7 +205,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = "Fighter",
+                Name = ClassEnum.Fighter.ToString(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 15,
@@ -249,7 +249,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = "Monk",
+                Name = ClassEnum.Monk.ToString(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 13,
@@ -286,7 +286,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = "Paladin",
+                Name = ClassEnum.Paladin.ToString(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 15,
@@ -330,7 +330,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = "Ranger",
+                Name = ClassEnum.Ranger.ToString(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 13,
@@ -373,7 +373,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = "Rogue",
+                Name = ClassEnum.Rogue.ToString(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 12,
@@ -417,7 +417,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = "Sorceror",
+                Name = ClassEnum.Sorcerer.ToString(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 10,
@@ -470,7 +470,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = "Warlock",
+                Name = ClassEnum.Warlock.ToString(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 8,
@@ -523,7 +523,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = "Wizard",
+                Name = ClassEnum.Wizard.ToString(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 8,

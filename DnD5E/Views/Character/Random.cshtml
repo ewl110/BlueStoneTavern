@@ -8,9 +8,9 @@
     <div class="row">
         <div class="col">
             <section class="character_intro">
-                <h2>@Model.Race @Model.Class @Model.Level</h2>
+                <h2>@Model.Race @Model.ClassPrimary @Model.TotalLevel</h2>
                 <q class="character_flavorText">Do you hear that? It is the roaring in my blood.</q>
-                <img class="character_avatar" src="https://via.placeholder.com/150" alt="Character Name (@Model.Race @Model.Class)" />
+                <img class="character_avatar" src="https://via.placeholder.com/150" alt="Character Name (@Model.Race @Model.ClassPrimary)" />
                 <div class="content-wrapper">
                     <p>@Model.ClassDescription</p>
                 </div>
@@ -23,7 +23,7 @@
                         <i>@Model.Size humanoid (@Model.Race), draconic bloodline, neutral good</i>
                         <div>
                             <b>Armor Class:</b> 14 (natural armor)
-                            <b>Hit Points:</b> @Model.HitPoints.HitPointsCurrent (Hit Dice @(Model.Level)d@(Model.HitPoints.HitDiceAvailable))
+                            <b>Hit Points:</b> @Model.HitPoints.HitPointsCurrent (Hit Dice @(Model.TotalLevel)d@(Model.HitPoints.HitDiceAvailable))
                             <b>Speed:</b> @Model.Speed ft.
                         </div>
                         <div>
@@ -182,7 +182,7 @@
             </section>
 
             <section class="character_features">
-                <h3>@Model.Class Features</h3>
+                <h3>@Model.ClassPrimary Features</h3>
                 @Html.Partial("_FeaturesList", Model.ClassFeatures)
             </section>
 
