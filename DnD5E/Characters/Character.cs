@@ -22,7 +22,7 @@ namespace DnD5E.Characters
         private AbilityScoresModel abilityScores;
         private int age;
         private CharacterBackgroundModel charBackground;
-        private List<CharacterClassModel> charClass;
+        private Dictionary<string, CharacterClassModel> charClass;
         private string charRace;
 
         private int deathSavesFailed;
@@ -65,18 +65,30 @@ namespace DnD5E.Characters
             this.charRaceVariantCard = this.charRaceCard.Variants.PullRandomCardFromDeck(true);
 
             // Define classes and totalLevel
-            this.charClass = new List<CharacterClassModel> {
-                new CharacterClassModel()
+            this.charClass = new Dictionary<string, CharacterClassModel> {
                 {
-                    Level = level,
-                    Name = this.charClassCard.Name,
-                },
-                new CharacterClassModel()
-                {
-                    Level = 1,
-                    Name = ClassEnum.Wizard.ToString(),
+                    this.charClassCard.Name,
+                    new CharacterClassModel()
+                    {
+                        Level = level,
+                        Name = this.charClassCard.Name,
+                    }
                 }
             };
+
+            //Test Multiclass
+            if (!this.charClass.ContainsKey(ClassEnum.Wizard.ToString()))
+            {
+                this.charClass.Add(
+                    ClassEnum.Wizard.ToString(),
+                    new CharacterClassModel()
+                    {
+                        Level = 1,
+                        Name = ClassEnum.Wizard.ToString()
+                    }
+                );
+            }
+
             this.totalLevel = GetTotalLevel();
 
             // Calculate modifiers
@@ -97,7 +109,7 @@ namespace DnD5E.Characters
             GetProficiencies();
         }
 
-        private void AddSpellCastingFeatures(string abilityModifier)
+        private void AddSpellCastingFeatures(string abilityModifier, string className)
         {
             int abilityMod = 0;
 
@@ -114,7 +126,7 @@ namespace DnD5E.Characters
                     break;
             }
 
-            this.classFeatures.Add(new FeaturesModel
+            this.charClass[className].Features.Add(new FeaturesModel
             {
                 Name = "Spell Save DC",
                 Description = new string[] {
@@ -122,7 +134,7 @@ namespace DnD5E.Characters
                 },
             });
 
-            this.classFeatures.Add(new FeaturesModel
+            this.charClass[className].Features.Add(new FeaturesModel
             {
                 Name = "Spell Attack Modifier",
                 Description = new string[] {
@@ -274,7 +286,7 @@ namespace DnD5E.Characters
         private void GetClassFeatures()
         {
             // Loop through all the currently selected character classes
-            foreach (CharacterClassModel charClass in this.charClass)
+            foreach (CharacterClassModel charClass in this.charClass.Values)
             {
                 // Find the mathching class in the ClassDeck
                 foreach (ClassCard c in Decks.ClassDeck.Cards)
@@ -291,11 +303,20 @@ namespace DnD5E.Characters
                                 {
                                     foreach (FeaturesModel item in c.Levels[i].Features)
                                     {
-                                        this.classFeatures.Add(item);
+                                        if (this.charClass.ContainsKey(c.Name))
+                                        {
+                                            if (this.charClass[c.Name].Features == null)
+                                            {
+                                                this.charClass[c.Name].Features = new List<FeaturesModel>
+                                                { };
+                                            }
+
+                                            this.charClass[c.Name].Features.Add(item);
+                                        }
 
                                         if (item.Name == "Spellcasting")
                                         {
-                                            AddSpellCastingFeatures(item.AbilityModifier);
+                                            AddSpellCastingFeatures(item.AbilityModifier, c.Name);
                                         }
                                     }
                                 }
@@ -311,11 +332,11 @@ namespace DnD5E.Characters
                                 {
                                     foreach (FeaturesModel item in this.charClassCard.Levels[i].Variants[classVariant].Features)
                                     {
-                                        this.classFeatures.Add(item);
+                                        this.charClass[c.Name].Features.Add(item);
 
                                         if (item.Name == "Spellcasting")
                                         {
-                                            AddSpellCastingFeatures(item.AbilityModifier);
+                                            AddSpellCastingFeatures(item.AbilityModifier, c.Name);
                                         }
                                     }
                                 }
@@ -395,7 +416,7 @@ namespace DnD5E.Characters
             string charClass = "";
             int level = 0;
 
-            foreach (var c in this.charClass)
+            foreach (var c in this.charClass.Values)
             {
                 if ( c.Level > level )
                 {
@@ -415,7 +436,7 @@ namespace DnD5E.Characters
             this.proficiencyTools = new List<string>() { };
             this.proficiencyWeapons = new List<string>() { };
 
-            foreach (var c in this.charClass)
+            foreach (var c in this.charClass.Values)
             {
                 for (int i = 1; i <= c.Level; i++)
                 {
@@ -677,7 +698,7 @@ namespace DnD5E.Characters
         {
             int totalLevel = 0;
 
-            foreach (var c in this.charClass)
+            foreach (var c in this.charClass.Values)
             {
                 totalLevel += c.Level;
             }

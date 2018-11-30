@@ -182,8 +182,14 @@
             </section>
 
             <section class="character_features">
-                <h3>@Model.ClassPrimary Features</h3>
-                @Html.Partial("_FeaturesList", Model.ClassFeatures)
+                @foreach (var charClass in Model.Class.Values)
+                {
+                    if (charClass.Features != null)
+                    {
+                        <h3>@charClass.Name Features (Level @(charClass.Level))</h3>
+                        @Html.Partial("_FeaturesList", charClass.Features)
+                    }
+                }
             </section>
 
             <section class="character_equipment">
