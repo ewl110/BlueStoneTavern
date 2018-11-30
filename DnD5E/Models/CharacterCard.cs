@@ -8,7 +8,7 @@ namespace DnD5E.Models
         public AbilityScoresModel AbilityScores { get; set; }
         public int Age { get; set; }
         public CharacterBackgroundModel Background { get; set; }
-        public List<CharacterClassModel> Class { get; set; }
+        public List<CharacterClassModel> Class { get; set; } // Switch to dictionary with string key to make adding class specific features easier?
         public string ClassPrimary { get; set; }
         public string ClassDescription { get; set; }
         public List<FeaturesModel> ClassFeatures { get; set; }
@@ -44,6 +44,7 @@ namespace DnD5E.Models
 
     public class CharacterClassModel : BaseCard
     {
+        public List<FeaturesModel> Features { get; set; }
         public int Level { get; set; }
         public string Variant { get; set; }
     }

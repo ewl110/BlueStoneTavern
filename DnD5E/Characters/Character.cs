@@ -67,11 +67,16 @@ namespace DnD5E.Characters
             // Define classes and totalLevel
             this.charClass = new List<CharacterClassModel> {
                 new CharacterClassModel()
-                    {
-                        Level = level,
-                        Name = this.charClassCard.Name,
-                    }
-                };
+                {
+                    Level = level,
+                    Name = this.charClassCard.Name,
+                },
+                new CharacterClassModel()
+                {
+                    Level = 1,
+                    Name = ClassEnum.Wizard.ToString(),
+                }
+            };
             this.totalLevel = GetTotalLevel();
 
             // Calculate modifiers
@@ -268,10 +273,8 @@ namespace DnD5E.Characters
 
         private void GetClassFeatures()
         {
-            List<FeaturesModel> features = new List<FeaturesModel>() { };
-
             // Loop through all the currently selected character classes
-            foreach (var charClass in this.charClass)
+            foreach (CharacterClassModel charClass in this.charClass)
             {
                 // Find the mathching class in the ClassDeck
                 foreach (ClassCard c in Decks.ClassDeck.Cards)
@@ -286,7 +289,7 @@ namespace DnD5E.Characters
                             {
                                 if (c.Levels[i].Features != null)
                                 {
-                                    foreach (FeaturesModel item in this.charClassCard.Levels[i].Features)
+                                    foreach (FeaturesModel item in c.Levels[i].Features)
                                     {
                                         this.classFeatures.Add(item);
 
