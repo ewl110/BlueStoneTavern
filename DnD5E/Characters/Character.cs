@@ -28,6 +28,7 @@ namespace DnD5E.Characters
         private int deathSavesFailed;
         private int deathSavesPassed;
 
+        private int attack = 1;
         private string classDescription;
         private List<FeaturesModel> classFeatures = new List<FeaturesModel>() { };
         private string charClassPrimary;
@@ -189,6 +190,7 @@ namespace DnD5E.Characters
             {
                 AbilityScores = this.abilityScores,
                 Age = this.age,
+                Attack = this.attack,
                 Background = this.charBackground,
                 Class = this.charClass,
                 ClassDescription = this.charClassCard.Description,
@@ -333,6 +335,11 @@ namespace DnD5E.Characters
                                             else
                                             {
                                                 this.charClass[c.Name].Features.Add(item);
+
+                                                if (item.Name == "Extra Attack")
+                                                {
+                                                    this.attack++;
+                                                }
                                             }
                                         }
                                     }
@@ -356,6 +363,11 @@ namespace DnD5E.Characters
                                         else
                                         {
                                             this.charClass[c.Name].Features.Add(item);
+
+                                            if (item.Name == "Extra Attack")
+                                            {
+                                                this.attack++;
+                                            }
                                         }
                                     }
                                 }

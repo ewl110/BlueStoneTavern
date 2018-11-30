@@ -2,6 +2,8 @@
 @{
     ViewData["Title"] = "Create Random Character";
     Layout = "_Layout";
+
+    string numberOfAttacks = Model.Attack == 1 ? "once" : Model.Attack == 2 ? "twice" : Model.Attack == 3 ? "three times" : "four times";
 }
 
 <div class="container">
@@ -119,7 +121,7 @@
                     <div class="col-sm-6">
                         <div class="character_actions">
                             <h4>Actions</h4>
-                            <p><b>Attack:</b> You can attack once when you take this action, using the following:</p>
+                            <p><b>Attack:</b> You can attack @numberOfAttacks when you take this action, using the following:</p>
                             <p><b>Quarterstaff:</b> <i>Melee Weapon Attack:</i> +2 to hit, reach 5 ft., one target. <i>Hit:</i> 1d8 bludgeoning damage. <i>Special:</i> Versatile (1d10 bludgeoning damage)</p>
                             <p><b>Dagger:</b> <i>Melee Weapon Attack:</i> +3 to hit, reach 5 ft., one target. <i>Hit:</i> 1d4 + 1 piercing damage. <i>Special:</i> Finesse, Thrown (20/60 ft.)</p>
                             <p><b>Dart:</b> <i>Ranged Weapon Attack:</i> +3 to hit, range 20/60 ft., one target. <i>Hit:</i> 1d4 + 1 piercing damage.</p>
