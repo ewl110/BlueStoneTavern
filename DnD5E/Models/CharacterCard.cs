@@ -11,6 +11,7 @@ namespace DnD5E.Models
         public string Class { get; set; }
         public string ClassDescription { get; set; }
         public List<FeaturesModel> ClassFeatures { get; set; }
+        public FactionCard Faction { get; set; }
         public int HitDice { get; set; }
         public HitPointsModel HitPoints { get; set; }
         public Guid Id { get; set; }

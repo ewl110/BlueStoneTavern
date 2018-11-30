@@ -151,11 +151,26 @@
                                 <p>@Model.Background.Feature.Description[i]</p>
                             }
                         }
+                    </div>
 
-                        <p><b>Faction:</b> You are a member of the Emerald Enclave, defenders of the wild lands.</p>
+                    <div class="content-wrapper">
+                        <p><b>Faction:</b> You are a member of the @Model.Faction.Name, @Model.Faction.Summary.</p>
+                        <p>@Model.Faction.Description</p>
+                    </div>
+
+                    <div class="content-wrapper">
                         <p><b>Personality Trait:</b> @Model.Background.Personality</p>
+                    </div>
+
+                    <div class="content-wrapper">
                         <p><b>Ideal:</b> @Model.Background.Ideal</p>
+                    </div>
+
+                    <div class="content-wrapper">
                         <p><b>Bond:</b> @Model.Background.Bond</p>
+                    </div>
+
+                    <div class="content-wrapper">
                         <p><b>Flaw:</b> @Model.Background.Flaw</p>
                     </div>
                 </div>

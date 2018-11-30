@@ -14,6 +14,7 @@ namespace DnD5E.Characters
 
         private BackgroundCard charBackgroundCard;
         private ClassCard charClassCard;
+        private FactionCard charFactionCard;
         private ClassCard charSubClassCard;
         private RaceCard charRaceCard;
         private RaceCard charRaceVariantCard;
@@ -63,6 +64,7 @@ namespace DnD5E.Characters
 
             this.charBackgroundCard = Decks.BackgroundDeck.Cards.PullRandomCardFromDeck();
             this.charClassCard = Decks.ClassDeck.Cards.PullRandomCardFromDeck(true);
+            this.charFactionCard = Decks.FactionDeck.Cards.PullRandomCardFromDeck();
             this.charRaceCard = Decks.RaceDeck.Cards.PullRandomCardFromDeck(true);
             this.charRaceVariantCard = this.charRaceCard.Variants.PullRandomCardFromDeck(true);
 
@@ -108,6 +110,7 @@ namespace DnD5E.Characters
                 Class = this.charClass,
                 ClassDescription = this.classDescription,
                 ClassFeatures = this.classFeatures,
+                Faction = this.charFactionCard,
                 HitPoints = new HitPointsModel
                 {
                     HitDice = this.hitDice,
