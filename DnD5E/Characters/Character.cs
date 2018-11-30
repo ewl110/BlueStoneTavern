@@ -28,6 +28,10 @@ namespace DnD5E.Characters
         private int deathSavesFailed;
         private int deathSavesPassed;
 
+        private List<string> actionAttack;
+        private List<ActionModel> actionBonus;
+        private List<ActionModel> actionOption;
+        private List<ActionModel> actionReaction;
         private int attack = 1;
         private string classDescription;
         private List<FeaturesModel> classFeatures = new List<FeaturesModel>() { };
@@ -106,7 +110,7 @@ namespace DnD5E.Characters
             this.speed = this.charRaceVariantCard.Speed != 30? this.charRaceVariantCard.Speed : this.charRaceCard.Speed;
 
             GetClassFeatures();
-            CalculateitPoints();
+            CalculateHitPoints();
             GetProficiencies();
         }
 
@@ -141,25 +145,9 @@ namespace DnD5E.Characters
             newFeature.Description.Add($"<b>Spell Attack Modifier:</b> +{abilityMod + GetProficiencyBonus()}");
 
             this.charClass[className].Features.Add(newFeature);
-
-            //this.charClass[className].Features.Add(new FeaturesModel
-            //{
-            //    Name = "Spell Save DC",
-            //    Description = new string[] {
-            //        (8 + abilityMod + GetProficiencyBonus()).ToString()
-            //    },
-            //});
-
-            //this.charClass[className].Features.Add(new FeaturesModel
-            //{
-            //    Name = "Spell Attack Modifier",
-            //    Description = new string[] {
-            //        $"+{abilityMod + GetProficiencyBonus()}"
-            //    },
-            //});
         }
 
-        private void CalculateitPoints()
+        private void CalculateHitPoints()
         {
             int hitDice = this.charClassCard.HitDice;
             int hitPointsMax = (hitDice + this.abilityScores.ConMod) + ((totalLevel - 1) * ((hitDice / 2) + 1 + this.abilityScores.ConMod));
@@ -259,6 +247,24 @@ namespace DnD5E.Characters
             return abilityScoreModifier;
         }
 
+        private void GetActions(ActionModel action)
+        {
+            switch (action.Type)
+            {
+                case "Attack":
+                    break;
+                case "Bonus":
+                    this.actionBonus.Add(action);
+                    break;
+                case "Option":
+                    this.actionOption.Add(action);
+                    break;
+                case "Reaction":
+                    this.actionReaction.Add(action);
+                    break;
+            }
+        }
+
         private List<string> GetArmorProficiency(ProficiencyModel proficiencies)
         {
             List<string> armorProficiency = new List<string>() { };
@@ -341,6 +347,11 @@ namespace DnD5E.Characters
                                                     this.attack++;
                                                 }
                                             }
+
+                                            if (item.Action != null)
+                                            {
+                                                GetActions(item.Action);
+                                            }
                                         }
                                     }
                                 }
@@ -368,6 +379,11 @@ namespace DnD5E.Characters
                                             {
                                                 this.attack++;
                                             }
+                                        }
+
+                                        if (item.Action != null)
+                                        {
+                                            GetActions(item.Action);
                                         }
                                     }
                                 }

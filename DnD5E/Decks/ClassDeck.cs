@@ -553,6 +553,11 @@ namespace DnD5E.Decks
                                         "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest."
                                     },
                                     AbilityModifier = AbilitiesEnum.Wis.ToString(),
+                                    Action = new ActionModel
+                                    {
+                                        Description = "Druid feature",
+                                        Type = ActionTypesEnum.Attack.ToString()
+                                    }
                                 }
                             },
                             Proficiencies = new ProficiencyModel
@@ -829,6 +834,11 @@ namespace DnD5E.Decks
                                         "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest."
                                     },
                                     AbilityModifier = AbilitiesEnum.Cha.ToString(),
+                                    Action = new ActionModel
+                                    {
+                                        Description = "Sorcerer feature",
+                                        Type = ActionTypesEnum.Attack.ToString()
+                                    }
                                 }
                             },
                             Proficiencies = new ProficiencyModel
@@ -882,6 +892,11 @@ namespace DnD5E.Decks
                                         "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest."
                                     },
                                     AbilityModifier = AbilitiesEnum.Cha.ToString(),
+                                    Action = new ActionModel
+                                    {
+                                        Description = "Warlock feature",
+                                        Type = ActionTypesEnum.Attack.ToString()
+                                    }
                                 }
                             },
                             Proficiencies = new ProficiencyModel
@@ -935,6 +950,11 @@ namespace DnD5E.Decks
                                         "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long or short rest."
                                     },
                                     AbilityModifier = AbilitiesEnum.Int.ToString(),
+                                    Action = new ActionModel
+                                    {
+                                        Description = "Wizard feature",
+                                        Type = ActionTypesEnum.Attack.ToString()
+                                    }
                                 }
                             },
                             Proficiencies = new ProficiencyModel

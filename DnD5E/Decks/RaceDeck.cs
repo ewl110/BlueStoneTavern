@@ -26,7 +26,7 @@ namespace DnD5E.Decks
                     {
                         Description = "Dragonborn trait",
                         Name = "Breath Weapon",
-                        Type = ActionTypesEnum.Action.ToString()
+                        Type = ActionTypesEnum.Attack.ToString()
                     },
                 },
                 AgeRange = new AgeRangeModel
@@ -43,6 +43,7 @@ namespace DnD5E.Decks
                 {
                     new RaceCard
                     {
+                        Name = "Dragonborn (Black)",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -64,14 +65,18 @@ namespace DnD5E.Decks
                             },
                             new FeaturesModel
                             {
-                                Name = "Breath weapon:",
+                                Name = "Breath weapon",
                                 Description = new List<string>
                                 {
                                     "You can use your action to exhale acid in a 5 ft. by 30 ft. line. Each creature in the affected area must make a DEX saving throw (DC = 8 + DEX modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
+                                },
+                                Action = new ActionModel
+                                {
+                                    Description = "Dragonborn trait",
+                                    Type = ActionTypesEnum.Attack.ToString()
                                 }
                             }
                         },
-                        Name = "Dragonborn (Black)",
                         Resistance = new string[]
                         {
                             DamageTypesEnum.Acid.ToString()
@@ -80,6 +85,7 @@ namespace DnD5E.Decks
                     },
                     new RaceCard
                     {
+                        Name = "Dragonborn (Blue)",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -105,10 +111,14 @@ namespace DnD5E.Decks
                                 Description = new List<string>
                                 {
                                     "You can use your action to exhale lightning in a 5 ft. by 30 ft. line. Each creature in the affected area must make a DEX saving throw (DC = 8 + DEX modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
+                                },
+                                Action = new ActionModel
+                                {
+                                    Description = "Dragonborn trait",
+                                    Type = ActionTypesEnum.Attack.ToString()
                                 }
                             }
                         },
-                        Name = "Dragonborn (Blue)",
                         Resistance = new string[]
                         {
                             DamageTypesEnum.Lightning.ToString()
@@ -117,6 +127,7 @@ namespace DnD5E.Decks
                     },
                     new RaceCard
                     {
+                        Name = "Dragonborn (Brass)",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -142,10 +153,14 @@ namespace DnD5E.Decks
                                 Description = new List<string>
                                 {
                                     "You can use your action to exhale fire in a 5 ft. by 30 ft. line. Each creature in the affected area must make a DEX saving throw (DC = 8 + DEX modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest.",
+                                },
+                                Action = new ActionModel
+                                {
+                                    Description = "Dragonborn trait",
+                                    Type = ActionTypesEnum.Attack.ToString()
                                 }
                             }
                         },
-                        Name = "Dragonborn (Brass)",
                         Resistance = new string[]
                         {
                             DamageTypesEnum.Fire.ToString()
@@ -154,6 +169,7 @@ namespace DnD5E.Decks
                     },
                     new RaceCard
                     {
+                        Name = "Dragonborn (Bronze)",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -179,10 +195,14 @@ namespace DnD5E.Decks
                                 Description = new List<string>
                                 {
                                     "You can use your action to exhale lightning in a 5 ft. by 30 ft. line. Each creature in the affected area must make a DEX saving throw (DC = 8 + DEX modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
+                                },
+                                Action = new ActionModel
+                                {
+                                    Description = "Dragonborn trait",
+                                    Type = ActionTypesEnum.Attack.ToString()
                                 }
                             }
                         },
-                        Name = "Dragonborn (Bronze)",
                         Resistance = new string[]
                         {
                             DamageTypesEnum.Lightning.ToString()
@@ -191,6 +211,7 @@ namespace DnD5E.Decks
                     },
                     new RaceCard
                     {
+                        Name = "Dragonborn (Copper)",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -216,10 +237,14 @@ namespace DnD5E.Decks
                                 Description = new List<string>
                                 {
                                     "You can use your action to exhale acid in a 5 ft. by 30 ft. line. Each creature in the affected area must make a DEX saving throw (DC = 8 + DEX modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
+                                },
+                                Action = new ActionModel
+                                {
+                                    Description = "Dragonborn trait",
+                                    Type = ActionTypesEnum.Attack.ToString()
                                 }
                             }
                         },
-                        Name = "Dragonborn (Copper)",
                         Resistance = new string[]
                         {
                             DamageTypesEnum.Acid.ToString()
@@ -228,6 +253,7 @@ namespace DnD5E.Decks
                     },
                     new RaceCard
                     {
+                        Name = "Dragonborn (Gold)",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -253,10 +279,14 @@ namespace DnD5E.Decks
                                 Description = new List<string>
                                 {
                                     "You can use your action to exhale fire in a 15 ft. cone. Each creature in the affected area must make a DEX saving throw (DC = 8 + DEX modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
+                                },
+                                Action = new ActionModel
+                                {
+                                    Description = "Dragonborn trait",
+                                    Type = ActionTypesEnum.Attack.ToString()
                                 }
                             }
                         },
-                        Name = "Dragonborn (Gold)",
                         Resistance = new string[]
                         {
                             DamageTypesEnum.Fire.ToString()
@@ -265,6 +295,7 @@ namespace DnD5E.Decks
                     },
                     new RaceCard
                     {
+                        Name = "Dragonborn (Green)",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -290,10 +321,14 @@ namespace DnD5E.Decks
                                 Description = new List<string>
                                 {
                                     "You can use your action to exhale fire in a 15 ft. cone. Each creature in the affected area must make a CON saving throw (DC = 8 + CON modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
+                                },
+                                Action = new ActionModel
+                                {
+                                    Description = "Dragonborn trait",
+                                    Type = ActionTypesEnum.Attack.ToString()
                                 }
                             }
                         },
-                        Name = "Dragonborn (Green)",
                         Resistance = new string[]
                         {
                             DamageTypesEnum.Poison.ToString()
@@ -302,6 +337,7 @@ namespace DnD5E.Decks
                     },
                     new RaceCard
                     {
+                        Name = "Dragonborn (Red)",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -327,10 +363,14 @@ namespace DnD5E.Decks
                                 Description = new List<string>
                                 {
                                     "You can use your action to exhale fire in a 15 ft. cone. Each creature in the affected area must make a DEX saving throw (DC = 8 + DEX modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
+                                },
+                                Action = new ActionModel
+                                {
+                                    Description = "Dragonborn trait",
+                                    Type = ActionTypesEnum.Attack.ToString()
                                 }
                             }
                         },
-                        Name = "Dragonborn (Red)",
                         Resistance = new string[]
                         {
                             DamageTypesEnum.Fire.ToString()
@@ -339,6 +379,7 @@ namespace DnD5E.Decks
                     },
                     new RaceCard
                     {
+                        Name = "Dragonborn (Silver)",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -364,10 +405,14 @@ namespace DnD5E.Decks
                                 Description = new List<string>
                                 {
                                     "You can use your action to exhale fire in a 15 ft. cone. Each creature in the affected area must make a CON saving throw (DC = 8 + CON modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest.",
+                                },
+                                Action = new ActionModel
+                                {
+                                    Description = "Dragonborn trait",
+                                    Type = ActionTypesEnum.Attack.ToString()
                                 }
                             }
                         },
-                        Name = "Dragonborn (Silver)",
                         Resistance = new string[]
                         {
                             DamageTypesEnum.Cold.ToString()
@@ -376,6 +421,7 @@ namespace DnD5E.Decks
                     },
                     new RaceCard
                     {
+                        Name = "Dragonborn (White)",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -401,10 +447,14 @@ namespace DnD5E.Decks
                                 Description = new List<string>
                                 {
                                     "You can use your action to exhale fire in a 15 ft. cone. Each creature in the affected area must make a CON saving throw (DC = 8 + CON modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
+                                },
+                                Action = new ActionModel
+                                {
+                                    Description = "Dragonborn trait",
+                                    Type = ActionTypesEnum.Attack.ToString()
                                 }
                             }
                         },
-                        Name = "Dragonborn (White)",
                         Resistance = new string[]
                         {
                             DamageTypesEnum.Cold.ToString()
@@ -872,6 +922,11 @@ namespace DnD5E.Decks
                                 Description = new List<string>
                                 {
                                     "As a bonus action, you can magically teleport up to 30 ft. to an unoccupied space you can see. Once you use this trait, you can't do so again until you finish a long rest. Starting at 3rd level, you also gain resistance to all damage when you teleport using this trait. The resistance lasts until the start of your next turn. During that time, you appear ghostly and translucent."
+                                },
+                                Action = new ActionModel
+                                {
+                                    Description = "Shadar-Kai trait",
+                                    Type = ActionTypesEnum.Bonus.ToString()
                                 }
                             },
                         },
@@ -1018,7 +1073,7 @@ namespace DnD5E.Decks
                             LanguagesEnum.Undercommon.ToString()
                         },
                         Name = "Deep Gnome",
-                        Weight = (int)RarityEnum.Rare
+                        Weight = (int)RarityEnum.VeryRare
                     },
                     new RaceCard
                     {

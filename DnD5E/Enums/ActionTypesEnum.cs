@@ -2,7 +2,7 @@
 {
     public enum ActionTypesEnum
     {
-        Action,
+        Attack,
         Bonus,
         Movement,
         Option,

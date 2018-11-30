@@ -6,6 +6,9 @@ namespace DnD5E.Models
     public class CharacterCard
     {
         public AbilityScoresModel AbilityScores { get; set; }
+        public List<ActionModel> ActionBonus { get; set; }
+        public List<ActionModel> ActionOption { get; set; }
+        public List<ActionModel> ActionReaction { get; set; }
         public int Age { get; set; }
         public int Attack { get; set; }
         public CharacterBackgroundModel Background { get; set; }
