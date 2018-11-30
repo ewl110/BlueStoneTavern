@@ -10,6 +10,7 @@ namespace DnD5E.Decks
         public static List<RaceCard> Cards = new List<RaceCard>() {
             new RaceCard()
             {
+                Name = "Dragonborn",
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 2,
@@ -38,7 +39,6 @@ namespace DnD5E.Decks
                     LanguagesEnum.Common.ToString(),
                     LanguagesEnum.Draconic.ToString(),
                 },
-                Name = "Dragonborn",
                 Variants = new List<RaceCard>()
                 {
                     new RaceCard
@@ -416,6 +416,7 @@ namespace DnD5E.Decks
             },
             new RaceCard()
             {
+                Name = "Dwarf",
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 0,
@@ -478,7 +479,6 @@ namespace DnD5E.Decks
                     LanguagesEnum.Common.ToString(),
                     LanguagesEnum.Dwarvish.ToString(),
                 },
-                Name = "Dwarf",
                 Proficiencies = new ProficiencyModel
                 {
                     Tools = new string[]
@@ -486,7 +486,12 @@ namespace DnD5E.Decks
                         "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."
                     },
                     Weapons = new string[]
-                    {}
+                    {
+                        WeaponsEnum.Battleaxe.ToString(),
+                        WeaponsEnum.Handaxe.ToString(),
+                        WeaponsEnum.HammerThrowing.GetAttributeOfType<DescriptionAttribute>().Description,
+                        WeaponsEnum.Warhammer.ToString()
+                    }
                 },
                 Resistance = new string[]
                 {
@@ -497,6 +502,7 @@ namespace DnD5E.Decks
                 {
                     new RaceCard
                     {
+                        Name = "Duergar",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 1,
@@ -545,11 +551,11 @@ namespace DnD5E.Decks
                         {
                             LanguagesEnum.Undercommon.ToString()
                         },
-                        Name = "Duergar",
                         Weight = (int)RarityEnum.VeryRare
                     },
                     new RaceCard
                     {
+                        Name = "Hill Dwarf",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -570,11 +576,11 @@ namespace DnD5E.Decks
                                 }
                             }
                         },
-                        Name = "Hill Dwarf",
                         Weight = (int)RarityEnum.Common
                     },
                     new RaceCard
                     {
+                        Name = "Mountain Dwarf",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 2,
@@ -595,7 +601,6 @@ namespace DnD5E.Decks
                                 }
                             }
                         },
-                        Name = "Mountain Dwarf",
                         Proficiencies = new ProficiencyModel
                         {
                             Armor = new string[]
@@ -611,6 +616,7 @@ namespace DnD5E.Decks
             },
             new RaceCard()
             {
+                Name = "Elf",
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 0,
@@ -665,7 +671,6 @@ namespace DnD5E.Decks
                     LanguagesEnum.Common.ToString(),
                     LanguagesEnum.Elvish.ToString(),
                 },
-                Name = "Elf",
                 Proficiencies = new ProficiencyModel
                 {
                     Skills = new string[]
@@ -677,6 +682,7 @@ namespace DnD5E.Decks
                 {
                     new RaceCard
                     {
+                        Name = "Drow",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -722,11 +728,20 @@ namespace DnD5E.Decks
                                 }
                             }
                         },
-                        Name = "Drow",
+                        Proficiencies = new ProficiencyModel
+                        {
+                            Weapons = new string[]
+                            {
+                                WeaponsEnum.Rapier.ToString(),
+                                WeaponsEnum.Shortsword.ToString(),
+                                WeaponsEnum.CrossbowHand.GetAttributeOfType<DescriptionAttribute>().Description
+                            }
+                        },
                         Weight = (int)RarityEnum.VeryRare
                     },
                     new RaceCard
                     {
+                        Name = "High Elf",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -760,11 +775,21 @@ namespace DnD5E.Decks
                         {
                             LanguagesEnum.SelectLanguage.GetAttributeOfType<DescriptionAttribute>().Description
                         },
-                        Name = "High Elf",
+                        Proficiencies = new ProficiencyModel
+                        {
+                            Weapons = new string[]
+                            {
+                                WeaponsEnum.Longsword.ToString(),
+                                WeaponsEnum.Shortsword.ToString(),
+                                WeaponsEnum.Shortbow.ToString(),
+                                WeaponsEnum.Longbow.ToString()
+                            }
+                        },
                         Weight = (int)RarityEnum.Common
                     },
                     new RaceCard
                     {
+                        Name = "Sea Elf",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -806,11 +831,21 @@ namespace DnD5E.Decks
                         {
                             LanguagesEnum.Aquan.ToString()
                         },
-                        Name = "Sea Elf",
+                        Proficiencies = new ProficiencyModel
+                        {
+                            Weapons = new string[]
+                            {
+                                WeaponsEnum.Spear.ToString(),
+                                WeaponsEnum.Trident.ToString(),
+                                WeaponsEnum.CrossbowLight.GetAttributeOfType<DescriptionAttribute>().Description,
+                                WeaponsEnum.Net.ToString()
+                            }
+                        },
                         Weight = (int)RarityEnum.Rare
                     },
                     new RaceCard
                     {
+                        Name = "Shadar-Kai",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -840,7 +875,6 @@ namespace DnD5E.Decks
                                 }
                             },
                         },
-                        Name = "Shadar-Kai",
                         Resistance = new string[]
                         {
                             DamageTypesEnum.Necrotic.ToString()
@@ -849,6 +883,7 @@ namespace DnD5E.Decks
                     },
                     new RaceCard
                     {
+                        Name = "Wood Elf",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -886,7 +921,16 @@ namespace DnD5E.Decks
                                 }
                             },
                         },
-                        Name = "Wood Elf",
+                        Proficiencies = new ProficiencyModel
+                        {
+                            Weapons = new string[]
+                            {
+                                WeaponsEnum.Longsword.ToString(),
+                                WeaponsEnum.Shortsword.ToString(),
+                                WeaponsEnum.Shortbow.ToString(),
+                                WeaponsEnum.Longbow.ToString()
+                            }
+                        },
                         Speed = 35,
                         Weight = (int)RarityEnum.Common
                     },

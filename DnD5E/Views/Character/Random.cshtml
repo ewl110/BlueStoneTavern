@@ -57,27 +57,42 @@
                         <div class="character_proficiencies">
                             <div class="content-wrapper">
                                 <p><b>Proficiencies</b> (+@Model.ProficiencyBonus proficiency bonus)</p>
-
-                                <p><b>Saving Throws:</b> @string.Join(", ", Model.ProficiencySavingThrows)</p>
-
-                                <p><b>Skills:</b> @string.Join(", ", Model.ProficiencySkills)</p>
-
-                                @if (Model.ProficiencyTools.Count > 0)
-                                {
-                                    <div class="content-wrapper">
-                                        <p><b>Tools:</b> @string.Join(", ", Model.ProficiencyTools)</p>
-                                    </div>
-                                }
-
-                                <p><b>Weapons:</b> Daggers, Darts, Light Crossbows, Quarterstaffs, Slings</p>
-
-                                @if (Model.ProficiencyArmor.Count > 0)
-                                {
-                                    <div class="content-wrapper">
-                                        <p><b>Armor:</b> @string.Join(", ", Model.ProficiencyArmor)</p>
-                                    </div>
-                                }
                             </div>
+
+                            @if (Model.ProficiencySavingThrows.Count > 0)
+                            {
+                                <div class="content-wrapper">
+                                    <p><b>Saving Throws:</b> @string.Join(", ", Model.ProficiencySavingThrows)</p>
+                                </div>
+                            }
+
+                            @if (Model.ProficiencySkills.Count > 0)
+                            {
+                                <div class="content-wrapper">
+                                    <p><b>Skills:</b> @string.Join(", ", Model.ProficiencySkills)</p>
+                                </div>
+                            }
+
+                            @if (Model.ProficiencyTools.Count > 0)
+                            {
+                                <div class="content-wrapper">
+                                    <p><b>Tools:</b> @string.Join(", ", Model.ProficiencyTools)</p>
+                                </div>
+                            }
+
+                            @if (Model.ProficiencyWeapons.Count > 0)
+                            {
+                                <div class="content-wrapper">
+                                    <p><b>Weapons:</b> @string.Join(", ", Model.ProficiencyWeapons)</p>
+                                </div>
+                            }
+
+                            @if (Model.ProficiencyArmor.Count > 0)
+                            {
+                                <div class="content-wrapper">
+                                    <p><b>Armor:</b> @string.Join(", ", Model.ProficiencyArmor)</p>
+                                </div>
+                            }
 
                             @if (Model.Resistance.Count > 0)
                             {

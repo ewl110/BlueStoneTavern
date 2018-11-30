@@ -350,6 +350,7 @@ namespace DnD5E.Characters
                     this.proficiencySavingThrows = this.proficiencySavingThrows.Union(GetSavingThrowProficiency(proficiencies)).ToList();
                     this.proficiencySkills = this.proficiencySkills.Union(GetSkillProficiency(proficiencies)).ToList();
                     this.proficiencyTools = this.proficiencyTools.Union(GetToolProficiency(proficiencies)).ToList();
+                    this.proficiencyWeapons = this.proficiencyWeapons.Union(GetWeaponProficiency(proficiencies)).ToList();
                 }
             }
 
@@ -361,6 +362,7 @@ namespace DnD5E.Characters
                 this.proficiencySavingThrows = this.proficiencySavingThrows.Union(GetSavingThrowProficiency(proficiencies)).ToList();
                 this.proficiencySkills = this.proficiencySkills.Union(GetSkillProficiency(proficiencies)).ToList();
                 this.proficiencyTools = this.proficiencyTools.Union(GetToolProficiency(proficiencies)).ToList();
+                this.proficiencyWeapons = this.proficiencyWeapons.Union(GetWeaponProficiency(proficiencies)).ToList();
             }
 
             if (this.charRaceCard.Proficiencies != null)
@@ -371,6 +373,7 @@ namespace DnD5E.Characters
                 this.proficiencySavingThrows = this.proficiencySavingThrows.Union(GetSavingThrowProficiency(proficiencies)).ToList();
                 this.proficiencySkills = this.proficiencySkills.Union(GetSkillProficiency(proficiencies)).ToList();
                 this.proficiencyTools = this.proficiencyTools.Union(GetToolProficiency(proficiencies)).ToList();
+                this.proficiencyWeapons = this.proficiencyWeapons.Union(GetWeaponProficiency(proficiencies)).ToList();
             }
 
             if (this.charRaceVariantCard.Proficiencies != null)
@@ -381,6 +384,7 @@ namespace DnD5E.Characters
                 this.proficiencySavingThrows = this.proficiencySavingThrows.Union(GetSavingThrowProficiency(proficiencies)).ToList();
                 this.proficiencySkills = this.proficiencySkills.Union(GetSkillProficiency(proficiencies)).ToList();
                 this.proficiencyTools = this.proficiencyTools.Union(GetToolProficiency(proficiencies)).ToList();
+                this.proficiencyWeapons = this.proficiencyWeapons.Union(GetWeaponProficiency(proficiencies)).ToList();
             }
 
             GetPassivePerception();
@@ -572,6 +576,21 @@ namespace DnD5E.Characters
             }
 
             return tools;
+        }
+
+        private List<string> GetWeaponProficiency(ProficiencyModel proficiencies)
+        {
+            List<string> weapons = new List<string>() { };
+
+            if (proficiencies.Weapons != null)
+            {
+                foreach (var item in proficiencies.Weapons)
+                {
+                    weapons.Add(item);
+                }
+            }
+
+            return weapons;
         }
     }
 }

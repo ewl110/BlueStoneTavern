@@ -40,6 +40,11 @@ namespace DnD5E.Decks
                                 {
                                     AbilitiesEnum.Str.ToString(),
                                     AbilitiesEnum.Con.ToString(),
+                                },
+                                Weapons = new string[]
+                                {
+                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
+                                    WeaponsEnum.MartialWeapon.GetAttributeOfType<DescriptionAttribute>().Description
                                 }
                             },
                             Rage = 2,
@@ -78,6 +83,14 @@ namespace DnD5E.Decks
                                 {
                                     AbilitiesEnum.Dex.ToString(),
                                     AbilitiesEnum.Cha.ToString(),
+                                },
+                                Weapons = new string[]
+                                {
+                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
+                                    WeaponsEnum.Longsword.ToString(),
+                                    WeaponsEnum.Rapier.ToString(),
+                                    WeaponsEnum.Shortsword.ToString(),
+                                    WeaponsEnum.CrossbowHand.GetAttributeOfType<DescriptionAttribute>().Description
                                 }
                             },
                         }
@@ -116,6 +129,10 @@ namespace DnD5E.Decks
                                 {
                                     AbilitiesEnum.Wis.ToString(),
                                     AbilitiesEnum.Cha.ToString(),
+                                },
+                                Weapons = new string[]
+                                {
+                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
                                 }
                             },
                         }
@@ -167,6 +184,19 @@ namespace DnD5E.Decks
                                 {
                                     AbilitiesEnum.Int.ToString(),
                                     AbilitiesEnum.Wis.ToString(),
+                                },
+                                Weapons = new string[]
+                                {
+                                    WeaponsEnum.Club.ToString(),
+                                    WeaponsEnum.Dagger.ToString(),
+                                    WeaponsEnum.Dart.ToString(),
+                                    WeaponsEnum.Javelin.ToString(),
+                                    WeaponsEnum.Mace.ToString(),
+                                    WeaponsEnum.Quarterstaff.ToString(),
+                                    WeaponsEnum.Scimitar.ToString(),
+                                    WeaponsEnum.Sickle.ToString(),
+                                    WeaponsEnum.Sling.ToString(),
+                                    WeaponsEnum.Spear.ToString(),
                                 }
                             },
                         }
@@ -206,6 +236,11 @@ namespace DnD5E.Decks
                                 {
                                     AbilitiesEnum.Str.ToString(),
                                     AbilitiesEnum.Con.ToString(),
+                                },
+                                Weapons = new string[]
+                                {
+                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
+                                    WeaponsEnum.MartialWeapon.GetAttributeOfType<DescriptionAttribute>().Description
                                 }
                             },
                         }
@@ -238,6 +273,11 @@ namespace DnD5E.Decks
                                 {
                                     AbilitiesEnum.Str.ToString(),
                                     AbilitiesEnum.Dex.ToString(),
+                                },
+                                Weapons = new string[]
+                                {
+                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
+                                    WeaponsEnum.Shortsword.ToString(),
                                 }
                             },
                         }
@@ -277,6 +317,11 @@ namespace DnD5E.Decks
                                 {
                                     AbilitiesEnum.Wis.ToString(),
                                     AbilitiesEnum.Cha.ToString(),
+                                },
+                                Weapons = new string[]
+                                {
+                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
+                                    WeaponsEnum.MartialWeapon.GetAttributeOfType<DescriptionAttribute>().Description
                                 }
                             },
                         }
@@ -315,6 +360,11 @@ namespace DnD5E.Decks
                                 {
                                     AbilitiesEnum.Str.ToString(),
                                     AbilitiesEnum.Dex.ToString(),
+                                },
+                                Weapons = new string[]
+                                {
+                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
+                                    WeaponsEnum.MartialWeapon.GetAttributeOfType<DescriptionAttribute>().Description
                                 }
                             },
                         }
@@ -351,6 +401,14 @@ namespace DnD5E.Decks
                                 {
                                     AbilitiesEnum.Dex.ToString(),
                                     AbilitiesEnum.Int.ToString(),
+                                },
+                                Weapons = new string[]
+                                {
+                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
+                                    WeaponsEnum.Longsword.ToString(),
+                                    WeaponsEnum.Rapier.ToString(),
+                                    WeaponsEnum.Shortsword.ToString(),
+                                    WeaponsEnum.CrossbowHand.GetAttributeOfType<DescriptionAttribute>().Description
                                 }
                             },
                         }
@@ -396,6 +454,14 @@ namespace DnD5E.Decks
                                 {
                                     AbilitiesEnum.Con.ToString(),
                                     AbilitiesEnum.Cha.ToString(),
+                                },
+                                Weapons = new string[]
+                                {
+                                    WeaponsEnum.Dagger.ToString(),
+                                    WeaponsEnum.Dart.ToString(),
+                                    WeaponsEnum.Sling.ToString(),
+                                    WeaponsEnum.Quarterstaff.ToString(),
+                                    WeaponsEnum.CrossbowLight.GetAttributeOfType<DescriptionAttribute>().Description
                                 }
                             },
                         }
@@ -445,6 +511,10 @@ namespace DnD5E.Decks
                                 {
                                     AbilitiesEnum.Wis.ToString(),
                                     AbilitiesEnum.Cha.ToString(),
+                                },
+                                Weapons = new string[]
+                                {
+                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
                                 }
                             },
                         }
@@ -490,6 +560,14 @@ namespace DnD5E.Decks
                                 {
                                     AbilitiesEnum.Int.ToString(),
                                     AbilitiesEnum.Wis.ToString(),
+                                },
+                                Weapons = new string[]
+                                {
+                                    WeaponsEnum.Dagger.ToString(),
+                                    WeaponsEnum.Dart.ToString(),
+                                    WeaponsEnum.Sling.ToString(),
+                                    WeaponsEnum.Quarterstaff.ToString(),
+                                    WeaponsEnum.CrossbowLight.GetAttributeOfType<DescriptionAttribute>().Description
                                 }
                             },
                         }
