@@ -27,14 +27,11 @@ namespace DnD5E.Characters
 
         private int deathSavesFailed;
         private int deathSavesPassed;
-        private int hitDice;
-        private int hitDiceUsed;
-        private int hitPointCurrent;
-        private int hitPointMax;
 
         private string classDescription;
         private List<FeaturesModel> classFeatures = new List<FeaturesModel>() { };
         private string charClassPrimary;
+        private HitPointsModel hitPoints;
         private List<string> immunity;
         private List<string> languages;
         private int passivePerception;
@@ -82,7 +79,6 @@ namespace DnD5E.Characters
             this.age = rng.Next(this.charRaceCard.AgeRange.Min, this.charRaceCard.AgeRange.Max);
             this.charBackground = GetBackground();
             this.charClassPrimary = GetPrimaryClass();
-            this.hitPointCurrent = this.hitPointMax = this.charClassCard.HitDice + this.abilityScores.ConMod;
             this.id = CreateGuid();
             this.immunity = GetImmunities();
             this.languages = GetLanguages();
@@ -92,6 +88,7 @@ namespace DnD5E.Characters
             this.speed = this.charRaceVariantCard.Speed != 30? this.charRaceVariantCard.Speed : this.charRaceCard.Speed;
 
             GetClassFeatures();
+            CalculateitPoints();
             GetProficiencies();
         }
 
@@ -129,6 +126,19 @@ namespace DnD5E.Characters
             });
         }
 
+        private void CalculateitPoints()
+        {
+            int hitDice = this.charClassCard.HitDice;
+            int hitPointsMax = (hitDice + this.abilityScores.ConMod) + ((totalLevel - 1) * ((hitDice / 2) + 1 + this.abilityScores.ConMod));
+            this.hitPoints = new HitPointsModel
+            {
+                HitDice = hitDice,
+                HitDiceAvailable = this.totalLevel,
+                HitPointsCurrent = hitPointsMax,
+                HitPointsMax = hitPointsMax,
+            };
+        }
+
         private Guid CreateGuid()
         {
             Guid id = Guid.Empty;
@@ -153,13 +163,7 @@ namespace DnD5E.Characters
                 ClassFeatures = this.classFeatures,
                 ClassPrimary = this.charClassPrimary,
                 Faction = this.charFactionCard,
-                HitPoints = new HitPointsModel
-                {
-                    HitDice = this.charClassCard.HitDice,
-                    HitDiceAvailable = this.hitDice,
-                    HitPointsCurrent = this.hitPointCurrent,
-                    HitPointsMax = this.hitPointMax,
-                },
+                HitPoints = this.hitPoints,
                 Id = this.id,
                 Immunity = this.immunity,
                 Languages = this.languages,

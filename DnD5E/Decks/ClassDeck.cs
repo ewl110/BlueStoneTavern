@@ -297,7 +297,7 @@ namespace DnD5E.Decks
                     Cha = 14
                 },
                 Description = "You are a holy warrior bound to a sacred oath.",
-                HitDice = 8,
+                HitDice = 10,
                 Levels = new Dictionary<int, LevelModel>()
                 {
                     {
