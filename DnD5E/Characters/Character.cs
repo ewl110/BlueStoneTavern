@@ -28,7 +28,7 @@ namespace DnD5E.Characters
         private int deathSavesFailed;
         private int deathSavesPassed;
 
-        private List<string> actionAttack;
+        private List<ActionModel> actionAttack;
         private List<ActionModel> actionBonus;
         private List<ActionModel> actionOption;
         private List<ActionModel> actionReaction;
@@ -62,6 +62,11 @@ namespace DnD5E.Characters
 
         public Character(int level)
         {
+            this.actionAttack = new List<ActionModel> { };
+            this.actionBonus = new List<ActionModel> { };
+            this.actionOption = new List<ActionModel> { };
+            this.actionReaction = new List<ActionModel> { };
+
             // Get required character data
             this.charBackgroundCard = Decks.BackgroundDeck.Cards.PullRandomCardFromDeck();
             this.charClassCard = Decks.ClassDeck.Cards.PullRandomCardFromDeck(true);
@@ -177,6 +182,10 @@ namespace DnD5E.Characters
             CharacterCard randomCharacter = new CharacterCard()
             {
                 AbilityScores = this.abilityScores,
+                ActionAttack = this.actionAttack,
+                ActionBonus = this.actionBonus,
+                ActionOption = this.actionOption,
+                ActionReaction = this.actionReaction,
                 Age = this.age,
                 Attack = this.attack,
                 Background = this.charBackground,
@@ -252,6 +261,14 @@ namespace DnD5E.Characters
             switch (action.Type)
             {
                 case "Attack":
+                    if (action.Weapon != null)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        this.actionAttack.Add(action);
+                    }
                     break;
                 case "Bonus":
                     this.actionBonus.Add(action);
@@ -590,6 +607,11 @@ namespace DnD5E.Characters
                 foreach (var item in this.charRaceCard.Features)
                 {
                     traits.Add(item);
+
+                    if (item.Action != null)
+                    {
+                        GetActions(item.Action);
+                    }
                 }
             }
 
@@ -598,6 +620,11 @@ namespace DnD5E.Characters
                 foreach (var item in this.charRaceVariantCard.Features)
                 {
                     traits.Add(item);
+
+                    if (item.Action != null)
+                    {
+                        GetActions(item.Action);
+                    }
                 }
             }
 

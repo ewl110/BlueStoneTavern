@@ -73,6 +73,7 @@ namespace DnD5E.Decks
                                 Action = new ActionModel
                                 {
                                     Description = "Dragonborn trait",
+                                    Name = "Breath weapon",
                                     Type = ActionTypesEnum.Attack.ToString()
                                 }
                             }
@@ -114,6 +115,7 @@ namespace DnD5E.Decks
                                 },
                                 Action = new ActionModel
                                 {
+                                    Name = "Breath weapon",
                                     Description = "Dragonborn trait",
                                     Type = ActionTypesEnum.Attack.ToString()
                                 }
@@ -156,6 +158,7 @@ namespace DnD5E.Decks
                                 },
                                 Action = new ActionModel
                                 {
+                                    Name = "Breath weapon",
                                     Description = "Dragonborn trait",
                                     Type = ActionTypesEnum.Attack.ToString()
                                 }
@@ -198,6 +201,7 @@ namespace DnD5E.Decks
                                 },
                                 Action = new ActionModel
                                 {
+                                    Name = "Breath weapon",
                                     Description = "Dragonborn trait",
                                     Type = ActionTypesEnum.Attack.ToString()
                                 }
@@ -240,6 +244,7 @@ namespace DnD5E.Decks
                                 },
                                 Action = new ActionModel
                                 {
+                                    Name = "Breath weapon",
                                     Description = "Dragonborn trait",
                                     Type = ActionTypesEnum.Attack.ToString()
                                 }
@@ -282,6 +287,7 @@ namespace DnD5E.Decks
                                 },
                                 Action = new ActionModel
                                 {
+                                    Name = "Breath weapon",
                                     Description = "Dragonborn trait",
                                     Type = ActionTypesEnum.Attack.ToString()
                                 }
@@ -324,6 +330,7 @@ namespace DnD5E.Decks
                                 },
                                 Action = new ActionModel
                                 {
+                                    Name = "Breath weapon",
                                     Description = "Dragonborn trait",
                                     Type = ActionTypesEnum.Attack.ToString()
                                 }
@@ -366,6 +373,7 @@ namespace DnD5E.Decks
                                 },
                                 Action = new ActionModel
                                 {
+                                    Name = "Breath weapon",
                                     Description = "Dragonborn trait",
                                     Type = ActionTypesEnum.Attack.ToString()
                                 }
@@ -408,6 +416,7 @@ namespace DnD5E.Decks
                                 },
                                 Action = new ActionModel
                                 {
+                                    Name = "Breath weapon",
                                     Description = "Dragonborn trait",
                                     Type = ActionTypesEnum.Attack.ToString()
                                 }
@@ -450,6 +459,7 @@ namespace DnD5E.Decks
                                 },
                                 Action = new ActionModel
                                 {
+                                    Name = "Breath weapon",
                                     Description = "Dragonborn trait",
                                     Type = ActionTypesEnum.Attack.ToString()
                                 }
@@ -925,6 +935,7 @@ namespace DnD5E.Decks
                                 },
                                 Action = new ActionModel
                                 {
+                                    Name = "Blessing of the Raven Queen",
                                     Description = "Shadar-Kai trait",
                                     Type = ActionTypesEnum.Bonus.ToString()
                                 }

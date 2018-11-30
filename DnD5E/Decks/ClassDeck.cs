@@ -555,6 +555,7 @@ namespace DnD5E.Decks
                                     AbilityModifier = AbilitiesEnum.Wis.ToString(),
                                     Action = new ActionModel
                                     {
+                                        Name = "Spellcasting",
                                         Description = "Druid feature",
                                         Type = ActionTypesEnum.Attack.ToString()
                                     }
@@ -836,6 +837,7 @@ namespace DnD5E.Decks
                                     AbilityModifier = AbilitiesEnum.Cha.ToString(),
                                     Action = new ActionModel
                                     {
+                                        Name = "Spellcasting",
                                         Description = "Sorcerer feature",
                                         Type = ActionTypesEnum.Attack.ToString()
                                     }
@@ -894,6 +896,7 @@ namespace DnD5E.Decks
                                     AbilityModifier = AbilitiesEnum.Cha.ToString(),
                                     Action = new ActionModel
                                     {
+                                        Name = "Spellcasting",
                                         Description = "Warlock feature",
                                         Type = ActionTypesEnum.Attack.ToString()
                                     }
@@ -952,6 +955,7 @@ namespace DnD5E.Decks
                                     AbilityModifier = AbilitiesEnum.Int.ToString(),
                                     Action = new ActionModel
                                     {
+                                        Name = "Spellcasting",
                                         Description = "Wizard feature",
                                         Type = ActionTypesEnum.Attack.ToString()
                                     }
