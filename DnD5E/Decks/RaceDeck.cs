@@ -57,7 +57,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Draconic Ancestry (Black)",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have an acid breath weapon and resistance to acid damage."
                                 }
@@ -65,7 +65,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Breath weapon:",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You can use your action to exhale acid in a 5 ft. by 30 ft. line. Each creature in the affected area must make a DEX saving throw (DC = 8 + DEX modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
                                 }
@@ -94,7 +94,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name ="Draconic Ancestry (Blue)",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have a lightning breath weapon and resistance to lightning damage."
                                 }
@@ -102,7 +102,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name ="Breath weapon",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You can use your action to exhale lightning in a 5 ft. by 30 ft. line. Each creature in the affected area must make a DEX saving throw (DC = 8 + DEX modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
                                 }
@@ -131,7 +131,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name ="Draconic Ancestry (Brass)",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have a fire breath weapon and resistance to fire damage.",
                                 }
@@ -139,7 +139,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name ="Breath weapon",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You can use your action to exhale fire in a 5 ft. by 30 ft. line. Each creature in the affected area must make a DEX saving throw (DC = 8 + DEX modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest.",
                                 }
@@ -168,7 +168,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Draconic Ancestry (Bronze)",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have a lightning breath weapon and resistance to lightning damage."
                                 }
@@ -176,7 +176,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Breath weapon",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You can use your action to exhale lightning in a 5 ft. by 30 ft. line. Each creature in the affected area must make a DEX saving throw (DC = 8 + DEX modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
                                 }
@@ -205,7 +205,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name ="Draconic Ancestry (Copper)",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have an acid breath weapon and resistance to acid damage."
                                 }
@@ -213,7 +213,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name ="Breath weapon",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You can use your action to exhale acid in a 5 ft. by 30 ft. line. Each creature in the affected area must make a DEX saving throw (DC = 8 + DEX modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
                                 }
@@ -242,7 +242,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name ="Draconic Ancestry (Gold)",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have a fire breath weapon and resistance to fire damage."
                                 }
@@ -250,7 +250,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name ="Breath weapon (Gold)",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You can use your action to exhale fire in a 15 ft. cone. Each creature in the affected area must make a DEX saving throw (DC = 8 + DEX modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
                                 }
@@ -279,7 +279,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Draconic Ancestry (Green)",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have a poison breath weapon and resistance to poison damage."
                                 }
@@ -287,7 +287,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Breath weapon",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You can use your action to exhale fire in a 15 ft. cone. Each creature in the affected area must make a CON saving throw (DC = 8 + CON modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
                                 }
@@ -316,7 +316,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Draconic Ancestry (Red)",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have a fire breath weapon and resistance to fire damage."
                                 }
@@ -324,7 +324,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Breath weapon",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You can use your action to exhale fire in a 15 ft. cone. Each creature in the affected area must make a DEX saving throw (DC = 8 + DEX modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
                                 }
@@ -353,7 +353,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Draconic Ancestry (Silver)",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have a cold breath weapon and resistance to cold damage.",
                                 }
@@ -361,7 +361,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Breath weapon",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You can use your action to exhale fire in a 15 ft. cone. Each creature in the affected area must make a CON saving throw (DC = 8 + CON modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest.",
                                 }
@@ -390,7 +390,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Draconic Ancestry (White)",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have a cold breath weapon and resistance to cold damage."
                                 }
@@ -398,7 +398,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Breath weapon",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You can use your action to exhale fire in a 15 ft. cone. Each creature in the affected area must make a CON saving throw (DC = 8 + CON modifier + proficiency bonus). A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest."
                                 }
@@ -435,8 +435,8 @@ namespace DnD5E.Decks
                 {
                     new FeaturesModel
                     {
-                        Name = "Speed",
-                        Description = new string[]
+                        Name = "Dwarven Endurance",
+                        Description = new List<string>
                         {
                             "Your speed is not reduced by wearing heavy armor."
                         }
@@ -444,7 +444,7 @@ namespace DnD5E.Decks
                     new FeaturesModel
                     {
                         Name = "Darkvision",
-                        Description = new string[]
+                        Description = new List<string>
                         {
                             "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
                         }
@@ -452,7 +452,7 @@ namespace DnD5E.Decks
                     new FeaturesModel
                     {
                         Name = "Dwarven Resilience",
-                        Description = new string[]
+                        Description = new List<string>
                         {
                             "You have advantage on saving throws against poison, and you have resistance against poison damage."
                         }
@@ -460,7 +460,7 @@ namespace DnD5E.Decks
                     new FeaturesModel
                     {
                         Name = "Dwarven Combat Training",
-                        Description = new string[]
+                        Description = new List<string>
                         {
                             "You have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer."
                         }
@@ -468,7 +468,7 @@ namespace DnD5E.Decks
                     new FeaturesModel
                     {
                         Name = "Stonecunning",
-                        Description = new string[]
+                        Description = new List<string>
                         {
                             "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
                         }
@@ -517,7 +517,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name ="Superior Darkvision",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "Your darkvision has a radius of 120 feet."
                                 }
@@ -525,7 +525,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name ="Duergar Resilience",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have advantage on saving throws against illusions and against being charmed or paralyzed."
                                 }
@@ -533,7 +533,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name ="Duergar Magic",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "When you reach 3rd level, you can cast the enlarge/reduce spell on yourself once with this trait, using only the spell's enlarge option. When you reach 5th level, you can cast the invisibility spell on yourself once with this trait. You don't need material components for either spell, and you can't cast them while you're in direct sunlight, although sunlight has no effect on them once cast. You regain the ability to cast these spells with this trait when you finish a long rest. Intelligence is your spellcasting ability for these spells."
                                 }
@@ -541,7 +541,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name ="Sunlight Sensitivity",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight."
                                 }
@@ -570,7 +570,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Dwarven Toughness",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
                                 }
@@ -595,7 +595,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Dwarven Armor Training",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have proficiency with light and medium armor."
                                 }
@@ -636,7 +636,7 @@ namespace DnD5E.Decks
                     new FeaturesModel
                     {
                         Name = "Darkvision",
-                        Description = new string[]
+                        Description = new List<string>
                         {
                             "Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
                         }
@@ -644,7 +644,7 @@ namespace DnD5E.Decks
                     new FeaturesModel
                     {
                         Name = "Keen Senses",
-                        Description = new string[]
+                        Description = new List<string>
                         {
                             "You have proficiency in the Perception skill."
                         }
@@ -652,7 +652,7 @@ namespace DnD5E.Decks
                     new FeaturesModel
                     {
                         Name = "Fey Ancestry",
-                        Description = new string[]
+                        Description = new List<string>
                         {
                             "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
                         }
@@ -660,7 +660,7 @@ namespace DnD5E.Decks
                     new FeaturesModel
                     {
                         Name = "Trance",
-                        Description = new string[]
+                        Description = new List<string>
                         {
                             "Elves do not sleep. Instead they meditate deeply, remaining semi-conscious, for 4 hours a day. The Common word for this meditation is \"trance\". While meditating, you dream after a fashion; such dreams are actually mental exercises that have become reflexive after years of practice. After resting in this way, you gain the same benefit a human would from 8 hours of sleep."
                         }
@@ -698,7 +698,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Superior Darkvision",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "Your darkvision has a range of 120 feet, instead of 60."
                                 }
@@ -706,7 +706,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Sunlight Sensitivity",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight when you, the target of the attack, or whatever you are trying to perceive is in direct sunlight."
                                 }
@@ -714,7 +714,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Drow Magic",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You know the dancing lights cantrip. When you reach 3rd level, you can cast faerie fire once, and it recharges after a long rest. When you reach 5th level, you can cast darkness once, and it recharges after a long rest. Charisma is your spellcasting ability for these spells."
                                 }
@@ -722,7 +722,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Drow Weapon Training",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have proficiency with rapiers, shortswords, and hand crossbows."
                                 }
@@ -757,7 +757,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Elf Weapon Training",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have proficiency with the longsword, shortsword, shortbow, and longbow."
                                 }
@@ -765,7 +765,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Cantrip",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You know one cantrip of your choice from the wizard list. INT is your spellcasting ability for it."
                                 }
@@ -805,7 +805,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Sea Elf Training",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have proficiency with the spear, trident, light crossbow, and net."
                                 }
@@ -813,7 +813,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Child of the Sea",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have a swimming speed of 30 feet, and you can breathe air and water."
                                 }
@@ -821,7 +821,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Friend of the Sea",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "Using gestures and sounds, you can communicate simple ideas with any beast that has an innate swimming speed."
                                 }
@@ -861,7 +861,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Necrotic Resistance",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have resistance to necrotic damage."
                                 }
@@ -869,7 +869,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Blessing of the Raven Queen",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "As a bonus action, you can magically teleport up to 30 ft. to an unoccupied space you can see. Once you use this trait, you can't do so again until you finish a long rest. Starting at 3rd level, you also gain resistance to all damage when you teleport using this trait. The resistance lasts until the start of your next turn. During that time, you appear ghostly and translucent."
                                 }
@@ -899,7 +899,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Elf Weapon Training",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have proficiency with the longsword, shortsword, shortbow, and longbow."
                                 }
@@ -907,7 +907,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Fleet of Foot",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "Your base walking speed increases to 35 feet."
                                 }
@@ -915,7 +915,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Mask of the Wild",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
                                 }
@@ -958,7 +958,7 @@ namespace DnD5E.Decks
                     new FeaturesModel
                     {
                         Name = "Darkvision",
-                        Description = new string[]
+                        Description = new List<string>
                         {
                             "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
                         }
@@ -966,7 +966,7 @@ namespace DnD5E.Decks
                     new FeaturesModel
                     {
                         Name = "Gnome Cunning",
-                        Description = new string[]
+                        Description = new List<string>
                         {
                             "You have advantage on all Intelligence, Wisdom, and Charisma saves against magic."
                         }
@@ -999,7 +999,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Superior Darkvision",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "Your darkvision has a radius of 120 feet."
                                 }
@@ -1007,7 +1007,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Stone Camouflage",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have advantage on Dexterity (stealth) checks to hide in rocky terrain."
                                 }
@@ -1037,7 +1037,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Natural Illusionist",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You know the minor illusion cantrip. Intelligence is your spellcasting modifier for it."
                                 }
@@ -1045,7 +1045,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Speak with Small Beasts",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "Through sound and gestures, you may communicate simple ideas with Small or smaller beasts."
                                 }
@@ -1071,7 +1071,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Artificer's Lore",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "Whenever you make an Intelligence (History) check related to magical, alchemical, or technological items, you can add twice your proficiency bonus instead of any other proficiency bonus that may apply."
                                 }
@@ -1079,7 +1079,7 @@ namespace DnD5E.Decks
                             new FeaturesModel
                             {
                                 Name = "Tinker",
-                                Description = new string[]
+                                Description = new List<string>
                                 {
                                     "You have proficiency with artisan tools (tinker's tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time. When you create a device, choose one of the following options:",
                                     "<i>Clockwork Toy:</i> This toy is a c1ockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents.<br /><i>Fire Starter:</i> The device produces a miniature flame, which you can use to light a candle, torch, or campfire. Using the device requires your action.<br /><i>Music Box:</i> When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song's end or when it is closed.",

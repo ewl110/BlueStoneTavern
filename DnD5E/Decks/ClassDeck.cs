@@ -28,6 +28,25 @@ namespace DnD5E.Decks
                         1,
                         new LevelModel
                         {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Rage",
+                                    Description = new List<string>
+                                    {
+                                        "Barbarian feature"
+                                    }
+                                },
+                                new FeaturesModel
+                                {
+                                    Name = "Unarmored Defense",
+                                    Description = new List<string>
+                                    {
+                                        "Barbarian feature"
+                                    }
+                                }
+                            },
                             Proficiencies = new ProficiencyModel
                             {
                                 Armor = new string[]
@@ -49,6 +68,370 @@ namespace DnD5E.Decks
                             },
                             Rage = 2,
                             RageDamage = 2
+                        }
+                    },
+                    {
+                        2,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Danger Sense",
+                                    Description = new List<string>
+                                    {
+                                        "Barbarian feature"
+                                    }
+                                },
+                                new FeaturesModel
+                                {
+                                    Name = "Reckless Attack",
+                                    Description = new List<string>
+                                    {
+                                        "Barbarian feature"
+                                    }
+                                }
+                            },
+                        }
+                    },
+                    {
+                        3,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Primal Path",
+                                    Description = new List<string>
+                                    {
+                                        "Barbarian feature"
+                                    }
+                                },
+                            },
+                            Rage = 3,
+                            Variants = new Dictionary<string, LevelModel>{
+                                {
+                                    ClassEnum.Berserker.ToString(),
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Frenzy",
+                                                Description = new List<string>
+                                                {
+                                                    "Berserker feature"
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.TotemWarrior.ToString(),
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Spirit Seeker",
+                                                Description = new List<string>
+                                                {
+                                                    "Totem warrior feature"
+                                                }
+                                            },
+                                            new FeaturesModel
+                                            {
+                                                Name = "Totem spirit",
+                                                Description = new List<string>
+                                                {
+                                                    "Totem warrior feature"
+                                                }
+                                            },
+                                        },
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        5,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Extra Attack",
+                                    Description = new List<string>
+                                    {
+                                        "Barbarian feature"
+                                    }
+                                },
+                                new FeaturesModel
+                                {
+                                    Name = "Fast Movement",
+                                    Description = new List<string>
+                                    {
+                                        "Barbarian feature"
+                                    }
+                                },
+                            },
+                            Rage = 3
+                        }
+                    },
+                    {
+                        6,
+                        new LevelModel
+                        {
+                            Rage = 4,
+                            Variants = new Dictionary<string, LevelModel>{
+                                {
+                                    ClassEnum.Berserker.ToString(),
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Mindless Rage",
+                                                Description = new List<string>
+                                                {
+                                                    "Berserker feature"
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.TotemWarrior.ToString(),
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Aspect of the Beast",
+                                                Description = new List<string>
+                                                {
+                                                    "Totem warrior feature"
+                                                }
+                                            },
+                                        },
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        7,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Feral Instinct",
+                                    Description = new List<string>
+                                    {
+                                        "Barbarian feature"
+                                    }
+                                },
+                            },
+                        }
+                    },
+                    {
+                        9,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Brutal Critical",
+                                    Description = new List<string>
+                                    {
+                                        "Barbarian feature"
+                                    }
+                                },
+                            },
+                            RageDamage = 3
+                        }
+                    },
+                    {
+                        10,
+                        new LevelModel
+                        {
+                            Variants = new Dictionary<string, LevelModel>{
+                                {
+                                    ClassEnum.Berserker.ToString(),
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Intimidating Presence",
+                                                Description = new List<string>
+                                                {
+                                                    "Berserker feature"
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.TotemWarrior.ToString(),
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Spirit Walker",
+                                                Description = new List<string>
+                                                {
+                                                    "Totem warrior feature"
+                                                }
+                                            },
+                                        },
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        11,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Relentless Rage",
+                                    Description = new List<string>
+                                    {
+                                        "Barbarian feature"
+                                    }
+                                },
+                            },
+                        }
+                    },
+                    {
+                        12,
+                        new LevelModel
+                        {
+                            Rage = 5
+                        }
+                    },
+                    {
+                        14,
+                        new LevelModel
+                        {
+                            Variants = new Dictionary<string, LevelModel>{
+                                {
+                                    ClassEnum.Berserker.ToString(),
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Retaliation",
+                                                Description = new List<string>
+                                                {
+                                                    "Berserker feature"
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.TotemWarrior.ToString(),
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Totemic Attunement",
+                                                Description = new List<string>
+                                                {
+                                                    "Totem warrior feature"
+                                                }
+                                            },
+                                        },
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        15,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Persistent Rage",
+                                    Description = new List<string>
+                                    {
+                                        "Barbarian feature"
+                                    }
+                                },
+                            },
+                        }
+                    },
+                    {
+                        16,
+                        new LevelModel
+                        {
+                            RageDamage = 4
+                        }
+                    },
+                    {
+                        17,
+                        new LevelModel
+                        {
+                            Rage = 6
+                        }
+                    },
+                    {
+                        18,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Indomitable Might",
+                                    Description = new List<string>
+                                    {
+                                        "Barbarian feature"
+                                    }
+                                },
+                            },
+                        }
+                    },
+                    {
+                        20,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Primal Champion",
+                                    Description = new List<string>
+                                    {
+                                        "Barbarian feature"
+                                    }
+                                },
+                            },
                         }
                     },
                 },
@@ -164,7 +547,7 @@ namespace DnD5E.Decks
                                 new FeaturesModel
                                 {
                                     Name = "Spellcasting",
-                                    Description = new string[]
+                                    Description = new List<string>
                                     {
                                         "Wisdom is your spellcasting ability for your druid spells. You use your Wisdom whenever a spell refers to your spellcasting ability.",
                                         "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest."
@@ -440,7 +823,7 @@ namespace DnD5E.Decks
                                 new FeaturesModel
                                 {
                                     Name = "Spellcasting",
-                                    Description = new string[]
+                                    Description = new List<string>
                                     {
                                         "Charisma is your spellcasting ability for your sorcerer spells. You use your Charisma whenever a spell refers to your spellcasting ability.",
                                         "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest."
@@ -493,7 +876,7 @@ namespace DnD5E.Decks
                                 new FeaturesModel
                                 {
                                     Name = "Spellcasting",
-                                    Description = new string[]
+                                    Description = new List<string>
                                     {
                                         "Charisma is your spellcasting ability for your warlock spells. You use your Charisma whenever a spell refers to your spellcasting ability.",
                                         "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest."
@@ -546,7 +929,7 @@ namespace DnD5E.Decks
                                 new FeaturesModel
                                 {
                                     Name = "Spellcasting",
-                                    Description = new string[]
+                                    Description = new List<string>
                                     {
                                         "Intelligence is your spellcasting ability for your wizard spells. You use your Intelligence whenever a spell refers to your spellcasting ability.",
                                         "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long or short rest."

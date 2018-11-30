@@ -16,7 +16,7 @@ namespace DnD5E.Decks
                 Feature = new FeaturesModel
                 {
                     Name ="Shelter of the Faithful",
-                    Description = new string[]
+                    Description = new List<string>
                     {
                         "As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle.",
                         "You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple."
@@ -86,7 +86,7 @@ namespace DnD5E.Decks
                 Feature = new FeaturesModel
                 {
                     Name = "False Identity",
-                    Description = new string[]
+                    Description = new List<string>
                     {
                         "You have created a second identity that includes documentation, established acquaintances, and disguises that allow you to assume that persona. Additionally, you can forge documents including official papers and personal letters, as long as you have seen an example of the kind of document or the handwriting you are trying to copy.",
                     }
@@ -155,7 +155,7 @@ namespace DnD5E.Decks
                 Feature = new FeaturesModel
                 {
                     Name ="Criminal Contact",
-                    Description = new string[]
+                    Description = new List<string>
                     {
                         "You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan masters, and seedy sailors who can deliver messages for you."
                     }
@@ -222,7 +222,7 @@ namespace DnD5E.Decks
                 Feature = new FeaturesModel
                 {
                     Name = "By Popular Demand",
-                    Description = new string[]
+                    Description = new List<string>
                     {
                         "You can always find a place to perform, usually in an inn or tavern but possibly with a circus, at a theater, or even in a noble's court. At such a place, you receive free lodging and food of a modest or comfortable standard (depending on the quality of the establishment), as long as you perform each night. In addition, your performance makes you something of a local figure. When strangers recognize you in a town where you have performed, they typically take a liking to you."
                     }
@@ -290,7 +290,7 @@ namespace DnD5E.Decks
                 Feature = new FeaturesModel
                 {
                     Name ="Wanderer",
-                    Description = new string[]
+                    Description = new List<string>
                     {
                         "You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth."
                     }

@@ -8,7 +8,7 @@ namespace DnD5E.Models
         public string AbilityModifier { get; set; }
         //public ActionModel Action { get; set; }
         public List<ClassEnum> Class { get; set; }
-        public new string[] Description { get; set; }
+        public new List<string> Description { get; set; }
         public string Key { get; set; }
         public List<RaceEnum> Race { get; set; }
     }

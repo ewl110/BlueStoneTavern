@@ -1,18 +1,21 @@
 ﻿@model IEnumerable<DnD5E.Models.FeaturesModel>
 
-@foreach (var item in Model)
+@foreach (var item in Model.OrderBy(o => o.Name).ToList())
 {
-    <div class="content-wrapper">
-        @for (int i = 0; i < item.Description.Length; i++)
-        {
-            if (i == 0)
+    @if (item.Description != null)
+    {
+        <div class="content-wrapper">
+            @for (int i = 0; i < item.Description.Count(); i++)
             {
-                <p><b>@(item.Name):</b> @Html.Raw(item.Description[i])</p>
+                @if (i == 0)
+                {
+                    <p><b>@(item.Name):</b> @Html.Raw(item.Description[i])</p>
+                }
+                else
+                {
+                    <p>@Html.Raw(item.Description[i])</p>
+                }
             }
-            else
-            {
-                <p>@Html.Raw(item.Description[i])</p>
-            }
-        }
-    </div>
+        </div>
+    }
 }

@@ -109,11 +109,21 @@ namespace DnD5E.Characters
             GetProficiencies();
         }
 
-        private void AddSpellCastingFeatures(string abilityModifier, string className)
+        private void AddSpellCastingFeatures(FeaturesModel feature, string className)
         {
             int abilityMod = 0;
 
-            switch (abilityModifier)
+            // Reset the description list
+            FeaturesModel newFeature = new FeaturesModel {
+                Name = feature.Name,
+                Description = new List<string>
+                {
+                    feature.Description[0],
+                    feature.Description[1]
+                }
+            };
+
+            switch (feature.AbilityModifier)
             {
                 case "Cha":
                     abilityMod = this.abilityScores.ChaMod;
@@ -126,21 +136,26 @@ namespace DnD5E.Characters
                     break;
             }
 
-            this.charClass[className].Features.Add(new FeaturesModel
-            {
-                Name = "Spell Save DC",
-                Description = new string[] {
-                    (8 + abilityMod + GetProficiencyBonus()).ToString()
-                },
-            });
+            newFeature.Description.Add($"<b>Spell Save DC:</b> {(8 + abilityMod + GetProficiencyBonus()).ToString()}");
+            newFeature.Description.Add($"<b>Spell Attack Modifier:</b> +{abilityMod + GetProficiencyBonus()}");
 
-            this.charClass[className].Features.Add(new FeaturesModel
-            {
-                Name = "Spell Attack Modifier",
-                Description = new string[] {
-                    $"+{abilityMod + GetProficiencyBonus()}"
-                },
-            });
+            this.charClass[className].Features.Add(newFeature);
+
+            //this.charClass[className].Features.Add(new FeaturesModel
+            //{
+            //    Name = "Spell Save DC",
+            //    Description = new string[] {
+            //        (8 + abilityMod + GetProficiencyBonus()).ToString()
+            //    },
+            //});
+
+            //this.charClass[className].Features.Add(new FeaturesModel
+            //{
+            //    Name = "Spell Attack Modifier",
+            //    Description = new string[] {
+            //        $"+{abilityMod + GetProficiencyBonus()}"
+            //    },
+            //});
         }
 
         private void CalculateitPoints()
@@ -293,6 +308,12 @@ namespace DnD5E.Characters
                 {
                     if (charClass.Name == c.Name)
                     {
+                        // Create empty feature list if one doesn't already exist
+                        if (this.charClass[c.Name].Features == null)
+                        {
+                            this.charClass[c.Name].Features = new List<FeaturesModel>{ };
+                        }
+
                         for (int i = 1; i <= charClass.Level; i++)
                         {
                             string classVariant = "";
@@ -305,18 +326,14 @@ namespace DnD5E.Characters
                                     {
                                         if (this.charClass.ContainsKey(c.Name))
                                         {
-                                            if (this.charClass[c.Name].Features == null)
+                                            if (item.Name == "Spellcasting")
                                             {
-                                                this.charClass[c.Name].Features = new List<FeaturesModel>
-                                                { };
+                                                AddSpellCastingFeatures(item, c.Name);
                                             }
-
-                                            this.charClass[c.Name].Features.Add(item);
-                                        }
-
-                                        if (item.Name == "Spellcasting")
-                                        {
-                                            AddSpellCastingFeatures(item.AbilityModifier, c.Name);
+                                            else
+                                            {
+                                                this.charClass[c.Name].Features.Add(item);
+                                            }
                                         }
                                     }
                                 }
@@ -332,11 +349,13 @@ namespace DnD5E.Characters
                                 {
                                     foreach (FeaturesModel item in this.charClassCard.Levels[i].Variants[classVariant].Features)
                                     {
-                                        this.charClass[c.Name].Features.Add(item);
-
                                         if (item.Name == "Spellcasting")
                                         {
-                                            AddSpellCastingFeatures(item.AbilityModifier, c.Name);
+                                            AddSpellCastingFeatures(item, c.Name);
+                                        }
+                                        else
+                                        {
+                                            this.charClass[c.Name].Features.Add(item);
                                         }
                                     }
                                 }

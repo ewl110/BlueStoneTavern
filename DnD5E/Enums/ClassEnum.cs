@@ -16,7 +16,7 @@ namespace DnD5E.Enums
         Rogue,
         Sorcerer,
         [Description("Totem Warrior")]
-        totemWarrior,
+        TotemWarrior,
         Warlock,
         Wizard
     }

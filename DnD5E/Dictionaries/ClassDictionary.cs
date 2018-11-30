@@ -44,10 +44,10 @@ namespace DnD5E.Dictionaries
                 }
             },
             {
-                ClassEnum.totemWarrior.ToString(),
+                ClassEnum.TotemWarrior.ToString(),
                 new ClassModel {
-                    Key = ClassEnum.totemWarrior.ToString(),
-                    Name = ClassEnum.totemWarrior.GetAttributeOfType<DescriptionAttribute>().Description,
+                    Key = ClassEnum.TotemWarrior.ToString(),
+                    Name = ClassEnum.TotemWarrior.GetAttributeOfType<DescriptionAttribute>().Description,
                     ParentClass = ClassEnum.Barbarian
                 }
             }
