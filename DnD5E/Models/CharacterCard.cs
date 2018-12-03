@@ -18,6 +18,7 @@ namespace DnD5E.Models
         public string ClassPrimary { get; set; }
         public string ClassDescription { get; set; }
         public List<FeaturesModel> ClassFeatures { get; set; }
+        public string Equipment { get; set; }
         public FactionCard Faction { get; set; }
         public int HitDice { get; set; }
         public HitPointsModel HitPoints { get; set; }
@@ -53,11 +54,6 @@ namespace DnD5E.Models
         public List<FeaturesModel> Features { get; set; }
         public int Level { get; set; }
         public string Variant { get; set; }
-    }
-
-    public class CharacterEquipmentModel
-    {
-        public WeaponsEnum[] Weapons { get; set; }
     }
 
     public class CharacterFeatureModel

@@ -216,10 +216,13 @@
                 }
             </section>
 
-            <section class="character_equipment">
-                <h3>Equipment</h3>
-                <p>Quarterstaff, dart (20), dagger (2), explorer's pack, hunting trap, drum crafted from a bear's skull, component pouch, traveler's clothes, belt pouch, money (10 gp).</p>
-            </section>
+            @if (Model.Equipment != null)
+            {
+                <section class="character_equipment">
+                    <h3>Equipment</h3>
+                    <p>@(Model.Equipment)</p>
+                </section>
+            }
         </div>
     </div>
 </div>

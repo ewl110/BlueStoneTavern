@@ -89,7 +89,7 @@ namespace DnD5E.Dictionaries
                         SkillsEnum.Survival
                     },
                     Tools = new List<ToolsEnum>(){
-                        ToolsEnum.artisansTools,
+                        ToolsEnum.ArtisansTools,
                         ToolsEnum.vehiclesLand
                     }
                 }
@@ -108,7 +108,7 @@ namespace DnD5E.Dictionaries
                         SkillsEnum.Persuasion
                     },
                     Tools = new List<ToolsEnum>(){
-                        ToolsEnum.artisansTools
+                        ToolsEnum.ArtisansTools
                     }
                 }
             },

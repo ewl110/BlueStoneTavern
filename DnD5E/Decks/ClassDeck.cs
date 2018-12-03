@@ -817,22 +817,61 @@ namespace DnD5E.Decks
                     Wis = 8,
                     Cha = 15
                 },
-                Actions = new List<ActionModel>
+                Description = "You are a spellcaster who draws on inherent magic from a gift or bloodline.",
+                Equipment = new List<EquipmentModel>
                 {
-                    new ActionModel{
-                        Type = ActionTypesEnum.Attack.ToString(),
+                    new EquipmentModel
+                    {
+                        Name = WeaponsEnum.Dagger.ToString(),
+                        Quantity = 2,
+                        Type = EquipmentTypeEnum.Weapon,
                         Weapon = WeaponsEnum.Dagger
                     },
-                    new ActionModel{
-                        Type = ActionTypesEnum.Attack.ToString(),
+                    new EquipmentModel
+                    {
+                        Name = WeaponsEnum.Dart.ToString(),
+                        Quantity = 20,
+                        Type = EquipmentTypeEnum.Weapon,
                         Weapon = WeaponsEnum.Dart
                     },
-                    new ActionModel{
-                        Type = ActionTypesEnum.Attack.ToString(),
+                    new EquipmentModel
+                    {
+                        Name = WeaponsEnum.Quarterstaff.ToString(),
+                        Type = EquipmentTypeEnum.Weapon,
                         Weapon = WeaponsEnum.Quarterstaff
-                    }
+                    },
+                    new EquipmentModel
+                    {
+                        Name = ToolsEnum.drum.ToString(),
+                        Description = "A drum crafted from a bear's skull",
+                        Type = EquipmentTypeEnum.Tool
+                    },
+                    new EquipmentModel
+                    {
+                        Name = ItemsEnum.HuntingTrap.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Type = EquipmentTypeEnum.Item
+                    },
+                    new EquipmentModel
+                    {
+                        Name = ItemsEnum.TravelersClothes.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Type = EquipmentTypeEnum.Item
+                    },
+                    new EquipmentModel
+                    {
+                        Name = ItemsEnum.ExlporersPack.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Type = EquipmentTypeEnum.Item
+                    },
+                    new EquipmentModel
+                    {
+                        Name = ItemsEnum.ComponentPouch.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Type = EquipmentTypeEnum.Item
+                    },
+                    new EquipmentModel
+                    {
+                        Name = ItemsEnum.BeltPouch.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Type = EquipmentTypeEnum.Item
+                    },
                 },
-                Description = "You are a spellcaster who draws on inherent magic from a gift or bloodline.",
                 HitDice = 6,
                 Levels = new Dictionary<int, LevelModel>()
                 {

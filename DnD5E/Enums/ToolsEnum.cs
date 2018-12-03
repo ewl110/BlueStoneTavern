@@ -5,19 +5,19 @@ namespace DnD5E.Enums
     public enum ToolsEnum
     {
         [Description("Alchemists's Supplies")]
-        alchemistsSupplies,
+        AlchemistsSupplies,
         [Description("Artisan's Tools")]
-        artisansTools,
+        ArtisansTools,
         [Description("Bagpipes")]
-        bagpipes,
+        Bagpipes,
         [Description("Brewer's Supplies")]
-        brewersSupplies,
+        BrewersSupplies,
         [Description("Caligrapher's Supplies")]
-        calligraphersSupplies,
+        CalligraphersSupplies,
         [Description("Carpenters's Supplies")]
-        carpentersSupplies,
+        CarpentersSupplies,
         [Description("Cartographer's Supplies")]
-        cartographersSupplies,
+        CartographersSupplies,
         [Description("Cobbler's Supplies")]
         cobblersSuppliers,
         [Description("Cook's Supplies")]

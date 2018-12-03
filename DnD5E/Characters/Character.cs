@@ -36,6 +36,7 @@ namespace DnD5E.Characters
         private string classDescription;
         private List<FeaturesModel> classFeatures = new List<FeaturesModel>() { };
         private string charClassPrimary;
+        private string equipment;
         private HitPointsModel hitPoints;
         private List<string> immunity;
         private List<string> languages;
@@ -114,14 +115,7 @@ namespace DnD5E.Characters
             this.resistance = GetResistances();
             this.speed = this.charRaceVariantCard.Speed != 30 ? this.charRaceVariantCard.Speed : this.charRaceCard.Speed;
 
-            if (this.charClassCard.Actions != null)
-            {
-                foreach (var action in this.charClassCard.Actions)
-                {
-                    GetActions(action);
-                }
-            }
-
+            GetEquipment();
             GetClassFeatures();
             CalculateHitPoints();
             GetProficiencies();
@@ -201,6 +195,7 @@ namespace DnD5E.Characters
                 ClassDescription = this.charClassCard.Description,
                 ClassFeatures = this.classFeatures,
                 ClassPrimary = this.charClassPrimary,
+                Equipment = this.equipment,
                 Faction = this.charFactionCard,
                 HitPoints = this.hitPoints,
                 Id = this.id,
@@ -537,6 +532,44 @@ namespace DnD5E.Characters
                         }
                     }
                 }
+            }
+        }
+
+        public void GetEquipment()
+        {
+            List<string> equipmentList = new List<string>() { };
+
+            if (this.charClassCard.Equipment != null)
+            {
+                foreach (var item in this.charClassCard.Equipment)
+                {
+                    string itemText = item.Name;
+
+                    if (item.Description != null)
+                    {
+                        itemText = item.Description;
+                    }
+
+                    if (item.Quantity > 1)
+                    {
+                        itemText += $" ({item.Quantity})";
+                    }
+
+                    equipmentList.Add(itemText);
+
+                    if (item.Type == EquipmentTypeEnum.Weapon)
+                    {
+                        ActionModel action = new ActionModel
+                        {
+                            Type = ActionTypesEnum.Attack.ToString(),
+                            Weapon =item.Weapon
+                        };
+
+                        GetActions(action);
+                    }
+                }
+
+                this.equipment = string.Join(", ", equipmentList.ToArray());
             }
         }
 
