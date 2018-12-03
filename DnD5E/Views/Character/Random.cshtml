@@ -10,11 +10,14 @@
     <div class="row">
         <div class="col">
             <section class="character_intro">
-                <h2>@Model.Race @Model.ClassPrimary @Model.TotalLevel</h2>
-                <q class="character_flavorText">Do you hear that? It is the roaring in my blood.</q>
-                <img class="character_avatar" src="https://via.placeholder.com/150" alt="Character Name (@Model.Race @Model.ClassPrimary)" />
-                <div class="content-wrapper">
-                    <p>@Model.ClassDescription</p>
+                <div class="row" style="align-items: center;">
+                    <div class="col-12 col-sm-8 col-md-9">
+                        <h2>@Model.Race @Model.ClassPrimary @Model.TotalLevel</h2>
+                        <i class="character_flavorText">@Model.ClassDescription</i>
+                    </div>
+                    <div class="col-12 col-sm-4 col-md-3">
+                        <img class="character_avatar" src="https://via.placeholder.com/150" alt="Character Name (@Model.Race @Model.ClassPrimary)" style="height:auto; width: 100%;" />
+                    </div>
                 </div>
             </section>
 

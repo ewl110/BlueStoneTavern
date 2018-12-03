@@ -534,7 +534,7 @@ namespace DnD5E.Decks
                     Wis = 15,
                     Cha = 12
                 },
-                Description = "You are a priest of the Old Faith, wielding the powers of nature &mdash; moonlight and plant growth, fire and lightning &mdash; and adopting animal forms.",
+                Description = "You are a priest of the Old Faith, wielding the powers of nature - moonlight and plant growth, fire and lightning - and adopting animal forms.",
                 HitDice = 8,
                 Levels = new Dictionary<int, LevelModel>()
                 {
