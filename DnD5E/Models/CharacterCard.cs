@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DnD5E.Enums;
+using System;
 using System.Collections.Generic;
 
 namespace DnD5E.Models
@@ -52,6 +53,11 @@ namespace DnD5E.Models
         public List<FeaturesModel> Features { get; set; }
         public int Level { get; set; }
         public string Variant { get; set; }
+    }
+
+    public class CharacterEquipmentModel
+    {
+        public WeaponsEnum[] Weapons { get; set; }
     }
 
     public class CharacterFeatureModel

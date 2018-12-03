@@ -36,6 +36,7 @@ namespace DnD5E.Enums
         Maul,
         Morningstar,
         Net,
+        None,
         Pike,
         Quarterstaff,
         Rapier,

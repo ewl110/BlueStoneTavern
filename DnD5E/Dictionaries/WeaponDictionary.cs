@@ -179,7 +179,7 @@ namespace DnD5E.Dictionaries
                         Dice = 4,
                         NumberOfDice = 1
                     },
-                    IsRanged = true,
+                    IsRanged = false,
                     Name = WeaponsEnum.Dagger.ToString(),
                     Properties = new WeaponPropertiesModel {
                         Finesse = true,
@@ -369,7 +369,7 @@ namespace DnD5E.Dictionaries
                         Dice = 6,
                         NumberOfDice = 1
                     },
-                    IsRanged = true,
+                    IsRanged = false,
                     Name = WeaponsEnum.Handaxe.ToString(),
                     Properties = new WeaponPropertiesModel {
                         Light = true,
@@ -396,7 +396,7 @@ namespace DnD5E.Dictionaries
                         Dice = 6,
                         NumberOfDice = 1
                     },
-                    IsRanged = true,
+                    IsRanged = false,
                     Name = WeaponsEnum.Javelin.ToString(),
                     Properties = new WeaponPropertiesModel {
                         Thrown = true
@@ -445,7 +445,7 @@ namespace DnD5E.Dictionaries
                         Dice = 4,
                         NumberOfDice = 1
                     },
-                    IsRanged = true,
+                    IsRanged = false,
                     Name = WeaponsEnum.HammerLight.GetAttributeOfType<DescriptionAttribute>().Description,
                     Properties = new WeaponPropertiesModel {
                         Light = true,
@@ -802,7 +802,7 @@ namespace DnD5E.Dictionaries
                         NumberOfDice = 1,
                         Versatile = 8
                     },
-                    IsRanged = true,
+                    IsRanged = false,
                     Name = WeaponsEnum.Spear.ToString(),
                     Properties = new WeaponPropertiesModel {
                         Thrown = true,
@@ -830,7 +830,7 @@ namespace DnD5E.Dictionaries
                         NumberOfDice = 1,
                         Versatile = 8
                     },
-                    IsRanged = true,
+                    IsRanged = false,
                     Name = WeaponsEnum.Trident.ToString(),
                     Properties = new WeaponPropertiesModel {
                         Thrown = true,

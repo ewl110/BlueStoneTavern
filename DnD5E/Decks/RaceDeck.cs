@@ -20,15 +20,6 @@ namespace DnD5E.Decks
                     Wis = 0,
                     Cha = 1
                 },
-                Actions = new ActionModel[]
-                {
-                    new ActionModel
-                    {
-                        Description = "Dragonborn trait",
-                        Name = "Breath Weapon",
-                        Type = ActionTypesEnum.Attack.ToString()
-                    },
-                },
                 AgeRange = new AgeRangeModel
                 {
                     Max = 80,
@@ -74,7 +65,8 @@ namespace DnD5E.Decks
                                 {
                                     Description = "Dragonborn trait",
                                     Name = "Breath weapon",
-                                    Type = ActionTypesEnum.Attack.ToString()
+                                    Type = ActionTypesEnum.Attack.ToString(),
+                                    Weapon = WeaponsEnum.None
                                 }
                             }
                         },
@@ -117,7 +109,8 @@ namespace DnD5E.Decks
                                 {
                                     Name = "Breath weapon",
                                     Description = "Dragonborn trait",
-                                    Type = ActionTypesEnum.Attack.ToString()
+                                    Type = ActionTypesEnum.Attack.ToString(),
+                                    Weapon = WeaponsEnum.None
                                 }
                             }
                         },
@@ -160,7 +153,8 @@ namespace DnD5E.Decks
                                 {
                                     Name = "Breath weapon",
                                     Description = "Dragonborn trait",
-                                    Type = ActionTypesEnum.Attack.ToString()
+                                    Type = ActionTypesEnum.Attack.ToString(),
+                                    Weapon = WeaponsEnum.None
                                 }
                             }
                         },
@@ -203,7 +197,8 @@ namespace DnD5E.Decks
                                 {
                                     Name = "Breath weapon",
                                     Description = "Dragonborn trait",
-                                    Type = ActionTypesEnum.Attack.ToString()
+                                    Type = ActionTypesEnum.Attack.ToString(),
+                                    Weapon = WeaponsEnum.None
                                 }
                             }
                         },
@@ -246,7 +241,8 @@ namespace DnD5E.Decks
                                 {
                                     Name = "Breath weapon",
                                     Description = "Dragonborn trait",
-                                    Type = ActionTypesEnum.Attack.ToString()
+                                    Type = ActionTypesEnum.Attack.ToString(),
+                                    Weapon = WeaponsEnum.None
                                 }
                             }
                         },
@@ -289,7 +285,8 @@ namespace DnD5E.Decks
                                 {
                                     Name = "Breath weapon",
                                     Description = "Dragonborn trait",
-                                    Type = ActionTypesEnum.Attack.ToString()
+                                    Type = ActionTypesEnum.Attack.ToString(),
+                                    Weapon = WeaponsEnum.None
                                 }
                             }
                         },
@@ -332,7 +329,8 @@ namespace DnD5E.Decks
                                 {
                                     Name = "Breath weapon",
                                     Description = "Dragonborn trait",
-                                    Type = ActionTypesEnum.Attack.ToString()
+                                    Type = ActionTypesEnum.Attack.ToString(),
+                                    Weapon = WeaponsEnum.None
                                 }
                             }
                         },
@@ -375,7 +373,8 @@ namespace DnD5E.Decks
                                 {
                                     Name = "Breath weapon",
                                     Description = "Dragonborn trait",
-                                    Type = ActionTypesEnum.Attack.ToString()
+                                    Type = ActionTypesEnum.Attack.ToString(),
+                                    Weapon = WeaponsEnum.None
                                 }
                             }
                         },
@@ -418,7 +417,8 @@ namespace DnD5E.Decks
                                 {
                                     Name = "Breath weapon",
                                     Description = "Dragonborn trait",
-                                    Type = ActionTypesEnum.Attack.ToString()
+                                    Type = ActionTypesEnum.Attack.ToString(),
+                                    Weapon = WeaponsEnum.None
                                 }
                             }
                         },
@@ -461,7 +461,8 @@ namespace DnD5E.Decks
                                 {
                                     Name = "Breath weapon",
                                     Description = "Dragonborn trait",
-                                    Type = ActionTypesEnum.Attack.ToString()
+                                    Type = ActionTypesEnum.Attack.ToString(),
+                                    Weapon = WeaponsEnum.None
                                 }
                             }
                         },

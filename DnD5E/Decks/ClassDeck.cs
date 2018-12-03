@@ -557,7 +557,8 @@ namespace DnD5E.Decks
                                     {
                                         Name = "Spellcasting",
                                         Description = "Druid feature",
-                                        Type = ActionTypesEnum.Attack.ToString()
+                                        Type = ActionTypesEnum.Attack.ToString(),
+                                        Weapon = WeaponsEnum.None
                                     }
                                 }
                             },
@@ -816,6 +817,21 @@ namespace DnD5E.Decks
                     Wis = 8,
                     Cha = 15
                 },
+                Actions = new List<ActionModel>
+                {
+                    new ActionModel{
+                        Type = ActionTypesEnum.Attack.ToString(),
+                        Weapon = WeaponsEnum.Dagger
+                    },
+                    new ActionModel{
+                        Type = ActionTypesEnum.Attack.ToString(),
+                        Weapon = WeaponsEnum.Dart
+                    },
+                    new ActionModel{
+                        Type = ActionTypesEnum.Attack.ToString(),
+                        Weapon = WeaponsEnum.Quarterstaff
+                    }
+                },
                 Description = "You are a spellcaster who draws on inherent magic from a gift or bloodline.",
                 HitDice = 6,
                 Levels = new Dictionary<int, LevelModel>()
@@ -839,7 +855,8 @@ namespace DnD5E.Decks
                                     {
                                         Name = "Spellcasting",
                                         Description = "Sorcerer feature",
-                                        Type = ActionTypesEnum.Attack.ToString()
+                                        Type = ActionTypesEnum.Attack.ToString(),
+                                        Weapon = WeaponsEnum.None
                                     }
                                 }
                             },
@@ -898,7 +915,8 @@ namespace DnD5E.Decks
                                     {
                                         Name = "Spellcasting",
                                         Description = "Warlock feature",
-                                        Type = ActionTypesEnum.Attack.ToString()
+                                        Type = ActionTypesEnum.Attack.ToString(),
+                                        Weapon = WeaponsEnum.None
                                     }
                                 }
                             },
@@ -957,7 +975,8 @@ namespace DnD5E.Decks
                                     {
                                         Name = "Spellcasting",
                                         Description = "Wizard feature",
-                                        Type = ActionTypesEnum.Attack.ToString()
+                                        Type = ActionTypesEnum.Attack.ToString(),
+                                        Weapon = WeaponsEnum.None
                                     }
                                 }
                             },

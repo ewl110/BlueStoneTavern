@@ -58,7 +58,7 @@ namespace DnD5E.Characters
             }
         }
 
-        public Character() : this(1) {}
+        public Character() : this(1) { }
 
         public Character(int level)
         {
@@ -102,7 +102,7 @@ namespace DnD5E.Characters
             this.totalLevel = GetTotalLevel();
 
             // Calculate modifiers
-            this.abilityScores = GetAbilityScores( this.charClassCard.AbilityScores, this.charRaceCard.AbilityScores, this.charRaceVariantCard.AbilityScores );
+            this.abilityScores = GetAbilityScores(this.charClassCard.AbilityScores, this.charRaceCard.AbilityScores, this.charRaceVariantCard.AbilityScores);
             this.age = rng.Next(this.charRaceCard.AgeRange.Min, this.charRaceCard.AgeRange.Max);
             this.charBackground = GetBackground();
             this.charClassPrimary = GetPrimaryClass();
@@ -112,7 +112,15 @@ namespace DnD5E.Characters
             this.proficiencyBonus = GetProficiencyBonus();
             this.raceTraits = GetRaceTraits();
             this.resistance = GetResistances();
-            this.speed = this.charRaceVariantCard.Speed != 30? this.charRaceVariantCard.Speed : this.charRaceCard.Speed;
+            this.speed = this.charRaceVariantCard.Speed != 30 ? this.charRaceVariantCard.Speed : this.charRaceCard.Speed;
+
+            if (this.charClassCard.Actions != null)
+            {
+                foreach (var action in this.charClassCard.Actions)
+                {
+                    GetActions(action);
+                }
+            }
 
             GetClassFeatures();
             CalculateHitPoints();
@@ -216,6 +224,40 @@ namespace DnD5E.Characters
             return randomCharacter;
         }
 
+        private string FormatAbilityModifier(int abilityScore)
+        {
+            string abilityModifier = null;
+            int addProficiencyBonus = abilityScore + this.proficiencyBonus;
+
+            if (addProficiencyBonus >= 0)
+            {
+                abilityModifier = "+";
+            }
+            else
+            {
+                abilityModifier = "-";
+            }
+
+            return $"{abilityModifier}{addProficiencyBonus}";
+        }
+
+        private string FormatWeaponDamageModifier(int weaponDamage)
+        {
+            string weaponDamageModifier = null;
+
+            if (weaponDamage > 0)
+            {
+                weaponDamageModifier = $" + {weaponDamage} ";
+            }
+            else if (weaponDamage < 0)
+            {
+                weaponDamageModifier = $" - {weaponDamage} ";
+            }
+
+            return weaponDamageModifier;
+
+        }
+
         private AbilityScoresModel GetAbilityScores(AbilityScoresModel classAS, AbilityScoresModel raceAS, AbilityScoresModel raceVariantAS)
         {
             int Str = classAS.Str + raceAS.Str + raceVariantAS.Str;
@@ -246,7 +288,7 @@ namespace DnD5E.Characters
 
         private int GetAbilityScoreModifier(int abilityScore)
         {
-            int abilityScoreModifier = (abilityScore - 10 ) / 2;
+            int abilityScoreModifier = (abilityScore - 10) / 2;
 
             if (abilityScore % 2 != 0)
             {
@@ -261,9 +303,96 @@ namespace DnD5E.Characters
             switch (action.Type)
             {
                 case "Attack":
-                    if (action.Weapon != null)
+                    if (action.Weapon != WeaponsEnum.None)
                     {
-                        return;
+                        List<string> propertiesList = new List<string>() { };
+
+                        WeaponCard weapon = Dictionaries.WeaponDictionary.List[action.Weapon];
+
+                        string weaponAttackType = "Melee";
+                        int weaponDamageModifier = this.abilityScores.StrMod;
+                        string weaponDamageType = weapon.Damage.DamageType.ToString().ToLower();
+                        string weaponReach = "5";
+
+                        if (weapon.IsRanged)
+                        {
+                            weaponAttackType = "Ranged";
+                            weaponDamageModifier = this.abilityScores.DexMod;
+                            weaponReach = $"{weapon.Range.Short}/{weapon.Range.Long}";
+                        }
+
+                        if (weapon.Properties != null)
+                        {
+                            if (weapon.Properties.Ammunition)
+                            {
+                                propertiesList.Add("Ammunition");
+                            }
+
+                            if (weapon.Properties.Finesse)
+                            {
+                                weaponDamageModifier = this.abilityScores.DexMod > this.abilityScores.StrMod ? this.abilityScores.DexMod : this.abilityScores.StrMod;
+                                propertiesList.Add("Finesse");
+                            }
+
+                            if (weapon.Properties.Heavy)
+                            {
+                                propertiesList.Add("Heavy");
+                            }
+
+                            if (weapon.Properties.Light)
+                            {
+                                propertiesList.Add("Light");
+                            }
+
+                            if (weapon.Properties.Loading)
+                            {
+                                propertiesList.Add("Loading");
+                            }
+
+                            if (weapon.Properties.Reach)
+                            {
+                                propertiesList.Add("Reach");
+                            }
+
+                            if (weapon.Properties.Special)
+                            {
+                                propertiesList.Add("Special");
+                            }
+
+                            if (weapon.Properties.Thrown)
+                            {
+                                string thrownProperty = "Thrown";
+
+                                if (weapon.Range != null && WeaponsEnum.Dart.ToString() != "Dart")
+                                {
+                                    thrownProperty += $" ({weapon.Range.Short}/{weapon.Range.Long} ft.)";
+                                }
+
+                                propertiesList.Add(thrownProperty);
+                            }
+
+                            if (weapon.Properties.TwoHanded)
+                            {
+                                propertiesList.Add("Two Handed");
+                            }
+
+                            if (weapon.Properties.Versatile)
+                            {
+                                propertiesList.Add($"Versatile ({weapon.Damage.NumberOfDice}d{weapon.Damage.Versatile}{FormatWeaponDamageModifier(weaponDamageModifier)} {weaponDamageType})");
+                            }
+                        }
+
+                        action.Description = $"<i>{weaponAttackType} Weapon Attack:</i> {FormatAbilityModifier(weaponDamageModifier)} to hit, reach {weaponReach} ft., one target. " +
+                            $"<i>Hit:</i> {weapon.Damage.NumberOfDice}d{weapon.Damage.Dice}{FormatWeaponDamageModifier(weaponDamageModifier)} {weaponDamageType} damage. ";
+
+                        if (weapon.Properties != null)
+                        {
+                            action.Description += $"<i>Special:</i> " + string.Join(", ", propertiesList.ToArray());
+                        }
+
+                        action.Name = weapon.Name;
+
+                        this.actionAttack.Add(action);
                     }
                     else
                     {
@@ -336,7 +465,7 @@ namespace DnD5E.Characters
                         // Create empty feature list if one doesn't already exist
                         if (this.charClass[c.Name].Features == null)
                         {
-                            this.charClass[c.Name].Features = new List<FeaturesModel>{ };
+                            this.charClass[c.Name].Features = new List<FeaturesModel> { };
                         }
 
                         for (int i = 1; i <= charClass.Level; i++)
@@ -435,7 +564,7 @@ namespace DnD5E.Characters
         }
 
         private List<string> GetLanguages() {
-            List<string> languages = new List<string>(){ };
+            List<string> languages = new List<string>() { };
 
             if (this.charBackgroundCard.Languages != null)
             {
@@ -467,7 +596,7 @@ namespace DnD5E.Characters
         private void GetPassivePerception() {
             int passivePerception = 10 + this.abilityScores.WisMod;
 
-            if ( string.Join(",", this.proficiencySkills).Contains("Perception") )
+            if (string.Join(",", this.proficiencySkills).Contains("Perception"))
             {
                 passivePerception += this.proficiencyBonus;
             }
@@ -482,7 +611,7 @@ namespace DnD5E.Characters
 
             foreach (var c in this.charClass.Values)
             {
-                if ( c.Level > level )
+                if (c.Level > level)
                 {
                     charClass = c.Name;
                     level = c.Level;
@@ -695,7 +824,7 @@ namespace DnD5E.Characters
                     savingThrowProficiency.Add($"{item} +{savingThrowMod}");
                 }
             }
-        
+
             return savingThrowProficiency;
         }
 

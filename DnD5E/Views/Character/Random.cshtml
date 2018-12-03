@@ -122,33 +122,33 @@
                         <div class="character_actions">
                             <h4>Actions</h4>
                             <p><b>Attack:</b> You can attack @numberOfAttacks when you take this action, using the following:</p>
-                            @*<p><b>Quarterstaff:</b> <i>Melee Weapon Attack:</i> +2 to hit, reach 5 ft., one target. <i>Hit:</i> 1d8 bludgeoning damage. <i>Special:</i> Versatile (1d10 bludgeoning damage)</p>
-        <p><b>Dagger:</b> <i>Melee Weapon Attack:</i> +3 to hit, reach 5 ft., one target. <i>Hit:</i> 1d4 + 1 piercing damage. <i>Special:</i> Finesse, Thrown (20/60 ft.)</p>
-        <p><b>Dart:</b> <i>Ranged Weapon Attack:</i> +3 to hit, range 20/60 ft., one target. <i>Hit:</i> 1d4 + 1 piercing damage.</p>
-        <p><b>Cold Breath:</b> Dragonborn trait</p>
-        <p><b>Spellcasting:</b> Sorceror feature</p>*@
-
                             @foreach (var item in Model.ActionAttack)
                             {
                                 <div class="content-wrapper">
-                                    <p><b>@item.Name:</b> @item.Description</p>
+                                    <p><b>@Html.Raw(item.Name):</b> @Html.Raw(item.Description)</p>
                                 </div>
                             }
 
-                            <h4>Bonus Actions</h4>
-                            @foreach (var item in Model.ActionBonus)
+                            @if (Model.ActionBonus.Count > 0)
                             {
-                                <div class="content-wrapper">
-                                    <p><b>@item.Name:</b> @item.Description</p>
-                                </div>
+                                <h4>Bonus Actions</h4>
+                                @foreach (var item in Model.ActionBonus)
+                                {
+                                    <div class="content-wrapper">
+                                        <p><b>@item.Name:</b> @item.Description</p>
+                                    </div>
+                                }
                             }
 
-                            <h4>Options</h4>
-                            @foreach (var item in Model.ActionOption)
+                            @if (Model.ActionOption.Count > 0)
                             {
-                                <div class="content-wrapper">
-                                    <p><b>@item.Name:</b> @item.Description</p>
-                                </div>
+                                <h4>Options</h4>
+                                @foreach (var item in Model.ActionOption)
+                                {
+                                    <div class="content-wrapper">
+                                        <p><b>@item.Name:</b> @item.Description</p>
+                                    </div>
+                                }
                             }
                         </div>
                     </div>
