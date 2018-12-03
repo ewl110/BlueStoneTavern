@@ -35,7 +35,7 @@ namespace DnD5E.Characters
         private int attack = 1;
         private string classDescription;
         private List<FeaturesModel> classFeatures = new List<FeaturesModel>() { };
-        private string charClassPrimary;
+        private CharacterClassModel charClassPrimary;
         private string equipment;
         private HitPointsModel hitPoints;
         private List<string> immunity;
@@ -88,17 +88,17 @@ namespace DnD5E.Characters
             };
 
             //Test Multiclass
-            if (!this.charClass.ContainsKey(ClassEnum.Wizard.ToString()))
-            {
-                this.charClass.Add(
-                    ClassEnum.Wizard.ToString(),
-                    new CharacterClassModel()
-                    {
-                        Level = 1,
-                        Name = ClassEnum.Wizard.ToString()
-                    }
-                );
-            }
+            //if (!this.charClass.ContainsKey(ClassEnum.Wizard.ToString()))
+            //{
+            //    this.charClass.Add(
+            //        ClassEnum.Wizard.ToString(),
+            //        new CharacterClassModel()
+            //        {
+            //            Level = 1,
+            //            Name = ClassEnum.Wizard.ToString()
+            //        }
+            //    );
+            //}
 
             this.totalLevel = GetTotalLevel();
 
@@ -497,6 +497,14 @@ namespace DnD5E.Characters
                                     }
                                 }
 
+                                // No variant is set and the SetVariant flag is present, choose a random variant
+                                if (c.Levels[i].SetVariant && charClass.Variant == null)
+                                {
+                                    string[] variantsList = this.charClassCard.Levels[i].Variants.Keys.ToArray();
+                                    string randomVariant = variantsList.PickRandomItemFromArray();
+                                    charClass.Variant = variantsList.PickRandomItemFromArray();
+                                }
+
                                 // Check if class variant exists
                                 if (charClass.Variant != null)
                                 {
@@ -637,16 +645,16 @@ namespace DnD5E.Characters
             this.passivePerception = passivePerception;
         }
 
-        private string GetPrimaryClass()
+        private CharacterClassModel GetPrimaryClass()
         {
-            string charClass = "";
+            CharacterClassModel charClass = null;
             int level = 0;
 
             foreach (var c in this.charClass.Values)
             {
                 if (c.Level > level)
                 {
-                    charClass = c.Name;
+                    charClass = c;
                     level = c.Level;
                 }
             }

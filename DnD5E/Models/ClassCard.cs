@@ -14,7 +14,7 @@ namespace DnD5E.Models
         //public ProficiencyModel Proficiencies { get; set; }
     }
 
-    public class LevelModel
+    public class LevelModel : BaseCard
     {
         public int? BardicInspiration { get; set; }
         public int? CombatDice { get; set; }
@@ -23,11 +23,11 @@ namespace DnD5E.Models
         public ProficiencyModel Proficiencies { get; set; }
         public int? Rage { get; set; }
         public int? RageDamage { get; set; }
+        public bool SetVariant { get; set; }
         public int? SneakAttack { get; set; }
         public SpellsModel Spells { get; set; }
         public SpellSlotsModel SpellSlots { get; set; }
         public Dictionary<string, LevelModel> Variants { get; set; }
-        public int? WildShape { get; set; }
     }
 
     public class SpellsModel

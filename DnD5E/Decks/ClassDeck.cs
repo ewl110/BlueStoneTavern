@@ -111,6 +111,7 @@ namespace DnD5E.Decks
                                 },
                             },
                             Rage = 3,
+                            SetVariant = true,
                             Variants = new Dictionary<string, LevelModel>{
                                 {
                                     ClassEnum.Berserker.ToString(),
