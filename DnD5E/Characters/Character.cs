@@ -130,10 +130,14 @@ namespace DnD5E.Characters
                 Name = feature.Name,
                 Description = new List<string>
                 {
-                    feature.Description[0],
-                    feature.Description[1]
+                    feature.Description[0]
                 }
             };
+
+            if (feature.Description.Count == 2)
+            {
+                newFeature.Description.Add(feature.Description[1]);
+            }
 
             switch (feature.AbilityModifier)
             {

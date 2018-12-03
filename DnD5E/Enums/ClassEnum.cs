@@ -8,6 +8,8 @@ namespace DnD5E.Enums
         Berserker,
         Bard,
         Cleric,
+        [Description("College of Lore")]
+        CollegeOfLore,
         Druid,
         Fighter,
         Monk,

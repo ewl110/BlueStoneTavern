@@ -450,6 +450,36 @@ namespace DnD5E.Decks
                     Cha = 15
                 },
                 Description = "You are an inspiring magician whose power echoes the music of creation.",
+                Equipment = new List<EquipmentModel>
+                {
+                    new EquipmentModel
+                    {
+                        Name = WeaponsEnum.Dagger.ToString(),
+                        Type = EquipmentTypeEnum.Weapon,
+                        Weapon = WeaponsEnum.Dagger
+                    },
+                    new EquipmentModel
+                    {
+                        Name = WeaponsEnum.Rapier.ToString(),
+                        Type = EquipmentTypeEnum.Weapon,
+                        Weapon = WeaponsEnum.Rapier
+                    },
+                    new EquipmentModel
+                    {
+                        Name = ArmorEnum.Leather.ToString(),
+                        Type = EquipmentTypeEnum.Armor,
+                    },
+                    new EquipmentModel
+                    {
+                        Name = ItemsEnum.EntertainersPack.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Type = EquipmentTypeEnum.Item,
+                    },
+                    new EquipmentModel
+                    {
+                        Name = ToolsEnum.selectInstrument.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Type = EquipmentTypeEnum.Tool,
+                    },
+                },
                 HitDice = 8,
                 Levels = new Dictionary<int, LevelModel>()
                 {
@@ -457,6 +487,35 @@ namespace DnD5E.Decks
                         1,
                         new LevelModel
                         {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Bardic Inspiration",
+                                    Description = new List<string>
+                                    {
+                                        "You can inspire others through stirring words or music. To do so, you use a Bonus Action on Your Turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6.",
+                                        "Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, Attack roll, or saving throw it makes. The creature can wait until after it rolls The D20 before deciding to use the Bardic Inspiration die, but must decide before the DM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.",
+                                        "You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a Long Rest.",
+                                        "Your Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level.",
+                                    },
+                                    Action = new ActionModel
+                                    {
+                                        Name = "Bardic Inspiration",
+                                        Description = "Bard feature",
+                                        Type = ActionTypesEnum.Bonus.ToString()
+                                    },
+                                },
+                                new FeaturesModel
+                                {
+                                    Name = "Spellcasting",
+                                    Description = new List<string>
+                                    {
+                                        "Charisma is your Spellcasting ability for your bard Spells. Your magic comes from the heart and soul you pour into the Performance of your music or oration. You use your Charisma whenever a spell refers to your Spellcasting ability. In addition, you use your Charisma modifier when Setting the saving throw DC for a bard spell you cast and when Making an Attack roll with one."
+                                    },
+                                    AbilityModifier = AbilitiesEnum.Cha.ToString()
+                                },
+                            },
                             Proficiencies = new ProficiencyModel
                             {
                                 Armor = new string[]
@@ -478,7 +537,218 @@ namespace DnD5E.Decks
                                 }
                             },
                         }
-                    }
+                    },
+                    {
+                        2,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Jack of All Trades",
+                                    Description = new List<string>
+                                    {
+                                        "Starting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you make that doesn't already include your proficiency bonus."
+                                    }
+                                },
+                                new FeaturesModel
+                                {
+                                    Name = "Song of Rest",
+                                    Description = new List<string>
+                                    {
+                                        "Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during a Short Rest. If you or any friendly creatures who can hear your Performance regain Hit Points by spending Hit Dice at the end of the Short Rest, each of those creatures regains an extra 1d6 Hit Points.",
+                                        "The extra Hit Points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level."
+                                    },
+                                    AbilityModifier = AbilitiesEnum.Cha.ToString()
+                                },
+                            },
+                        }
+                    },
+                    {
+                        3,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Bardic College",
+                                    Description = new List<string>
+                                    {
+                                        "Select yoru college of expertise."
+                                    }
+                                },
+                                new FeaturesModel
+                                {
+                                    Name = "Expertise",
+                                    Description = new List<string>
+                                    {
+                                        "At 3rd level, choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+                                        "At 10th level, you can choose another two skill proficiencies to gain this benefit."
+                                    }
+                                },
+                            },
+                            SetVariant = true,
+                            Variants = new Dictionary<string, LevelModel>{
+                                {
+                                    ClassEnum.CollegeOfLore.ToString(),
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Bonus Proficiencies",
+                                                Description = new List<string>
+                                                {
+                                                    "When you join the College of Lore at 3rd level, you gain proficiency with three Skills of your choice."
+                                                },
+                                            },
+                                            new FeaturesModel
+                                            {
+                                                Name = "Cutting Words",
+                                                Description = new List<string>
+                                                {
+                                                    "Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an Attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the Attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can’t hear you or if it’s immune to being Charmed."
+                                                },
+                                            }
+                                        },
+                                        Proficiencies = new ProficiencyModel
+                                        {
+                                            Skills = new string[]
+                                            {
+                                                SkillsEnum.SelectSkill.ToString(),
+                                                SkillsEnum.SelectSkill.ToString(),
+                                                SkillsEnum.SelectSkill.ToString(),
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        5,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Font of Inspiration",
+                                    Description = new List<string>
+                                    {
+                                        "Beginning when you reach 5th level, you regain all of your expended uses of Bardic Inspiration when you finish a short or Long Rest."
+                                    }
+                                },
+                            },
+                        }
+                    },
+                    {
+                        6,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Countercharm",
+                                    Description = new List<string>
+                                    {
+                                        "At 6th level, you gain the ability to use musical notes or words of power to disrupt mind-influencing effects. As an action, you can start a Performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on Saving Throws against being Frightened or Charmed. A creature must be able to hear you to gain this benefit. The Performance ends early if you are Incapacitated or silenced or if you voluntarily end it (no action required)."
+                                    },
+                                    Action = new ActionModel
+                                    {
+                                        Name = "Countercharm",
+                                        Description = "Bard feature",
+                                        Type = ActionTypesEnum.Option.ToString()
+                                    }
+                                },
+                            },
+                            Variants = new Dictionary<string, LevelModel>{
+                                {
+                                    ClassEnum.CollegeOfLore.ToString(),
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Additional Magical Secrets",
+                                                Description = new List<string>
+                                                {
+                                                    "At 6th level, you learn two Spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.",
+                                                    "The chosen Spells count as bard Spells for you but don’t count against the number of bard Spells you know."
+                                                },
+                                            }
+                                        },
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        10,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Magical Secrets",
+                                    Description = new List<string>
+                                    {
+                                        "By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines. Choose two Spells from any class, including this one. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.",
+                                        "The chosen Spells count as bard Spells for you and are included in the number in the Spells Known column of the Bard table.",
+                                        "You learn two additional Spells from any class at 14th level and again at 18th level."
+                                    },
+                                },
+                            },
+                        }
+                    },
+                    {
+                        14,
+                        new LevelModel
+                        {
+                            Variants = new Dictionary<string, LevelModel>{
+                                {
+                                    ClassEnum.CollegeOfLore.ToString(),
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Peerless Skill",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the GM tells you whether you succeed or fail."
+                                                },
+                                            }
+                                        },
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        20,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Superior Inspiration",
+                                    Description = new List<string>
+                                    {
+                                        "At 20th level, when you roll initiative and have no uses of Bardic Inspiration left, you regain one use."
+                                    },
+                                },
+                            },
+                        }
+                    },
                 },
             },
             new ClassCard()

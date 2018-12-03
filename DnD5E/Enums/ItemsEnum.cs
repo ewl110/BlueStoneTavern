@@ -8,6 +8,10 @@ namespace DnD5E.Enums
         BeltPouch,
         [Description("Component Pouch")]
         ComponentPouch,
+        [Description("Diplomat's Pack")]
+        DiplomatsPack,
+        [Description("Entertainer's Pack")]
+        EntertainersPack,
         [Description("Explorer's Pack")]
         ExlporersPack,
         [Description("Hunting Trap")]
