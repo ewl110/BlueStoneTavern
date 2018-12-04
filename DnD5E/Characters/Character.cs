@@ -128,15 +128,12 @@ namespace DnD5E.Characters
             // Reset the description list
             FeaturesModel newFeature = new FeaturesModel {
                 Name = feature.Name,
-                Description = new List<string>
-                {
-                    feature.Description[0]
-                }
+                Description = new List<string>{}
             };
 
-            if (feature.Description.Count == 2)
+            foreach (var item in feature.Description)
             {
-                newFeature.Description.Add(feature.Description[1]);
+                newFeature.Description.Add(item);
             }
 
             switch (feature.AbilityModifier)
