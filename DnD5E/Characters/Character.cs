@@ -301,7 +301,7 @@ namespace DnD5E.Characters
         {
             switch (action.Type)
             {
-                case "Attack":
+                case ActionTypesEnum.Attack:
                     if (action.Weapon != WeaponsEnum.None)
                     {
                         List<string> propertiesList = new List<string>() { };
@@ -398,13 +398,13 @@ namespace DnD5E.Characters
                         this.actionAttack.Add(action);
                     }
                     break;
-                case "Bonus":
+                case ActionTypesEnum.Bonus:
                     this.actionBonus.Add(action);
                     break;
-                case "Option":
+                case ActionTypesEnum.Option:
                     this.actionOption.Add(action);
                     break;
-                case "Reaction":
+                case ActionTypesEnum.Reaction:
                     this.actionReaction.Add(action);
                     break;
             }
@@ -469,8 +469,6 @@ namespace DnD5E.Characters
 
                         for (int i = 1; i <= charClass.Level; i++)
                         {
-                            string classVariant = "";
-
                             if (c.Levels.ContainsKey(i))
                             {
                                 if (c.Levels[i].Features != null)
@@ -504,39 +502,39 @@ namespace DnD5E.Characters
                                 // No variant is set and the SetVariant flag is present, choose a random variant
                                 if (c.Levels[i].SetVariant && charClass.Variant == null)
                                 {
-                                    string[] variantsList = this.charClassCard.Levels[i].Variants.Keys.ToArray();
-                                    string randomVariant = variantsList.PickRandomItemFromArray();
-                                    charClass.Variant = variantsList.PickRandomItemFromArray();
+                                    ClassEnum[] variantsList = this.charClassCard.Levels[i].Variants.Keys.ToArray();
+                                    ClassEnum randomVariant = variantsList.PickRandomItemFromArray();
+                                    charClass.Variant = randomVariant.ToString();
                                 }
 
                                 // Check if class variant exists
                                 if (charClass.Variant != null)
                                 {
-                                    classVariant = charClass.Variant;
-                                }
+                                    Enum.TryParse(charClass.Variant, out ClassEnum classVariant);
 
-                                // If class variant is found add the relevant features
-                                if (this.charClassCard.Levels[i].Variants != null && this.charClassCard.Levels[i].Variants.ContainsKey(classVariant) && this.charClassCard.Levels[i].Variants[classVariant].Features != null)
-                                {
-                                    foreach (FeaturesModel item in this.charClassCard.Levels[i].Variants[classVariant].Features)
+                                    // If class variant is found add the relevant features
+                                    if (this.charClassCard.Levels[i].Variants != null && this.charClassCard.Levels[i].Variants.ContainsKey(classVariant) && this.charClassCard.Levels[i].Variants[classVariant].Features != null)
                                     {
-                                        if (item.Name == "Spellcasting")
+                                        foreach (FeaturesModel item in this.charClassCard.Levels[i].Variants[classVariant].Features)
                                         {
-                                            AddSpellCastingFeatures(item, c.Name);
-                                        }
-                                        else
-                                        {
-                                            this.charClass[c.Name].Features.Add(item);
-
-                                            if (item.Name == "Extra Attack")
+                                            if (item.Name == "Spellcasting")
                                             {
-                                                this.attack++;
+                                                AddSpellCastingFeatures(item, c.Name);
                                             }
-                                        }
+                                            else
+                                            {
+                                                this.charClass[c.Name].Features.Add(item);
 
-                                        if (item.Action != null)
-                                        {
-                                            GetActions(item.Action);
+                                                if (item.Name == "Extra Attack")
+                                                {
+                                                    this.attack++;
+                                                }
+                                            }
+
+                                            if (item.Action != null)
+                                            {
+                                                GetActions(item.Action);
+                                            }
                                         }
                                     }
                                 }
@@ -573,7 +571,7 @@ namespace DnD5E.Characters
                     {
                         ActionModel action = new ActionModel
                         {
-                            Type = ActionTypesEnum.Attack.ToString(),
+                            Type = ActionTypesEnum.Attack,
                             Weapon =item.Weapon
                         };
 
@@ -680,7 +678,7 @@ namespace DnD5E.Characters
                 {
                     if (this.charClassCard.Levels.ContainsKey(i) && this.charClassCard.Levels[i].Proficiencies != null)
                     {
-                        string classVariant = "";
+                        //ClassEnum classVariant = ClassEnum.None;
                         var proficiencies = this.charClassCard.Levels[i].Proficiencies;
 
                         this.proficiencyArmor = this.proficiencyArmor.Union(GetArmorProficiency(proficiencies)).ToList();
@@ -691,18 +689,18 @@ namespace DnD5E.Characters
 
                         if (c.Variant != null)
                         {
-                            classVariant = c.Variant;
-                        }
+                            Enum.TryParse(c.Variant, out ClassEnum classVariant);
 
-                        if (this.charClassCard.Levels[i].Variants != null && this.charClassCard.Levels[i].Variants.ContainsKey(classVariant) && this.charClassCard.Levels[i].Variants[classVariant].Proficiencies != null)
-                        {
-                            var proficienciesVariant = this.charClassCard.Levels[i].Variants[classVariant].Proficiencies;
+                            if (this.charClassCard.Levels[i].Variants != null && this.charClassCard.Levels[i].Variants.ContainsKey(classVariant) && this.charClassCard.Levels[i].Variants[classVariant].Proficiencies != null)
+                            {
+                                var proficienciesVariant = this.charClassCard.Levels[i].Variants[classVariant].Proficiencies;
 
-                            this.proficiencyArmor = this.proficiencyArmor.Union(GetArmorProficiency(proficienciesVariant)).ToList();
-                            this.proficiencySavingThrows = this.proficiencySavingThrows.Union(GetSavingThrowProficiency(proficienciesVariant)).ToList();
-                            this.proficiencySkills = this.proficiencySkills.Union(GetSkillProficiency(proficienciesVariant)).ToList();
-                            this.proficiencyTools = this.proficiencyTools.Union(GetToolProficiency(proficienciesVariant)).ToList();
-                            this.proficiencyWeapons = this.proficiencyWeapons.Union(GetWeaponProficiency(proficienciesVariant)).ToList();
+                                this.proficiencyArmor = this.proficiencyArmor.Union(GetArmorProficiency(proficienciesVariant)).ToList();
+                                this.proficiencySavingThrows = this.proficiencySavingThrows.Union(GetSavingThrowProficiency(proficienciesVariant)).ToList();
+                                this.proficiencySkills = this.proficiencySkills.Union(GetSkillProficiency(proficienciesVariant)).ToList();
+                                this.proficiencyTools = this.proficiencyTools.Union(GetToolProficiency(proficienciesVariant)).ToList();
+                                this.proficiencyWeapons = this.proficiencyWeapons.Union(GetWeaponProficiency(proficienciesVariant)).ToList();
+                            }
                         }
                     }
                 }

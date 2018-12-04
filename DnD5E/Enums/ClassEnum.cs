@@ -13,7 +13,20 @@ namespace DnD5E.Enums
         Druid,
         Fighter,
         Monk,
+        None,
         Paladin,
+        [Description("Path of the Ancestral Guardian")]
+        PathOfTheAncestralGuardian,
+        [Description("Path of the Battlerager")]
+        PathOfTheBattlerager,
+        [Description("Path of the Berserker")]
+        PathOfTheBerserker,
+        [Description("Path of the Storm Herald")]
+        PathOfTheStormHerald,
+        [Description("Path of the Totem Warrior")]
+        PathOfTheTotemWarrior,
+        [Description("Path of the Zealot")]
+        PathOfTheZealot,
         Ranger,
         Rogue,
         Sorcerer,

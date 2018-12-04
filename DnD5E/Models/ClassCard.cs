@@ -27,7 +27,7 @@ namespace DnD5E.Models
         public int? SneakAttack { get; set; }
         public SpellsModel Spells { get; set; }
         public SpellSlotsModel SpellSlots { get; set; }
-        public Dictionary<string, LevelModel> Variants { get; set; }
+        public Dictionary<ClassEnum, LevelModel> Variants { get; set; }
     }
 
     public class SpellsModel

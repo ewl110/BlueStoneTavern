@@ -274,8 +274,8 @@ namespace DnD5E.Dictionaries
                     },
                     Damage = new WeaponDamageModel {
                         DamageType = DamageTypesEnum.Slashing,
-                        Dice = 8,
-                        NumberOfDice = 12
+                        Dice = 12,
+                        NumberOfDice = 1
                     },
                     IsRanged = false,
                     Name = WeaponsEnum.Greataxe.ToString(),
