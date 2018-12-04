@@ -362,7 +362,7 @@ namespace DnD5E.Characters
                             {
                                 string thrownProperty = "Thrown";
 
-                                if (weapon.Range != null && WeaponsEnum.Dart.ToString() != "Dart")
+                                if (weapon.Range != null && WeaponsEnum.Dart.ToString() != weapon.Name)
                                 {
                                     thrownProperty += $" ({weapon.Range.Short}/{weapon.Range.Long} ft.)";
                                 }

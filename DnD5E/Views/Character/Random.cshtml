@@ -125,33 +125,24 @@
                         <div class="character_actions">
                             <h4>Actions</h4>
                             <p><b>Attack:</b> You can attack @numberOfAttacks when you take this action, using the following:</p>
-                            @foreach (var item in Model.ActionAttack)
-                            {
-                                <div class="content-wrapper">
-                                    <p><b>@Html.Raw(item.Name):</b> @Html.Raw(item.Description)</p>
-                                </div>
-                            }
+                            @Html.Partial("_ActionList", Model.ActionAttack)
 
                             @if (Model.ActionBonus.Count > 0)
                             {
                                 <h4>Bonus Actions</h4>
-                                @foreach (var item in Model.ActionBonus)
-                                {
-                                    <div class="content-wrapper">
-                                        <p><b>@item.Name:</b> @item.Description</p>
-                                    </div>
-                                }
+                                @Html.Partial("_ActionList", Model.ActionBonus)
+                            }
+
+                            @if (Model.ActionReaction.Count > 0)
+                            {
+                                <h4>Reactions</h4>
+                                @Html.Partial("_ActionList", Model.ActionReaction)
                             }
 
                             @if (Model.ActionOption.Count > 0)
                             {
                                 <h4>Options</h4>
-                                @foreach (var item in Model.ActionOption)
-                                {
-                                    <div class="content-wrapper">
-                                        <p><b>@item.Name:</b> @item.Description</p>
-                                    </div>
-                                }
+                                @Html.Partial("_ActionList", Model.ActionOption)
                             }
                         </div>
                     </div>

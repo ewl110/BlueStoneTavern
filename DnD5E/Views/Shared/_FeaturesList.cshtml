@@ -4,7 +4,7 @@
 {
     @if (item.Description != null)
     {
-        <div class="content-wrapper">
+        <div id="@(item.Name.Replace(" ",""))" class="content-wrapper">
             @for (int i = 0; i < item.Description.Count(); i++)
             {
                 @if (i == 0)

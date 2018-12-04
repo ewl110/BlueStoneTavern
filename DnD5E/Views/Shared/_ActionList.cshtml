@@ -1,0 +1,18 @@
+﻿@model IEnumerable<DnD5E.Models.ActionModel>
+
+@foreach (var item in Model)
+{
+    @if (item.Description != null)
+    {
+        <div class="content-wrapper">
+            @if (item.Weapon != DnD5E.Enums.WeaponsEnum.None)
+            {
+                <p><b>@item.Name:</b> @Html.Raw(item.Description)</p>
+            }
+            else
+            {
+                <p><a href="#@(item.Name.Replace(" ",""))"><b>@item.Name:</b></a> @Html.Raw(item.Description)</p>
+            }
+        </div>
+    }
+}

@@ -20,7 +20,7 @@ namespace DnD5E.Decks
                     Wis = 12,
                     Cha = 10
                 },
-                Description = "You are a fierce warrior of primitive background who can enter battle rage.",
+                Description = "You are a fierce warrior of primitive background who can enter a battle rage.",
                 Equipment = new List<EquipmentModel>
                 {
                     new EquipmentModel
@@ -811,9 +811,20 @@ namespace DnD5E.Decks
                                     Name = "Spellcasting",
                                     Description = new List<string>
                                     {
-                                        "Charisma is your Spellcasting ability for your bard Spells. Your magic comes from the heart and soul you pour into the Performance of your music or oration. You use your Charisma whenever a spell refers to your Spellcasting ability. In addition, you use your Charisma modifier when Setting the saving throw DC for a bard spell you cast and when Making an Attack roll with one."
+                                        "Charisma is your Spellcasting ability for your bard Spells. Your magic comes from the heart and soul you pour into the Performance of your music or oration. You use your Charisma whenever a spell refers to your Spellcasting ability. In addition, you use your Charisma modifier when Setting the saving throw DC for a bard spell you cast and when Making an Attack roll with one.",
+                                        "You know two cantrips of your choice from the bard spell list. You learn additional bard cantrips of your choice at higher levels, learning a 3rd cantrip at 4th level and a 4th at 10th level.",
+                                        "You know four 1st-level spells of your choice from the bard spell list. You learn an additional bard spell of your choice at each level except 12th, 16th, 19th, and 20th. Each of these spells must be of a level for which you have spell slots.",
+                                        "Additionally, when you gain a level in this class, you can choose one of the bard spells you know and replace it with another spell from the bard spell list, which also must be of a level for which you have spell slots.",
+                                        "You can cast any bard spell you know as a <b>ritual</b> if that spell has the ritual tag.",
+                                        "You can use a musical instrument as a <b>spellcasting focus</b> for your bard spells."
                                     },
-                                    AbilityModifier = AbilitiesEnum.Cha.ToString()
+                                    AbilityModifier = AbilitiesEnum.Cha.ToString(),
+                                    Action = new ActionModel
+                                    {
+                                        Name = "Spellcasting",
+                                        Description = "Bard feature",
+                                        Type = ActionTypesEnum.Attack
+                                    }
                                 },
                             },
                             Proficiencies = new ProficiencyModel
@@ -860,7 +871,13 @@ namespace DnD5E.Decks
                                         "Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during a Short Rest. If you or any friendly creatures who can hear your Performance regain Hit Points by spending Hit Dice at the end of the Short Rest, each of those creatures regains an extra 1d6 Hit Points.",
                                         "The extra Hit Points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level."
                                     },
-                                    AbilityModifier = AbilitiesEnum.Cha.ToString()
+                                    AbilityModifier = AbilitiesEnum.Cha.ToString(),
+                                    Action = new ActionModel
+                                    {
+                                        Name = "Song of Rest",
+                                        Description = "Bard feature",
+                                        Type = ActionTypesEnum.Option
+                                    }
                                 },
                             },
                         }
@@ -912,6 +929,12 @@ namespace DnD5E.Decks
                                                 {
                                                     "Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an Attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the Attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can’t hear you or if it’s immune to being Charmed."
                                                 },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Cutting Words",
+                                                    Description = "College of Lore feature",
+                                                    Type = ActionTypesEnum.Reaction
+                                                }
                                             }
                                         },
                                         Proficiencies = new ProficiencyModel
