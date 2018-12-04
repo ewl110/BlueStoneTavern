@@ -909,6 +909,46 @@ namespace DnD5E.Decks
                             SetVariant = true,
                             Variants = new Dictionary<ClassEnum, LevelModel>{
                                 {
+                                    ClassEnum.CollegeOfGlamour,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Mantle of Inspiration",
+                                                Description = new List<string>
+                                                {
+                                                    "At 3rd level, as a bonus action, you can expend one use of your Bardic Inspiration to grant yourself a wondrous appearance. When you do so, choose a number of creatures you can see and that can see you within 60 feet of you, up to a number equal to your Charisma modifier (minimum of one). Each of them gains 5 temporary hit points. When a creature gains these temporary hit points, it can immediately use its reaction to move up to its speed, without provoking opportunity attacks.",
+                                                    "The number of temporary hit points increases when you reach certain levels in this class, increasing to 8 at 5th level, 11 at 10th level, and 14 at 15th level."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Mantle of Inspiration",
+                                                    Description = "College of Glamour feature",
+                                                    Type = ActionTypesEnum.Bonus
+                                                }
+                                            },
+                                            new FeaturesModel
+                                            {
+                                                Name = "Enthralling Performance",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 3rd level, if you perform for at least 1 minute, you can attempt to inspire wonder in your audience. At the end of the performance, choose a number of humanoids within 60 feet of you who watched and listened to all of it, up to a number equal to your Charisma modifier (minimum of one). Each target must succeed on a Wisdom saving throw against your spell save DC or be charmed by you. While charmed in this way, the target idolizes you, it speaks glowingly of you to anyone who talks to it, and it hinders anyone who opposes you, although it avoids violence unless it was already inclined to fight on your behalf. This effect ends on a target after 1 hour, if it takes any damage, if you attack it, or if it witnesses you attacking or damaging any of its allies.",
+                                                    "If a target succeeds on its saving throw, the target has no hint that you tried to charm it.",
+                                                    "Once you use this feature, you can't use it again until you finish a short or long rest."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Enthralling Performance",
+                                                    Description = "College of Glamour feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            }
+                                        },
+                                    }
+                                },
+                                {
                                     ClassEnum.CollegeOfLore,
                                     new LevelModel
                                     {
@@ -947,7 +987,136 @@ namespace DnD5E.Decks
                                             }
                                         }
                                     }
-                                }
+                                },
+                                {
+                                    ClassEnum.CollegeOfSwords,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Bonus Proficiencies",
+                                                Description = new List<string>
+                                                {
+                                                    "At 3rd level, you gain proficiency with medium armor and the scimitar."
+                                                }
+                                            },
+                                            new FeaturesModel
+                                            {
+                                                Name = "Fighting Style",
+                                                Description = new List<string>
+                                                {
+                                                    "At 3rd level, choose one of the following options. You can't take a Fighting Style option more than once, even if something in the game lets you choose again.",
+                                                    "<b>Dueling:</b> When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.<br /><b>Two-Weapon Fighting:</b> When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack."
+                                                },
+                                            },
+                                            new FeaturesModel
+                                            {
+                                                Name = "Blade Flourish",
+                                                Description = new List<string>
+                                                {
+                                                    "At 3rd level, whenever you take the Attack action on your turn, your walking speed increases by 10 feet until the end of the turn, and if a weapon attack that you make as part of this action hits a creature, you can use one of the following Blade Flourish options of your choice. You can use only one Blade Flourish option per turn.",
+                                                    "<b>Defensive Flourish:</b> You can expend one use of your Bardic Inspiration to cause the weapon to deal extra damage to the target you hit. The damage equals the number you roll on the Bardic Inspiration die. You also add the number rolled to your AC until the start of your next turn.<br /><b>Slashing Flourish:</b> You can expend one use of your Bardic Inspiration to cause the weapon to deal extra damage to the target you hit and to any other creature of your choice that you can see within 5 feet of you. The damage equals the number you roll on the Bardic Inspiration die.<br /><b>Mobile Flourish:</b> You can expend one use of your Bardic Inspiration to cause the weapon to deal extra damage to the target you hit. The damage equals the number you roll on the Bardic Inspiration die. You can also push the target up to 5 feet away from you, plus a number of feet equal to the number you roll on that die. You can then immediately use your reaction to move up to your walking speed to an unoccupied space within 5 feet of the target."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Blade Flourish",
+                                                    Description = "College of Swords feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            }
+                                        },
+                                        Proficiencies = new ProficiencyModel
+                                        {
+                                            Armor = new string[]
+                                            {
+                                                ArmorEnum.Medium.ToString()
+                                            },
+                                            Weapons = new string[]
+                                            {
+                                                WeaponsEnum.Scimitar.ToString()
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.CollegeOfValor,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Bonus Proficiencies",
+                                                Description = new List<string>
+                                                {
+                                                    "At 3rd level, you gain proficiency with medium armor, shields, and martial weapons."
+                                                }
+                                            },
+                                            new FeaturesModel
+                                            {
+                                                Name = "Combat Inspiration",
+                                                Description = new List<string>
+                                                {
+                                                    "Also at 3rd level, a creature that has a Bardic Inspiration die from you can roll that die and add the number rolled to a weapon damage roll it just made. Alternatively, when an attack roll is made against the creature, it can use its reaction to roll the Bardic Inspiration die and add the number rolled to its AC against that attack, after seeing the roll but before knowing whether it hits or misses."
+                                                },
+                                            },
+                                        },
+                                        Proficiencies = new ProficiencyModel
+                                        {
+                                            Armor = new string[]
+                                            {
+                                                ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description,
+                                                ArmorEnum.Shield.ToString()
+                                            },
+                                            Weapons = new string[]
+                                            {
+                                                WeaponsEnum.MartialWeapon.GetAttributeOfType<DescriptionAttribute>().Description
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.CollegeOfWhispers,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Psychic Blades",
+                                                Description = new List<string>
+                                                {
+                                                    "At 3rd level, when you hit a creature with a weapon attack, you can expend one use of your Bardic Inspiration to deal an extra 2d6 psychic damage to that target. You can do so only once per round on your turn.",
+                                                    "The psychic damage increases when you reach certain levels in this class, increasing to 3d6 at 5th level, 5d6 at 10th level, and 8d6 at 15th level."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Psychic Blades",
+                                                    Description = "College of Whispers feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            },
+                                            new FeaturesModel
+                                            {
+                                                Name = "Words of Terror",
+                                                Description = new List<string>
+                                                {
+                                                    "At 3rd level, if you speak to a humanoid alone for at least 1 minute, you can attempt to seed paranoia in its mind. At the end of the conversation, the target must succeed on a Wisdom saving throw against your spell save DC or be frightened of you or another creature of your choice. The target is frightened in this way for 1 hour, until it is attacked or damaged, or until it witnesses its allies being attacked or damaged.",
+                                                    "If the target succeeds on its saving throw, the target has no hint that you tried to frighten it.",
+                                                    "Once you use this feature, you can't use it again until you finish a short or long rest."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Words of Terror",
+                                                    Description = "College of Whispers feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            }
+                                        },
+                                    }
+                                },
                             }
                         }
                     },
@@ -991,6 +1160,31 @@ namespace DnD5E.Decks
                             },
                             Variants = new Dictionary<ClassEnum, LevelModel>{
                                 {
+                                    ClassEnum.CollegeOfGlamour,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Mantle of Majesty",
+                                                Description = new List<string>
+                                                {
+                                                    "At 6th level, as a bonus action, you cast Command, without expending a spell slot, and you take on an appearance of unearthly beauty for 1 minute or until your concentration ends (as if you were concentrating on a spell). During this time, you can cast Command as a bonus action on each of your turns, without expending a spell slot.",
+                                                    "Any creature charmed by you automatically fails its saving throw against the Command you cast with this feature.",
+                                                    "Once you use this feature, you can't use it again until you finish a long rest."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Mantle of Majesty",
+                                                    Description = "College of Glamour feature",
+                                                    Type = ActionTypesEnum.Bonus
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
                                     ClassEnum.CollegeOfLore,
                                     new LevelModel
                                     {
@@ -1001,13 +1195,73 @@ namespace DnD5E.Decks
                                                 Name = "Additional Magical Secrets",
                                                 Description = new List<string>
                                                 {
-                                                    "At 6th level, you learn two Spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.",
-                                                    "The chosen Spells count as bard Spells for you but don’t count against the number of bard Spells you know."
+                                                    "At 6th level, you learn two spells of your choice from any classes. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip. The chosen spells count as bard spells for you but don't count against the number of bard spells you know."
                                                 },
-                                            }
+                                            },
                                         },
                                     }
-                                }
+                                },
+                                {
+                                    ClassEnum.CollegeOfSwords,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Extra Attack",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 6th level, you can attack twice, instead of once, whenever you take the Attack action on your turn"
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.CollegeOfValor,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Extra Attack",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 6th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.CollegeOfWhispers,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Mantle of Whispers",
+                                                Description = new List<string>
+                                                {
+                                                    "At 6th level, when a humanoid dies within 30 feet of you, you can magically capture its shadow using your reaction. You retain this shadow until you use it or you finish a long rest.",
+                                                    "You can use the shadow as an action. When you do so, it vanishes, magically transforming into a disguise that appears on you. You now look like the dead person, but healthy and alive. This disguise lasts for 1 hour or until you end it as a bonus action.",
+                                                    "While you're in the disguise, you gain access to all information that the humanoid would freely share with a casual acquaintance. Such information includes general details on its background and personal life, but doesn't include secrets. The information is enough that you can pass yourself off as the person by drawing on its memories.",
+                                                    "Another creature can see through this disguise by succeeding on a Wisdom (Insight) check contested by your Charisma (Deception) check. You gain a +5 bonus to your check.",
+                                                    "Once you capture a shadow with this feature, you can't capture another one with it until you finish a short or long rest."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Mantle of Whispers",
+                                                    Description = "College of Whispers feature",
+                                                    Type = ActionTypesEnum.Reaction
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
                             }
                         }
                     },
@@ -1036,6 +1290,30 @@ namespace DnD5E.Decks
                         {
                             Variants = new Dictionary<ClassEnum, LevelModel>{
                                 {
+                                    ClassEnum.CollegeOfGlamour,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Unbreakable Majesty",
+                                                Description = new List<string>
+                                                {
+                                                    "At 14th level, as a bonus action, you can assume a magically majestic presence for 1 minute or until you are incapacitated. For the duration, whenever any creature tries to attack you for the first time on a turn, the attacker must make a Charisma saving throw against your spell save DC. On a failed save, it can't attack you on this turn, and it must choose a new target for its attack or the attack is wasted. On a successful save, it can attack you on this turn, but it has disadvantage on any saving throw it makes against your spells on your next turn.",
+                                                    "Once you assume this majestic presence, you can't do so again until you finish a short or long rest."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Unbreakable Majesty",
+                                                    Description = "College of Glamour feature",
+                                                    Type = ActionTypesEnum.Bonus
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
                                     ClassEnum.CollegeOfLore,
                                     new LevelModel
                                     {
@@ -1048,10 +1326,77 @@ namespace DnD5E.Decks
                                                 {
                                                     "Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the GM tells you whether you succeed or fail."
                                                 },
-                                            }
+                                            },
                                         },
                                     }
-                                }
+                                },
+                                {
+                                    ClassEnum.CollegeOfSwords,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Masters Flourish",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 14th level, whenever you use a Blade Flourish option, you can roll a d6 and use it instead of expending a Bardic Inspiration die."
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.CollegeOfValor,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Battle Magic",
+                                                Description = new List<string>
+                                                {
+                                                    "At 14th level, when you use your action to a cast a bard spell, you can make one weapon attack as a bonus action."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Battle Magic",
+                                                    Description = "College of Valor feature",
+                                                    Type = ActionTypesEnum.Bonus
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.CollegeOfWhispers,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Shadow Lore",
+                                                Description = new List<string>
+                                                {
+                                                    "At 14th level, as an action, you magically whisper a phrase that only one creature of your choice within 30 feet of you can hear. The target must make a Wisdom saving throw against your spell save DC. It automatically succeeds if it doesn't share a language with you or if it can't hear you. On a successful saving throw, your whisper sounds like unintelligible mumbling and has no effect.",
+                                                    "On a failed saving throw, the target is charmed by you for the next 8 hours or until you or your allies attack it, damage it, or force it to make a saving throw. It interprets the whispers as a description of its most mortifying secret. You gain no knowledge of this secret, but the target is convinced you know it.",
+                                                    "The charmed creature obeys your commands for fear that you will reveal its secret. It won't risk its life for you or fight for you, unless it was already inclined to do so. It grants you favors and gifts it would offer to a close friend.",
+                                                    "When the effect ends, the creature has no understanding of why it held you in such fear.",
+                                                    "Once you use this feature, you can't use it again until you finish a long rest."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Shadow Lore",
+                                                    Description = "College of Whispers feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
                             }
                         }
                     },

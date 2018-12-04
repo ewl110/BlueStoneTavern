@@ -8,8 +8,16 @@ namespace DnD5E.Enums
         Berserker,
         Bard,
         Cleric,
+        [Description("College of Glamour")]
+        CollegeOfGlamour,
         [Description("College of Lore")]
         CollegeOfLore,
+        [Description("College of Swords")]
+        CollegeOfSwords,
+        [Description("College of Valor")]
+        CollegeOfValor,
+        [Description("College of Whispers")]
+        CollegeOfWhispers,
         Druid,
         Fighter,
         Monk,
