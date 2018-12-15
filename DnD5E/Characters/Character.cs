@@ -68,6 +68,7 @@ namespace DnD5E.Characters
             this.actionOption = new List<ActionModel> { };
             this.actionReaction = new List<ActionModel> { };
 
+            var cards = Decks.ClassDeck.Cards;
             // Get required character data
             this.charBackgroundCard = Decks.BackgroundDeck.Cards.PullRandomCardFromDeck();
             this.charClassCard = Decks.ClassDeck.Cards.PullRandomCardFromDeck(true);

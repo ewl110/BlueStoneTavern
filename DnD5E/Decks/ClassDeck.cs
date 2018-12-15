@@ -1516,6 +1516,7 @@ namespace DnD5E.Decks
                                     WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
                                 }
                             },
+                            SetVariant = true,
                             Variants = new Dictionary<ClassEnum, LevelModel>
                             {
                                 {
@@ -1540,7 +1541,7 @@ namespace DnD5E.Decks
                                                 SkillsEnum.Arcana.ToString()
                                             }
                                         },
-                                        Spells = {
+                                        Spells = new SpellsModel {
                                             Cantrips = new List<SpellsEnum>
                                             {
                                                 SpellsEnum.CantripWizard,
@@ -1562,7 +1563,7 @@ namespace DnD5E.Decks
                                         {
                                             new FeaturesModel
                                             {
-                                                Name = "Reaoer",
+                                                Name = "Reaper",
                                                 Description = new List<string>
                                                 {
                                                     "At 1st level, you learn one necromancy cantrip of your choice from any spell list. When you cast a necromancy cantrip that normally targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other."
@@ -1576,7 +1577,7 @@ namespace DnD5E.Decks
                                                 WeaponsEnum.MartialWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
                                             }
                                         },
-                                        Spells = {
+                                        Spells = new SpellsModel {
                                             Cantrips = new List<SpellsEnum>
                                             {
                                                 SpellsEnum.CantripNecromancy,
@@ -1654,7 +1655,7 @@ namespace DnD5E.Decks
                                     }
                                 },
                                 {
-                                    ClassEnum.DomainArcana,
+                                    ClassEnum.DomainDeath,
                                     new LevelModel
                                     {
                                         Features = new List<FeaturesModel>
@@ -1683,7 +1684,7 @@ namespace DnD5E.Decks
                                     ClassEnum.DomainArcana,
                                     new LevelModel
                                     {
-                                        Spells = {
+                                        Spells = new SpellsModel {
                                             _2 = new List<SpellsEnum>
                                             {
                                                 SpellsEnum.MagicWeapon,
@@ -1696,7 +1697,7 @@ namespace DnD5E.Decks
                                     ClassEnum.DomainDeath,
                                     new LevelModel
                                     {
-                                        Spells = {
+                                        Spells = new SpellsModel {
                                             _2 = new List<SpellsEnum>
                                             {
                                                 SpellsEnum.BlindnessDeafness,
@@ -1730,7 +1731,7 @@ namespace DnD5E.Decks
                                     ClassEnum.DomainArcana,
                                     new LevelModel
                                     {
-                                        Spells = {
+                                        Spells = new SpellsModel {
                                             _3 = new List<SpellsEnum>
                                             {
                                                 SpellsEnum.DispelMagic,
@@ -1743,7 +1744,7 @@ namespace DnD5E.Decks
                                     ClassEnum.DomainDeath,
                                     new LevelModel
                                     {
-                                        Spells = {
+                                        Spells = new SpellsModel {
                                             _3 = new List<SpellsEnum>
                                             {
                                                 SpellsEnum.AnimateDead,
@@ -1808,7 +1809,7 @@ namespace DnD5E.Decks
                                     ClassEnum.DomainArcana,
                                     new LevelModel
                                     {
-                                        Spells = {
+                                        Spells = new SpellsModel {
                                             _4 = new List<SpellsEnum>
                                             {
                                                 SpellsEnum.ArcaneEye,
@@ -1818,10 +1819,10 @@ namespace DnD5E.Decks
                                     }
                                 },
                                 {
-                                    ClassEnum.DomainArcana,
+                                    ClassEnum.DomainDeath,
                                     new LevelModel
                                     {
-                                        Spells = {
+                                        Spells = new SpellsModel {
                                             _4 = new List<SpellsEnum>
                                             {
                                                 SpellsEnum.Blight,
@@ -1886,7 +1887,7 @@ namespace DnD5E.Decks
                                     ClassEnum.DomainArcana,
                                     new LevelModel
                                     {
-                                        Spells = {
+                                        Spells = new SpellsModel {
                                             _5 = new List<SpellsEnum>
                                             {
                                                 SpellsEnum.PlanarBinding,
@@ -1899,7 +1900,7 @@ namespace DnD5E.Decks
                                     ClassEnum.DomainDeath,
                                     new LevelModel
                                     {
-                                        Spells = {
+                                        Spells = new SpellsModel {
                                             _5 = new List<SpellsEnum>
                                             {
                                                 SpellsEnum.AntilifeShell,
@@ -1957,7 +1958,7 @@ namespace DnD5E.Decks
                                                 },
                                             },
                                         },
-                                        Spells = {
+                                        Spells = new SpellsModel {
                                             _6 = new List<SpellsEnum>
                                             {
                                                 SpellsEnum.SpellWizard
@@ -1978,7 +1979,7 @@ namespace DnD5E.Decks
                                     }
                                 },
                                 {
-                                    ClassEnum.DomainArcana,
+                                    ClassEnum.DomainDeath,
                                     new LevelModel
                                     {
                                         Features = new List<FeaturesModel>
