@@ -1517,6 +1517,11 @@ namespace DnD5E.Decks
                                 }
                             },
                             SetVariant = true,
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 3,
+                                _1 = 2,
+                            },
                             Variants = new Dictionary<ClassEnum, LevelModel>
                             {
                                 {
@@ -1678,6 +1683,12 @@ namespace DnD5E.Decks
                         3,
                         new LevelModel
                         {
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 3,
+                                _1 = 4,
+                                _2 = 2
+                            },
                             Variants = new Dictionary<ClassEnum, LevelModel>
                             {
                                 {
@@ -1710,6 +1721,18 @@ namespace DnD5E.Decks
                         }
                     },
                     {
+                        4,
+                        new LevelModel
+                        {
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 4,
+                                _1 = 4,
+                                _2 = 3
+                            },
+                        }
+                    },
+                    {
                         5,
                         new LevelModel
                         {
@@ -1724,6 +1747,13 @@ namespace DnD5E.Decks
                                         "<i>5th Level:</i> CR 1/2 or lower<br /><i>8th Level:</i> CR 1 or lower<br /><i>11th Level:</i> CR 2 or lower<br /><i>14th Level:</i> CR 3 or lower<br /><i>17th Level:</i> CR 4 or lower"
                                     },
                                 },
+                            },
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 4,
+                                _1 = 4,
+                                _2 = 3,
+                                _3 = 2
                             },
                             Variants = new Dictionary<ClassEnum, LevelModel>
                             {
@@ -1760,6 +1790,13 @@ namespace DnD5E.Decks
                         6,
                         new LevelModel
                         {
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 4,
+                                _1 = 4,
+                                _2 = 3,
+                                _3 = 3
+                            },
                             Variants = new Dictionary<ClassEnum, LevelModel>
                             {
                                 {
@@ -1803,6 +1840,14 @@ namespace DnD5E.Decks
                         7,
                         new LevelModel
                         {
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 4,
+                                _1 = 4,
+                                _2 = 3,
+                                _3 = 2,
+                                _4 = 1
+                            },
                             Variants = new Dictionary<ClassEnum, LevelModel>
                             {
                                 {
@@ -1838,6 +1883,14 @@ namespace DnD5E.Decks
                         8,
                         new LevelModel
                         {
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 4,
+                                _1 = 4,
+                                _2 = 3,
+                                _3 = 2,
+                                _4 = 2
+                            },
                             Variants = new Dictionary<ClassEnum, LevelModel>
                             {
                                 {
@@ -1881,6 +1934,15 @@ namespace DnD5E.Decks
                         9,
                         new LevelModel
                         {
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 4,
+                                _1 = 4,
+                                _2 = 3,
+                                _3 = 3,
+                                _4 = 3,
+                                _5 = 1
+                            },
                             Variants = new Dictionary<ClassEnum, LevelModel>
                             {
                                 {
@@ -1935,12 +1997,85 @@ namespace DnD5E.Decks
                                     }
                                 },
                             },
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 5,
+                                _1 = 4,
+                                _2 = 3,
+                                _3 = 3,
+                                _4 = 3,
+                                _5 = 2
+                            },
+                        }
+                    },
+                    {
+                        11,
+                        new LevelModel
+                        {
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 5,
+                                _1 = 4,
+                                _2 = 3,
+                                _3 = 3,
+                                _4 = 3,
+                                _5 = 2,
+                                _6 = 1
+                            },
+                        }
+                    },
+                    {
+                        13,
+                        new LevelModel
+                        {
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 5,
+                                _1 = 4,
+                                _2 = 3,
+                                _3 = 3,
+                                _4 = 3,
+                                _5 = 2,
+                                _6 = 1,
+                                _7 = 1
+                            },
+                        }
+                    },
+                    {
+                        15,
+                        new LevelModel
+                        {
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 5,
+                                _1 = 4,
+                                _2 = 3,
+                                _3 = 3,
+                                _4 = 3,
+                                _5 = 2,
+                                _6 = 1,
+                                _7 = 1,
+                                _8 = 1,
+                            },
                         }
                     },
                     {
                         17,
                         new LevelModel
                         {
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 5,
+                                _1 = 4,
+                                _2 = 3,
+                                _3 = 3,
+                                _4 = 3,
+                                _5 = 2,
+                                _6 = 1,
+                                _7 = 1,
+                                _8 = 1,
+                                _9 = 1
+                            },
                             Variants = new Dictionary<ClassEnum, LevelModel>
                             {
                                 {
@@ -1996,6 +2131,63 @@ namespace DnD5E.Decks
                                     }
                                 }
                             }
+                        }
+                    },
+                    {
+                        18,
+                        new LevelModel
+                        {
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 5,
+                                _1 = 4,
+                                _2 = 3,
+                                _3 = 3,
+                                _4 = 3,
+                                _5 = 3,
+                                _6 = 1,
+                                _7 = 1,
+                                _8 = 1,
+                                _9 = 1
+                            },
+                        }
+                    },
+                    {
+                        19,
+                        new LevelModel
+                        {
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 5,
+                                _1 = 4,
+                                _2 = 3,
+                                _3 = 3,
+                                _4 = 3,
+                                _5 = 3,
+                                _6 = 2,
+                                _7 = 1,
+                                _8 = 1,
+                                _9 = 1
+                            },
+                        }
+                    },
+                    {
+                        20,
+                        new LevelModel
+                        {
+                            SpellSlots = new SpellSlotsModel
+                            {
+                                Cantrips = 5,
+                                _1 = 4,
+                                _2 = 3,
+                                _3 = 3,
+                                _4 = 3,
+                                _5 = 3,
+                                _6 = 2,
+                                _7 = 2,
+                                _8 = 1,
+                                _9 = 1
+                            },
                         }
                     },
                 },
