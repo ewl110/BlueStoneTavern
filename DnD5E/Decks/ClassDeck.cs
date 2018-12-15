@@ -1715,6 +1715,138 @@ namespace DnD5E.Decks
                                         }
                                     }
                                 },
+                                {
+                                    ClassEnum.DomainLife,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Disciple of Life",
+                                                Description = new List<string>
+                                                {
+                                                    "Also starting at 1st level, whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell's level."
+                                                },
+                                            },
+                                        },
+                                        Proficiencies = new ProficiencyModel
+                                        {
+                                            Armor = new List<ArmorEnum>
+                                            {
+                                                ArmorEnum.Heavy
+                                            },
+                                        },
+                                        Spells = new SpellsModel {
+                                            _1 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Bless,
+                                                SpellsEnum.CureWounds,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLight,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Warding Flare",
+                                                Description = new List<string>
+                                                {
+                                                    "Also at 1st level, when you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can't be blinded is immune to this feature.",
+                                                    "You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Warding Flare",
+                                                    Description = "Ligth Domain feature",
+                                                    Type = ActionTypesEnum.Reaction
+                                                }
+                                            },
+                                        },
+                                        Spells = new SpellsModel {
+                                            Cantrips = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Light
+                                            },
+                                            _1 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Bless,
+                                                SpellsEnum.CureWounds,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainNature,
+                                    new LevelModel
+                                    {
+                                        Proficiencies = new ProficiencyModel
+                                        {
+                                            Armor = new List<ArmorEnum>
+                                            {
+                                                ArmorEnum.Heavy
+                                            },
+                                        },
+                                        Spells = new SpellsModel {
+                                            Cantrips = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.CantripDruid
+                                            },
+                                            _1 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.AnimalFriendship,
+                                                SpellsEnum.SpeakWithAnimals,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainTempest,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Wrath of the Storm",
+                                                Description = new List<string>
+                                                {
+                                                    "Also at 1st level, when a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning or thunder damage (your choice) on a failed saving throw, and half as much damage on a successful one.",
+                                                    "You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Wrath of the Storm",
+                                                    Description = "Tempest Domain feature",
+                                                    Type = ActionTypesEnum.Reaction
+                                                }
+                                            }
+                                        },
+                                        Proficiencies = new ProficiencyModel
+                                        {
+                                            Armor = new List<ArmorEnum>
+                                            {
+                                                ArmorEnum.Heavy
+                                            },
+                                            Weapons = new List<WeaponsEnum>
+                                            {
+                                                WeaponsEnum.MartialWeapon
+                                            }
+                                        },
+                                        Spells = new SpellsModel {
+                                            _1 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.FogCloud,
+                                                SpellsEnum.Thunderwave,
+                                            }
+                                        }
+                                    }
+                                },
                             }
                         }
                     },
@@ -1845,6 +1977,115 @@ namespace DnD5E.Decks
                                         },
                                     }
                                 },
+                                {
+                                    ClassEnum.DomainKnowledge,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Channel Divinity: Knowledge of the Ages",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 2nd level, as an action, you choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Channel Divinity: Knowledge of the Ages",
+                                                    Description = "Knowledge Domain feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLife,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Channel Divinity: Preserve Life",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 2nd level, as an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Channel Divinity: Preserve Life",
+                                                    Description = "Life Domain feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLight,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Channel Divinity: Radiance of the Dawn",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 2nd level, as an action, you present your holy symbol, and any magical darkness within 30 feet of you is dispelled. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes radiant damage equal to 2d10 + your cleric level on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Channel Divinity: Radiance of the Dawn",
+                                                    Description = "Ligth Domain feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainNature,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Channel Divinity: Charm Animals and Plants",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 2nd level, as an action, you present your holy symbol and invoke the name of your deity. Each beast or plant creature that can see you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is charmed by you for 1 minute or until it takes damage. While it is charmed by you, it is friendly to you and other creatures you designate."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Channel Divinity: Charm Animals and Plants",
+                                                    Description = "Nature Domain feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainTempest,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Channel Divinity: Destructive Wrath",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 2nd level, when you roll lightning or thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling."
+                                                },
+                                            }
+                                        },
+                                    }
+                                },
                             }
                         }
                     },
@@ -1908,6 +2149,71 @@ namespace DnD5E.Decks
                                             {
                                                 SpellsEnum.GentleRepose,
                                                 SpellsEnum.RayOfEnfeeblement,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainKnowledge,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _2 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Augury,
+                                                SpellsEnum.Suggestion,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLife,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _2 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.LesserRestoration,
+                                                SpellsEnum.SpiritualWeapon,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLight,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _2 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.FlamingSphere,
+                                                SpellsEnum.ScorchingRay,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainNature,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _2 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Barkskin,
+                                                SpellsEnum.SpikeGrowth,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainTempest,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _2 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.GustOfWind,
+                                                SpellsEnum.Shatter,
                                             }
                                         }
                                     }
@@ -2000,6 +2306,71 @@ namespace DnD5E.Decks
                                             {
                                                 SpellsEnum.Revivify,
                                                 SpellsEnum.VampiricTouch,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainKnowledge,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _3 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Nondetection,
+                                                SpellsEnum.SpeakWithDead,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLife,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _3 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.BeaconOfHope,
+                                                SpellsEnum.Revivify,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLight,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _3 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Daylight,
+                                                SpellsEnum.Fireball,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainNature,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _3 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.PlantGrowth,
+                                                SpellsEnum.WindWall,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainTempest,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _3 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.CallLightning,
+                                                SpellsEnum.SleetStorm,
                                             }
                                         }
                                     }
@@ -2100,6 +2471,105 @@ namespace DnD5E.Decks
                                         }
                                     }
                                 },
+                                {
+                                    ClassEnum.DomainKnowledge,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Channel Divinity: Read Thoughts",
+                                                Description = new List<string>
+                                                {
+                                                    "At 6th level, as an action, choose one creature that you can see within 60 feet of you. That creature must make a Wisdom saving throw. If the creature succeeds on the saving throw, you can't use this feature on it again until you finish a long rest.",
+                                                    "If the creature fails its save, you can read its surface thoughts (those foremost in its mind, reflecting its current emotions and what it is actively thinking about) when it is within 60 feet of you. This effect lasts for 1 minute.",
+                                                    "During that time, you can use your action to end this effect and cast the suggestion spell on the creature without expending a spell slot. The target automatically fails its saving throw against the spell."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Channel Divinity: Read Thoughts",
+                                                    Description = "Knowledge Domain feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLife,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Blessed Healer",
+                                                Description = new List<string>
+                                                {
+                                                    "Beginning at 6th level, when you cast a spell of 1st level or higher that restores hit points to a creature other than you, you regain hit points equal to 2 + the spell's level."
+                                                },
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLight,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Improved Flare",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 6th level, you can also use your Warding Flare feature when a creature that you can see within 30 feet of you attacks a creature other than you."
+                                                },
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainNature,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Dampen Elements",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 6th level, when you or a creature within 30 feet of you takes acid, cold, fire, lightning, or thunder damage, you can use your reaction to grant resistance to the creature against that instance of the damage."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Dampen Elements",
+                                                    Description = "Nature Domain feature",
+                                                    Type = ActionTypesEnum.Reaction
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainTempest,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Thunderbolt Strike",
+                                                Description = new List<string>
+                                                {
+                                                    "At 6th level, when you deal lightning damage to a Large or smaller creature, you can also push it up to 10 feet away from you."
+                                                },
+                                            }
+                                        },
+                                    }
+                                },
                             }
                         }
                     },
@@ -2165,6 +2635,71 @@ namespace DnD5E.Decks
                                             {
                                                 SpellsEnum.Blight,
                                                 SpellsEnum.DeathWard,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainKnowledge,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _4 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.ArcaneEye,
+                                                SpellsEnum.Confusion,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLife,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _4 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.DeathWard,
+                                                SpellsEnum.GuardianOfFaith,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLight,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _4 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.GuardianOfFaith,
+                                                SpellsEnum.WallOfFire,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainNature,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _4 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.DominateBeast,
+                                                SpellsEnum.GraspingVine,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainTempest,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _4 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.ControlWater,
+                                                SpellsEnum.IceStorm,
                                             }
                                         }
                                     }
@@ -2254,6 +2789,90 @@ namespace DnD5E.Decks
                                         },
                                     }
                                 },
+                                {
+                                    ClassEnum.DomainKnowledge,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Potent Spellcasting",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip."
+                                                },
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLife,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Divine Strike",
+                                                Description = new List<string>
+                                                {
+                                                    "At 8th level, once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8."
+                                                },
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLight,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Potent Spellcasting",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip."
+                                                },
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainNature,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Divine Strike",
+                                                Description = new List<string>
+                                                {
+                                                    "At 8th level, once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 cold, fire, or lightning damage (your choice) to the target. When you reach 14th level, the extra damage increases to 2d8."
+                                                },                                           },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainTempest,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Divine Strike",
+                                                Description = new List<string>
+                                                {
+                                                    "At 8th level, once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 thunder damage to the target. When you reach 14th level, the extra damage increases to 2d8."
+                                                },
+                                            }
+                                        },
+                                    }
+                                },
                             }
                         }
                     },
@@ -2320,6 +2939,71 @@ namespace DnD5E.Decks
                                             {
                                                 SpellsEnum.AntilifeShell,
                                                 SpellsEnum.RaiseDead,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainKnowledge,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _5 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.LegendLore,
+                                                SpellsEnum.Scrying,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLife,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _1 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.MassCureWounds,
+                                                SpellsEnum.RaiseDead,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLight,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _5 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.FlameStrike,
+                                                SpellsEnum.Scrying,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainNature,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _5 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.InsectPlague,
+                                                SpellsEnum.TreeStride,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainTempest,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _1 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.DestructiveWave,
+                                                SpellsEnum.InsectPlague
                                             }
                                         }
                                     }
@@ -2518,6 +3202,99 @@ namespace DnD5E.Decks
                                                 {
                                                     "Starting at 17th level, when an enemy you can see dies within 60 feet of you, you or one creature of your choice that is within 60 feet of you regains hit points equal to the enemy's number of Hit Dice. You can use this feature only if you aren't incapacitated. Once you use it, you can't do so again until the start of your next turn."
                                                 }
+                                            }
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainKnowledge,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Visions of the Past",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 17th level, you can spend at least 1 minute in meditation and prayer, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score and must maintain concentration during that time, as if you were casting a spell.",
+                                                    "Once you use this feature, you can't use it again until you finish a short or long rest.",
+                                                    "<b>Object Reading:</b> Holding an object as you meditate, you can see visions of the object's previous owner. After meditating for 1 minute, you learn how the owner acquired and lost the object, as well as the most recent significant event involving the object and that owner. If the object was owned by another creature in the recent past (within a number of days equal to your Wisdom score), you can spend 1 additional minute for each owner to learn the same information about that creature.",
+                                                    "<b>Area Reading:</b> As you meditate, you see visions of recent events in your immediate vicinity (a room, street, tunnel, clearing, or the like, up to a 50-foot cube), going back a number of days equal to your Wisdom score. For each minute you meditate, you learn about one significant event, beginning with the most recent. Significant events typically involve powerful emotions, such as battles and betrayals, marriages and murders, births and funerals. However, they might also include more mundane events that are nevertheless important in your current situation."
+                                                },
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLife,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Supreme Healing",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 17th level, when you would normally roll one or more dice to restore hit points with a spell, you instead use the highest number possible for each die. For example, instead of restoring 2d6 hit points to a creature, you restore 12."
+                                                },
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainLight,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Corona of Light",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 17th level, you can use your action to activate an aura of sunlight that lasts for 1 minute or until you dismiss it using another action. You emit bright light in a 60-foot radius and dim light 30 feet beyond that. Your enemies in the bright light have disadvantage on saving throws against any spell that deals fire or radiant damage."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Corona of Light",
+                                                    Description = "Light Domain feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainNature,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Master of Nature",
+                                                Description = new List<string>
+                                                {
+                                                    "At 17th level, while creatures are charmed by your Charm Animals and Plants feature, you can take a bonus action on your turn to verbally command what each of those creatures will do on its next turn."
+                                                },                                           },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainTempest,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Stormborn",
+                                                Description = new List<string>
+                                                {
+                                                    "At 17th level, you have a flying speed equal to your current walking speed whenever you are not underground or indoors."
+                                                },
                                             }
                                         },
                                     }

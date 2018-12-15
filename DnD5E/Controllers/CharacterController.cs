@@ -45,25 +45,6 @@ namespace DnD5E.Controllers
             string displayClass = notFound;
             string displayRace = notFound;
 
-            //if (Enum.IsDefined(typeof(BackgroundEnum), charBackground))
-            //{
-            //    bg = (BackgroundEnum)Enum.Parse(typeof(BackgroundEnum), charBackground);
-            //    displayBackground = bg.GetAttributeOfType<DescriptionAttribute>().Description;
-            //}
-
-            //if (Enum.IsDefined(typeof(ClassEnum), charClass))
-            //{
-            //    c = (ClassEnum)Enum.Parse(typeof(ClassEnum), charClass);
-            //    displayClass = c.GetAttributeOfType<DescriptionAttribute>().Description;
-            //}
-
-            //if (Enum.IsDefined(typeof(RaceEnum), charRace))
-            //{
-            //    r = (RaceEnum)Enum.Parse(typeof(RaceEnum), charRace);
-            //    displayRace = r.GetAttributeOfType<DescriptionAttribute>().Description;
-            //}
-
-            //return new ContentResult { Content = $"Race: {displayRace} - Class: {displayClass} - Background: {displayBackground}" };
             return View();
         }
 
@@ -94,7 +75,7 @@ namespace DnD5E.Controllers
         {
             Random rng = new Random();
 
-            CharacterCard character = new Characters.Character(20, "Cleric").CreateNewCharacter();
+            CharacterCard character = new Characters.Character(20).CreateNewCharacter();
             return View(character);
         }
     }
