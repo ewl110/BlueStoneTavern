@@ -32,16 +32,16 @@ namespace DnD5E.Models
 
     public class SpellsModel
     {
-        public string[] Cantrips { get; set; }
-        public string[] _1 { get; set; }
-        public string[] _2 { get; set; }
-        public string[] _3 { get; set; }
-        public string[] _4 { get; set; }
-        public string[] _5 { get; set; }
-        public string[] _6 { get; set; }
-        public string[] _7 { get; set; }
-        public string[] _8 { get; set; }
-        public string[] _9 { get; set; }
+        public List<SpellsEnum> Cantrips { get; set; }
+        public List<SpellsEnum> _1 { get; set; }
+        public List<SpellsEnum> _2 { get; set; }
+        public List<SpellsEnum> _3 { get; set; }
+        public List<SpellsEnum> _4 { get; set; }
+        public List<SpellsEnum> _5 { get; set; }
+        public List<SpellsEnum> _6 { get; set; }
+        public List<SpellsEnum> _7 { get; set; }
+        public List<SpellsEnum> _8 { get; set; }
+        public List<SpellsEnum> _9 { get; set; }
     }
 
     public class SpellSlotsModel

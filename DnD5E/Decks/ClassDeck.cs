@@ -1432,6 +1432,41 @@ namespace DnD5E.Decks
                     Cha = 12
                 },
                 Description = "You are a priestly champion who wields divine magic in service of a higher power.",
+                Equipment = new List<EquipmentModel>
+                {
+                    new EquipmentModel
+                    {
+                        Name = WeaponsEnum.Mace.ToString(),
+                        Type = EquipmentTypeEnum.Weapon,
+                        Weapon = WeaponsEnum.Mace
+                    },
+                    new EquipmentModel
+                    {
+                        Name = WeaponsEnum.CrossbowLight.ToString(),
+                        Type = EquipmentTypeEnum.Weapon,
+                        Weapon = WeaponsEnum.CrossbowLight
+                    },
+                    new EquipmentModel
+                    {
+                        Name = ArmorEnum.ScaleMail.ToString(),
+                        Type = EquipmentTypeEnum.Armor,
+                    },
+                    new EquipmentModel
+                    {
+                        Name = ArmorEnum.Shield.ToString(),
+                        Type = EquipmentTypeEnum.Armor,
+                    },
+                    new EquipmentModel
+                    {
+                        Name = ItemsEnum.PriestsPack.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Type = EquipmentTypeEnum.Item,
+                    },
+                    new EquipmentModel
+                    {
+                        Name = ItemsEnum.HolySymbol.ToString(),
+                        Type = EquipmentTypeEnum.Item,
+                    },
+                },
                 HitDice = 8,
                 Levels = new Dictionary<int, LevelModel>()
                 {
@@ -1439,6 +1474,30 @@ namespace DnD5E.Decks
                         1,
                         new LevelModel
                         {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Spellcasting",
+                                    Description = new List<string>
+                                    {
+                                        "Wisdom is your spellcasting ability for your cleric spells. You use your Wisdom whenever a cleric spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when Setting the saving throw DC for a cleric spell you cast and when making an attack roll with one.",
+                                        "At 1st level, you know three cantrips of your choice from the cleric spell list. You learn additional cleric cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Cleric table.",
+                                        "The Cleric table shows how many spell slots you have to cast your cleric spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.",
+                                        "You prepare the list of cleric spells that are available for you to cast, choosing from the cleric spell list. When you do so, choose a number of cleric spells equal to your Wisdom modifier + your cleric level (minimum of one spell). The spells must be of a level for which you have spell slots.",
+                                        "You can cast a cleric spell as a ritual if that spell has the ritual tag and you have the spell prepared.",
+                                        "You can change your list of prepared spells when you finish a long rest.",
+                                        "You can use a holy symbol as a spellcasting focus for your cleric spells."
+                                    },
+                                    AbilityModifier = AbilitiesEnum.Wis.ToString(),
+                                    Action = new ActionModel
+                                    {
+                                        Name = "Spellcasting",
+                                        Description = "Cleric feature",
+                                        Type = ActionTypesEnum.Attack
+                                    }
+                                },
+                            },
                             Proficiencies = new ProficiencyModel
                             {
                                 Armor = new string[]
@@ -1457,8 +1516,487 @@ namespace DnD5E.Decks
                                     WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
                                 }
                             },
+                            Variants = new Dictionary<ClassEnum, LevelModel>
+                            {
+                                {
+                                    ClassEnum.DomainArcana,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Arcane Initiate",
+                                                Description = new List<string>
+                                                {
+                                                    "At 1st level, you gain proficiency in the Arcana skill, and you gain two cantrips of your choice from the wizard spell list. For you, these cantrips count as cleric cantrips."
+                                                }
+                                            }
+                                        },
+                                        Proficiencies = new ProficiencyModel
+                                        {
+                                            Skills = new string[]
+                                            {
+                                                SkillsEnum.Arcana.ToString()
+                                            }
+                                        },
+                                        Spells = {
+                                            Cantrips = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.CantripWizard,
+                                                SpellsEnum.CantripWizard
+                                            },
+                                            _1 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.DetectMagic,
+                                                SpellsEnum.MagicMissile,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainDeath,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Reaoer",
+                                                Description = new List<string>
+                                                {
+                                                    "At 1st level, you learn one necromancy cantrip of your choice from any spell list. When you cast a necromancy cantrip that normally targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other."
+                                                }
+                                            }
+                                        },
+                                        Proficiencies = new ProficiencyModel
+                                        {
+                                            Weapons = new string[]
+                                            {
+                                                WeaponsEnum.MartialWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
+                                            }
+                                        },
+                                        Spells = {
+                                            Cantrips = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.CantripNecromancy,
+                                            },
+                                            _1 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.FalseLife,
+                                                SpellsEnum.RayOfSickness,
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
-                    }
+                    },
+                    {
+                        2,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Channel Divinity",
+                                    Description = new List<string>
+                                    {
+                                        "At 2nd level, you start with two abilities: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.",
+                                        "When you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.",
+                                        "Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC.",
+                                        "Beginning at 6th level, you can use your Channel Divinity twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses."
+                                    },
+                                },
+                                new FeaturesModel
+                                {
+                                    Name = "Turn Undead",
+                                    Description = new List<string>
+                                    {
+                                        "As an action, each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.",
+                                        "A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action."
+                                    },
+                                    Action = new ActionModel
+                                    {
+                                        Name = "Turn Undead",
+                                        Description = "Cleric feature",
+                                        Type = ActionTypesEnum.Option
+                                    }
+                                },
+                            },
+                            Variants = new Dictionary<ClassEnum, LevelModel>
+                            {
+                                {
+                                    ClassEnum.DomainArcana,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Arcane Abjuration",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 2nd level, as an action, you present your holy symbol, and one celestial, elemental, fey, or fiend of your choice that is within 30 feet of you must make a Wisdom saving throw, provided that the creature can see or hear you. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.",
+                                                    "A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly end its move in a space within 30 feet of you. It also can't take reactions. For its action, it can use the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, then the creature can use the Dodge action.",
+                                                    "After you reach 5th level, when a creature fails its saving throw against your Arcane Abjuration feature, the creature is banished for 1 minute (as in the Banishment spell, no concentration required) if it isn't on its plane of origin and if its challenge rating is at or below a certain threshold, as shown below.",
+                                                    "<i>5th Level:</i> CR 1/2 or lower<br /><i>8th Level:</i> CR 1 or lower<br /><i>11th Level:</i> CR 2 or lower<br /><i>14th Level:</i> CR 3 or lower<br /><i>17th Level:</i> CR 4 or lower"
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Arcane Abjuraton",
+                                                    Description = "Arcana Domain Feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            }
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainArcana,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Touch of Death",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 2nd level, when you hit a creature with a melee attack, you can use Channel Divinity to deal extra necrotic damage to the target. The damage equals 5 + twice your cleric level."
+                                                },
+                                            }
+                                        },
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        3,
+                        new LevelModel
+                        {
+                            Variants = new Dictionary<ClassEnum, LevelModel>
+                            {
+                                {
+                                    ClassEnum.DomainArcana,
+                                    new LevelModel
+                                    {
+                                        Spells = {
+                                            _2 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.MagicWeapon,
+                                                SpellsEnum.NystulsMagicAura
+                                            },
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainDeath,
+                                    new LevelModel
+                                    {
+                                        Spells = {
+                                            _2 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.BlindnessDeafness,
+                                                SpellsEnum.RayOfEnfeeblement
+                                            },
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        5,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Destroy Undead",
+                                    Description = new List<string>
+                                    {
+                                        "Starting at 5th level, when an undead of CR 1/2 or lower fails its saving throw against your Turn Undead feature, the creature is instantly destroyed. The CR of undead increases as you gain levels.",
+                                        "<i>5th Level:</i> CR 1/2 or lower<br /><i>8th Level:</i> CR 1 or lower<br /><i>11th Level:</i> CR 2 or lower<br /><i>14th Level:</i> CR 3 or lower<br /><i>17th Level:</i> CR 4 or lower"
+                                    },
+                                },
+                            },
+                            Variants = new Dictionary<ClassEnum, LevelModel>
+                            {
+                                {
+                                    ClassEnum.DomainArcana,
+                                    new LevelModel
+                                    {
+                                        Spells = {
+                                            _3 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.DispelMagic,
+                                                SpellsEnum.MagicCircle
+                                            },
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainDeath,
+                                    new LevelModel
+                                    {
+                                        Spells = {
+                                            _3 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.AnimateDead,
+                                                SpellsEnum.VampiricTouch
+                                            },
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        6,
+                        new LevelModel
+                        {
+                            Variants = new Dictionary<ClassEnum, LevelModel>
+                            {
+                                {
+                                    ClassEnum.DomainArcana,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Spell Breaker",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 6th level, when you restore hit points to an ally with a spell of 1st level or higher, you can also end one spell of your choice on that creature. The level of the spell you end must be equal to or lower than the level of the spell slot you use to cast the healing spell."
+                                                },
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainDeath,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Inescapable Destruction",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 6th level, necrotic damage dealt by your cleric spells and Channel Divinity options ignore resistance to necrotic damage."
+                                                },
+                                            },
+                                        },
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        7,
+                        new LevelModel
+                        {
+                            Variants = new Dictionary<ClassEnum, LevelModel>
+                            {
+                                {
+                                    ClassEnum.DomainArcana,
+                                    new LevelModel
+                                    {
+                                        Spells = {
+                                            _4 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.ArcaneEye,
+                                                SpellsEnum.LeomundsSecretChest
+                                            },
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainArcana,
+                                    new LevelModel
+                                    {
+                                        Spells = {
+                                            _4 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Blight,
+                                                SpellsEnum.DeathWard
+                                            },
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        8,
+                        new LevelModel
+                        {
+                            Variants = new Dictionary<ClassEnum, LevelModel>
+                            {
+                                {
+                                    ClassEnum.DomainArcana,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Potent Spellcasting",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip."
+                                                },
+                                            },
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainDeath,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Divine Strike",
+                                                Description = new List<string>
+                                                {
+                                                    "At 8th level, once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 necrotic damage to the target. When you reach 14th level, the extra damage increases to 2d8."
+                                                },
+                                            },
+                                        },
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        9,
+                        new LevelModel
+                        {
+                            Variants = new Dictionary<ClassEnum, LevelModel>
+                            {
+                                {
+                                    ClassEnum.DomainArcana,
+                                    new LevelModel
+                                    {
+                                        Spells = {
+                                            _5 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.PlanarBinding,
+                                                SpellsEnum.TeleportationCircle
+                                            },
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainDeath,
+                                    new LevelModel
+                                    {
+                                        Spells = {
+                                            _5 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.AntilifeShell,
+                                                SpellsEnum.Cloudkill
+                                            },
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        10,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "Divine Intervention",
+                                    Description = new List<string>
+                                    {
+                                        "Beginning at 10th level, you can call on your deity to intervene on your behalf as an action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes. The DM chooses the nature of the intervention.",
+                                        "If your deity intervenes, you can't use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.",
+                                        "At 20th level, your call for intervention succeeds automatically, no roll required."
+                                    },
+                                    Action = new ActionModel
+                                    {
+                                        Name = "Divine Intervention",
+                                        Description = "Cleric feature",
+                                        Type = ActionTypesEnum.Option
+                                    }
+                                },
+                            },
+                        }
+                    },
+                    {
+                        17,
+                        new LevelModel
+                        {
+                            Variants = new Dictionary<ClassEnum, LevelModel>
+                            {
+                                {
+                                    ClassEnum.DomainArcana,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Arcane Mastery",
+                                                Description = new List<string>
+                                                {
+                                                    "At 17th level, you choose four spells from the wizard spell list, one from each of the following levels: 6th, 7th, 8th, and 9th. You add them to your list of domain spells. Like your other domain spells, they are always prepared and count as cleric spells for you."
+                                                },
+                                            },
+                                        },
+                                        Spells = {
+                                            _6 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.SpellWizard
+                                            },
+                                            _7 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.SpellWizard
+                                            },
+                                            _8 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.SpellWizard
+                                            },
+                                            _9 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.SpellWizard
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainArcana,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Improved Reaper",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 17th level, when you casts a necromancy spell of 1st through 5th-level that targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other. If the spell consumes its material components, you must provide them for each target."
+                                                },
+                                            },
+                                        },
+                                    }
+                                }
+                            }
+                        }
+                    },
                 },
             },
             new ClassCard()

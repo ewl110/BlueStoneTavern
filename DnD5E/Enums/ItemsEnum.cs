@@ -16,6 +16,10 @@ namespace DnD5E.Enums
         ExlporersPack,
         [Description("Hunting Trap")]
         HuntingTrap,
+        [Description("Holy Symbol")]
+        HolySymbol,
+        [Description("Priest's Pack")]
+        PriestsPack,
         [Description("Traveler's Pack")]
         TravelersClothes,
     }

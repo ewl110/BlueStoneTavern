@@ -18,6 +18,10 @@ namespace DnD5E.Enums
         CollegeOfValor,
         [Description("College of Whispers")]
         CollegeOfWhispers,
+        [Description("Arcana Domain")]
+        DomainArcana,
+        [Description("Death Domain")]
+        DomainDeath,
         Druid,
         Fighter,
         Monk,
