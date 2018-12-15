@@ -1,7 +1,6 @@
 ﻿using DnD5E.Enums;
 using DnD5E.Models;
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace DnD5E.Decks
 {
@@ -25,10 +24,13 @@ namespace DnD5E.Decks
                     Max = 80,
                     Min = 15
                 },
-                Languages = new List<string>
+                Proficiencies = new ProficiencyModel
                 {
-                    LanguagesEnum.Common.ToString(),
-                    LanguagesEnum.Draconic.ToString(),
+                    Languages = new List<LanguagesEnum>
+                    {
+                        LanguagesEnum.Common,
+                        LanguagesEnum.Draconic,
+                    },
                 },
                 Variants = new List<RaceCard>()
                 {
@@ -70,9 +72,9 @@ namespace DnD5E.Decks
                                 }
                             }
                         },
-                        Resistance = new string[]
+                        Resistance = new List<DamageTypesEnum>
                         {
-                            DamageTypesEnum.Acid.ToString()
+                            DamageTypesEnum.Acid
                         },
                         Weight = (int)RarityEnum.Uncommon
                     },
@@ -114,9 +116,9 @@ namespace DnD5E.Decks
                                 }
                             }
                         },
-                        Resistance = new string[]
+                        Resistance = new List<DamageTypesEnum>
                         {
-                            DamageTypesEnum.Lightning.ToString()
+                            DamageTypesEnum.Lightning
                         },
                         Weight = (int)RarityEnum.Uncommon
                     },
@@ -158,9 +160,9 @@ namespace DnD5E.Decks
                                 }
                             }
                         },
-                        Resistance = new string[]
+                        Resistance = new List<DamageTypesEnum>
                         {
-                            DamageTypesEnum.Fire.ToString()
+                            DamageTypesEnum.Fire
                         },
                         Weight = (int)RarityEnum.Common
                     },
@@ -202,9 +204,9 @@ namespace DnD5E.Decks
                                 }
                             }
                         },
-                        Resistance = new string[]
+                        Resistance = new List<DamageTypesEnum>
                         {
-                            DamageTypesEnum.Lightning.ToString()
+                            DamageTypesEnum.Lightning
                         },
                         Weight = (int)RarityEnum.Common
                     },
@@ -246,9 +248,9 @@ namespace DnD5E.Decks
                                 }
                             }
                         },
-                        Resistance = new string[]
+                        Resistance = new List<DamageTypesEnum>
                         {
-                            DamageTypesEnum.Acid.ToString()
+                            DamageTypesEnum.Acid
                         },
                         Weight = (int)RarityEnum.Common
                     },
@@ -290,9 +292,9 @@ namespace DnD5E.Decks
                                 }
                             }
                         },
-                        Resistance = new string[]
+                        Resistance = new List<DamageTypesEnum>
                         {
-                            DamageTypesEnum.Fire.ToString()
+                            DamageTypesEnum.Fire
                         },
                         Weight = (int)RarityEnum.Common
                     },
@@ -334,9 +336,9 @@ namespace DnD5E.Decks
                                 }
                             }
                         },
-                        Resistance = new string[]
+                        Resistance = new List<DamageTypesEnum>
                         {
-                            DamageTypesEnum.Poison.ToString()
+                            DamageTypesEnum.Poison
                         },
                         Weight = (int)RarityEnum.Uncommon
                     },
@@ -378,9 +380,9 @@ namespace DnD5E.Decks
                                 }
                             }
                         },
-                        Resistance = new string[]
+                        Resistance = new List<DamageTypesEnum>
                         {
-                            DamageTypesEnum.Fire.ToString()
+                            DamageTypesEnum.Fire
                         },
                         Weight = (int)RarityEnum.Uncommon
                     },
@@ -422,9 +424,9 @@ namespace DnD5E.Decks
                                 }
                             }
                         },
-                        Resistance = new string[]
+                        Resistance = new List<DamageTypesEnum>
                         {
-                            DamageTypesEnum.Cold.ToString()
+                            DamageTypesEnum.Cold
                         },
                         Weight = (int)RarityEnum.Common
                     },
@@ -466,9 +468,9 @@ namespace DnD5E.Decks
                                 }
                             }
                         },
-                        Resistance = new string[]
+                        Resistance = new List<DamageTypesEnum>
                         {
-                            DamageTypesEnum.Cold.ToString()
+                            DamageTypesEnum.Cold
                         },
                         Weight = (int)RarityEnum.Uncommon
                     },
@@ -535,28 +537,28 @@ namespace DnD5E.Decks
                         }
                     }
                 },
-                Languages = new List<string>
-                {
-                    LanguagesEnum.Common.ToString(),
-                    LanguagesEnum.Dwarvish.ToString(),
-                },
                 Proficiencies = new ProficiencyModel
                 {
-                    Tools = new string[]
+                    Languages = new List<LanguagesEnum>
                     {
-                        "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."
+                        LanguagesEnum.Common,
+                        LanguagesEnum.Dwarvish
                     },
-                    Weapons = new string[]
+                    Tools = new List<ToolsEnum>
                     {
-                        WeaponsEnum.Battleaxe.ToString(),
-                        WeaponsEnum.Handaxe.ToString(),
-                        WeaponsEnum.HammerThrowing.GetAttributeOfType<DescriptionAttribute>().Description,
-                        WeaponsEnum.Warhammer.ToString()
+                        //"You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."
+                    },
+                    Weapons = new List<WeaponsEnum>
+                    {
+                        WeaponsEnum.Battleaxe,
+                        WeaponsEnum.Handaxe,
+                        WeaponsEnum.HammerThrowing,
+                        WeaponsEnum.Warhammer
                     }
                 },
-                Resistance = new string[]
+                Resistance = new List<DamageTypesEnum>
                 {
-                    DamageTypesEnum.Poison.ToString()
+                    DamageTypesEnum.Poison
                 },
                 Speed = 25,
                 Variants = new List<RaceCard>()
@@ -608,9 +610,12 @@ namespace DnD5E.Decks
                                 }
                             }
                         },
-                        Languages = new List<string>
+                        Proficiencies = new ProficiencyModel
                         {
-                            LanguagesEnum.Undercommon.ToString()
+                            Languages = new List<LanguagesEnum>
+                            {
+                                LanguagesEnum.Undercommon
+                            },
                         },
                         Weight = (int)RarityEnum.VeryRare
                     },
@@ -664,10 +669,10 @@ namespace DnD5E.Decks
                         },
                         Proficiencies = new ProficiencyModel
                         {
-                            Armor = new string[]
+                            Armor = new List<ArmorEnum>
                             {
-                                ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
-                                ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description
+                                ArmorEnum.Light,
+                                ArmorEnum.Medium
                             }
                         },
                         Weight = (int)RarityEnum.Common
@@ -727,16 +732,16 @@ namespace DnD5E.Decks
                         }
                     }
                 },
-                Languages = new List<string>
-                {
-                    LanguagesEnum.Common.ToString(),
-                    LanguagesEnum.Elvish.ToString(),
-                },
                 Proficiencies = new ProficiencyModel
                 {
-                    Skills = new string[]
+                    Languages = new List<LanguagesEnum>
                     {
-                        SkillsEnum.Perception.ToString()
+                        LanguagesEnum.Common,
+                        LanguagesEnum.Elvish,
+                    },
+                    Skills = new List<SkillsEnum>
+                    {
+                        SkillsEnum.Perception
                     }
                 },
                 Variants = new List<RaceCard>()
@@ -791,11 +796,11 @@ namespace DnD5E.Decks
                         },
                         Proficiencies = new ProficiencyModel
                         {
-                            Weapons = new string[]
+                            Weapons = new List<WeaponsEnum>
                             {
-                                WeaponsEnum.Rapier.ToString(),
-                                WeaponsEnum.Shortsword.ToString(),
-                                WeaponsEnum.CrossbowHand.GetAttributeOfType<DescriptionAttribute>().Description
+                                WeaponsEnum.Rapier,
+                                WeaponsEnum.Shortsword,
+                                WeaponsEnum.CrossbowHand
                             }
                         },
                         Weight = (int)RarityEnum.VeryRare
@@ -832,18 +837,18 @@ namespace DnD5E.Decks
                                 }
                             },
                         },
-                        Languages = new List<string>
-                        {
-                            LanguagesEnum.SelectLanguage.GetAttributeOfType<DescriptionAttribute>().Description
-                        },
                         Proficiencies = new ProficiencyModel
                         {
-                            Weapons = new string[]
+                            Languages = new List<LanguagesEnum>
                             {
-                                WeaponsEnum.Longsword.ToString(),
-                                WeaponsEnum.Shortsword.ToString(),
-                                WeaponsEnum.Shortbow.ToString(),
-                                WeaponsEnum.Longbow.ToString()
+                                LanguagesEnum.SelectLanguage
+                            },
+                            Weapons = new List<WeaponsEnum>
+                            {
+                                WeaponsEnum.Longsword,
+                                WeaponsEnum.Shortsword,
+                                WeaponsEnum.Shortbow,
+                                WeaponsEnum.Longbow
                             }
                         },
                         Weight = (int)RarityEnum.Common
@@ -888,18 +893,18 @@ namespace DnD5E.Decks
                                 }
                             },
                         },
-                        Languages = new List<string>
-                        {
-                            LanguagesEnum.Aquan.ToString()
-                        },
                         Proficiencies = new ProficiencyModel
                         {
-                            Weapons = new string[]
+                            Languages = new List<LanguagesEnum>
                             {
-                                WeaponsEnum.Spear.ToString(),
-                                WeaponsEnum.Trident.ToString(),
-                                WeaponsEnum.CrossbowLight.GetAttributeOfType<DescriptionAttribute>().Description,
-                                WeaponsEnum.Net.ToString()
+                                LanguagesEnum.Aquan
+                            },
+                            Weapons = new List<WeaponsEnum>
+                            {
+                                WeaponsEnum.Spear,
+                                WeaponsEnum.Trident,
+                                WeaponsEnum.CrossbowLight,
+                                WeaponsEnum.Net
                             }
                         },
                         Weight = (int)RarityEnum.Rare
@@ -942,9 +947,9 @@ namespace DnD5E.Decks
                                 }
                             },
                         },
-                        Resistance = new string[]
+                        Resistance = new List<DamageTypesEnum>
                         {
-                            DamageTypesEnum.Necrotic.ToString()
+                            DamageTypesEnum.Necrotic
                         },
                         Weight = (int)RarityEnum.VeryRare
                     },
@@ -990,12 +995,12 @@ namespace DnD5E.Decks
                         },
                         Proficiencies = new ProficiencyModel
                         {
-                            Weapons = new string[]
+                            Weapons = new List<WeaponsEnum>
                             {
-                                WeaponsEnum.Longsword.ToString(),
-                                WeaponsEnum.Shortsword.ToString(),
-                                WeaponsEnum.Shortbow.ToString(),
-                                WeaponsEnum.Longbow.ToString()
+                                WeaponsEnum.Longsword,
+                                WeaponsEnum.Shortsword,
+                                WeaponsEnum.Shortbow,
+                                WeaponsEnum.Longbow
                             }
                         },
                         Speed = 35,
@@ -1006,6 +1011,7 @@ namespace DnD5E.Decks
             },
             new RaceCard()
             {
+                Name = "Gnome",
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 0,
@@ -1039,18 +1045,21 @@ namespace DnD5E.Decks
                         }
                     },
                 },
-                Languages = new List<string>
+                Proficiencies = new ProficiencyModel
                 {
-                    LanguagesEnum.Common.ToString(),
-                    LanguagesEnum.Gnomish.ToString(),
+                    Languages = new List<LanguagesEnum>
+                    {
+                        LanguagesEnum.Common,
+                        LanguagesEnum.Gnomish,
+                    },
                 },
-                Name = "Gnome",
-                Size = SizeEnum.Small.ToString(),
+                Size = SizeEnum.Small,
                 Speed = 25,
                 Variants = new List<RaceCard>()
                 {
                     new RaceCard
                     {
+                        Name = "Deep Gnome",
                         AbilityScores = new AbilityScoresModel
                         {
                             Str = 0,
@@ -1080,11 +1089,13 @@ namespace DnD5E.Decks
                                 }
                             },
                         },
-                        Languages = new List<string>
+                        Proficiencies = new ProficiencyModel
                         {
-                            LanguagesEnum.Undercommon.ToString()
+                            Languages = new List<LanguagesEnum>
+                            {
+                                LanguagesEnum.Undercommon
+                            },
                         },
-                        Name = "Deep Gnome",
                         Weight = (int)RarityEnum.VeryRare
                     },
                     new RaceCard

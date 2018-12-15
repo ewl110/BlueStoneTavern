@@ -24,9 +24,14 @@ namespace DnD5E.Decks
                 },
                 Proficiencies = new ProficiencyModel
                 {
-                    Skills = new string[]{
-                        SkillsEnum.Insight.ToString(),
-                        SkillsEnum.Religion.ToString()
+                    Languages = new List<LanguagesEnum>
+                    {
+                        LanguagesEnum.SelectLanguage,
+                        LanguagesEnum.SelectLanguage
+                    },
+                    Skills = new List<SkillsEnum>{
+                        SkillsEnum.Insight,
+                        SkillsEnum.Religion
                     }
                 },
                 Bond = new string[]{
@@ -63,10 +68,6 @@ namespace DnD5E.Decks
                     "I've enjoyed fine food, drink, and high society among my temple's elite. Rough living grates on me.",
                     "I've spent so long in the temple that I have little practical experience dealing with people in the outside world.",
                 },
-                Languages = new List<string> {
-                    LanguagesEnum.SelectLanguage.GetAttributeOfType<DescriptionAttribute>().Description,
-                    LanguagesEnum.SelectLanguage.GetAttributeOfType<DescriptionAttribute>().Description
-                },
                 Equipment = new string[]{
                     "A holy symbol (a gift to you when you entered the priesthood)",
                     "a prayer book or prayer wheel",
@@ -77,7 +78,7 @@ namespace DnD5E.Decks
                 Money = new MoneyModel
                 {
                     Gp = 15
-                }
+                },
             },
             new BackgroundCard()
             {
@@ -93,13 +94,13 @@ namespace DnD5E.Decks
                 },
                 Proficiencies = new ProficiencyModel
                 {
-                    Skills = new string[]{
-                        SkillsEnum.Deception.ToString(),
-                        SkillsEnum.SleightOfHand.GetAttributeOfType<DescriptionAttribute>().Description
+                    Skills = new List<SkillsEnum>{
+                        SkillsEnum.Deception,
+                        SkillsEnum.SleightOfHand
                     },
-                    Tools = new string[]{
-                        ToolsEnum.disguiseKit.GetAttributeOfType<DescriptionAttribute>().Description,
-                        ToolsEnum.forgeryKit.GetAttributeOfType<DescriptionAttribute>().Description
+                    Tools = new List<ToolsEnum>{
+                        ToolsEnum.disguiseKit,
+                        ToolsEnum.forgeryKit
                     }
                 },
                 Ideal = new string[]{
@@ -162,13 +163,13 @@ namespace DnD5E.Decks
                 },
                 Proficiencies = new ProficiencyModel
                 {
-                    Skills = new string[]{
-                        SkillsEnum.Deception.ToString(),
-                        SkillsEnum.Stealth.ToString()
+                    Skills = new List<SkillsEnum>{
+                        SkillsEnum.Deception,
+                        SkillsEnum.Stealth
                     },
-                    Tools = new string[]{
-                        ToolsEnum.selectGameSet.GetAttributeOfType<DescriptionAttribute>().Description,
-                        ToolsEnum.thievesTools.GetAttributeOfType<DescriptionAttribute>().Description
+                    Tools = new List<ToolsEnum>{
+                        ToolsEnum.selectGameSet,
+                        ToolsEnum.thievesTools
                     }
                 },
                 Ideal = new string[]{
@@ -229,13 +230,13 @@ namespace DnD5E.Decks
                 },
                 Proficiencies = new ProficiencyModel
                 {
-                    Skills = new string[]{
-                        SkillsEnum.Acrobatics.ToString(),
-                        SkillsEnum.Performance.ToString()
+                    Skills = new List<SkillsEnum>{
+                        SkillsEnum.Acrobatics,
+                        SkillsEnum.Performance
                     },
-                    Tools = new string[]{
-                        ToolsEnum.disguiseKit.GetAttributeOfType<DescriptionAttribute>().Description,
-                        ToolsEnum.selectInstrument.GetAttributeOfType<DescriptionAttribute>().Description
+                    Tools = new List<ToolsEnum>{
+                        ToolsEnum.disguiseKit,
+                        ToolsEnum.selectInstrument
                     }
                 },
                 Ideal = new string[]{
@@ -297,12 +298,15 @@ namespace DnD5E.Decks
                 },
                 Proficiencies = new ProficiencyModel
                 {
-                    Skills = new string[]{
-                        SkillsEnum.Athletics.ToString(),
-                        SkillsEnum.Survival.ToString()
+                    Languages = new List<LanguagesEnum> {
+                        LanguagesEnum.SelectLanguage
                     },
-                    Tools = new string[]{
-                        ToolsEnum.selectInstrument.GetAttributeOfType<DescriptionAttribute>().Description
+                    Skills = new List<SkillsEnum>{
+                        SkillsEnum.Athletics,
+                        SkillsEnum.Survival
+                    },
+                    Tools = new List<ToolsEnum>{
+                        ToolsEnum.selectInstrument
                     }
                 },
                 Bond = new string[]{
@@ -338,9 +342,6 @@ namespace DnD5E.Decks
                     "I'm always picking things up, absently fiddling with them, and sometimes accidentally breaking them.",
                     "I feel far more comfortable around animals than people.",
                     "I was, in fact, raised by wolves.",
-                },
-                Languages = new List<string> {
-                    LanguagesEnum.SelectLanguage.GetAttributeOfType<DescriptionAttribute>().Description
                 },
                 Equipment = new string[]{
                     "A staff",

@@ -1,13 +1,15 @@
 ﻿using DnD5E.Enums;
+using System.Collections.Generic;
 
 namespace DnD5E.Models
 {
     public class ProficiencyModel : BaseModel
     {
-        public string[] Armor { get; set; }
-        public string[] SavingThrows { get; set; }
-        public string[] Skills { get; set; }
-        public string[] Tools { get; set; }
-        public string[] Weapons { get; set; }
+        public List<ArmorEnum> Armor { get; set; }
+        public List<LanguagesEnum> Languages { get; set; }
+        public List<AbilitiesEnum> SavingThrows { get; set; }
+        public List<SkillsEnum> Skills { get; set; }
+        public List<ToolsEnum> Tools { get; set; }
+        public List<WeaponsEnum> Weapons { get; set; }
     }
 }

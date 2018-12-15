@@ -9,11 +9,10 @@ namespace DnD5E.Models
         public ActionModel[] Actions { get; set; }
         public AgeRangeModel AgeRange { get; set; }
         public List<FeaturesModel> Features { get; set; }
-        public string[] Immunity { get; set; }
-        public List<string> Languages { get; set; }
+        public List<DamageTypesEnum> Immunity { get; set; }
         public ProficiencyModel Proficiencies { get; set; }
-        public string[] Resistance { get; set; }
-        public string Size { get; set; } = SizeEnum.Medium.ToString();
+        public List<DamageTypesEnum> Resistance { get; set; }
+        public SizeEnum Size { get; set; } = SizeEnum.Medium;
         public int Speed { get; set; } = 30;
         public List<RaceCard> Variants { get; set; }
     }

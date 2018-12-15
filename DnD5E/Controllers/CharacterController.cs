@@ -94,7 +94,7 @@ namespace DnD5E.Controllers
         {
             Random rng = new Random();
 
-            CharacterCard character = new Characters.Character(rng.Next(1,20)).CreateNewCharacter();
+            CharacterCard character = new Characters.Character(20, "Cleric").CreateNewCharacter();
             return View(character);
         }
     }

@@ -22,6 +22,24 @@ namespace DnD5E.Enums
         DomainArcana,
         [Description("Death Domain")]
         DomainDeath,
+        [Description("Forge Domain")]
+        DomainForge,
+        [Description("Grave Domain")]
+        DomainGrave,
+        [Description("Knowledge Domain")]
+        DomainKnowledge,
+        [Description("Life Domain")]
+        DomainLife,
+        [Description("Light Domain")]
+        DomainLight,
+        [Description("Nature Domain")]
+        DomainNature,
+        [Description("Tempest Domain")]
+        DomainTempest,
+        [Description("Trickery Domain")]
+        DomainTrickery,
+        [Description("War Domain")]
+        DomainWar,
         Druid,
         Fighter,
         Monk,

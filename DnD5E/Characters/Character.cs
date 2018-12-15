@@ -39,10 +39,10 @@ namespace DnD5E.Characters
         private string equipment;
         private HitPointsModel hitPoints;
         private List<string> immunity;
-        private List<string> languages;
         private int passivePerception;
         private List<string> proficiencyArmor;
         private int proficiencyBonus;
+        private List<string> proficiencyLanguages;
         private List<string> proficiencySavingThrows;
         private List<string> proficiencySkills;
         private List<string> proficiencyTools;
@@ -59,21 +59,29 @@ namespace DnD5E.Characters
             }
         }
 
-        public Character() : this(1) { }
+        public static int GetRandomLevel() {
+            Random rng2 = new Random();
+            return rng2.Next(1, 20);
+        }
 
-        public Character(int level)
+        public Character() : this(GetRandomLevel()) {}
+
+        public Character(int level) : this(level, Decks.ClassDeck.Cards.PullRandomCardFromDeck(true).Name) {}
+
+        public Character(int level, string characterClass) : this(level, characterClass, Decks.RaceDeck.Cards.PullRandomCardFromDeck(true).Name) {}
+
+        public Character(int level, string characterClass, string characterRace)
         {
             this.actionAttack = new List<ActionModel> { };
             this.actionBonus = new List<ActionModel> { };
             this.actionOption = new List<ActionModel> { };
             this.actionReaction = new List<ActionModel> { };
 
-            var cards = Decks.ClassDeck.Cards;
             // Get required character data
             this.charBackgroundCard = Decks.BackgroundDeck.Cards.PullRandomCardFromDeck();
-            this.charClassCard = Decks.ClassDeck.Cards.PullRandomCardFromDeck(true);
+            this.charClassCard = Decks.ClassDeck.Cards.Find(x => x.Name == characterClass);
             this.charFactionCard = Decks.FactionDeck.Cards.PullRandomCardFromDeck();
-            this.charRaceCard = Decks.RaceDeck.Cards.PullRandomCardFromDeck(true);
+            this.charRaceCard = Decks.RaceDeck.Cards.Find(x => x.Name == characterRace);
             this.charRaceVariantCard = this.charRaceCard.Variants.PullRandomCardFromDeck(true);
 
             // Define classes and totalLevel
@@ -110,7 +118,6 @@ namespace DnD5E.Characters
             this.charClassPrimary = GetPrimaryClass();
             this.id = CreateGuid();
             this.immunity = GetImmunities();
-            this.languages = GetLanguages();
             this.proficiencyBonus = GetProficiencyBonus();
             this.raceTraits = GetRaceTraits();
             this.resistance = GetResistances();
@@ -139,13 +146,13 @@ namespace DnD5E.Characters
 
             switch (feature.AbilityModifier)
             {
-                case "Cha":
+                case AbilitiesEnum.Cha:
                     abilityMod = this.abilityScores.ChaMod;
                     break;
-                case "Int":
+                case AbilitiesEnum.Int:
                     abilityMod = this.abilityScores.IntMod;
                     break;
-                case "Wis":
+                case AbilitiesEnum.Wis:
                     abilityMod = this.abilityScores.WisMod;
                     break;
             }
@@ -202,7 +209,7 @@ namespace DnD5E.Characters
                 HitPoints = this.hitPoints,
                 Id = this.id,
                 Immunity = this.immunity,
-                Languages = this.languages,
+                Languages = this.proficiencyLanguages,
                 PassivePerception = this.passivePerception,
                 ProficiencyArmor = this.proficiencyArmor,
                 ProficiencyBonus = this.proficiencyBonus,
@@ -213,7 +220,7 @@ namespace DnD5E.Characters
                 Race = this.charRaceVariantCard.Name,
                 RaceTraits = this.raceTraits,
                 Resistance = this.resistance,
-                Size = this.charRaceCard.Size,
+                Size = this.charRaceCard.Size.GetEnumText(),
                 Speed = this.speed,
                 TotalLevel = this.totalLevel,
             };
@@ -416,13 +423,15 @@ namespace DnD5E.Characters
             {
                 foreach (var item in proficiencies.Armor)
                 {
+                    string text = item.GetEnumText();
+
                     if (this.charClassCard.Name == ClassEnum.Druid.ToString())
                     {
-                        armorProficiency.Add($"{item} (nonmetal)");
+                        armorProficiency.Add($"{text} (nonmetal)");
                     }
                     else
                     {
-                        armorProficiency.Add(item);
+                        armorProficiency.Add(text);
                     }
                 }
             }
@@ -498,20 +507,30 @@ namespace DnD5E.Characters
                                 }
 
                                 // No variant is set and the SetVariant flag is present, choose a random variant
+                                ClassEnum classVariant = ClassEnum.None;
                                 if (c.Levels[i].SetVariant && charClass.Variant == null)
                                 {
                                     ClassEnum[] variantsList = this.charClassCard.Levels[i].Variants.Keys.ToArray();
-                                    ClassEnum randomVariant = variantsList.PickRandomItemFromArray();
-                                    charClass.Variant = randomVariant.ToString();
+                                    classVariant = variantsList.PickRandomItemFromArray();
+                                    charClass.Variant = classVariant.GetEnumText();
+                                } else if (charClass.Variant != null)
+                                {
+                                    Enum.TryParse(charClass.Variant, out ClassEnum cv);
+                                    classVariant = EnumUtil.GetValueFromDescription<ClassEnum>(charClass.Variant);
+                                    //classVariant = cv;
                                 }
 
                                 // Check if class variant exists
-                                if (charClass.Variant != null)
+                                if (classVariant != ClassEnum.None)
                                 {
-                                    Enum.TryParse(charClass.Variant, out ClassEnum classVariant);
+                                    //Enum.TryParse(charClass.Variant, out ClassEnum classVariant);
 
                                     // If class variant is found add the relevant features
-                                    if (this.charClassCard.Levels[i].Variants != null && this.charClassCard.Levels[i].Variants.ContainsKey(classVariant) && this.charClassCard.Levels[i].Variants[classVariant].Features != null)
+                                    if (
+                                        this.charClassCard.Levels[i].Variants != null && 
+                                        this.charClassCard.Levels[i].Variants.ContainsKey(classVariant) && 
+                                        this.charClassCard.Levels[i].Variants[classVariant].Features != null
+                                    )
                                     {
                                         foreach (FeaturesModel item in this.charClassCard.Levels[i].Variants[classVariant].Features)
                                         {
@@ -589,7 +608,7 @@ namespace DnD5E.Characters
             {
                 foreach (var item in this.charRaceCard.Immunity)
                 {
-                    immunity.Add(item);
+                    immunity.Add(item.GetEnumText());
                 }
             }
 
@@ -597,37 +616,22 @@ namespace DnD5E.Characters
             {
                 foreach (var item in this.charRaceVariantCard.Immunity)
                 {
-                    immunity.Add(item);
+                    immunity.Add(item.GetEnumText());
                 }
             }
 
             return immunity;
         }
 
-        private List<string> GetLanguages() {
+        private List<string> GetLanguageProficiency(ProficiencyModel proficiencies)
+        {
             List<string> languages = new List<string>() { };
 
-            if (this.charBackgroundCard.Languages != null)
+            if (proficiencies.Skills != null)
             {
-                foreach (var item in this.charBackgroundCard.Languages)
+                foreach (var item in proficiencies.Skills)
                 {
-                    languages.Add(item);
-                }
-            }
-
-            if (this.charRaceCard.Languages != null)
-            {
-                foreach (var item in this.charRaceCard.Languages)
-                {
-                    languages.Add(item);
-                }
-            }
-
-            if (this.charRaceVariantCard.Languages != null)
-            {
-                foreach (var item in this.charRaceVariantCard.Languages)
-                {
-                    languages.Add(item);
+                    languages.Add(item.GetEnumText());
                 }
             }
 
@@ -665,6 +669,7 @@ namespace DnD5E.Characters
         private void GetProficiencies()
         {
             this.proficiencyArmor = new List<string>() { };
+            this.proficiencyLanguages = new List<string>() { };
             this.proficiencySavingThrows = new List<string>() { };
             this.proficiencySkills = new List<string>() { };
             this.proficiencyTools = new List<string>() { };
@@ -680,6 +685,7 @@ namespace DnD5E.Characters
                         var proficiencies = this.charClassCard.Levels[i].Proficiencies;
 
                         this.proficiencyArmor = this.proficiencyArmor.Union(GetArmorProficiency(proficiencies)).ToList();
+                        this.proficiencyLanguages = this.proficiencyArmor.Union(GetLanguageProficiency(proficiencies)).ToList();
                         this.proficiencySavingThrows = this.proficiencySavingThrows.Union(GetSavingThrowProficiency(proficiencies)).ToList();
                         this.proficiencySkills = this.proficiencySkills.Union(GetSkillProficiency(proficiencies)).ToList();
                         this.proficiencyTools = this.proficiencyTools.Union(GetToolProficiency(proficiencies)).ToList();
@@ -694,6 +700,7 @@ namespace DnD5E.Characters
                                 var proficienciesVariant = this.charClassCard.Levels[i].Variants[classVariant].Proficiencies;
 
                                 this.proficiencyArmor = this.proficiencyArmor.Union(GetArmorProficiency(proficienciesVariant)).ToList();
+                                this.proficiencyLanguages = this.proficiencyArmor.Union(GetLanguageProficiency(proficiencies)).ToList();
                                 this.proficiencySavingThrows = this.proficiencySavingThrows.Union(GetSavingThrowProficiency(proficienciesVariant)).ToList();
                                 this.proficiencySkills = this.proficiencySkills.Union(GetSkillProficiency(proficienciesVariant)).ToList();
                                 this.proficiencyTools = this.proficiencyTools.Union(GetToolProficiency(proficienciesVariant)).ToList();
@@ -709,6 +716,7 @@ namespace DnD5E.Characters
                 var proficiencies = this.charBackgroundCard.Proficiencies;
 
                 this.proficiencyArmor = this.proficiencyArmor.Union(GetArmorProficiency(proficiencies)).ToList();
+                this.proficiencyLanguages = this.proficiencyArmor.Union(GetLanguageProficiency(proficiencies)).ToList();
                 this.proficiencySavingThrows = this.proficiencySavingThrows.Union(GetSavingThrowProficiency(proficiencies)).ToList();
                 this.proficiencySkills = this.proficiencySkills.Union(GetSkillProficiency(proficiencies)).ToList();
                 this.proficiencyTools = this.proficiencyTools.Union(GetToolProficiency(proficiencies)).ToList();
@@ -720,6 +728,7 @@ namespace DnD5E.Characters
                 var proficiencies = this.charRaceCard.Proficiencies;
 
                 this.proficiencyArmor = this.proficiencyArmor.Union(GetArmorProficiency(proficiencies)).ToList();
+                this.proficiencyLanguages = this.proficiencyArmor.Union(GetLanguageProficiency(proficiencies)).ToList();
                 this.proficiencySavingThrows = this.proficiencySavingThrows.Union(GetSavingThrowProficiency(proficiencies)).ToList();
                 this.proficiencySkills = this.proficiencySkills.Union(GetSkillProficiency(proficiencies)).ToList();
                 this.proficiencyTools = this.proficiencyTools.Union(GetToolProficiency(proficiencies)).ToList();
@@ -731,6 +740,7 @@ namespace DnD5E.Characters
                 var proficiencies = this.charRaceVariantCard.Proficiencies;
 
                 this.proficiencyArmor = this.proficiencyArmor.Union(GetArmorProficiency(proficiencies)).ToList();
+                this.proficiencyLanguages = this.proficiencyArmor.Union(GetLanguageProficiency(proficiencies)).ToList();
                 this.proficiencySavingThrows = this.proficiencySavingThrows.Union(GetSavingThrowProficiency(proficiencies)).ToList();
                 this.proficiencySkills = this.proficiencySkills.Union(GetSkillProficiency(proficiencies)).ToList();
                 this.proficiencyTools = this.proficiencyTools.Union(GetToolProficiency(proficiencies)).ToList();
@@ -809,7 +819,7 @@ namespace DnD5E.Characters
             {
                 foreach (var item in this.charRaceCard.Resistance)
                 {
-                    resistance.Add(item);
+                    resistance.Add(item.GetEnumText());
                 }
             }
 
@@ -817,35 +827,35 @@ namespace DnD5E.Characters
             {
                 foreach (var item in this.charRaceVariantCard.Resistance)
                 {
-                    resistance.Add(item);
+                    resistance.Add(item.GetEnumText());
                 }
             }
 
             return resistance;
         }
 
-        private int GetSavingThrowModifier(string ability)
+        private int GetSavingThrowModifier(AbilitiesEnum ability)
         {
             int abilityModifier = this.proficiencyBonus;
 
             switch (ability)
             {
-                case "Cha":
+                case AbilitiesEnum.Cha:
                     abilityModifier += this.abilityScores.ChaMod;
                     break;
-                case "Con":
+                case AbilitiesEnum.Con:
                     abilityModifier += this.abilityScores.ConMod;
                     break;
-                case "Dex":
+                case AbilitiesEnum.Dex:
                     abilityModifier += this.abilityScores.DexMod;
                     break;
-                case "Int":
+                case AbilitiesEnum.Int:
                     abilityModifier += this.abilityScores.IntMod;
                     break;
-                case "Str":
+                case AbilitiesEnum.Str:
                     abilityModifier += this.abilityScores.StrMod;
                     break;
-                case "Wis":
+                case AbilitiesEnum.Wis:
                     abilityModifier += this.abilityScores.WisMod;
                     break;
             }
@@ -869,37 +879,37 @@ namespace DnD5E.Characters
             return savingThrowProficiency;
         }
 
-        private int GetSkillModifier(string skill) {
+        private int GetSkillModifier(SkillsEnum skill) {
             int skillModifier = this.proficiencyBonus;
 
             switch (skill)
             {
-                case "Acrobatics":
-                case "Sleight of Hand":
-                case "Stealth":
+                case SkillsEnum.Acrobatics:
+                case SkillsEnum.SleightOfHand:
+                case SkillsEnum.Stealth:
                     skillModifier += this.abilityScores.DexMod;
                     break;
-                case "Arcana":
-                case "History":
-                case "Investigation":
-                case "Nature":
-                case "Religion":
+                case SkillsEnum.Arcana:
+                case SkillsEnum.History:
+                case SkillsEnum.Investigation:
+                case SkillsEnum.Nature:
+                case SkillsEnum.Religion:
                     skillModifier += this.abilityScores.IntMod;
                     break;
-                case "Animal Handling":
-                case "Insight":
-                case "Medicine":
-                case "Perception":
-                case "Survival":
+                case SkillsEnum.AnimalHandling:
+                case SkillsEnum.Insight:
+                case SkillsEnum.Medicine:
+                case SkillsEnum.Perception:
+                case SkillsEnum.Survival:
                     skillModifier += this.abilityScores.WisMod;
                     break;
-                case "Athletics":
+                case SkillsEnum.Athletics:
                     skillModifier += this.abilityScores.StrMod;
                     break;
-                case "Deception":
-                case "Intimidation":
-                case "Performance":
-                case "Persuasion":
+                case SkillsEnum.Deception:
+                case SkillsEnum.Intimidation:
+                case SkillsEnum.Performance:
+                case SkillsEnum.Persuasion:
                     skillModifier += this.abilityScores.ChaMod;
                     break;
             }
@@ -931,7 +941,7 @@ namespace DnD5E.Characters
             {
                 foreach (var item in proficiencies.Tools)
                 {
-                    tools.Add(item);
+                    tools.Add(item.GetEnumText());
                 }
             }
 
@@ -958,7 +968,7 @@ namespace DnD5E.Characters
             {
                 foreach (var item in proficiencies.Weapons)
                 {
-                    weapons.Add(item);
+                    weapons.Add(item.GetEnumText());
                 }
             }
 

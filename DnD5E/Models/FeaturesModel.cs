@@ -5,7 +5,7 @@ namespace DnD5E.Models
 {
     public class FeaturesModel : BaseModel
     {
-        public string AbilityModifier { get; set; }
+        public AbilitiesEnum AbilityModifier { get; set; }
         public ActionModel Action { get; set; }
         public List<ClassEnum> Class { get; set; }
         public new List<string> Description { get; set; }

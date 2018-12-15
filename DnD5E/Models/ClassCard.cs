@@ -19,10 +19,12 @@ namespace DnD5E.Models
         public int? BardicInspiration { get; set; }
         public int? CombatDice { get; set; }
         public List<FeaturesModel> Features { get; set; }
+        public List<DamageTypesEnum> Immunity { get; set; }
         public int? KiPoints { get; set; }
         public ProficiencyModel Proficiencies { get; set; }
         public int? Rage { get; set; }
         public int? RageDamage { get; set; }
+        public List<DamageTypesEnum> Resistance { get; set;}
         public bool SetVariant { get; set; }
         public int? SneakAttack { get; set; }
         public SpellsModel Spells { get; set; }

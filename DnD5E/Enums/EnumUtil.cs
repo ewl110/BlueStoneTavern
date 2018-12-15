@@ -7,6 +7,23 @@ namespace DnD5E.Enums
 {
     public static class EnumUtil
     {
+        public static string GetEnumText(this Enum value)
+        {
+            string text;
+
+            try
+            {
+                text = value.GetAttributeOfType<DescriptionAttribute>().Description;
+            }
+            catch (Exception ex)
+            {
+
+                text = value.ToString();
+            }
+
+            return text;
+        }
+
         public static IEnumerable<T> GetValues<T>()
         {
             return Enum.GetValues(typeof(T)).Cast<T>();

@@ -10,7 +10,7 @@ namespace DnD5E.Decks
         public static List<ClassCard> Cards = new List<ClassCard>() {
             new ClassCard()
             {
-                Name = ClassEnum.Barbarian.ToString(),
+                Name = ClassEnum.Barbarian.GetEnumText(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 15,
@@ -25,27 +25,27 @@ namespace DnD5E.Decks
                 {
                     new EquipmentModel
                     {
-                        Name = WeaponsEnum.Greataxe.ToString(),
+                        Name = WeaponsEnum.Greataxe.GetEnumText(),
                         Type = EquipmentTypeEnum.Weapon,
                         Weapon = WeaponsEnum.Greataxe
                     },
                     new EquipmentModel
                     {
-                        Name = WeaponsEnum.Handaxe.ToString(),
+                        Name = WeaponsEnum.Handaxe.GetEnumText(),
                         Type = EquipmentTypeEnum.Weapon,
                         Weapon = WeaponsEnum.Handaxe,
                         Quantity = 2
                     },
                     new EquipmentModel
                     {
-                        Name = WeaponsEnum.Javelin.ToString(),
+                        Name = WeaponsEnum.Javelin.GetEnumText(),
                         Type = EquipmentTypeEnum.Weapon,
                         Weapon = WeaponsEnum.Javelin,
                         Quantity = 4
                     },
                     new EquipmentModel
                     {
-                        Name = ItemsEnum.ExlporersPack.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Name = ItemsEnum.ExlporersPack.GetEnumText(),
                         Type = EquipmentTypeEnum.Item,
                     },
                 },
@@ -87,21 +87,21 @@ namespace DnD5E.Decks
                             },
                             Proficiencies = new ProficiencyModel
                             {
-                                Armor = new string[]
+                                Armor = new List<ArmorEnum>
                                 {
-                                    ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    ArmorEnum.Shield.ToString()
+                                    ArmorEnum.Light,
+                                    ArmorEnum.Medium,
+                                    ArmorEnum.Shield
                                 },
-                                SavingThrows = new string[]
+                                SavingThrows = new List<AbilitiesEnum>
                                 {
-                                    AbilitiesEnum.Str.ToString(),
-                                    AbilitiesEnum.Con.ToString(),
+                                    AbilitiesEnum.Str,
+                                    AbilitiesEnum.Con,
                                 },
-                                Weapons = new string[]
+                                Weapons = new List<WeaponsEnum>
                                 {
-                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    WeaponsEnum.MartialWeapon.GetAttributeOfType<DescriptionAttribute>().Description
+                                    WeaponsEnum.SimpleWeapon,
+                                    WeaponsEnum.MartialWeapon
                                 }
                             },
                             Rage = 2,
@@ -739,7 +739,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = ClassEnum.Bard.ToString(),
+                Name = ClassEnum.Bard.GetEnumText(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 10,
@@ -754,29 +754,29 @@ namespace DnD5E.Decks
                 {
                     new EquipmentModel
                     {
-                        Name = WeaponsEnum.Dagger.ToString(),
+                        Name = WeaponsEnum.Dagger.GetEnumText(),
                         Type = EquipmentTypeEnum.Weapon,
                         Weapon = WeaponsEnum.Dagger
                     },
                     new EquipmentModel
                     {
-                        Name = WeaponsEnum.Rapier.ToString(),
+                        Name = WeaponsEnum.Rapier.GetEnumText(),
                         Type = EquipmentTypeEnum.Weapon,
                         Weapon = WeaponsEnum.Rapier
                     },
                     new EquipmentModel
                     {
-                        Name = ArmorEnum.Leather.ToString(),
+                        Name = ArmorEnum.Leather.GetEnumText(),
                         Type = EquipmentTypeEnum.Armor,
                     },
                     new EquipmentModel
                     {
-                        Name = ItemsEnum.EntertainersPack.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Name = ItemsEnum.EntertainersPack.GetEnumText(),
                         Type = EquipmentTypeEnum.Item,
                     },
                     new EquipmentModel
                     {
-                        Name = ToolsEnum.selectInstrument.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Name = ToolsEnum.selectInstrument.GetEnumText(),
                         Type = EquipmentTypeEnum.Tool,
                     },
                 },
@@ -818,7 +818,7 @@ namespace DnD5E.Decks
                                         "You can cast any bard spell you know as a <b>ritual</b> if that spell has the ritual tag.",
                                         "You can use a musical instrument as a <b>spellcasting focus</b> for your bard spells."
                                     },
-                                    AbilityModifier = AbilitiesEnum.Cha.ToString(),
+                                    AbilityModifier = AbilitiesEnum.Cha,
                                     Action = new ActionModel
                                     {
                                         Name = "Spellcasting",
@@ -829,22 +829,22 @@ namespace DnD5E.Decks
                             },
                             Proficiencies = new ProficiencyModel
                             {
-                                Armor = new string[]
+                                Armor = new List<ArmorEnum>
                                 {
-                                    ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
+                                    ArmorEnum.Light,
                                 },
-                                SavingThrows = new string[]
+                                SavingThrows = new List<AbilitiesEnum>
                                 {
-                                    AbilitiesEnum.Dex.ToString(),
-                                    AbilitiesEnum.Cha.ToString(),
+                                    AbilitiesEnum.Dex,
+                                    AbilitiesEnum.Cha,
                                 },
-                                Weapons = new string[]
+                                Weapons = new List<WeaponsEnum>
                                 {
-                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    WeaponsEnum.Longsword.ToString(),
-                                    WeaponsEnum.Rapier.ToString(),
-                                    WeaponsEnum.Shortsword.ToString(),
-                                    WeaponsEnum.CrossbowHand.GetAttributeOfType<DescriptionAttribute>().Description
+                                    WeaponsEnum.SimpleWeapon,
+                                    WeaponsEnum.Longsword,
+                                    WeaponsEnum.Rapier,
+                                    WeaponsEnum.Shortsword,
+                                    WeaponsEnum.CrossbowHand
                                 }
                             },
                         }
@@ -871,7 +871,7 @@ namespace DnD5E.Decks
                                         "Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during a Short Rest. If you or any friendly creatures who can hear your Performance regain Hit Points by spending Hit Dice at the end of the Short Rest, each of those creatures regains an extra 1d6 Hit Points.",
                                         "The extra Hit Points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level."
                                     },
-                                    AbilityModifier = AbilitiesEnum.Cha.ToString(),
+                                    AbilityModifier = AbilitiesEnum.Cha,
                                     Action = new ActionModel
                                     {
                                         Name = "Song of Rest",
@@ -907,7 +907,8 @@ namespace DnD5E.Decks
                                 },
                             },
                             SetVariant = true,
-                            Variants = new Dictionary<ClassEnum, LevelModel>{
+                            Variants = new Dictionary<ClassEnum, LevelModel>
+                            {
                                 {
                                     ClassEnum.CollegeOfGlamour,
                                     new LevelModel
@@ -979,11 +980,11 @@ namespace DnD5E.Decks
                                         },
                                         Proficiencies = new ProficiencyModel
                                         {
-                                            Skills = new string[]
+                                            Skills = new List<SkillsEnum>
                                             {
-                                                SkillsEnum.SelectSkill.ToString(),
-                                                SkillsEnum.SelectSkill.ToString(),
-                                                SkillsEnum.SelectSkill.ToString(),
+                                                SkillsEnum.SelectSkill,
+                                                SkillsEnum.SelectSkill,
+                                                SkillsEnum.SelectSkill,
                                             }
                                         }
                                     }
@@ -1029,13 +1030,13 @@ namespace DnD5E.Decks
                                         },
                                         Proficiencies = new ProficiencyModel
                                         {
-                                            Armor = new string[]
+                                            Armor = new List<ArmorEnum>
                                             {
-                                                ArmorEnum.Medium.ToString()
+                                                ArmorEnum.Medium
                                             },
-                                            Weapons = new string[]
+                                            Weapons = new List<WeaponsEnum>
                                             {
-                                                WeaponsEnum.Scimitar.ToString()
+                                                WeaponsEnum.Scimitar
                                             }
                                         }
                                     }
@@ -1065,14 +1066,14 @@ namespace DnD5E.Decks
                                         },
                                         Proficiencies = new ProficiencyModel
                                         {
-                                            Armor = new string[]
+                                            Armor = new List<ArmorEnum>
                                             {
-                                                ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description,
-                                                ArmorEnum.Shield.ToString()
+                                                ArmorEnum.Medium,
+                                                ArmorEnum.Shield
                                             },
-                                            Weapons = new string[]
+                                            Weapons = new List<WeaponsEnum>
                                             {
-                                                WeaponsEnum.MartialWeapon.GetAttributeOfType<DescriptionAttribute>().Description
+                                                WeaponsEnum.MartialWeapon
                                             }
                                         }
                                     }
@@ -1421,7 +1422,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = ClassEnum.Cleric.ToString(),
+                Name = ClassEnum.Cleric.GetEnumText(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 14,
@@ -1436,34 +1437,34 @@ namespace DnD5E.Decks
                 {
                     new EquipmentModel
                     {
-                        Name = WeaponsEnum.Mace.ToString(),
+                        Name = WeaponsEnum.Mace.GetEnumText(),
                         Type = EquipmentTypeEnum.Weapon,
                         Weapon = WeaponsEnum.Mace
                     },
                     new EquipmentModel
                     {
-                        Name = WeaponsEnum.CrossbowLight.ToString(),
+                        Name = WeaponsEnum.CrossbowLight.GetEnumText(),
                         Type = EquipmentTypeEnum.Weapon,
                         Weapon = WeaponsEnum.CrossbowLight
                     },
                     new EquipmentModel
                     {
-                        Name = ArmorEnum.ScaleMail.ToString(),
+                        Name = ArmorEnum.ScaleMail.GetEnumText(),
                         Type = EquipmentTypeEnum.Armor,
                     },
                     new EquipmentModel
                     {
-                        Name = ArmorEnum.Shield.ToString(),
+                        Name = ArmorEnum.Shield.GetEnumText(),
                         Type = EquipmentTypeEnum.Armor,
                     },
                     new EquipmentModel
                     {
-                        Name = ItemsEnum.PriestsPack.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Name = ItemsEnum.PriestsPack.GetEnumText(),
                         Type = EquipmentTypeEnum.Item,
                     },
                     new EquipmentModel
                     {
-                        Name = ItemsEnum.HolySymbol.ToString(),
+                        Name = ItemsEnum.HolySymbol.GetEnumText(),
                         Type = EquipmentTypeEnum.Item,
                     },
                 },
@@ -1489,7 +1490,7 @@ namespace DnD5E.Decks
                                         "You can change your list of prepared spells when you finish a long rest.",
                                         "You can use a holy symbol as a spellcasting focus for your cleric spells."
                                     },
-                                    AbilityModifier = AbilitiesEnum.Wis.ToString(),
+                                    AbilityModifier = AbilitiesEnum.Wis,
                                     Action = new ActionModel
                                     {
                                         Name = "Spellcasting",
@@ -1500,20 +1501,20 @@ namespace DnD5E.Decks
                             },
                             Proficiencies = new ProficiencyModel
                             {
-                                Armor = new string[]
+                                Armor = new List<ArmorEnum>
                                 {
-                                    ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    ArmorEnum.Shield.ToString()
+                                    ArmorEnum.Light,
+                                    ArmorEnum.Medium,
+                                    ArmorEnum.Shield
                                 },
-                                SavingThrows = new string[]
+                                SavingThrows = new List<AbilitiesEnum>
                                 {
-                                    AbilitiesEnum.Wis.ToString(),
-                                    AbilitiesEnum.Cha.ToString(),
+                                    AbilitiesEnum.Wis,
+                                    AbilitiesEnum.Cha,
                                 },
-                                Weapons = new string[]
+                                Weapons = new List<WeaponsEnum>
                                 {
-                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
+                                    WeaponsEnum.SimpleWeapon,
                                 }
                             },
                             SetVariant = true,
@@ -1541,9 +1542,9 @@ namespace DnD5E.Decks
                                         },
                                         Proficiencies = new ProficiencyModel
                                         {
-                                            Skills = new string[]
+                                            Skills = new List<SkillsEnum>
                                             {
-                                                SkillsEnum.Arcana.ToString()
+                                                SkillsEnum.Arcana
                                             }
                                         },
                                         Spells = new SpellsModel {
@@ -1577,9 +1578,9 @@ namespace DnD5E.Decks
                                         },
                                         Proficiencies = new ProficiencyModel
                                         {
-                                            Weapons = new string[]
+                                            Weapons = new List<WeaponsEnum>
                                             {
-                                                WeaponsEnum.MartialWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
+                                                WeaponsEnum.MartialWeapon,
                                             }
                                         },
                                         Spells = new SpellsModel {
@@ -1594,7 +1595,126 @@ namespace DnD5E.Decks
                                             }
                                         }
                                     }
-                                }
+                                },
+                                {
+                                    ClassEnum.DomainForge,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Blessing of the Forge",
+                                                Description = new List<string>
+                                                {
+                                                    "At 1st level, at the end of a long rest, touch one nonmagical object that is a suit of armor or a simple or martial weapon. Until the end of your next long rest, the object becomes a magic item, granting a +1 bonus to AC if it's armor or a +1 bonus to attack and damage rolls if it's a weapon.",
+                                                    "Once you use this feature, you can't use it again until you finish a long rest."
+                                                }
+                                            }
+                                        },
+                                        Proficiencies = new ProficiencyModel
+                                        {
+                                            Armor = new List<ArmorEnum>
+                                            {
+                                                ArmorEnum.Heavy,
+                                            },
+                                            Tools = new List<ToolsEnum>
+                                            {
+                                                ToolsEnum.smithsTools,
+                                            }
+                                        },
+                                        Spells = new SpellsModel {
+                                            _1 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Identify,
+                                                SpellsEnum.SearingSmite,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainGrave,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Circle of Mortality",
+                                                Description = new List<string>
+                                                {
+                                                    "At 1st level, when you would normally roll one or more dice to restore hit points with a spell to a creature at 0 hit points, you instead use the highest number possible for each die.",
+                                                    "In addition, you learn the Spare the Dying cantrip, which doesn't count against the number of cleric cantrips you know. For you, it has a range of 30 feet, and you can cast it as a bonus action."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Circle of Mortality",
+                                                    Description = "Grave Domain Feature",
+                                                    Type = ActionTypesEnum.Bonus
+                                                }
+                                            },
+                                            new FeaturesModel
+                                            {
+                                                Name = "Eyes of the Grave",
+                                                Description = new List<string>
+                                                {
+                                                    "At 1st level, as an action, you can open your awareness to magically detect undead. Until the end of your next turn, you know the location of any undead within 60 feet of you that isn't behind total cover and that isn't protected from divination magic. This sense doesn't tell you anything about a creature's capabilities or identity.",
+                                                    "You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Eyes of the Grave",
+                                                    Description = "Grave Domain Feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            }
+                                        },
+                                        Spells = new SpellsModel {
+                                            Cantrips = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.SpareTheDying
+                                            },
+                                            _1 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Bane,
+                                                SpellsEnum.FalseLife,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainKnowledge,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Blessing of Knowledge",
+                                                Description = new List<string>
+                                                {
+                                                    "At 1st level, you learn two languages of your choice. You also become proficient in your choice of two of the following skills: Arcana, History, Nature, or Religion.",
+                                                    "Your proficiency bonus is doubled for any ability check you make that uses either of those skills."
+                                                },
+                                            },
+                                        },
+                                        Proficiencies = new ProficiencyModel
+                                        {
+                                            Languages = new List<LanguagesEnum>
+                                            {
+                                                LanguagesEnum.SelectLanguage,
+                                                LanguagesEnum.SelectLanguage
+                                            }
+                                        },
+                                        Spells = new SpellsModel {
+                                            _1 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Command,
+                                                SpellsEnum.Identify,
+                                            }
+                                        }
+                                    }
+                                },
                             }
                         }
                     },
@@ -1617,7 +1737,7 @@ namespace DnD5E.Decks
                                 },
                                 new FeaturesModel
                                 {
-                                    Name = "Turn Undead",
+                                    Name = "Channel Divinity: Turn Undead",
                                     Description = new List<string>
                                     {
                                         "As an action, each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.",
@@ -1625,7 +1745,7 @@ namespace DnD5E.Decks
                                     },
                                     Action = new ActionModel
                                     {
-                                        Name = "Turn Undead",
+                                        Name = "Channel Divinity: Turn Undead",
                                         Description = "Cleric feature",
                                         Type = ActionTypesEnum.Option
                                     }
@@ -1641,7 +1761,7 @@ namespace DnD5E.Decks
                                         {
                                             new FeaturesModel
                                             {
-                                                Name = "Arcane Abjuration",
+                                                Name = "Channel Divinity: Arcane Abjuration",
                                                 Description = new List<string>
                                                 {
                                                     "Starting at 2nd level, as an action, you present your holy symbol, and one celestial, elemental, fey, or fiend of your choice that is within 30 feet of you must make a Wisdom saving throw, provided that the creature can see or hear you. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.",
@@ -1651,7 +1771,7 @@ namespace DnD5E.Decks
                                                 },
                                                 Action = new ActionModel
                                                 {
-                                                    Name = "Arcane Abjuraton",
+                                                    Name = "Channel Divinity: Arcane Abjuraton",
                                                     Description = "Arcana Domain Feature",
                                                     Type = ActionTypesEnum.Option
                                                 }
@@ -1667,7 +1787,7 @@ namespace DnD5E.Decks
                                         {
                                             new FeaturesModel
                                             {
-                                                Name = "Touch of Death",
+                                                Name = "Channel Divinity: Touch of Death",
                                                 Description = new List<string>
                                                 {
                                                     "Starting at 2nd level, when you hit a creature with a melee attack, you can use Channel Divinity to deal extra necrotic damage to the target. The damage equals 5 + twice your cleric level."
@@ -1675,7 +1795,56 @@ namespace DnD5E.Decks
                                             }
                                         },
                                     }
-                                }
+                                },
+                                {
+                                    ClassEnum.DomainForge,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Channel Divinity: Artisan's Blessing",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 2nd level, you can conduct an hour-long ritual that crafts a nonmagical item that must include some metal. The creation is completed at the end of the hour, coalescing in an unoccupied space of your choice on a surface within 5 feet of you.",
+                                                    "The thing you create can be something that is worth no more than 100 gp. As part of this ritual, you must lay out metal, which can include coins, with a value equal to the creation. The metal irretrievably coalesces and transforms into the creation at the ritual's end, magically forming even nonmetal parts of the creation.",
+                                                    "The ritual can create a duplicate of a nonmagical item that contains metal, such as a key, if you possess the original during the ritual."
+                                                }
+                                            }
+                                        },
+                                        Spells = new SpellsModel {
+                                            _1 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Identify,
+                                                SpellsEnum.SearingSmite,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainGrave,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Channel Divinity: Path to the Grave",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 2nd level, as an action, you choose one creature you can see within 30 feet of you, cursing it until the end of your next turn. The next time you or an ally of yours hits the cursed creature with an attack, the creature has vulnerability to all of that attack's damage, and then the curse ends."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Channel Divinity: Path to the Grave",
+                                                    Description = "Grave Domain Feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            }
+                                        },
+                                    }
+                                },
                             }
                         }
                     },
@@ -1716,7 +1885,33 @@ namespace DnD5E.Decks
                                             },
                                         }
                                     }
-                                }
+                                },
+                                {
+                                    ClassEnum.DomainForge,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _2 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.HeatMetal,
+                                                SpellsEnum.MagicWeapon,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainGrave,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _2 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.GentleRepose,
+                                                SpellsEnum.RayOfEnfeeblement,
+                                            }
+                                        }
+                                    }
+                                },
                             }
                         }
                     },
@@ -1782,7 +1977,33 @@ namespace DnD5E.Decks
                                             },
                                         }
                                     }
-                                }
+                                },
+                                {
+                                    ClassEnum.DomainForge,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _3 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.ElementalWeapon,
+                                                SpellsEnum.ProtectionFromEnergy,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainGrave,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _3 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Revivify,
+                                                SpellsEnum.VampiricTouch,
+                                            }
+                                        }
+                                    }
+                                },
                             }
                         }
                     },
@@ -1832,7 +2053,53 @@ namespace DnD5E.Decks
                                             },
                                         },
                                     }
-                                }
+                                },
+                                {
+                                    ClassEnum.DomainForge,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Soul of the Forge",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 6th level, you get a number of special abilities:",
+                                                    "You gain resistance to fire damage.<br />While wearing heavy armor, you gain a +1 bonus to AC."
+                                                }
+                                            }
+                                        },
+                                        Resistance = new List<DamageTypesEnum>
+                                        {
+                                            DamageTypesEnum.Fire
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainGrave,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Sentinel at Death's Door",
+                                                Description = new List<string>
+                                                {
+                                                    "At 6th level, as a reaction when you or a creature that you can see within 30 feet of you suffers a critical hit, you can turn that attack into a normal hit. Any effects triggered by a critical hit are canceled.",
+                                                    "You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Sentinel at Death's Door",
+                                                    Description = "Grave Domain Feature",
+                                                    Type = ActionTypesEnum.Reaction
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
                             }
                         }
                     },
@@ -1875,7 +2142,33 @@ namespace DnD5E.Decks
                                             },
                                         }
                                     }
-                                }
+                                },
+                                {
+                                    ClassEnum.DomainForge,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _4 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Fabricate,
+                                                SpellsEnum.WallOfFire,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainGrave,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _4 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Blight,
+                                                SpellsEnum.DeathWard,
+                                            }
+                                        }
+                                    }
+                                },
                             }
                         }
                     },
@@ -1926,7 +2219,41 @@ namespace DnD5E.Decks
                                             },
                                         },
                                     }
-                                }
+                                },
+                                {
+                                    ClassEnum.DomainForge,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Divine Strike",
+                                                Description = new List<string>
+                                                {
+                                                    "At 8th level, once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 fire damage to the target. When you reach 14th level, the extra damage increases to 2d8."
+                                                }
+                                            }
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainGrave,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Potent Spellcasting",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip."
+                                                },
+                                            }
+                                        },
+                                    }
+                                },
                             }
                         }
                     },
@@ -1970,7 +2297,33 @@ namespace DnD5E.Decks
                                             },
                                         }
                                     }
-                                }
+                                },
+                                {
+                                    ClassEnum.DomainForge,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _5 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.AnimateObject,
+                                                SpellsEnum.Creation,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainGrave,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _5 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.AntilifeShell,
+                                                SpellsEnum.RaiseDead,
+                                            }
+                                        }
+                                    }
+                                },
                             }
                         }
                     },
@@ -2129,7 +2482,46 @@ namespace DnD5E.Decks
                                             },
                                         },
                                     }
-                                }
+                                },
+                                {
+                                    ClassEnum.DomainForge,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Saint of Forge and Fire",
+                                                Description = new List<string>
+                                                {
+                                                    "At 17th level, you gain the following benefits:",
+                                                    "You gain immunity to fire damage.<br />While you're wearing heavy armor, you have resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks."
+                                                }
+                                            }
+                                        },
+                                        Immunity = new List<DamageTypesEnum>
+                                        {
+                                            DamageTypesEnum.Fire
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainGrave,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Keeper of Souls",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 17th level, when an enemy you can see dies within 60 feet of you, you or one creature of your choice that is within 60 feet of you regains hit points equal to the enemy's number of Hit Dice. You can use this feature only if you aren't incapacitated. Once you use it, you can't do so again until the start of your next turn."
+                                                }
+                                            }
+                                        },
+                                    }
+                                },
                             }
                         }
                     },
@@ -2194,7 +2586,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = ClassEnum.Druid.ToString(),
+                Name = ClassEnum.Druid.GetEnumText(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 13,
@@ -2222,7 +2614,7 @@ namespace DnD5E.Decks
                                         "Wisdom is your spellcasting ability for your druid spells. You use your Wisdom whenever a spell refers to your spellcasting ability.",
                                         "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest."
                                     },
-                                    AbilityModifier = AbilitiesEnum.Wis.ToString(),
+                                    AbilityModifier = AbilitiesEnum.Wis,
                                     Action = new ActionModel
                                     {
                                         Name = "Spellcasting",
@@ -2234,29 +2626,29 @@ namespace DnD5E.Decks
                             },
                             Proficiencies = new ProficiencyModel
                             {
-                                Armor = new string[]
+                                Armor = new List<ArmorEnum>
                                 {
-                                    ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    ArmorEnum.Shield.ToString()
+                                    ArmorEnum.Light,
+                                    ArmorEnum.Medium,
+                                    ArmorEnum.Shield
                                 },
-                                SavingThrows = new string[]
+                                SavingThrows = new List<AbilitiesEnum>
                                 {
-                                    AbilitiesEnum.Int.ToString(),
-                                    AbilitiesEnum.Wis.ToString(),
+                                    AbilitiesEnum.Int,
+                                    AbilitiesEnum.Wis,
                                 },
-                                Weapons = new string[]
+                                Weapons = new List<WeaponsEnum>
                                 {
-                                    WeaponsEnum.Club.ToString(),
-                                    WeaponsEnum.Dagger.ToString(),
-                                    WeaponsEnum.Dart.ToString(),
-                                    WeaponsEnum.Javelin.ToString(),
-                                    WeaponsEnum.Mace.ToString(),
-                                    WeaponsEnum.Quarterstaff.ToString(),
-                                    WeaponsEnum.Scimitar.ToString(),
-                                    WeaponsEnum.Sickle.ToString(),
-                                    WeaponsEnum.Sling.ToString(),
-                                    WeaponsEnum.Spear.ToString(),
+                                    WeaponsEnum.Club,
+                                    WeaponsEnum.Dagger,
+                                    WeaponsEnum.Dart,
+                                    WeaponsEnum.Javelin,
+                                    WeaponsEnum.Mace,
+                                    WeaponsEnum.Quarterstaff,
+                                    WeaponsEnum.Scimitar,
+                                    WeaponsEnum.Sickle,
+                                    WeaponsEnum.Sling,
+                                    WeaponsEnum.Spear,
                                 }
                             },
                         }
@@ -2265,7 +2657,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = ClassEnum.Fighter.ToString(),
+                Name = ClassEnum.Fighter.GetEnumText(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 15,
@@ -2285,22 +2677,22 @@ namespace DnD5E.Decks
                         {
                             Proficiencies = new ProficiencyModel
                             {
-                                Armor = new string[]
+                                Armor = new List<ArmorEnum>
                                 {
-                                    ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    ArmorEnum.Heavy.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    ArmorEnum.Shield.ToString()
+                                    ArmorEnum.Light,
+                                    ArmorEnum.Medium,
+                                    ArmorEnum.Heavy,
+                                    ArmorEnum.Shield
                                 },
-                                SavingThrows = new string[]
+                                SavingThrows = new List<AbilitiesEnum>
                                 {
-                                    AbilitiesEnum.Str.ToString(),
-                                    AbilitiesEnum.Con.ToString(),
+                                    AbilitiesEnum.Str,
+                                    AbilitiesEnum.Con,
                                 },
-                                Weapons = new string[]
+                                Weapons = new List<WeaponsEnum>
                                 {
-                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    WeaponsEnum.MartialWeapon.GetAttributeOfType<DescriptionAttribute>().Description
+                                    WeaponsEnum.SimpleWeapon,
+                                    WeaponsEnum.MartialWeapon
                                 }
                             },
                         }
@@ -2309,7 +2701,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = ClassEnum.Monk.ToString(),
+                Name = ClassEnum.Monk.GetEnumText(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 13,
@@ -2329,15 +2721,15 @@ namespace DnD5E.Decks
                         {
                             Proficiencies = new ProficiencyModel
                             {
-                                SavingThrows = new string[]
+                                SavingThrows = new List<AbilitiesEnum>
                                 {
-                                    AbilitiesEnum.Str.ToString(),
-                                    AbilitiesEnum.Dex.ToString(),
+                                    AbilitiesEnum.Str,
+                                    AbilitiesEnum.Dex,
                                 },
-                                Weapons = new string[]
+                                Weapons = new List<WeaponsEnum>
                                 {
-                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    WeaponsEnum.Shortsword.ToString(),
+                                    WeaponsEnum.SimpleWeapon,
+                                    WeaponsEnum.Shortsword,
                                 }
                             },
                         }
@@ -2346,7 +2738,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = ClassEnum.Paladin.ToString(),
+                Name = ClassEnum.Paladin.GetEnumText(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 15,
@@ -2366,22 +2758,22 @@ namespace DnD5E.Decks
                         {
                             Proficiencies = new ProficiencyModel
                             {
-                                Armor = new string[]
+                                Armor = new List<ArmorEnum>
                                 {
-                                    ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    ArmorEnum.Heavy.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    ArmorEnum.Shield.ToString()
+                                    ArmorEnum.Light,
+                                    ArmorEnum.Medium,
+                                    ArmorEnum.Heavy,
+                                    ArmorEnum.Shield
                                 },
-                                SavingThrows = new string[]
+                                SavingThrows = new List<AbilitiesEnum>
                                 {
-                                    AbilitiesEnum.Wis.ToString(),
-                                    AbilitiesEnum.Cha.ToString(),
+                                    AbilitiesEnum.Wis,
+                                    AbilitiesEnum.Cha,
                                 },
-                                Weapons = new string[]
+                                Weapons = new List<WeaponsEnum>
                                 {
-                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    WeaponsEnum.MartialWeapon.GetAttributeOfType<DescriptionAttribute>().Description
+                                    WeaponsEnum.SimpleWeapon,
+                                    WeaponsEnum.MartialWeapon
                                 }
                             },
                         }
@@ -2390,7 +2782,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = ClassEnum.Ranger.ToString(),
+                Name = ClassEnum.Ranger.GetEnumText(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 13,
@@ -2410,21 +2802,21 @@ namespace DnD5E.Decks
                         {
                             Proficiencies = new ProficiencyModel
                             {
-                                Armor = new string[]
+                                Armor = new List<ArmorEnum>
                                 {
-                                    ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    ArmorEnum.Medium.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    ArmorEnum.Shield.ToString()
+                                    ArmorEnum.Light,
+                                    ArmorEnum.Medium,
+                                    ArmorEnum.Shield
                                 },
-                                SavingThrows = new string[]
+                                SavingThrows = new List<AbilitiesEnum>
                                 {
-                                    AbilitiesEnum.Str.ToString(),
-                                    AbilitiesEnum.Dex.ToString(),
+                                    AbilitiesEnum.Str,
+                                    AbilitiesEnum.Dex,
                                 },
-                                Weapons = new string[]
+                                Weapons = new List<WeaponsEnum>
                                 {
-                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    WeaponsEnum.MartialWeapon.GetAttributeOfType<DescriptionAttribute>().Description
+                                    WeaponsEnum.SimpleWeapon,
+                                    WeaponsEnum.MartialWeapon
                                 }
                             },
                         }
@@ -2433,7 +2825,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = ClassEnum.Rogue.ToString(),
+                Name = ClassEnum.Rogue.GetEnumText(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 12,
@@ -2453,22 +2845,22 @@ namespace DnD5E.Decks
                         {
                             Proficiencies = new ProficiencyModel
                             {
-                                Armor = new string[]
+                                Armor = new List<ArmorEnum>
                                 {
-                                    ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
+                                    ArmorEnum.Light,
                                 },
-                                SavingThrows = new string[]
+                                SavingThrows = new List<AbilitiesEnum>
                                 {
-                                    AbilitiesEnum.Dex.ToString(),
-                                    AbilitiesEnum.Int.ToString(),
+                                    AbilitiesEnum.Dex,
+                                    AbilitiesEnum.Int,
                                 },
-                                Weapons = new string[]
+                                Weapons = new List<WeaponsEnum>
                                 {
-                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
-                                    WeaponsEnum.Longsword.ToString(),
-                                    WeaponsEnum.Rapier.ToString(),
-                                    WeaponsEnum.Shortsword.ToString(),
-                                    WeaponsEnum.CrossbowHand.GetAttributeOfType<DescriptionAttribute>().Description
+                                    WeaponsEnum.SimpleWeapon,
+                                    WeaponsEnum.Longsword,
+                                    WeaponsEnum.Rapier,
+                                    WeaponsEnum.Shortsword,
+                                    WeaponsEnum.CrossbowHand
                                 }
                             },
                         }
@@ -2477,7 +2869,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = ClassEnum.Sorcerer.ToString(),
+                Name = ClassEnum.Sorcerer.GetEnumText(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 10,
@@ -2492,53 +2884,53 @@ namespace DnD5E.Decks
                 {
                     new EquipmentModel
                     {
-                        Name = WeaponsEnum.Dagger.ToString(),
+                        Name = WeaponsEnum.Dagger.GetEnumText(),
                         Quantity = 2,
                         Type = EquipmentTypeEnum.Weapon,
                         Weapon = WeaponsEnum.Dagger
                     },
                     new EquipmentModel
                     {
-                        Name = WeaponsEnum.Dart.ToString(),
+                        Name = WeaponsEnum.Dart.GetEnumText(),
                         Quantity = 20,
                         Type = EquipmentTypeEnum.Weapon,
                         Weapon = WeaponsEnum.Dart
                     },
                     new EquipmentModel
                     {
-                        Name = WeaponsEnum.Quarterstaff.ToString(),
+                        Name = WeaponsEnum.Quarterstaff.GetEnumText(),
                         Type = EquipmentTypeEnum.Weapon,
                         Weapon = WeaponsEnum.Quarterstaff
                     },
                     new EquipmentModel
                     {
-                        Name = ToolsEnum.drum.ToString(),
+                        Name = ToolsEnum.drum.GetEnumText(),
                         Description = "A drum crafted from a bear's skull",
                         Type = EquipmentTypeEnum.Tool
                     },
                     new EquipmentModel
                     {
-                        Name = ItemsEnum.HuntingTrap.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Name = ItemsEnum.HuntingTrap.GetEnumText(),
                         Type = EquipmentTypeEnum.Item
                     },
                     new EquipmentModel
                     {
-                        Name = ItemsEnum.TravelersClothes.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Name = ItemsEnum.TravelersClothes.GetEnumText(),
                         Type = EquipmentTypeEnum.Item
                     },
                     new EquipmentModel
                     {
-                        Name = ItemsEnum.ExlporersPack.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Name = ItemsEnum.ExlporersPack.GetEnumText(),
                         Type = EquipmentTypeEnum.Item
                     },
                     new EquipmentModel
                     {
-                        Name = ItemsEnum.ComponentPouch.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Name = ItemsEnum.ComponentPouch.GetEnumText(),
                         Type = EquipmentTypeEnum.Item
                     },
                     new EquipmentModel
                     {
-                        Name = ItemsEnum.BeltPouch.GetAttributeOfType<DescriptionAttribute>().Description,
+                        Name = ItemsEnum.BeltPouch.GetEnumText(),
                         Type = EquipmentTypeEnum.Item
                     },
                 },
@@ -2559,7 +2951,7 @@ namespace DnD5E.Decks
                                         "Charisma is your spellcasting ability for your sorcerer spells. You use your Charisma whenever a spell refers to your spellcasting ability.",
                                         "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest."
                                     },
-                                    AbilityModifier = AbilitiesEnum.Cha.ToString(),
+                                    AbilityModifier = AbilitiesEnum.Cha,
                                     Action = new ActionModel
                                     {
                                         Name = "Spellcasting",
@@ -2571,18 +2963,18 @@ namespace DnD5E.Decks
                             },
                             Proficiencies = new ProficiencyModel
                             {
-                                SavingThrows = new string[]
+                                SavingThrows = new List<AbilitiesEnum>
                                 {
-                                    AbilitiesEnum.Con.ToString(),
-                                    AbilitiesEnum.Cha.ToString(),
+                                    AbilitiesEnum.Con,
+                                    AbilitiesEnum.Cha,
                                 },
-                                Weapons = new string[]
+                                Weapons = new List<WeaponsEnum>
                                 {
-                                    WeaponsEnum.Dagger.ToString(),
-                                    WeaponsEnum.Dart.ToString(),
-                                    WeaponsEnum.Sling.ToString(),
-                                    WeaponsEnum.Quarterstaff.ToString(),
-                                    WeaponsEnum.CrossbowLight.GetAttributeOfType<DescriptionAttribute>().Description
+                                    WeaponsEnum.Dagger,
+                                    WeaponsEnum.Dart,
+                                    WeaponsEnum.Sling,
+                                    WeaponsEnum.Quarterstaff,
+                                    WeaponsEnum.CrossbowLight
                                 }
                             },
                         }
@@ -2591,7 +2983,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = ClassEnum.Warlock.ToString(),
+                Name = ClassEnum.Warlock.GetEnumText(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 8,
@@ -2619,7 +3011,7 @@ namespace DnD5E.Decks
                                         "Charisma is your spellcasting ability for your warlock spells. You use your Charisma whenever a spell refers to your spellcasting ability.",
                                         "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest."
                                     },
-                                    AbilityModifier = AbilitiesEnum.Cha.ToString(),
+                                    AbilityModifier = AbilitiesEnum.Cha,
                                     Action = new ActionModel
                                     {
                                         Name = "Spellcasting",
@@ -2631,18 +3023,18 @@ namespace DnD5E.Decks
                             },
                             Proficiencies = new ProficiencyModel
                             {
-                                Armor = new string[]
+                                Armor = new List<ArmorEnum>
                                 {
-                                    ArmorEnum.Light.GetAttributeOfType<DescriptionAttribute>().Description,
+                                    ArmorEnum.Light,
                                 },
-                                SavingThrows = new string[]
+                                SavingThrows = new List<AbilitiesEnum>
                                 {
-                                    AbilitiesEnum.Wis.ToString(),
-                                    AbilitiesEnum.Cha.ToString(),
+                                    AbilitiesEnum.Wis,
+                                    AbilitiesEnum.Cha,
                                 },
-                                Weapons = new string[]
+                                Weapons = new List<WeaponsEnum>
                                 {
-                                    WeaponsEnum.SimpleWeapon.GetAttributeOfType<DescriptionAttribute>().Description,
+                                    WeaponsEnum.SimpleWeapon,
                                 }
                             },
                         }
@@ -2651,7 +3043,7 @@ namespace DnD5E.Decks
             },
             new ClassCard()
             {
-                Name = ClassEnum.Wizard.ToString(),
+                Name = ClassEnum.Wizard.GetEnumText(),
                 AbilityScores = new AbilityScoresModel
                 {
                     Str = 8,
@@ -2679,7 +3071,7 @@ namespace DnD5E.Decks
                                         "Intelligence is your spellcasting ability for your wizard spells. You use your Intelligence whenever a spell refers to your spellcasting ability.",
                                         "To cast a spell, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long or short rest."
                                     },
-                                    AbilityModifier = AbilitiesEnum.Int.ToString(),
+                                    AbilityModifier = AbilitiesEnum.Int,
                                     Action = new ActionModel
                                     {
                                         Name = "Spellcasting",
@@ -2691,18 +3083,18 @@ namespace DnD5E.Decks
                             },
                             Proficiencies = new ProficiencyModel
                             {
-                                SavingThrows = new string[]
+                                SavingThrows = new List<AbilitiesEnum>
                                 {
-                                    AbilitiesEnum.Int.ToString(),
-                                    AbilitiesEnum.Wis.ToString(),
+                                    AbilitiesEnum.Int,
+                                    AbilitiesEnum.Wis,
                                 },
-                                Weapons = new string[]
+                                Weapons = new List<WeaponsEnum>
                                 {
-                                    WeaponsEnum.Dagger.ToString(),
-                                    WeaponsEnum.Dart.ToString(),
-                                    WeaponsEnum.Sling.ToString(),
-                                    WeaponsEnum.Quarterstaff.ToString(),
-                                    WeaponsEnum.CrossbowLight.GetAttributeOfType<DescriptionAttribute>().Description
+                                    WeaponsEnum.Dagger,
+                                    WeaponsEnum.Dart,
+                                    WeaponsEnum.Sling,
+                                    WeaponsEnum.Quarterstaff,
+                                    WeaponsEnum.CrossbowLight
                                 }
                             },
                         }
