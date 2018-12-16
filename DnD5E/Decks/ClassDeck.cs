@@ -1847,6 +1847,77 @@ namespace DnD5E.Decks
                                         }
                                     }
                                 },
+                                {
+                                    ClassEnum.DomainTrickery,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Blessing of the Trickster",
+                                                Description = new List<string>
+                                                {
+                                                    "At 1st level, you can use your action to touch a willing creature other than yourself to give it advantage on Dexterity (Stealth) checks. This blessing lasts for 1 hour or until you use this feature again."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Blessing of the Trickster",
+                                                    Description = "Trickery Domain feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            }
+                                        },
+                                        Spells = new SpellsModel {
+                                            _1 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.CharmPerson,
+                                                SpellsEnum.DisguiseSelf,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainWar,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "War Priest",
+                                                Description = new List<string>
+                                                {
+                                                    "You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "War Priest",
+                                                    Description = "War Domain feature",
+                                                    Type = ActionTypesEnum.Bonus
+                                                }
+                                            }
+                                        },
+                                        Proficiencies = new ProficiencyModel
+                                        {
+                                            Armor = new List<ArmorEnum>
+                                            {
+                                                ArmorEnum.Heavy,
+                                            },
+                                            Weapons = new List<WeaponsEnum>
+                                            {
+                                                WeaponsEnum.MartialWeapon
+                                            },
+                                        },
+                                        Spells = new SpellsModel {
+                                            _1 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.DivineFavor,
+                                                SpellsEnum.ShieldOfFaith,
+                                            }
+                                        }
+                                    }
+                                },
                             }
                         }
                     },
@@ -2086,6 +2157,47 @@ namespace DnD5E.Decks
                                         },
                                     }
                                 },
+                                {
+                                    ClassEnum.DomainTrickery,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Channel Divinity: Invoke Duplicity",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 2nd level, as an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.",
+                                                    "For the duration, you can cast spells as though you were in the illusion's space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how distracting the illusion is to the target."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Channel Divinity: Invoke Duplicity",
+                                                    Description = "Trickery Domain feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            }
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainWar,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Channel Divinity: Guided Strike",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 2nd level, when you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
+                                                },
+                                            }
+                                        },
+                                    }
+                                },
                             }
                         }
                     },
@@ -2214,6 +2326,32 @@ namespace DnD5E.Decks
                                             {
                                                 SpellsEnum.GustOfWind,
                                                 SpellsEnum.Shatter,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainTrickery,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _2 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.MirrorImage,
+                                                SpellsEnum.PassWithoutTrace,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainWar,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _2 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.MagicWeapon,
+                                                SpellsEnum.SpiritualWeapon,
                                             }
                                         }
                                     }
@@ -2371,6 +2509,32 @@ namespace DnD5E.Decks
                                             {
                                                 SpellsEnum.CallLightning,
                                                 SpellsEnum.SleetStorm,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainTrickery,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _3 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.Blink,
+                                                SpellsEnum.DispelMagic,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainWar,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _3 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.CrusadersMantle,
+                                                SpellsEnum.SpiritGuardians,
                                             }
                                         }
                                     }
@@ -2570,6 +2734,52 @@ namespace DnD5E.Decks
                                         },
                                     }
                                 },
+                                {
+                                    ClassEnum.DomainTrickery,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Channel Divinity: Cloak of Shadows",
+                                                Description = new List<string>
+                                                {
+                                                    "Starting at 6th level, as an action, you become invisible until the end of your next turn. You become visible if you attack or cast a spell."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Channel Divinity: Cloak of Shadows",
+                                                    Description = "Trickery Domain feature",
+                                                    Type = ActionTypesEnum.Option
+                                                }
+                                            }
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainWar,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Channel Divinity: War God's Blessing",
+                                                Description = new List<string>
+                                                {
+                                                    "At 6th level, when a creature within 30 feet of you makes an attack roll, you can use your reaction to grant that creature a +10 bonus to the roll, using your Channel Divinity. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
+                                                },
+                                                Action = new ActionModel
+                                                {
+                                                    Name = "Channel Divinity: War God's Blessing",
+                                                    Description = "War Domain feature",
+                                                    Type = ActionTypesEnum.Reaction
+                                                }
+                                            }
+                                        },
+                                    }
+                                },
                             }
                         }
                     },
@@ -2700,6 +2910,32 @@ namespace DnD5E.Decks
                                             {
                                                 SpellsEnum.ControlWater,
                                                 SpellsEnum.IceStorm,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainTrickery,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _4 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.DimensionDoor,
+                                                SpellsEnum.Polymorph,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainWar,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _1 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.FreedomOfMovement,
+                                                SpellsEnum.Stoneskin,
                                             }
                                         }
                                     }
@@ -2873,6 +3109,40 @@ namespace DnD5E.Decks
                                         },
                                     }
                                 },
+                                {
+                                    ClassEnum.DomainTrickery,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Divine Strike",
+                                                Description = new List<string>
+                                                {
+                                                    "At 8th level, once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 poison damage to the target. When you reach 14th level, the extra damage increases to 2d8."
+                                                },
+                                            }
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainWar,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Divine Strike",
+                                                Description = new List<string>
+                                                {
+                                                    "At 8th level, once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 damage of the same type dealt by the weapon to the target. When you reach 14th level, the extra damage increases to 2d8."
+                                                },
+                                            }
+                                        },
+                                    }
+                                },
                             }
                         }
                     },
@@ -3004,6 +3274,32 @@ namespace DnD5E.Decks
                                             {
                                                 SpellsEnum.DestructiveWave,
                                                 SpellsEnum.InsectPlague
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainTrickery,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _5 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.DominateBeast,
+                                                SpellsEnum.ModifyMemory,
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainWar,
+                                    new LevelModel
+                                    {
+                                        Spells = new SpellsModel {
+                                            _5 = new List<SpellsEnum>
+                                            {
+                                                SpellsEnum.FlameStrike,
+                                                SpellsEnum.HoldMonster,
                                             }
                                         }
                                     }
@@ -3296,6 +3592,46 @@ namespace DnD5E.Decks
                                                     "At 17th level, you have a flying speed equal to your current walking speed whenever you are not underground or indoors."
                                                 },
                                             }
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainTrickery,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Improved Duplicity",
+                                                Description = new List<string>
+                                                {
+                                                    "At 17th level, you can create up to four duplicates of yourself, instead of one, when you use Invoke Duplicity. As a bonus action on your turn, you can move any number of them up to 30 feet, to a maximum range of 120 feet."
+                                                },
+                                            }
+                                        },
+                                    }
+                                },
+                                {
+                                    ClassEnum.DomainWar,
+                                    new LevelModel
+                                    {
+                                        Features = new List<FeaturesModel>
+                                        {
+                                            new FeaturesModel
+                                            {
+                                                Name = "Avatar of Battle",
+                                                Description = new List<string>
+                                                {
+                                                    "At 17th level, you gain resistance to bludgeoning, piercing, and slashing damage from non-magical weapons."
+                                                },
+                                            }
+                                        },
+                                        Resistance = new List<DamageTypesEnum>
+                                        {
+                                            DamageTypesEnum.Bludgeoning,
+                                            DamageTypesEnum.Piercing,
+                                            DamageTypesEnum.Slashing
                                         },
                                     }
                                 },

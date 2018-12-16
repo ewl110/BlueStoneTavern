@@ -255,7 +255,7 @@ namespace DnD5E.Characters
             }
             else if (weaponDamage < 0)
             {
-                weaponDamageModifier = $" - {weaponDamage} ";
+                weaponDamageModifier = $" - {weaponDamage * -1} ";
             }
 
             return weaponDamageModifier;
