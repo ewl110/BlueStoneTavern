@@ -20,6 +20,15 @@ namespace DnD5E.Decks
                     Wis = 12,
                     Cha = 10
                 },
+                ASI = new AbilitiesEnum[]
+                {
+                    AbilitiesEnum.Con,
+                    AbilitiesEnum.Str,
+                    AbilitiesEnum.Dex,
+                    AbilitiesEnum.Wis,
+                    AbilitiesEnum.Cha,
+                    AbilitiesEnum.Int
+                },
                 Description = "You are a fierce warrior of primitive background who can enter a battle rage.",
                 Equipment = new List<EquipmentModel>
                 {
@@ -268,6 +277,19 @@ namespace DnD5E.Decks
                         }
                     },
                     {
+                        4,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "ASI",
+                                },
+                            },
+                        }
+                    },
+                    {
                         5,
                         new LevelModel
                         {
@@ -411,6 +433,19 @@ namespace DnD5E.Decks
                                         "By 7th level, you have advantage on initiative rolls.",
                                         "Additionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn."
                                     }
+                                },
+                            },
+                        }
+                    },
+                    {
+                        8,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "ASI",
                                 },
                             },
                         }
@@ -565,6 +600,13 @@ namespace DnD5E.Decks
                         12,
                         new LevelModel
                         {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "ASI"
+                                }
+                            },
                             Rage = 5
                         }
                     },
@@ -691,6 +733,13 @@ namespace DnD5E.Decks
                         16,
                         new LevelModel
                         {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "ASI"
+                                }
+                            },
                             RageDamage = 4
                         }
                     },
@@ -715,6 +764,19 @@ namespace DnD5E.Decks
                                         "Beginning at 18th level, if your total for a Strength check is less than your Strength score, you can use that score in place of the total."
                                     }
                                 },
+                            },
+                        }
+                    },
+                    {
+                        19,
+                        new LevelModel
+                        {
+                            Features = new List<FeaturesModel>
+                            {
+                                new FeaturesModel
+                                {
+                                    Name = "ASI"
+                                }
                             },
                         }
                     },
@@ -748,6 +810,15 @@ namespace DnD5E.Decks
                     Int = 12,
                     Wis = 8,
                     Cha = 15
+                },
+                ASI = new AbilitiesEnum[]
+                {
+                    AbilitiesEnum.Cha,
+                    AbilitiesEnum.Dex,
+                    AbilitiesEnum.Con,
+                    AbilitiesEnum.Wis,
+                    AbilitiesEnum.Str,
+                    AbilitiesEnum.Int
                 },
                 Description = "You are an inspiring magician whose power echoes the music of creation.",
                 Equipment = new List<EquipmentModel>
@@ -1431,6 +1502,15 @@ namespace DnD5E.Decks
                     Int = 10,
                     Wis = 15,
                     Cha = 12
+                },
+                ASI = new AbilitiesEnum[]
+                {
+                    AbilitiesEnum.Wis,
+                    AbilitiesEnum.Str,
+                    AbilitiesEnum.Con,
+                    AbilitiesEnum.Dex,
+                    AbilitiesEnum.Cha,
+                    AbilitiesEnum.Int
                 },
                 Description = "You are a priestly champion who wields divine magic in service of a higher power.",
                 Equipment = new List<EquipmentModel>

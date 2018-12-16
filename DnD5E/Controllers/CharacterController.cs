@@ -75,7 +75,7 @@ namespace DnD5E.Controllers
         {
             Random rng = new Random();
 
-            CharacterCard character = new Characters.Character(20, "Cleric").CreateNewCharacter();
+            CharacterCard character = new Characters.Character(20, ClassEnum.Barbarian.GetEnumText()).CreateNewCharacter();
             return View(character);
         }
     }

@@ -7,6 +7,7 @@ namespace DnD5E.Models
     {
         public AbilityScoresModel AbilityScores { get; set; }
         public List<ActionModel> Actions { get; set; }
+        public AbilitiesEnum[] ASI { get; set; }
         //public ClassEnum? BaseClass { get; set; }
         public List<EquipmentModel> Equipment { get; set; }
         public int HitDice { get; set; }
