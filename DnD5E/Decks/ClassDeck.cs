@@ -567,7 +567,7 @@ namespace DnD5E.Decks
                                                 },
                                                 Action = new ActionModel
                                                 {
-                                                    Name = "ZealousPresence",
+                                                    Name = "Zealous Presence",
                                                     Description = "Path of the Zealot feature",
                                                     Type = ActionTypesEnum.Bonus
                                                 }
@@ -3789,6 +3789,15 @@ namespace DnD5E.Decks
                     Wis = 15,
                     Cha = 12
                 },
+                ASI = new AbilitiesEnum[]
+                {
+                    AbilitiesEnum.Wis,
+                    AbilitiesEnum.Con,
+                    AbilitiesEnum.Dex,
+                    AbilitiesEnum.Int,
+                    AbilitiesEnum.Cha,
+                    AbilitiesEnum.Str
+                },
                 Description = "You are a priest of the Old Faith, wielding the powers of nature - moonlight and plant growth, fire and lightning - and adopting animal forms.",
                 HitDice = 8,
                 Levels = new Dictionary<int, LevelModel>()
@@ -3860,6 +3869,15 @@ namespace DnD5E.Decks
                     Wis = 12,
                     Cha = 10
                 },
+                ASI = new AbilitiesEnum[]
+                {
+                    AbilitiesEnum.Str,
+                    AbilitiesEnum.Con,
+                    AbilitiesEnum.Wis,
+                    AbilitiesEnum.Cha,
+                    AbilitiesEnum.Int,
+                    AbilitiesEnum.Dex
+                },
                 Description = "You are a master of martial combat, skilled with a variety of weapons and armor.",
                 HitDice = 10,
                 Levels = new Dictionary<int, LevelModel>()
@@ -3904,6 +3922,15 @@ namespace DnD5E.Decks
                     Wis = 14,
                     Cha = 10
                 },
+                ASI = new AbilitiesEnum[]
+                {
+                    AbilitiesEnum.Dex,
+                    AbilitiesEnum.Wis,
+                    AbilitiesEnum.Con,
+                    AbilitiesEnum.Str,
+                    AbilitiesEnum.Int,
+                    AbilitiesEnum.Cha
+                },
                 Description = "You are a master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.",
                 HitDice = 8,
                 Levels = new Dictionary<int, LevelModel>()
@@ -3940,6 +3967,15 @@ namespace DnD5E.Decks
                     Int = 12,
                     Wis = 8,
                     Cha = 14
+                },
+                ASI = new AbilitiesEnum[]
+                {
+                    AbilitiesEnum.Str,
+                    AbilitiesEnum.Cha,
+                    AbilitiesEnum.Con,
+                    AbilitiesEnum.Wis,
+                    AbilitiesEnum.Dex,
+                    AbilitiesEnum.Int
                 },
                 Description = "You are a holy warrior bound to a sacred oath.",
                 HitDice = 10,
@@ -3985,6 +4021,15 @@ namespace DnD5E.Decks
                     Wis = 14,
                     Cha = 8
                 },
+                ASI = new AbilitiesEnum[]
+                {
+                    AbilitiesEnum.Dex,
+                    AbilitiesEnum.Wis,
+                    AbilitiesEnum.Con,
+                    AbilitiesEnum.Str,
+                    AbilitiesEnum.Int,
+                    AbilitiesEnum.Cha
+                },
                 Description = "You are a warrior who uses martial prowess and nature magic to combat threats on the edges of civilization.",
                 HitDice = 10,
                 Levels = new Dictionary<int, LevelModel>()
@@ -4027,6 +4072,15 @@ namespace DnD5E.Decks
                     Int = 14,
                     Wis = 13,
                     Cha = 8
+                },
+                ASI = new AbilitiesEnum[]
+                {
+                    AbilitiesEnum.Dex,
+                    AbilitiesEnum.Int,
+                    AbilitiesEnum.Wis,
+                    AbilitiesEnum.Cha,
+                    AbilitiesEnum.Con,
+                    AbilitiesEnum.Str
                 },
                 Description = "You are a scoundrel who uses stealth and trickery to overcome obstacles.",
                 HitDice = 8,
@@ -4071,6 +4125,15 @@ namespace DnD5E.Decks
                     Int = 12,
                     Wis = 8,
                     Cha = 15
+                },
+                ASI = new AbilitiesEnum[]
+                {
+                    AbilitiesEnum.Cha,
+                    AbilitiesEnum.Con,
+                    AbilitiesEnum.Dex,
+                    AbilitiesEnum.Wis,
+                    AbilitiesEnum.Int,
+                    AbilitiesEnum.Str
                 },
                 Description = "You are a spellcaster who draws on inherent magic from a gift or bloodline.",
                 Equipment = new List<EquipmentModel>
@@ -4186,6 +4249,15 @@ namespace DnD5E.Decks
                     Wis = 12,
                     Cha = 15
                 },
+                ASI = new AbilitiesEnum[]
+                {
+                    AbilitiesEnum.Cha,
+                    AbilitiesEnum.Dex,
+                    AbilitiesEnum.Con,
+                    AbilitiesEnum.Wis,
+                    AbilitiesEnum.Int,
+                    AbilitiesEnum.Str
+                },
                 Description = "You are a wielder of magic that isderived from a bargain with an extraplanar entity.",
                 HitDice = 8,
                 Levels = new Dictionary<int, LevelModel>()
@@ -4245,6 +4317,15 @@ namespace DnD5E.Decks
                     Int = 15,
                     Wis = 12,
                     Cha = 10
+                },
+                ASI = new AbilitiesEnum[]
+                {
+                    AbilitiesEnum.Int,
+                    AbilitiesEnum.Dex,
+                    AbilitiesEnum.Con,
+                    AbilitiesEnum.Wis,
+                    AbilitiesEnum.Cha,
+                    AbilitiesEnum.Str
                 },
                 Description = "You are a scholarly magic-user capable of maipulating the structures of reality.",
                 HitDice = 6,
