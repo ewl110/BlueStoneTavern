@@ -17,17 +17,17 @@ namespace DnD5E.Models
 
     public class LevelModel : BaseCard
     {
-        public int? BardicInspiration { get; set; }
-        public int? CombatDice { get; set; }
+        public int BardicInspiration { get; set; } = 0;
+        public int CombatDice { get; set; } = 0;
         public List<FeaturesModel> Features { get; set; }
         public List<DamageTypesEnum> Immunity { get; set; }
-        public int? KiPoints { get; set; }
+        public int KiPoints { get; set; } = 0;
         public ProficiencyModel Proficiencies { get; set; }
-        public int? Rage { get; set; }
-        public int? RageDamage { get; set; }
+        public int Rage { get; set; } = 0;
+        public int RageDamage { get; set; } = 0;
         public List<DamageTypesEnum> Resistance { get; set;}
         public bool SetVariant { get; set; }
-        public int? SneakAttack { get; set; }
+        public int SneakAttack { get; set; } = 0;
         public SpellsModel Spells { get; set; }
         public SpellSlotsModel SpellSlots { get; set; }
         public Dictionary<ClassEnum, LevelModel> Variants { get; set; }

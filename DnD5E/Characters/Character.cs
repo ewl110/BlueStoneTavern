@@ -28,6 +28,14 @@ namespace DnD5E.Characters
         private int deathSavesFailed;
         private int deathSavesPassed;
 
+        // Class specific features
+        private int bardicInspiration;
+        private int combatDice;
+        private int kiPoints;
+        private int rage;
+        private int rageDamage;
+        private int sneakAttack;
+
         private List<ActionModel> actionAttack;
         private List<ActionModel> actionBonus;
         private List<ActionModel> actionOption;
@@ -176,6 +184,46 @@ namespace DnD5E.Characters
                 HitPointsCurrent = hitPointsMax,
                 HitPointsMax = hitPointsMax,
             };
+        }
+
+        private string ConvertIntToNumberString(int number) {
+            string numberString = "zero";
+
+            switch (number)
+            {
+                case 1:
+                    numberString = "one";
+                    break;
+                case 2:
+                    numberString = "two";
+                    break;
+                case 3:
+                    numberString = "three";
+                    break;
+                case 4:
+                    numberString = "four";
+                    break;
+                case 5:
+                    numberString = "five";
+                    break;
+                case 6:
+                    numberString = "six";
+                    break;
+                case 7:
+                    numberString = "seven";
+                    break;
+                case 8:
+                    numberString = "eight";
+                    break;
+                case 9:
+                    numberString = "nine";
+                    break;
+                case 100:
+                    numberString = "unlimited";
+                    break;
+            }
+
+            return numberString;
         }
 
         private Guid CreateGuid()
@@ -429,6 +477,11 @@ namespace DnD5E.Characters
                             }
                             break;
                         case ActionTypesEnum.Bonus:
+                            if (action.Name == "Rage")
+                            {
+                                action.Description = $"{action.Description} ({ConvertIntToNumberString(this.rage)} uses per long rests, +{this.rageDamage} damage)";
+                            }
+
                             this.actionBonus.Add(action);
                             break;
                         case ActionTypesEnum.Option:
@@ -519,6 +572,10 @@ namespace DnD5E.Characters
                                                 case "Combat Superiority":
                                                     break;
                                                 case "Rage":
+                                                    if (this.charClass[c.Name].Features.Any(x => x.Name == "Rage"))
+                                                    {
+                                                        return;
+                                                    }
                                                     break;
                                                 case "Sneak Attack":
                                                     break;
@@ -550,7 +607,8 @@ namespace DnD5E.Characters
                                     ClassEnum[] variantsList = this.charClassCard.Levels[i].Variants.Keys.ToArray();
                                     classVariant = variantsList.PickRandomItemFromArray();
                                     charClass.Variant = classVariant.GetEnumText();
-                                } else if (charClass.Variant != null)
+                                }
+                                else if (charClass.Variant != null)
                                 {
                                     Enum.TryParse(charClass.Variant, out ClassEnum cv);
                                     classVariant = EnumUtil.GetValueFromDescription<ClassEnum>(charClass.Variant);
@@ -591,6 +649,37 @@ namespace DnD5E.Characters
                                             }
                                         }
                                     }
+                                }
+
+                                // Set class specific features
+                                if (c.Levels[i].BardicInspiration != 0)
+                                {
+                                    this.bardicInspiration = c.Levels[i].BardicInspiration;
+                                }
+
+                                if (c.Levels[i].CombatDice != 0)
+                                {
+                                    this.combatDice = c.Levels[i].CombatDice;
+                                }
+
+                                if (c.Levels[i].KiPoints != 0)
+                                {
+                                    this.kiPoints = c.Levels[i].KiPoints;
+                                }
+
+                                if (c.Levels[i].Rage != 0)
+                                {
+                                    this.rage = c.Levels[i].Rage;
+                                }
+
+                                if (c.Levels[i].RageDamage != 0)
+                                {
+                                    this.rageDamage = c.Levels[i].RageDamage;
+                                }
+
+                                if (c.Levels[i].SneakAttack != 0)
+                                {
+                                    this.sneakAttack = c.Levels[i].SneakAttack;
                                 }
                             }
                         }

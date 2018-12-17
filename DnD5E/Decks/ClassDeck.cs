@@ -795,6 +795,7 @@ namespace DnD5E.Decks
                                     }
                                 },
                             },
+                            Rage = 100
                         }
                     },
                 },
